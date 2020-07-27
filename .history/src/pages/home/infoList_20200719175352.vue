@@ -1,0 +1,53 @@
+<template>
+    <div>
+        <div class="infolist-wrap">
+            <div v-for="(info,index) in infoList" :key="index">
+                <li>{{info.name}}</li>
+                <li>{{info.rate}}</li>
+                <li>预期收益</li>
+                <li></li>
+                <li>{{info.content}}</li>
+                <button>查看详情</button>
+            </div>
+        </div>
+    </div>
+</template>
+<script>
+export default {
+    name:'',
+    data(){
+        return{
+            infoList:[
+                {
+                    name:"产品名称产品名称",
+                    rate:"3.45%",
+                    content:"文案内容文案内容文案内容文案内容文案内容"
+                },
+                {
+                    name:"产品名称产品名称",
+                    rate:"3.45%",
+                    content:"文案内容文案内容文案内容文案内容文案内容"
+                },
+                {
+                    name:"产品名称产品名称",
+                    rate:"3.45%",
+                    content:"文案内容文案内容文案内容文案内容文案内容"
+                },
+                {
+                    name:"产品名称产品名称",
+                    rate:"3.45%",
+                    content:"文案内容文案内容文案内容文案内容文案内容"
+                },
+            ]
+        }
+    }
+}
+</script>
+<style scoped>
+.infolist-wrap{
+    display: -webkit-box;
+}
+.infolist-wrap div{
+    width: 270px;
+}
+</style>
