@@ -1,6 +1,9 @@
 import business from './modules/business'
 import layoutHeaderAside from '@/layout/header-aside'
 import home from './modules/home'
+// 引入营销管理路由
+import marketingmanage from './modules/marketingmanage'
+
 
 // import header from './modules'
 // 由于懒加载页面太多的话会造成webpack热更新太慢，所以开发环境不使用懒加载，只有生产环境使用懒加载
@@ -25,7 +28,8 @@ export const frameInRoutes = [
       }
     ]
   },
-  business
+  business,
+
 ]
 /**
  * 在主框架内显示
@@ -46,7 +50,7 @@ const frameIn = [
           close: true
         },
         component: _import('system/index'),
-        children:[
+        children: [
           {
             path: 'operatemanage',
             name: 'operatemanage',
@@ -95,7 +99,9 @@ const frameIn = [
         },
         hidden: true,
         component: _import('system/function/redirect')
-      }
+      },
+      // 营销管理
+      ...marketingmanage,
     ]
   },
   ...frameInRoutes
