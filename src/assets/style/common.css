@@ -1,0 +1,151 @@
+.ui-form-item__label {
+  font-size: 14px;
+  font-family: SourceHanSansCN;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  text-align: left;
+}
+
+.ui-input__inner {
+  font-size:12px;
+  font-family:SourceHanSansCN;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  width: 380px;
+  height: 33px;
+  text-align: center;
+  background: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(231, 232, 239, 1);
+  border-radius: 3px 3px 3px 3px;
+}
+/* 标题 */
+.handle-title {
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+  margin-top: 80px;
+  background: rgba(245, 246, 248, 1);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 4px 4px 0px 0px;
+}
+.handle-title .back {
+   text-align: right;
+}
+/* 确认页不可编辑的条目类名 */
+.right-item{
+ width:380px;
+ height:33px;
+ line-height: 33px;
+ font-family:SourceHanSansCN;
+ font-weight:bold;
+ color:rgba(51,51,51,1);
+ text-align: center;
+ background:rgba(255,255,255,1);
+ border:2px solid rgba(231,232,239,1);
+ border-radius:3px;
+}
+
+/* 返回按钮 */
+.btn {
+    margin-top: 17px;
+    text-align: center;
+}
+.back-btn,.continue-next{
+    width: 129px;
+    height: 39px;
+    border-radius: 3px;
+}
+/* important 覆盖 hover效果 */
+.back-btn{
+    background: #9B7041 !important;
+    border-color: #9B7041 !important;
+    margin-right: 123px;
+}
+/* 一行只放一个按钮 */
+.single-btn{
+    margin-right: 0;
+}
+/* 其他按钮 */
+.continue-next {
+    background: rgba(206, 40, 72, 1) !important;
+    border-color: rgba(206, 40, 72, 1) !important;
+  }
+
+.ui-upload-list {
+  width: 380px;
+}
+/* 表格含操作的样式 */
+.operator-button {
+  font-size: 14px;
+  font-family: SimHei;
+  font-weight: 400;
+  text-decoration: underline;
+  color: rgba(5, 141, 215, 1);
+}
+/* 表格 */
+.ui-table thead {
+  font-size: 12px;
+  font-family: SourceHanSansCN;
+  font-weight: bold;
+  color: rgba(189, 194, 202, 1);
+}
+    
+.ui-table tr {
+  height: 58px; 
+}
+.table .ui-table__row .ui-table_1_column_1{
+ font-size:14px;
+ font-family:SourceHanSansCN;
+ font-weight:400;
+ color:rgba(155,112,65,1);
+}
+ /*表格内部居中  */
+ .ui-table .cell {
+    text-align: center; 
+ }
+.ui-table td {
+ 
+ font-size: 14px;
+ font-family: SourceHanSansCN;
+ font-weight: 400;
+ color: rgba(51, 51, 51, 1);
+ padding: 0px 0px;
+}
+/*右边主题  */
+.right-wrap {
+  width: 1137px;
+  margin: 0 auto;
+}
+/* 单个按钮结果页 */
+.result {
+    padding: 79px 0 100px 0;
+    background: #fff;
+    
+  }
+  .waiting{
+    text-align: center;
+  }
+  
+  .result-img {
+    display: block;
+    width: 257px;
+    height: 158px;
+    margin: 0 auto;
+    background: orangered;
+  }
+  .result-status,
+  .batch {
+    text-align: center;
+    font-size: 16px;
+    font-family: SimHei;
+    font-weight: bold;
+    color: rgba(51, 51, 51, 1);
+  }
+  .result-status {
+    font-size: 16px;
+    margin: 20px 0;
+  }
+  .batch {
+    font-size: 12px;
+    margin-bottom: 49px;
+  }

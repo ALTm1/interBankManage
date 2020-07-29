@@ -1,7 +1,8 @@
 import business from './modules/business'
 import layoutHeaderAside from '@/layout/header-aside'
 import home from './modules/home'
-
+// 参数管理路由
+import parammanagement from './modules/parammanagement'
 // import header from './modules'
 // 由于懒加载页面太多的话会造成webpack热更新太慢，所以开发环境不使用懒加载，只有生产环境使用懒加载
 const _import = require('@/libs/utils/util.import.' + process.env.NODE_ENV)
@@ -22,7 +23,8 @@ export const frameInRoutes = [
           auth: false
         },
         component: _import('system/log')
-      }
+      },
+
     ]
   },
   business
@@ -46,7 +48,7 @@ const frameIn = [
           close: true
         },
         component: _import('system/index'),
-        children:[
+        children: [
           {
             path: 'operatemanage',
             name: 'operatemanage',
@@ -95,10 +97,13 @@ const frameIn = [
         },
         hidden: true,
         component: _import('system/function/redirect')
-      }
+      },
+      ...parammanagement
+
     ]
   },
-  ...frameInRoutes
+  ...frameInRoutes,
+
 ]
 
 /**

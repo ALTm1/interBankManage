@@ -18,6 +18,8 @@ import router from './router'
 import { frameInRoutes } from '@/router/routes'
 import '@/libs/mixins'
 import { deleteClass, setClass } from '@csii/vx-util'
+// 引入公共样式
+import "@/assets/style/common.css"
 
 // 核心插件
 Vue.use(vxadmin)
@@ -29,7 +31,7 @@ new Vue({
   store,
   i18n,
   render: h => h(App),
-  created () {
+  created() {
     // 处理路由 得到每一级的路由设置
     this.$store.commit('vxadmin/page/init', frameInRoutes)
 
@@ -43,7 +45,7 @@ new Vue({
       }
     })
   },
-  mounted () {
+  mounted() {
     // 展示系统信息
     this.$store.commit('vxadmin/releases/versionShow')
     // 用户登录后从数据库加载一系列的设置
@@ -54,7 +56,7 @@ new Vue({
   watch: {
     // 检测路由变化切换侧边栏内容
     '$route.matched': {
-      handler (matched) {
+      handler(matched) {
         if (matched.length > 0) {
           // change by lss
           const menuAside = this.$store.state.vxadmin.menu.header

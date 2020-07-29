@@ -10,11 +10,7 @@
       </div>
     </div>
     <!-- 退出登录 -->
-    <ui-dialog
-      title="提示"
-      :visible.sync="dialogVisible"
-      width="30%"
-      :before-close="handleClose">
+    <ui-dialog title="提示" :visible.sync="dialogVisible" width="30%" :before-close="handleClose">
       <span>确认退出？</span>
       <span slot="footer" class="dialog-footer">
         <ui-button @click="dialogVisible = false">取 消</ui-button>
@@ -30,15 +26,10 @@
         <div class="menu-admin">
           <span>系统员管理1</span>
           <div>
-            <li  @click="dialogVisible = true">退出登录</li>
+            <li @click="dialogVisible = true">退出登录</li>
           </div>
         </div>
-        <ui-menu
-          default-active="1"
-          class="el-menu-vertical-demo"
-          @open="handleOpen"
-         
-        >
+        <ui-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen">
           <ui-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
@@ -51,18 +42,18 @@
               <ui-menu-item index="1-4-1">选项1</ui-menu-item>
             </ui-submenu>
           </ui-submenu>
-         <ui-submenu index="2">
+          <ui-submenu index="2">
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>系统管理</span>
             </template>
             <ui-menu-item index="2-1" @click="operate">操作员管理</ui-menu-item>
-            <ui-menu-item index="2-2"  @click="system">角色管理</ui-menu-item>
+            <ui-menu-item index="2-2" @click="system">角色管理</ui-menu-item>
             <ui-menu-item index="2-3">日志管理</ui-menu-item>
             <ui-menu-item index="2-4">登录密码修改</ui-menu-item>
             <ui-menu-item index="2-5">登录密码重置</ui-menu-item>
           </ui-submenu>
-          
+
           <ui-menu-item index="3">
             <i class="el-icon-document"></i>
             <span slot="title">机构管理</span>
@@ -95,36 +86,44 @@
             <i class="el-icon-setting"></i>
             <span slot="title">客户端版本管理</span>
           </ui-menu-item>
+          <ui-submenu index="11">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>参数管理</span>
+            </template>
+            <ui-menu-item index="11-1" @click="goTagService">产品标签维护</ui-menu-item>
+            <ui-menu-item index="11-2" @click="goSection">部门维护</ui-menu-item>
+            <ui-menu-item index="11-3" @click="goApproveMenuService">审批菜单维护</ui-menu-item>
+          </ui-submenu>
         </ui-menu>
       </div>
       <!-- 右侧 -->
       <div class="menu-right">
-        <router-view/>
+        <router-view />
       </div>
-
     </div>
   </div>
   <!-- </div> -->
 </template>
 
 <script>
-import uiMenuSide from "./components/menu-side";
-import uiMenuHeader from "./components/menu-header";
-import uiTabs from "./components/tabs";
-import uiHeaderFullscreen from "./components/header-fullscreen";
-import uiHeaderLocales from "./components/header-locales";
-import uiHeaderSearch from "./components/header-search";
-import uiHeaderSize from "./components/header-size";
-import uiHeaderTheme from "./components/header-theme";
-import uiHeaderUser from "./components/header-user";
-import uiHeaderLog from "./components/header-log";
-import uiHeaderColor from "./components/header-color";
-import { mapState, mapGetters, mapActions } from "vuex";
-import mixinSearch from "./mixins/search";
-import menuTree from "./components/menu-tree/menu";
-import home from "../../pages/home/Home";
+import uiMenuSide from './components/menu-side'
+import uiMenuHeader from './components/menu-header'
+import uiTabs from './components/tabs'
+import uiHeaderFullscreen from './components/header-fullscreen'
+import uiHeaderLocales from './components/header-locales'
+import uiHeaderSearch from './components/header-search'
+import uiHeaderSize from './components/header-size'
+import uiHeaderTheme from './components/header-theme'
+import uiHeaderUser from './components/header-user'
+import uiHeaderLog from './components/header-log'
+import uiHeaderColor from './components/header-color'
+import { mapState, mapGetters, mapActions } from 'vuex'
+import mixinSearch from './mixins/search'
+import menuTree from './components/menu-tree/menu'
+import home from '../../pages/home/Home'
 export default {
-  name: "ui-layout-header-aside",
+  name: 'ui-layout-header-aside',
   mixins: [mixinSearch],
   components: {
     uiMenuSide,
@@ -139,29 +138,29 @@ export default {
     uiHeaderLog,
     uiHeaderColor,
     menuTree,
-    home
+    home,
   },
   data() {
     return {
       dialogVisible: false,
       // 用户身份
-      user: "系统管理员1",
-      time: "2",
+      user: '系统管理员1',
+      time: '2',
       // [侧边栏宽度] 正常状态
-      asideWidth: "200px",
+      asideWidth: '200px',
       // [侧边栏宽度] 折叠状态
-      asideWidthCollapse: "65px"
-    };
+      asideWidthCollapse: '65px',
+    }
   },
   computed: {
-    ...mapState("vxadmin", {
-      keepAlive: state => state.page.keepAlive,
-      grayActive: state => state.gray.active,
-      transitionActive: state => state.transition.active,
-      asideCollapse: state => state.menu.asideCollapse
+    ...mapState('vxadmin', {
+      keepAlive: (state) => state.page.keepAlive,
+      grayActive: (state) => state.gray.active,
+      transitionActive: (state) => state.transition.active,
+      asideCollapse: (state) => state.menu.asideCollapse,
     }),
-    ...mapGetters("vxadmin", {
-      themeActiveSetting: "theme/activeSetting"
+    ...mapGetters('vxadmin', {
+      themeActiveSetting: 'theme/activeSetting',
     }),
     /**
      * @description 最外层容器的背景图片样式
@@ -171,51 +170,63 @@ export default {
       return {
         ...(this.themeActiveSetting.backgroundImage
           ? {
-              backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')`
+              backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')`,
             }
-          : {})
-      };
-    }
+          : {}),
+      }
+    },
   },
   methods: {
-    ...mapActions("vxadmin/menu", ["asideCollapseToggle"]),
+    ...mapActions('vxadmin/menu', ['asideCollapseToggle']),
     /**
      * 接收点击切换侧边栏的按钮
      */
     handleToggleAside() {
-      this.asideCollapseToggle();
+      this.asideCollapseToggle()
     },
     handleOpen(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key, keyPath)
     },
     handleClose(key, keyPath) {
-      console.log(key, keyPath);
+      console.log(key, keyPath)
     },
-    system(){
+    system() {
       this.$router.push('rolemanage')
     },
-    operate(){
+    operate() {
       this.$router.push('operatemanage')
     },
-      handleClose(done) {
-        this.$confirm('确认关闭？')
-          .then(_ => {
-            done();
-          })
-          .catch(_ => {});
-      },
-      getout(){
-        this.dialogVisible = false
-        this.$router.push('/login')
-      }
-    
-  }
-};
+    // 参数管理
+    // 产品标签维护
+    goTagService() {
+      this.$router.push('productService')
+    },
+    // 部门维护
+    goSection() {
+      this.$router.push('sectionService')
+    },
+    // 审批菜单维护
+    goApproveMenuService() {
+      this.$router.push('menuService')
+    },
+    handleClose(done) {
+      this.$confirm('确认关闭？')
+        .then((_) => {
+          done()
+        })
+        .catch((_) => {})
+    },
+    getout() {
+      this.dialogVisible = false
+      this.$router.push('/login')
+    },
+  },
+}
 </script>
 
 <style lang="scss">
 // 注册主题
-@import "~@/assets/style/theme/register.scss";
+@import '~@/assets/style/theme/register.scss';
 </style>
 <style lang="scss">
 .tab-menu {
@@ -269,8 +280,13 @@ export default {
   width: 300px;
   background-color: #fff;
 }
-.menu-admin{
-  background: #BE9D62;
+.menu-right {
+  width: calc(100% - 300px);
+  min-height: 92vh;
+  background: rgba(239, 240, 244, 1);
+}
+.menu-admin {
+  background: #be9d62;
   text-align: center;
   color: #fff;
   cursor: pointer;
