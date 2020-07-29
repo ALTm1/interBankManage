@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2020-07-27 19:06:58
+ * @LastEditTime: 2020-07-28 15:25:04
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \interBankManage\src\main.js
+ */
 // Vue
 import Vue from 'vue'
 import i18n from './i18n'
@@ -19,6 +27,10 @@ import { frameInRoutes } from '@/router/routes'
 import '@/libs/mixins'
 import { deleteClass, setClass } from '@csii/vx-util'
 // 引入公共样式
+import "@/assets/style/common.css"
+
+
+// 引入公共样式
 import "@/assets/style/common.css"
 
 // 核心插件

@@ -276,6 +276,7 @@ export default {
 .menu-side {
   display: -webkit-box;
 }
+
 .menu-wrap {
   width: 300px;
   background-color: #fff;
@@ -290,5 +291,8 @@ export default {
   text-align: center;
   color: #fff;
   cursor: pointer;
+}
+.menu-right {
+  width: calc(100% - 300px);
 }
 </style>
