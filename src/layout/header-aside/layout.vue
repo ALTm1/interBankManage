@@ -95,6 +95,24 @@
             <ui-menu-item index="11-2" @click="goSection">部门维护</ui-menu-item>
             <ui-menu-item index="11-3" @click="goApproveMenuService">审批菜单维护</ui-menu-item>
           </ui-submenu>
+          <ui-submenu index="12">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>业务管理</span>
+            </template>
+            <ui-menu-item index="12-1" @click="goOutBankInfo">行外机构信息维护</ui-menu-item>
+            <ui-menu-item index="12-2" @click="goUserManagement">用户管理</ui-menu-item>
+            <ui-menu-item index="12-3" @click="goProductmaintence">产品维护</ui-menu-item>
+            <ui-menu-item index="12-4" @click="goFilesManagement">文件管理</ui-menu-item>
+          </ui-submenu>
+          <ui-submenu index="13">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>授信管理</span>
+            </template>
+            <ui-menu-item index="13-1" @click="goCreditQuery">授信额度查询</ui-menu-item>
+            <ui-menu-item index="13-2" @click="goCreditFilesManagement">授信文件管理</ui-menu-item>
+          </ui-submenu>
         </ui-menu>
       </div>
       <!-- 右侧 -->
@@ -196,7 +214,7 @@ export default {
     operate() {
       this.$router.push('operatemanage')
     },
-    // 参数管理
+    /***参数管理***/
     // 产品标签维护
     goTagService() {
       this.$router.push('productService')
@@ -209,6 +227,36 @@ export default {
     goApproveMenuService() {
       this.$router.push('menuService')
     },
+    /**业务管理***/
+    //  行外机构信息管理
+    goOutBankInfo() {
+      this.$router.push('outBankInfoMaintain')
+    },
+    // 用户管理
+    goUserManagement() {
+      this.$router.push('userQuery')
+      productQuery
+    },
+    // 产品维护
+    goProductmaintence() {
+      this.$router.push('productQuery')
+    },
+    // 文件管理
+    goFilesManagement() {
+      this.$router.push('filesManagement')
+    },
+    /***
+     * 授信管理
+     */
+    //授信额度查询
+    goCreditQuery() {
+      this.$router.push('lineCreditQuery')
+    },
+    //授信文件管理
+    goCreditFilesManagement() {
+      this.$router.push('creditFilesManagement')
+    },
+
     handleClose(done) {
       this.$confirm('确认关闭？')
         .then((_) => {
