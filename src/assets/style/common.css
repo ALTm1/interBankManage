@@ -120,7 +120,8 @@
 }
 /*右边主题  */
 .right-wrap {
-  width: 1137px;
+  width: calc(100% - 24px);
+  /* width: 1137px; */
   margin: 0 auto;
 }
 /* 结果页 */

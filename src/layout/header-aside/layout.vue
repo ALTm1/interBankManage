@@ -113,6 +113,21 @@
             <ui-menu-item index="13-1" @click="goCreditQuery">授信额度查询</ui-menu-item>
             <ui-menu-item index="13-2" @click="goCreditFilesManagement">授信文件管理</ui-menu-item>
           </ui-submenu>
+          <ui-submenu index="14">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>行为模块分析</span>
+            </template>
+            <ui-menu-item index="14-1" @click="goAccessFrequency">功能模块访问频次</ui-menu-item>
+            <ui-menu-item index="14-2" @click="goAccessTime">功能模块访问时长</ui-menu-item>
+          </ui-submenu>
+          <ui-submenu index="15">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>联盟圈管理</span>
+            </template>
+            <ui-menu-item index="15-1" @click="goUnionlapmanagement">联盟圈管理</ui-menu-item>
+          </ui-submenu>
         </ui-menu>
       </div>
       <!-- 右侧 -->
@@ -217,46 +232,62 @@ export default {
     /***参数管理***/
     // 产品标签维护
     goTagService() {
-      this.$router.push('productService')
+      this.$router.push('/productService')
     },
     // 部门维护
     goSection() {
-      this.$router.push('sectionService')
+      this.$router.push('/sectionService')
     },
     // 审批菜单维护
     goApproveMenuService() {
-      this.$router.push('menuService')
+      this.$router.push('/menuService')
     },
     /**业务管理***/
     //  行外机构信息管理
     goOutBankInfo() {
-      this.$router.push('outBankInfoMaintain')
+      this.$router.push('/outBankInfoMaintain')
     },
     // 用户管理
     goUserManagement() {
-      this.$router.push('userQuery')
+      this.$router.push('/userQuery')
       productQuery
     },
     // 产品维护
     goProductmaintence() {
-      this.$router.push('productQuery')
+      this.$router.push('/productQuery')
     },
     // 文件管理
     goFilesManagement() {
-      this.$router.push('filesManagement')
+      this.$router.push('/filesManagement')
     },
     /***
      * 授信管理
      */
     //授信额度查询
     goCreditQuery() {
-      this.$router.push('lineCreditQuery')
+      this.$router.push('/lineCreditQuery')
     },
     //授信文件管理
     goCreditFilesManagement() {
-      this.$router.push('creditFilesManagement')
+      this.$router.push('/creditFilesManagement')
     },
-
+    /***
+     * 行为分析
+     */
+    //访问频次
+    goAccessFrequency() {
+      this.$router.push('/accessFrequency')
+    },
+    //访问时长
+    goAccessTime() {
+      this.$router.push('/accessTime')
+    },
+    /***
+     * 联盟圈管理
+     */
+    goUnionlapmanagement() {
+      this.$router.push('/unionlapQuery')
+    },
     handleClose(done) {
       this.$confirm('确认关闭？')
         .then((_) => {
@@ -333,6 +364,7 @@ export default {
 .menu-right {
   width: calc(100% - 300px);
   min-height: 92vh;
+  // margin: 0 auto;
   background: rgba(239, 240, 244, 1);
 }
 .menu-admin {
