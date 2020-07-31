@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 09:04:21
- * @LastEditTime: 2020-07-29 10:45:56
+ * @LastEditTime: 2020-07-31 17:15:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIndex.vue
@@ -37,7 +37,7 @@
           @click.native="submitForm('ruleForm')"
           text="查询"
           backgroundColor="#CE2848"
-          margin="0px 60px 0px 0px"
+          marginRight="100px"
         ></Button>
         <Button @click.native="resetForm('ruleForm')" text="重置" backgroundColor="#9B7041"></Button>
       </ui-form-item>

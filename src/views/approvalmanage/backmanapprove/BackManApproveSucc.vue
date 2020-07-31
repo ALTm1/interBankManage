@@ -1,11 +1,13 @@
 <!--
  * @Author: your name
- * @Date: 2020-07-28 18:20:49
- * @LastEditTime: 2020-07-31 16:01:30
+ * @Date: 2020-07-31 17:05:44
+ * @LastEditTime: 2020-07-31 17:06:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
- * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MettingDeleteSucc.vue
+ * @FilePath: \interBankManage\src\views\approvalmanage\backmanapprove\BackManApproveSucc.vue
 --> 
+
+
 
 <template>
   <div class="wrap">
@@ -32,7 +34,7 @@ export default {
   },
   methods: {
     returnLast() {
-      this.$router.push('/marketingmanage/meetingmanage/meetingindex')
+      this.$router.push('/approvalmanage/organapprove/organapproveindex')
     },
   },
 }

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-30 19:52:15
- * @LastEditTime: 2020-07-31 09:29:55
+ * @LastEditTime: 2020-07-31 19:04:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\DynamicZone.vue
@@ -9,27 +9,72 @@
 
 <template>
   <div class="wrap">
-    <div v-for="item in displayInfoArr" :key="item.title">
-      <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
-      <span class="choose-text">选择</span>
+    <div>
+      <div>
+        <DisplayItem title="推送会议" content="会议标题1"></DisplayItem>
+        <span class="choose-text" @click="meetingDialog=!meetingDialog">选择</span>
+      </div>
+      <div>
+        <DisplayItem title="推送培训" content="培训标题1"></DisplayItem>
+        <span class="choose-text" @click="organDynamicDialog=!organDynamicDialog">选择</span>
+      </div>
+      <div>
+        <DisplayItem title="推送机构动态" content="机构动态标题1"></DisplayItem>
+        <span class="choose-text" @click="trainDialog=!trainDialog">选择</span>
+      </div>
     </div>
-    <!-- <ui-dialog title="会议列表" center :visible.sync="meetingDialog">
-      <ui-table :data="tableData" v-if="showTable">
-        <ui-table-column prop="order" label="序号" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="proLevelOne" label="产品一级分类" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="proLevelTwo" label="产品二级分类" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="tradeDirec" label="交易方向" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="proName" label="产品名称" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="organName" label="机构全称" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="proRate" label="利率" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="timeLimit" label="期限" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="money" label="金额" align="center" min-width="100px"></ui-table-column>
-      </ui-table>
+    <ui-dialog title="会议列表" center :visible.sync="meetingDialog">
+      <div class="dialog-content">
+        <ui-table :data="meetingTable">
+          <ui-table-column prop="order" label="请选择" align="center" min-width="150px">
+            <template slot-scope="scope">
+              <ui-radio v-model="meetingRadio" :label="scope.row.order"></ui-radio>
+            </template>
+          </ui-table-column>
+          <ui-table-column prop="meetingTitle" label="会议标题" align="center" min-width="150px"></ui-table-column>
+          <ui-table-column prop="releaseDate" label="发布时间" align="center" min-width="150px"></ui-table-column>
+        </ui-table>
+      </div>
       <div class="footer">
         <span class="cancel-button float-left" @click="meetingDialog=!meetingDialog">取消</span>
         <span class="confirm-button float-right" @click="meetingDialog=!meetingDialog">确认</span>
       </div>
-    </ui-dialog>-->
+    </ui-dialog>
+    <ui-dialog title="培训列表" center :visible.sync="trainDialog">
+      <div class="dialog-content">
+        <ui-table :data="trainTable">
+          <ui-table-column prop="order" label="请选择" align="center" min-width="150px">
+            <template slot-scope="scope">
+              <ui-radio v-model="trainRadio" :label="scope.row.order"></ui-radio>
+            </template>
+          </ui-table-column>
+          <ui-table-column prop="trainTitle" label="培训标题" align="center" min-width="150px"></ui-table-column>
+          <ui-table-column prop="releaseDate" label="发布时间" align="center" min-width="150px"></ui-table-column>
+        </ui-table>
+      </div>
+      <div class="footer">
+        <span class="cancel-button float-left" @click="trainDialog=!trainDialog">取消</span>
+        <span class="confirm-button float-right" @click="trainDialog=!trainDialog">确认</span>
+      </div>
+    </ui-dialog>
+    <ui-dialog title="机构动态列表" center :visible.sync="organDynamicDialog">
+      <div class="dialog-content">
+        <ui-table :data="organDynamicTable">
+          <ui-table-column prop="order" label="请选择" align="center" min-width="150px">
+            <template slot-scope="scope">
+              <ui-radio v-model="organDynamicRadio" :label="scope.row.order"></ui-radio>
+            </template>
+          </ui-table-column>
+          <ui-table-column prop="organDynamicTitle" label="机构动态标题" align="center" min-width="150px"></ui-table-column>
+          <ui-table-column prop="releaseDate" label="发布时间" align="center" min-width="150px"></ui-table-column>
+        </ui-table>
+      </div>
+      <div class="footer">
+        <span class="cancel-button float-left" @click="organDynamicDialog=!organDynamicDialog">取消</span>
+        <span class="confirm-button float-right" @click="organDynamicDialog=!organDynamicDialog">确认</span>
+      </div>
+    </ui-dialog>
+
     <div style="text-align: center">
       <Button text="提交" backgroundColor="#9B7041"></Button>
     </div>
@@ -40,20 +85,6 @@
 export default {
   data() {
     return {
-      displayInfoArr: [
-        {
-          title: '推送会议',
-          content: '会议标题1',
-        },
-        {
-          title: '推送培训',
-          content: '培训标题1',
-        },
-        {
-          title: '推送机构动态',
-          content: '机构动态标题1',
-        },
-      ],
       // 会议列表弹框
       meetingDialog: false,
       meetingTable: [
@@ -62,7 +93,43 @@ export default {
           meetingTitle: '江南银行会议',
           releaseDate: '2020-09-09',
         },
+        {
+          order: 2,
+          meetingTitle: '江南银行会议',
+          releaseDate: '2020-09-09',
+        },
       ],
+      meetingRadio: '',
+      // 机构动态列表弹框
+      organDynamicDialog: false,
+      organDynamicTable: [
+        {
+          order: 1,
+          organDynamicTitle: '江南银行会议',
+          releaseDate: '2020-09-09',
+        },
+        {
+          order: 2,
+          organDynamicTitle: '江南银行会议',
+          releaseDate: '2020-09-09',
+        },
+      ],
+      organDynamicRadio: '',
+      // 机构动态列表弹框
+      trainDialog: false,
+      trainTable: [
+        {
+          order: 1,
+          trainTitle: '江南银行会议',
+          releaseDate: '2020-09-09',
+        },
+        {
+          order: 2,
+          trainTitle: '江南银行会议',
+          releaseDate: '2020-09-09',
+        },
+      ],
+      trainRadio: '',
     }
   },
 }
@@ -70,7 +137,7 @@ export default {
 
 <style lang="css" scoped>
 .wrap {
-  width: 550px;
+  width: 700px;
   margin: 0 auto;
 }
 .choose-text {
@@ -80,5 +147,52 @@ export default {
   text-decoration: underline;
   color: rgba(5, 141, 215, 1);
   margin-left: 20px;
+}
+
+/* 弹出框 */
+.wrap /deep/ .ui-dialog--center .ui-dialog__body {
+  padding: 0px 0px;
+}
+.wrap /deep/ .ui-dialog__header {
+  background: rgba(245, 246, 248, 1);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 4px 4px 0px 0px;
+}
+.wrap /deep/ .ui-dialog__title {
+  font-size: 14px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.dialog-content {
+  padding: 100px 100px;
+}
+.footer {
+  width: 100%;
+  height: 83px;
+}
+.cancel-button {
+  display: inline-block;
+  width: 50%;
+  height: 83px;
+  line-height: 83px;
+  background: rgba(238, 238, 238, 1);
+  text-align: center;
+  font-size: 20px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.confirm-button {
+  display: inline-block;
+  width: 50%;
+  height: 83px;
+  line-height: 83px;
+  background: rgba(155, 112, 65, 1);
+  text-align: center;
+  font-size: 20px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
 }
 </style>

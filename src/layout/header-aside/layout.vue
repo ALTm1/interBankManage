@@ -29,10 +29,10 @@
             <li @click="dialogVisible = true">退出登录</li>
           </div>
         </div>
-        <ui-menu default-active="1" class="el-menu-vertical-demo" @open="handleOpen">
+        <ui-menu default-active="1" class="ui-menu-vertical-demo" @open="handleOpen">
           <ui-submenu index="1">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="ui-icon-location"></i>
               <span>我的主页</span>
             </template>
             <ui-menu-item index="1-1">选项1</ui-menu-item>
@@ -44,7 +44,7 @@
           </ui-submenu>
           <ui-submenu index="2">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="ui-icon-location"></i>
               <span>系统管理</span>
             </template>
             <ui-menu-item index="2-1" @click="operate">操作员管理</ui-menu-item>
@@ -55,40 +55,40 @@
           </ui-submenu>
 
           <ui-menu-item index="3">
-            <i class="el-icon-document"></i>
+            <i class="ui-icon-document"></i>
             <span slot="title">机构管理</span>
           </ui-menu-item>
           <ui-menu-item index="4">
-            <i class="el-icon-setting"></i>
+            <i class="ui-icon-setting"></i>
             <span slot="title">用户管理</span>
           </ui-menu-item>
           <ui-menu-item index="5">
-            <i class="el-icon-setting"></i>
+            <i class="ui-icon-setting"></i>
             <span slot="title">产品查询</span>
           </ui-menu-item>
           <ui-menu-item index="6">
-            <i class="el-icon-setting"></i>
+            <i class="ui-icon-setting"></i>
             <span slot="title">任务中心</span>
           </ui-menu-item>
           <ui-menu-item index="7">
-            <i class="el-icon-setting"></i>
+            <i class="ui-icon-setting"></i>
             <span slot="title">个人中心</span>
           </ui-menu-item>
           <ui-menu-item index="8">
-            <i class="el-icon-setting"></i>
+            <i class="ui-icon-setting"></i>
             <span slot="title">同业圈管理</span>
           </ui-menu-item>
           <ui-menu-item index="9">
-            <i class="el-icon-setting"></i>
+            <i class="ui-icon-setting"></i>
             <span slot="title">举报及反馈管理</span>
           </ui-menu-item>
           <ui-menu-item index="10">
-            <i class="el-icon-setting"></i>
+            <i class="ui-icon-setting"></i>
             <span slot="title">客户端版本管理</span>
           </ui-menu-item>
           <ui-submenu index="11">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="ui-icon-location"></i>
               <span>参数管理</span>
             </template>
             <ui-menu-item index="11-1" @click="goTagService">产品标签维护</ui-menu-item>
@@ -97,7 +97,7 @@
           </ui-submenu>
           <ui-submenu index="12">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="ui-icon-location"></i>
               <span>业务管理</span>
             </template>
             <ui-menu-item index="12-1" @click="goOutBankInfo">行外机构信息维护</ui-menu-item>
@@ -107,11 +107,29 @@
           </ui-submenu>
           <ui-submenu index="13">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="ui-icon-location"></i>
               <span>授信管理</span>
             </template>
             <ui-menu-item index="13-1" @click="goCreditQuery">授信额度查询</ui-menu-item>
             <ui-menu-item index="13-2" @click="goCreditFilesManagement">授信文件管理</ui-menu-item>
+          </ui-submenu>
+          <ui-submenu index="14">
+            <template slot="title">
+              <i class="ui-icon-location"></i>
+              <span>营销管理</span>
+            </template>
+            <ui-menu-item index="14-1" @click="goMeetingManage">会议管理</ui-menu-item>
+            <ui-menu-item index="14-2" @click="goTrainingManage">培训管理</ui-menu-item>
+            <ui-menu-item index="14-3" @click="goMarketDisManage">营销展示管理</ui-menu-item>
+          </ui-submenu>
+          <ui-submenu index="15">
+            <template slot="title">
+              <i class="ui-icon-location"></i>
+              <span>审批管理</span>
+            </template>
+            <ui-menu-item index="15-1" @click="goOrganApprove">机构认证审批</ui-menu-item>
+            <ui-menu-item index="15-2" @click="goBackManApprove">后管交易审批</ui-menu-item>
+            <ui-menu-item index="15-3" @click="goApprovalRecord">审批记录查询</ui-menu-item>
           </ui-submenu>
         </ui-menu>
       </div>
@@ -256,6 +274,37 @@ export default {
     goCreditFilesManagement() {
       this.$router.push('creditFilesManagement')
     },
+
+    /** 营销管理 **/
+
+    // 会议管理
+    goMeetingManage() {
+      this.$router.push('/marketingmanage/meetingmanage/meetingindex')
+    },
+    // 培训管理
+    goTrainingManage() {
+      this.$router.push('/marketingmanage/trainingmanage/trainingindex')
+    },
+    // 营销展示管理
+    goMarketDisManage() {
+      this.$router.push('/marketingmanage/marketdismanage/marketdisindex')
+    },
+
+    /** 审批管理 **/
+
+    // 机构认证审批
+    goOrganApprove() {
+      this.$router.push('/approvalmanage/organapprove/organapproveindex')
+    },
+    // 后管交易审批
+    goBackManApprove() {
+      this.$router.push('/approvalmanage/backmanapprove/backmanapproveindex')
+    },
+    // 审批记录查询
+    goApprovalRecord(){
+      this.$router.push('/approvalmanage/approvalrecord/approvalrecordqry')
+    },
+
 
     handleClose(done) {
       this.$confirm('确认关闭？')

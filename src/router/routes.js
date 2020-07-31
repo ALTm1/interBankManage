@@ -5,6 +5,8 @@ import home from './modules/home'
 import parammanagement from './modules/parammanagement'
 // 引入营销管理路由
 import marketingmanage from './modules/marketingmanage'
+// 引入审批管理路由
+import approvalmanage from './modules/approvalmanage'
 
 
 // import header from './modules'
@@ -107,6 +109,9 @@ const frameIn = [
 
       // 营销管理
       ...marketingmanage,
+
+      // 审批管理
+      ...approvalmanage
     ]
   },
   ...frameInRoutes,

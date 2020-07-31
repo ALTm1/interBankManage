@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 15:37:16
- * @LastEditTime: 2020-07-28 16:14:19
+ * @LastEditTime: 2020-07-31 14:23:31
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\components\displayitem\index.vue
@@ -42,16 +42,16 @@ export default {
   margin-bottom: 18px;
 }
 .display-title {
+  width: 200px;
+  height: 33px;
+  line-height: 33px;
+  text-align: right;
   display: inline-block;
   font-size: 14px;
   font-family: SourceHanSansCN;
   font-weight: bold;
   color: rgba(51, 51, 51, 1);
   margin-right: 43px;
-  width: 100px;
-  height: 33px;
-  line-height: 33px;
-  text-align: right;
 }
 .display-content {
   display: inline-block;

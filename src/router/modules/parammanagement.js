@@ -8,7 +8,6 @@ export default [
       title: '产品标签新增'
     },
     component: () => import('@/views/parammanagement/producttags/productService.vue'),
-
   },
   {
     path: '/productTagAdd',
