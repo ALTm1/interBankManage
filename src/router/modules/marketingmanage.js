@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-28 09:23:48
- * @LastEditTime: 2020-07-29 16:04:16
+ * @LastEditTime: 2020-07-30 19:57:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\router\modules\marketingmanage.js
@@ -236,6 +236,14 @@ export default [
           title: '产品推荐'
         },
         component: () => import('@/views/marketingmanage/marketdismanage/ProRecommend'),
+      },
+      {
+        path: '/dynamiczone',
+        name: 'dynamiczone',
+        meta: {
+          title: '动态专区'
+        },
+        component: () => import('@/views/marketingmanage/marketdismanage/DynamicZone'),
       },
     ]
   },

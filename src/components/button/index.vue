@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 10:07:41
- * @LastEditTime: 2020-07-28 16:18:16
+ * @LastEditTime: 2020-07-30 19:12:52
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\components\button\index.vue
@@ -9,7 +9,10 @@
 
 
 <template>
-  <div class="button-item" :style="{'background':backgroundColor,'margin':margin}">
+  <div
+    class="button-item"
+    :style="{'background':backgroundColor,'marginLeft':marginLeft,'marginRight':marginRight}"
+  >
     <span class="button-text">{{text}}</span>
   </div>
 </template>
@@ -21,9 +24,13 @@ export default {
       type: String,
       default: '#CE2848',
     },
-    margin: {
+    marginLeft: {
       type: String,
-      default: 'auto',
+      default: '0px',
+    },
+    marginRight: {
+      type: String,
+      default: '0px',
     },
     text: {
       type: String,

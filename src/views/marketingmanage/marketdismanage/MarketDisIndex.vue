@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 14:07:51
- * @LastEditTime: 2020-07-29 16:09:34
+ * @LastEditTime: 2020-07-30 16:56:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\MarketDisIndex.vue
@@ -39,7 +39,7 @@
     <div>
       <ui-menu
         :default-active="menuActiveIndex"
-        class="el-menu-demo"
+        class="ui-menu-demo market-display-menu"
         mode="horizontal"
         @select="handleSelect"
         text-color="#333333"
@@ -98,5 +98,9 @@ export default {
 .form-block {
   width: 600px;
   margin: 0 auto;
+}
+
+.market-display-menu{
+  background: none;
 }
 </style>

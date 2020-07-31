@@ -253,6 +253,7 @@ export default {
 }
 .menu-side {
   display: -webkit-box;
+  background: rgb(240, 239, 244);
 }
 
 .menu-wrap {
