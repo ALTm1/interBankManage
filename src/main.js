@@ -26,6 +26,8 @@ import router from './router'
 import { frameInRoutes } from '@/router/routes'
 import '@/libs/mixins'
 import { deleteClass, setClass } from '@csii/vx-util'
+// 引入公共样式
+import "@/assets/style/common.css"
 
 
 // 引入公共样式

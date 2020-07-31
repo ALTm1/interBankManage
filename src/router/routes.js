@@ -1,6 +1,8 @@
 import business from './modules/business'
 import layoutHeaderAside from '@/layout/header-aside'
 import home from './modules/home'
+// 参数管理路由
+import parammanagement from './modules/parammanagement'
 // 引入营销管理路由
 import marketingmanage from './modules/marketingmanage'
 
@@ -25,7 +27,8 @@ export const frameInRoutes = [
           auth: false
         },
         component: _import('system/log')
-      }
+      },
+
     ]
   },
   business,
@@ -100,11 +103,14 @@ const frameIn = [
         hidden: true,
         component: _import('system/function/redirect')
       },
+      ...parammanagement,
+
       // 营销管理
       ...marketingmanage,
     ]
   },
-  ...frameInRoutes
+  ...frameInRoutes,
+
 ]
 
 /**

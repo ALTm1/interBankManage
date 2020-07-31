@@ -86,6 +86,15 @@
             <i class="el-icon-setting"></i>
             <span slot="title">客户端版本管理</span>
           </ui-menu-item>
+          <ui-submenu index="11">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>参数管理</span>
+            </template>
+            <ui-menu-item index="11-1" @click="goTagService">产品标签维护</ui-menu-item>
+            <ui-menu-item index="11-2" @click="goSection">部门维护</ui-menu-item>
+            <ui-menu-item index="11-3" @click="goApproveMenuService">审批菜单维护</ui-menu-item>
+          </ui-submenu>
         </ui-menu>
       </div>
       <!-- 右侧 -->
@@ -187,6 +196,19 @@ export default {
     operate() {
       this.$router.push('operatemanage')
     },
+    // 参数管理
+    // 产品标签维护
+    goTagService() {
+      this.$router.push('productService')
+    },
+    // 部门维护
+    goSection() {
+      this.$router.push('sectionService')
+    },
+    // 审批菜单维护
+    goApproveMenuService() {
+      this.$router.push('menuService')
+    },
     handleClose(done) {
       this.$confirm('确认关闭？')
         .then((_) => {
@@ -259,6 +281,11 @@ export default {
 .menu-wrap {
   width: 300px;
   background-color: #fff;
+}
+.menu-right {
+  width: calc(100% - 300px);
+  min-height: 92vh;
+  background: rgba(239, 240, 244, 1);
 }
 .menu-admin {
   background: #be9d62;
