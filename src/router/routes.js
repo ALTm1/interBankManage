@@ -3,6 +3,14 @@ import layoutHeaderAside from '@/layout/header-aside'
 import home from './modules/home'
 // 参数管理路由
 import parammanagement from './modules/parammanagement'
+// 业务管理
+import businessmanagement from './modules/businessmanagement'
+// 审批管理
+import creditmanagement from './modules/creditmanagement'
+// 行为分析
+import behavioranalysis from './modules/behavioranalysis'
+// 联盟圈
+import unionlapmanagement from './modules/unionlapmanagement'
 // 引入营销管理路由
 import marketingmanage from './modules/marketingmanage'
 // 引入审批管理路由
@@ -72,6 +80,11 @@ const frameIn = [
               title: '角色管理'
             }
           },
+          ...parammanagement,
+          ...businessmanagement,
+          ...creditmanagement,
+          ...behavioranalysis,
+          ...unionlapmanagement
         ]
       },
       // 系统 前端日志
@@ -105,7 +118,7 @@ const frameIn = [
         hidden: true,
         component: _import('system/function/redirect')
       },
-      ...parammanagement,
+
 
       // 营销管理
       ...marketingmanage,

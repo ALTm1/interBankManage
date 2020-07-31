@@ -1,5 +1,5 @@
 <template>
-  <!-- 结果页 -->
+  <!-- 停用结果页 -->
   <div class="recording-res">
     <div class="right-wrap">
       <ui-row class="handle-title">
@@ -31,7 +31,7 @@ export default {
   methods: {
     // 点击完成
     clickFinish() {
-      this.$router.push('/userQuery')
+      this.$router.push('/unionlapQuery')
     },
     // 返回按钮
     goBack() {

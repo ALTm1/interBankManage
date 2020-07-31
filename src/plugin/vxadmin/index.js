@@ -28,8 +28,8 @@ import {
   RadioGroup,
   // RadioButton,
   Checkbox,
-  // CheckboxButton,
-  // CheckboxGroup,
+  CheckboxButton,
+  CheckboxGroup,
   // Switch,
   Select,
   // SelectDrag,
@@ -131,8 +131,8 @@ export default {
     Vue.use(RadioGroup)
     // Vue.use(RadioButton)
     Vue.use(Checkbox)
-    // Vue.use(CheckboxButton)
-    // Vue.use(CheckboxGroup)
+    Vue.use(CheckboxButton)
+    Vue.use(CheckboxGroup)
     // Vue.use(Switch)
     Vue.use(Select)
     // Vue.use(SelectDrag)
