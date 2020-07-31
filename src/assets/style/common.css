@@ -1,3 +1,5 @@
+/* form表单 */
+
 .ui-form-item__label {
   font-size: 14px;
   font-family: SourceHanSansCN;
@@ -73,6 +75,8 @@
     background: rgba(206, 40, 72, 1) !important;
     border-color: rgba(206, 40, 72, 1) !important;
   }
+
+/* 上传组件 */
 
 .ui-upload-list {
   width: 380px;
@@ -153,6 +157,8 @@
     margin-bottom: 49px;
   }
 
+/* table表格 */
+
 .ui-table thead {
   font-size: 12px;
   font-family: SourceHanSansCN;
@@ -171,6 +177,8 @@
   color: rgba(51, 51, 51, 1);
   padding: 0px 0px;
 }
+
+/* table操作按钮 */
 
 .operator-button {
   font-size: 14px;
