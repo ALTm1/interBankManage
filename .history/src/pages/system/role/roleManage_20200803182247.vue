@@ -28,7 +28,7 @@
         </ui-table-column>
       </ui-table>
       <div class="role-btn">
-        <button @click="add">新增</button>
+        <button>新增</button>
       </div>
     </div>
   </div>
@@ -61,9 +61,6 @@ export default {
   methods:{
        toDetail(row) {
         this.$router.push('roledetail')
-      },
-      add(){
-        this.$router.push('roleadd')
       }
   }
 };

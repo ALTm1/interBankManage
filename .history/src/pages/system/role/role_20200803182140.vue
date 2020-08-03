@@ -12,7 +12,6 @@ export default {
 };
 </script>
 <style>
-
 .ui-breadcrumb__inner a, .ui-breadcrumb__inner.is-link{
   font-size:12px;
 font-weight:400;

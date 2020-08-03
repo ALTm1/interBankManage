@@ -1,13 +1,6 @@
 <template>
   <div class="role-wrap">
     <!-- 角色查询 -->
-     <!-- 面包屑 -->
-      <ui-breadcrumb separator-class="ui-icon-arrow-right">
-        <ui-breadcrumb-item :to="{ path: '/' }">您的位置: 系统管理</ui-breadcrumb-item>
-        <ui-breadcrumb-item>角色查询</ui-breadcrumb-item>
-        <!-- <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
-      </ui-breadcrumb>
     <div class="role-query">
       <li>角色查询</li>
     </div>
@@ -17,19 +10,16 @@
         <ui-table-column prop="id" label="角色ID" width="120"></ui-table-column>
         <ui-table-column prop="name" label="角色名称" width="180"></ui-table-column>
         <ui-table-column prop="state" label="角色状态" width="180"></ui-table-column>
-        <ui-table-column prop="ps" label="备注" width="180"></ui-table-column>
+        <ui-table-column prop="ps" label="备注" width="120"></ui-table-column>
         <ui-table-column prop="date" label="修改时间" width="180"></ui-table-column>
-        <ui-table-column fixed="right" label="操作" width="180">
+        <ui-table-column fixed="right" label="操作" width="120">
           <template slot-scope="scope">
-            <ui-button @click="toDetail(scope.row)" type="text" size="small">详情</ui-button>
-            <ui-button @click="handleClick(scope.row)" type="text" size="small" v-show="scope.row.name=='交易员'">修改</ui-button>
-            <ui-button type="text" size="small" v-show="scope.row.name=='交易员'">注销</ui-button>
+            <ui-button @click="handleClick(scope.row)" type="text" size="small">详情</ui-button>
+            <ui-button @click="handleClick(scope.row)" type="text" size="small">修改</ui-button>
+            <ui-button type="text" size="small">注销</ui-button>
           </template>
         </ui-table-column>
       </ui-table>
-      <div class="role-btn">
-        <button @click="add">新增</button>
-      </div>
     </div>
   </div>
 </template>
@@ -52,18 +42,15 @@ export default {
           id:"002",
           state:"已生效",
           date: "2020-01-31  17:00",
-          name: "审批员",
+          name: "交易员",
           ps: "交易员"
         },
       ]
     };
   },
   methods:{
-       toDetail(row) {
-        this.$router.push('roledetail')
-      },
-      add(){
-        this.$router.push('roleadd')
+       handleClick(row) {
+        console.log(row);
       }
   }
 };
@@ -82,30 +69,13 @@ export default {
   background: rgba(245, 246, 248, 1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px 4px 0px 0px;
-  padding-left: 11px;
+  padding-left: 10px;
 }
 .role-table{
     width: 100%;
 }
-
-.role-table{
-  background-color: #fff;
-}
-.role-btn{
-  padding: 80px 0 295px 0;
-  text-align: center;
-}
-.role-btn button{
-  width:129px;
-height:39px;
-line-height: 39px;
-cursor: pointer;
-border: none;
-font-size:14px;
-font-weight:400;
-color:rgba(255,255,255,1);
-outline: none;
-background:rgba(155,112,65,1);
-border-radius:3px;
+.role-table .ui-table{
+   
+    padding: 20px;
 }
 </style>

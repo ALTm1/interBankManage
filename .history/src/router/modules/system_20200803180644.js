@@ -105,24 +105,7 @@ export default [
                 meta: {
                     title: '角色管理'
                 } 
-            },
-            {
-                path: 'roledetail',
-                name: 'roledetail',
-                component: () => import('@/pages/system/role/roleDetail.vue'),
-                meta: {
-                    title: '角色管理'
-                } 
-            },
-            {
-                path: 'roleadd',
-                name: 'roleadd',
-                component: () => import('@/pages/system/role/roleAdd.vue'),
-                meta: {
-                    title: '角色管理'
-                } 
-            },
-            
+            }
         ]
     },
 ]

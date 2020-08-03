@@ -63,7 +63,7 @@ export default {
         this.$router.push('roledetail')
       },
       add(){
-        this.$router.push('roleadd')
+        this.$router.push('role')
       }
   }
 };

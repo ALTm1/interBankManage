@@ -1,13 +1,6 @@
 <template>
   <div class="role-wrap">
     <!-- 角色查询 -->
-     <!-- 面包屑 -->
-      <ui-breadcrumb separator-class="ui-icon-arrow-right">
-        <ui-breadcrumb-item :to="{ path: '/' }">您的位置: 系统管理</ui-breadcrumb-item>
-        <ui-breadcrumb-item>角色查询</ui-breadcrumb-item>
-        <!-- <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
-      </ui-breadcrumb>
     <div class="role-query">
       <li>角色查询</li>
     </div>
@@ -21,14 +14,14 @@
         <ui-table-column prop="date" label="修改时间" width="180"></ui-table-column>
         <ui-table-column fixed="right" label="操作" width="180">
           <template slot-scope="scope">
-            <ui-button @click="toDetail(scope.row)" type="text" size="small">详情</ui-button>
+            <ui-button @click="handleClick(scope.row)" type="text" size="small" >详情</ui-button>
             <ui-button @click="handleClick(scope.row)" type="text" size="small" v-show="scope.row.name=='交易员'">修改</ui-button>
             <ui-button type="text" size="small" v-show="scope.row.name=='交易员'">注销</ui-button>
           </template>
         </ui-table-column>
       </ui-table>
       <div class="role-btn">
-        <button @click="add">新增</button>
+        <button>新增</button>
       </div>
     </div>
   </div>
@@ -59,11 +52,8 @@ export default {
     };
   },
   methods:{
-       toDetail(row) {
-        this.$router.push('roledetail')
-      },
-      add(){
-        this.$router.push('roleadd')
+       handleClick(row) {
+        console.log(row);
       }
   }
 };
@@ -92,7 +82,7 @@ export default {
   background-color: #fff;
 }
 .role-btn{
-  padding: 80px 0 295px 0;
+  margin: 80px 0 295px 0;
   text-align: center;
 }
 .role-btn button{
@@ -101,9 +91,6 @@ height:39px;
 line-height: 39px;
 cursor: pointer;
 border: none;
-font-size:14px;
-font-weight:400;
-color:rgba(255,255,255,1);
 outline: none;
 background:rgba(155,112,65,1);
 border-radius:3px;

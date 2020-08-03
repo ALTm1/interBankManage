@@ -1,13 +1,6 @@
 <template>
   <div class="role-wrap">
     <!-- 角色查询 -->
-     <!-- 面包屑 -->
-      <ui-breadcrumb separator-class="ui-icon-arrow-right">
-        <ui-breadcrumb-item :to="{ path: '/' }">您的位置: 系统管理</ui-breadcrumb-item>
-        <ui-breadcrumb-item>角色查询</ui-breadcrumb-item>
-        <!-- <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item> -->
-      </ui-breadcrumb>
     <div class="role-query">
       <li>角色查询</li>
     </div>
@@ -28,7 +21,7 @@
         </ui-table-column>
       </ui-table>
       <div class="role-btn">
-        <button @click="add">新增</button>
+        <button>新增</button>
       </div>
     </div>
   </div>
@@ -61,9 +54,6 @@ export default {
   methods:{
        toDetail(row) {
         this.$router.push('roledetail')
-      },
-      add(){
-        this.$router.push('roleadd')
       }
   }
 };
