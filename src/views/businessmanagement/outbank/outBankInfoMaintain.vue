@@ -3,9 +3,7 @@
   <div class="out-bank">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">行外机构信息查询</ui-col>
-      </ui-row>
+      <block-title blockTitle="行外机构信息维护"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -47,9 +45,9 @@
               </ui-radio>
             </template>
           </ui-table-column>
-          <ui-table-column prop="tagName" label="机构名称" width="180"></ui-table-column>
-          <ui-table-column prop="remark" label="机构类型" width="180"></ui-table-column>
-          <ui-table-column prop="createTime" label="机构状态" width="180"></ui-table-column>
+          <ui-table-column prop="tagName" label="机构名称"></ui-table-column>
+          <ui-table-column prop="remark" label="机构类型"></ui-table-column>
+          <ui-table-column prop="createTime" label="机构状态"></ui-table-column>
           <ui-table-column label="操作">
             <template slot-scope="scope">
               <ui-button
@@ -68,9 +66,9 @@
           </ui-table-column>
         </ui-table>
       </div>
-      <!-- <ui-row class="btn btnbg">
-        <ui-button type="primary" class="back-btn single-btn" @click="goAdd">新增</ui-button>
-      </ui-row>-->
+      <ui-row class="btn btnbg">
+        <!-- <ui-button type="primary" class="back-btn single-btn" @click="goAdd">新增</ui-button> -->
+      </ui-row>
     </div>
   </div>
 </template>
@@ -151,17 +149,21 @@ export default {
 </script>
 <style lang="scss">
 .out-bank {
-  .form {
+  .right-wrap {
     background: #fff;
-    .ui-form {
-      width: 50%;
-      padding: 62px 0;
-      margin: 0 auto;
+    .form {
+      background: #fff;
+      .ui-form {
+        width: 50%;
+        padding: 62px 0;
+        margin: 0 auto;
+      }
+    }
+    .table {
+      padding-bottom: 40px;
     }
   }
-  .table {
-    background: #fff;
-  }
+
   .btnbg {
     margin-top: 0;
     background: #fff;

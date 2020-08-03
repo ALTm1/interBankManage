@@ -41,7 +41,7 @@
               <template slot="title">选项4</template>
               <ui-menu-item index="1-4-1">选项1</ui-menu-item>
             </ui-submenu>
-          </ui-submenu> -->
+          </ui-submenu>-->
           <ui-submenu index="2">
             <template slot="title">
               <i class="ui-icon-location"></i>
@@ -194,7 +194,7 @@ export default {
   },
   data() {
     return {
-      dialogVisible:false,
+      dialogVisible: false,
       // 用户身份
       user: '系统管理员1',
       time: '2',
@@ -415,7 +415,7 @@ export default {
   background-color: #fff;
 }
 .menu-right {
-  width: calc(100% - 300px);
+  width: calc(100% - 196px);
   min-height: 92vh;
   padding: 20px 20px ;
   box-sizing: border-box;
@@ -426,8 +426,5 @@ export default {
   text-align: center;
   color: #fff;
   cursor: pointer;
-}
-.menu-right {
-  width: calc(100% - 300px);
 }
 </style>

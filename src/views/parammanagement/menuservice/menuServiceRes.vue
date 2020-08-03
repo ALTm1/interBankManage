@@ -2,6 +2,8 @@
   <!-- 菜单维护结果页 -->
   <div class="product-tag-res">
     <div class="right-wrap">
+      <block-title blockTitle="审批菜单维护"></block-title>
+
       <div class="result">
         <img src alt class="result-img" />
         <div class="result-status">交易成功</div>

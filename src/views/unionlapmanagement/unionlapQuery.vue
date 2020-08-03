@@ -3,9 +3,7 @@
   <div class="user-query">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">联盟圈管理</ui-col>
-      </ui-row>
+      <block-title blockTitle="联盟圈管理"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -14,13 +12,10 @@
                 <ui-form-item label="联盟圈名称">
                   <ui-input-business v-model="form.organName" placeholder="请输入联盟圈名称"></ui-input-business>
                 </ui-form-item>
-                <!-- <ui-form-item label="用户姓名">
-                  <ui-input-business v-model="form.userName" placeholder="请输入用户姓名"></ui-input-business>
-                </ui-form-item>-->
               </ui-col>
             </ui-row>
             <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
+              <ui-button type="primary" class="back-btn" @click="goBack">重置</ui-button>
               <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button>
             </ui-row>
           </ui-form>

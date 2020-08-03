@@ -3,9 +3,7 @@
   <div class="user-query">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">联盟圈管理</ui-col>
-      </ui-row>
+      <block-title blockTitle="联盟圈管理详情"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">

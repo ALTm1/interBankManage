@@ -2,10 +2,7 @@
   <!-- 停用结果页 -->
   <div class="recording-res">
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">机构信息</ui-col>
-        <ui-col :span="12" class="back">返回</ui-col>
-      </ui-row>
+      <block-title blockTitle="文件修改结果"></block-title>
       <div class="result">
         <div>
           <img src alt class="result-img" />

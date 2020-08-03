@@ -3,30 +3,24 @@
   <div class="user-query">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">联盟圈管理新增</ui-col>
-      </ui-row>
+      <block-title blockTitle="联盟圈修改"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
             <ui-row>
               <ui-col>
                 <ui-form-item label="联盟圈名称">
-                  <ui-input-business v-model="form.organName" placeholder="请输入联盟圈名称"></ui-input-business>
+                  <ui-input-business v-model="form.unionlapName" placeholder="请输入联盟圈名称"></ui-input-business>
                 </ui-form-item>
-                <!-- <ui-form-item label="用户姓名">
-                  <ui-input-business v-model="form.userName" placeholder="请输入用户姓名"></ui-input-business>
-                </ui-form-item>-->
               </ui-col>
-            </ui-row>
-            <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
-              <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button>
             </ui-row>
           </ui-form>
         </div>
       </ui-row>
-
+      <ui-row class="list-title">
+        <div class="img"></div>
+        <span>机构列表</span>
+      </ui-row>
       <div class="table">
         <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
           <ui-table-column label="请选择" width="80">
@@ -47,49 +41,14 @@
               <ui-checkbox label="否"></ui-checkbox>
             </ui-checkbox-group>
           </ui-table-column>
-          <!-- <ui-table-column label="操作">
-            <template slot-scope="scope">
-              <ui-button
-                class="operator-button"
-                @click="goDetail(scope.row)"
-                type="text"
-                size="small"
-              >详情</ui-button>
-              <ui-button
-                v-if="scope.row.status === '正常'"
-                class="operator-button"
-                @click="goResetPass(scope.row)"
-                type="text"
-                size="small"
-              >密码重置</ui-button>
-              <ui-button
-                v-if="scope.row.status === '正常'"
-                class="operator-button"
-                @click="goBlockUp(scope.row)"
-                type="text"
-                size="small"
-              >停用</ui-button>
-              <ui-button
-                v-if="scope.row.status === '已停用'"
-                class="operator-button"
-                @click="goStartUsing(scope.row)"
-                type="text"
-                size="small"
-              >启用</ui-button>
-              <ui-button
-                v-if="scope.row.status != '已注销'"
-                class="operator-button"
-                @click="goCancel(scope.row)"
-                type="text"
-                size="small"
-              >注销</ui-button>
-            </template>
-          </ui-table-column>-->
         </ui-table>
       </div>
       <ui-row class="btn btnbg">
-        <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
-        <ui-button type="primary" class="continue-next" @click="goModify">修改</ui-button>
+        <ui-button type="primary" class="back-btn" @click="goBack">新增机构</ui-button>
+        <ui-button type="primary" class="continue-next" @click="goModify">删除机构</ui-button>
+      </ui-row>
+      <ui-row class="btn btnbg">
+        <ui-button type="primary" class="continue-next" @click="goBack">返回</ui-button>
       </ui-row>
     </div>
   </div>
@@ -102,8 +61,7 @@ export default {
     return {
       // 表单的值
       form: {
-        organName: '',
-        userName: '',
+        unionlapName: '',
       },
       //复选框
       checkList: ['选中且禁用'],
@@ -167,11 +125,11 @@ export default {
 <style lang="scss">
 .user-query {
   .form {
-    background: #fff;
+    // background: #fff;
     .ui-form {
       width: 50%;
-      padding: 62px 0;
-      margin: 0 auto;
+      padding: 0;
+      margin: 82px auto 47px;
     }
   }
   .table {
@@ -179,7 +137,6 @@ export default {
   }
   .btnbg {
     margin-top: 0;
-    background: #fff;
     padding: 50px 0 30px;
   }
   .resetTip {

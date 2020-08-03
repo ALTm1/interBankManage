@@ -3,10 +3,8 @@
   <div class="user-detail">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">机构信息</ui-col>
-        <ui-col :span="12" class="back">返回</ui-col>
-      </ui-row>
+      <block-title blockTitle="操作确认页"></block-title>
+
       <div class="form">
         <ui-form ref="form" label-width="100px">
           <ui-row>

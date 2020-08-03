@@ -3,10 +3,8 @@
   <div class="section-del">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">机构删除</ui-col>
-        <ui-col :span="12" class="back">返回</ui-col>
-      </ui-row>
+      <block-title blockTitle="部门删除确认"></block-title>
+
       <div class="form">
         <ui-form ref="form" label-width="150px">
           <ui-row>
@@ -30,7 +28,7 @@
 </template>
 <script>
 export default {
-  name: 'productTagDel',
+  name: 'sectionDel',
   computed: {},
   data() {
     return {
