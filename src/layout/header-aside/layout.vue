@@ -130,19 +130,21 @@
             <ui-menu-item index="15-1" @click="goOrganApprove">机构认证审批</ui-menu-item>
             <ui-menu-item index="15-2" @click="goBackManApprove">后管交易审批</ui-menu-item>
             <ui-menu-item index="15-3" @click="goApprovalRecord">审批记录查询</ui-menu-item>
-            <template slot="title">
-              <i class="el-icon-location"></i>
-              <span>行为模块分析</span>
-            </template>
-            <ui-menu-item index="14-1" @click="goAccessFrequency">功能模块访问频次</ui-menu-item>
-            <ui-menu-item index="14-2" @click="goAccessTime">功能模块访问时长</ui-menu-item>
           </ui-submenu>
           <ui-submenu index="16">
             <template slot="title">
               <i class="el-icon-location"></i>
+              <span>行为模块分析</span>
+            </template>
+            <ui-menu-item index="16-1" @click="goAccessFrequency">功能模块访问频次</ui-menu-item>
+            <ui-menu-item index="16-2" @click="goAccessTime">功能模块访问时长</ui-menu-item>
+          </ui-submenu>
+          <ui-submenu index="17">
+            <template slot="title">
+              <i class="el-icon-location"></i>
               <span>联盟圈管理</span>
             </template>
-            <ui-menu-item index="16-1" @click="goUnionlapmanagement">联盟圈管理</ui-menu-item>
+            <ui-menu-item index="17-1" @click="goUnionlapmanagement">联盟圈管理</ui-menu-item>
           </ui-submenu>
         </ui-menu>
       </div>
@@ -331,10 +333,9 @@ export default {
       this.$router.push('/approvalmanage/backmanapprove/backmanapproveindex')
     },
     // 审批记录查询
-    goApprovalRecord(){
+    goApprovalRecord() {
       this.$router.push('/approvalmanage/approvalrecord/approvalrecordqry')
     },
-
 
     handleClose(done) {
       this.$confirm('确认关闭？')
