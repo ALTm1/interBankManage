@@ -1,6 +1,7 @@
 export default [
     {
         path: 'system',
+        name: "system",
         redirect: { name: 'operatemanage' },
         component: () => import('@/pages/system/operate/operate.vue'),
         children: [
@@ -84,7 +85,7 @@ export default [
                     title: '操作员管理'
                 }
             },
-            
+
         ]
 
     },
@@ -96,14 +97,14 @@ export default [
         meta: {
             title: '角色管理'
         },
-        children:[
+        children: [
             {
                 path: 'roleManage',
                 name: 'roleManage',
                 component: () => import('@/pages/system/role/roleManage.vue'),
                 meta: {
                     title: '角色管理'
-                } 
+                }
             }
         ]
     },

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 14:07:51
- * @LastEditTime: 2020-08-03 10:53:54
+ * @LastEditTime: 2020-08-03 18:09:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\MarketDisIndex.vue
@@ -19,6 +19,7 @@
 
 <template>
   <div class="wrap">
+    <BorderHeader title="详情页"></BorderHeader>
     <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
       <ui-form-item label="营销渠道" prop="marketChannel">
         <ui-select v-model="form.marketChannel" placeholder="请选择营销渠道">
@@ -27,14 +28,12 @@
         </ui-select>
       </ui-form-item>
       <!-- 按钮 -->
-      <ui-form-item>
-        <Button
-          @click.native="submitForm('ruleForm')"
-          text="查询"
-          backgroundColor="#CE2848"
-          margin="0px 60px 0px 0px"
-        ></Button>
-      </ui-form-item>
+      <Button
+        @click.native="submitForm('ruleForm')"
+        text="查询"
+        backgroundColor="#CE2848"
+        margin="0px 60px 0px 0px"
+      ></Button>
     </ui-form>
     <div v-if="resultShow">
       <ui-menu
@@ -96,9 +95,14 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.wrap {
+  margin: 0 auto;
+  background: #ffffff;
+}
 .form-block {
   width: 600px;
   margin: 0 auto;
+  padding: 40px;
 }
 
 .market-display-menu {
