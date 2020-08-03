@@ -8,18 +8,21 @@
       <ui-table :data="tableData">
         <ui-table-column prop="number" label="序号" width="120"></ui-table-column>
         <ui-table-column prop="id" label="角色ID" width="120"></ui-table-column>
-        <ui-table-column prop="name" label="角色名称" width="120"></ui-table-column>
-        <ui-table-column prop="state" label="角色状态" width="120"></ui-table-column>
-        <ui-table-column prop="ps" label="备注" width="120"></ui-table-column>
+        <ui-table-column prop="name" label="角色名称" width="180"></ui-table-column>
+        <ui-table-column prop="state" label="角色状态" width="180"></ui-table-column>
+        <ui-table-column prop="ps" label="备注" width="180"></ui-table-column>
         <ui-table-column prop="date" label="修改时间" width="180"></ui-table-column>
-        <ui-table-column fixed="right" label="操作" width="120">
+        <ui-table-column fixed="right" label="操作" width="180">
           <template slot-scope="scope">
-            <ui-button @click="handleClick(scope.row)" type="text" size="small">详情</ui-button>
-            <ui-button @click="handleClick(scope.row)" type="text" size="small">修改</ui-button>
-            <ui-button type="text" size="small">注销</ui-button>
+            <ui-button @click="handleClick(scope.row)" type="text" size="small" >详情</ui-button>
+            <ui-button @click="handleClick(scope.row)" type="text" size="small" v-show="scope.row.name=='交易员'">修改</ui-button>
+            <ui-button type="text" size="small" v-show="scope.row.name=='交易员'">注销</ui-button>
           </template>
         </ui-table-column>
       </ui-table>
+      <div class="role-btn">
+        <button>新增</button>
+      </div>
     </div>
   </div>
 </template>
@@ -42,7 +45,7 @@ export default {
           id:"002",
           state:"已生效",
           date: "2020-01-31  17:00",
-          name: "交易员",
+          name: "审批员",
           ps: "交易员"
         },
       ]
@@ -69,13 +72,16 @@ export default {
   background: rgba(245, 246, 248, 1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px 4px 0px 0px;
-  padding-left: 10px;
+  padding-left: 11px;
 }
 .role-table{
     width: 100%;
 }
-.role-table .ui-table{
-   
-    padding: 20px;
+
+.role-table{
+  background-color: #fff;
+}
+.role-btn{
+  margin: 80px 0 295px 0;
 }
 </style>
