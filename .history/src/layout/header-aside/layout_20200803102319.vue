@@ -193,7 +193,7 @@ export default {
   },
   data() {
     return {
-      dialogVisible:false,
+      
       // 用户身份
       user: '系统管理员1',
       time: '2',

@@ -11,7 +11,7 @@ import pluginLog from '@/plugin/log'
 // import pluginOpen from '@/plugin/open'
 import util from '@csii/vx-util'
 import {
-  // Pagination,
+  Pagination,
   Dialog,
   Autocomplete,
   Dropdown,
@@ -28,8 +28,8 @@ import {
   RadioGroup,
   // RadioButton,
   Checkbox,
-  // CheckboxButton,
-  // CheckboxGroup,
+  CheckboxButton,
+  CheckboxGroup,
   // Switch,
   Select,
   // SelectDrag,
@@ -42,7 +42,7 @@ import {
   DatePicker,
   // TimeSelect,
   // TimePicker,
-  // Popover,
+  Popover,
   Tooltip,
   Breadcrumb,
   BreadcrumbItem,
@@ -57,7 +57,7 @@ import {
   // Icon,
   Row,
   Col,
-  // Upload,
+  Upload,
   // Progress,
   // Spinner,
   // Badge,
@@ -65,8 +65,8 @@ import {
   // Rate,
   // Steps,
   // Step,
-   Carousel,
-   Scrollbar,
+  Carousel,
+  Scrollbar,
   CarouselItem,
   // Collapse,
   // CollapseItem,
@@ -98,7 +98,7 @@ import {
 } from '@csii/vx-web'
 
 export default {
-  async install (Vue, options) {
+  async install(Vue, options) {
     // 设置为 false 以阻止 vue 在启动时生成生产提示
     // https://cn.vuejs.org/v2/api/#productionTip
     Vue.config.productionTip = false
@@ -114,7 +114,7 @@ export default {
     Vue.prototype.$defaultImg = 'this.src="' + require('@/assets/image/logo.png') + '"'
 
     // Element
-    // Vue.use(Pagination)
+    Vue.use(Pagination)
     Vue.use(Dialog)
     Vue.use(Autocomplete)
     Vue.use(Dropdown)
@@ -131,8 +131,8 @@ export default {
     Vue.use(RadioGroup)
     // Vue.use(RadioButton)
     Vue.use(Checkbox)
-    // Vue.use(CheckboxButton)
-    // Vue.use(CheckboxGroup)
+    Vue.use(CheckboxButton)
+    Vue.use(CheckboxGroup)
     // Vue.use(Switch)
     Vue.use(Select)
     // Vue.use(SelectDrag)
@@ -145,7 +145,7 @@ export default {
     Vue.use(DatePicker)
     // Vue.use(TimeSelect)
     // Vue.use(TimePicker)
-    // Vue.use(Popover)
+    Vue.use(Popover)
     Vue.use(Tooltip)
     Vue.use(Breadcrumb)
     Vue.use(BreadcrumbItem)
@@ -160,7 +160,7 @@ export default {
     // Vue.use(Icon)
     Vue.use(Row)
     Vue.use(Col)
-    // Vue.use(Upload)
+    Vue.use(Upload)
     // Vue.use(Progress)
     // Vue.use(Spinner)
     // Vue.use(Badge)
@@ -168,9 +168,9 @@ export default {
     // Vue.use(Rate)
     // Vue.use(Steps)
     // Vue.use(Step)
-     Vue.use(Carousel)
-     Vue.use(Scrollbar)
-     Vue.use(CarouselItem)
+    Vue.use(Carousel)
+    Vue.use(Scrollbar)
+    Vue.use(CarouselItem)
     // Vue.use(Collapse)
     // Vue.use(CollapseItem)
     // Vue.use(Cascader)
