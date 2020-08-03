@@ -39,7 +39,7 @@
           @open="handleOpen"
          
         >
-          <ui-submenu index="1">
+          <!-- <ui-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>我的主页</span>
@@ -50,24 +50,24 @@
               <template slot="title">选项4</template>
               <ui-menu-item index="1-4-1">选项1</ui-menu-item>
             </ui-submenu>
-          </ui-submenu>
-         <ui-submenu index="2">
+          </ui-submenu> -->
+         <ui-submenu index="1">
             <template slot="title">
               <i class="el-icon-location"></i>
               <span>系统管理</span>
             </template>
-            <ui-menu-item index="2-1" @click="operate">操作员管理</ui-menu-item>
-            <ui-menu-item index="2-2"  @click="system">角色管理</ui-menu-item>
-            <ui-menu-item index="2-3">日志管理</ui-menu-item>
-            <ui-menu-item index="2-4">登录密码修改</ui-menu-item>
-            <ui-menu-item index="2-5">登录密码重置</ui-menu-item>
+            <ui-menu-item index="1-1" @click="operate">操作员管理</ui-menu-item>
+            <ui-menu-item index="1-2"  @click="system">角色管理</ui-menu-item>
+            <ui-menu-item index="1-3">日志管理</ui-menu-item>
+            <ui-menu-item index="1-4">登录密码修改</ui-menu-item>
+            <ui-menu-item index="1-5">登录密码重置</ui-menu-item>
           </ui-submenu>
           
-          <ui-menu-item index="3">
+          <ui-menu-item index="2">
             <i class="el-icon-document"></i>
             <span slot="title">机构管理</span>
           </ui-menu-item>
-          <ui-menu-item index="4">
+          <ui-menu-item index="3">
             <i class="el-icon-setting"></i>
             <span slot="title">用户管理</span>
           </ui-menu-item>

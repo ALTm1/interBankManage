@@ -1,0 +1,119 @@
+<template>
+  <div class="menu-list">
+   <div class="menu-wrap">
+        <div class="menu-admin">
+          <span>系统员管理1</span>
+          <div>
+            <li  @click="dialogVisible = true">退出登录</li>
+          </div>
+        </div>
+        <ui-menu
+          default-active="1"
+          class="el-menu-vertical-demo"
+          @open="handleOpen"
+        >
+         <ui-submenu index="2">
+            <template slot="title">
+              <!-- <i class="el-icon-location"></i> -->
+              <span>系统管理</span>
+            </template>
+            <ui-menu-item index="2-1" @click="operate">操作员管理</ui-menu-item>
+            <ui-menu-item index="2-2"  @click="system">角色管理</ui-menu-item>
+            <ui-menu-item index="2-3">日志管理</ui-menu-item>
+            <ui-menu-item index="2-4">登录密码修改</ui-menu-item>
+            <ui-menu-item index="2-5">登录密码重置</ui-menu-item>
+          </ui-submenu>
+          
+          <ui-menu-item index="3">
+             <template slot="title">
+              <span>参数管理</span>
+            </template>
+            <ui-menu-item index="2-1" @click="operate">产品标签维护</ui-menu-item>
+            <ui-menu-item index="2-2"  @click="system">角色管理</ui-menu-item>
+            <ui-menu-item index="2-3">日志管理</ui-menu-item>
+            <ui-menu-item index="2-4">登录密码修改</ui-menu-item>
+            <ui-menu-item index="2-5">登录密码重置</ui-menu-item>
+            <!-- <i class="el-icon-document"></i>
+            <span slot="title">机构管理</span> -->
+          </ui-menu-item>
+          <ui-menu-item index="4">
+            <i class="el-icon-setting"></i>
+            <span slot="title">用户管理</span>
+          </ui-menu-item>
+          <ui-menu-item index="5">
+            <i class="el-icon-setting"></i>
+            <span slot="title">产品查询</span>
+          </ui-menu-item>
+          <ui-menu-item index="6">
+            <i class="el-icon-setting"></i>
+            <span slot="title">任务中心</span>
+          </ui-menu-item>
+          <ui-menu-item index="7">
+            <i class="el-icon-setting"></i>
+            <span slot="title">个人中心</span>
+          </ui-menu-item>
+          <ui-menu-item index="8">
+            <i class="el-icon-setting"></i>
+            <span slot="title">同业圈管理</span>
+          </ui-menu-item>
+          <ui-menu-item index="9">
+            <i class="el-icon-setting"></i>
+            <span slot="title">举报及反馈管理</span>
+          </ui-menu-item>
+          <ui-menu-item index="10">
+            <i class="el-icon-setting"></i>
+            <span slot="title">客户端版本管理</span>
+          </ui-menu-item>
+        </ui-menu>
+      </div>
+  
+  </div>
+</template>
+<script>
+export default {
+  name: "menuTree",
+  components: {},
+  data() {
+    return {
+      
+    };
+  },
+  methods: {
+    handleSelect(key, keyPath) {
+      console.log(key, keyPath);
+    }
+  }
+};
+</script>
+<style>
+.ui-menu--horizontal>.ui-submenu .ui-submenu__title{
+    font-size:16px!important;
+   line-height: 50px!important;
+    height: 50px!important;
+}
+.ui-icon-arrow-down:before{
+    content: '';  
+    display: none;
+}
+.theme-vx .ui-menu-item i, .theme-vx .ui-submenu__title i{
+    width: 0!important;
+     display: none!important;
+}
+.ui-menu--horizontal>.ui-submenu{
+    text-align: center!important;
+}
+.ui-menu--horizontal>.ui-menu-item{
+    font-size: 16px;
+    line-height: 50px;
+}
+.ui-submenu .ui-submenu__title .ui-menu-item{
+     font-size:16px;
+font-weight:400;
+color:rgba(51,51,51,1);
+}
+.menu-item{
+    text-align: center;
+    height: 50px;
+   line-height: 50px;
+}
+</style>
