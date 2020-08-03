@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:19:30
- * @LastEditTime: 2020-07-29 10:24:10
+ * @LastEditTime: 2020-08-03 17:25:00
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingDetail.vue
@@ -9,8 +9,16 @@
 
 <template>
   <div class="wrap">
-    <div v-for="item in displayInfoArr" :key="item.title">
-      <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
+    <BorderHeader title="详情页"></BorderHeader>
+
+    <div class="clear content">
+      <div
+        :class="[index%2==0?'float-left':'float-right']"
+        v-for="(item,index) in displayInfoArr"
+        :key="item.title"
+      >
+        <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
+      </div>
     </div>
   </div>
 </template>
@@ -52,7 +60,10 @@ export default {
 
 <style lang="css" scoped>
 .wrap {
-  width: 500px;
   margin: 0 auto;
+  background: #ffffff;
+}
+.content {
+  padding: 20px 40px;
 }
 </style>

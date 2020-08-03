@@ -21,8 +21,8 @@
     <!-- 半透明遮罩 -->
     <!-- <div class="ui-layout-header-aside-mask"></div> -->
     <!-- 主体内容 -->
-    <div class="menu-side">
-      <div class="menu-wrap">
+    <div class="menu-side clear">
+      <div class="menu-wrap float-left">
         <div class="menu-admin">
           <span>系统员管理1</span>
           <div>
@@ -120,7 +120,8 @@
             </template>
             <ui-menu-item index="14-1" @click="goMeetingManage">会议管理</ui-menu-item>
             <ui-menu-item index="14-2" @click="goTrainingManage">培训管理</ui-menu-item>
-            <ui-menu-item index="14-3" @click="goMarketDisManage">营销展示管理</ui-menu-item>
+            <ui-menu-item index="14-3" @click="goOrganManage">机构动态管理</ui-menu-item>
+            <ui-menu-item index="14-4" @click="goMarketDisManage">营销展示管理</ui-menu-item>
           </ui-submenu>
           <ui-submenu index="15">
             <template slot="title">
@@ -149,7 +150,7 @@
         </ui-menu>
       </div>
       <!-- 右侧 -->
-      <div class="menu-right">
+      <div class="menu-right float-right">
         <router-view />
       </div>
     </div>
@@ -317,6 +318,10 @@ export default {
     goTrainingManage() {
       this.$router.push('/marketingmanage/trainingmanage/trainingindex')
     },
+    // 机构动态管理
+    goOrganManage() {
+      this.$router.push('/marketingmanage/organmanage/organindex')
+    },
     // 营销展示管理
     goMarketDisManage() {
       this.$router.push('/marketingmanage/marketdismanage/marketdisindex')
@@ -402,7 +407,6 @@ export default {
   margin-left: 100px;
 }
 .menu-side {
-  display: -webkit-box;
   background: rgb(240, 239, 244);
 }
 
@@ -413,7 +417,8 @@ export default {
 .menu-right {
   width: calc(100% - 300px);
   min-height: 92vh;
-  // margin: 0 auto;
+  padding: 20px 20px ;
+  box-sizing: border-box;
   background: rgba(239, 240, 244, 1);
 }
 .menu-admin {

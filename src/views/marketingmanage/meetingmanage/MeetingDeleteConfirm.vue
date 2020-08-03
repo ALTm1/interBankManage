@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 17:40:25
- * @LastEditTime: 2020-07-28 18:42:47
+ * @LastEditTime: 2020-08-03 17:31:14
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingDelete.vue
@@ -9,11 +9,18 @@
 
 <template>
   <div class="wrap">
-    <div v-for="item in meetingInfoArr" :key="item.title">
-      <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
+    <BorderHeader title="详情页"></BorderHeader>
+    <div class="clear content">
+      <div
+        :class="[index%2==0?'float-left':'float-right']"
+        v-for="(item,index) in displayInfoArr"
+        :key="item.title"
+      >
+        <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
+      </div>
     </div>
-    <div style="textAlign: center; marginTop: 35px">
-      <Button text="删除" backgroundColor="#9B7041" @click.native="goMeetingDeleteSucc"></Button>
+    <div class="buttons">
+      <Button text="删除" backgroundColor="#9B7041" @click.native="goResult"></Button>
     </div>
   </div>
 </template>
@@ -22,7 +29,7 @@
 export default {
   data() {
     return {
-      meetingInfoArr: [
+      displayInfoArr: [
         {
           title: '操作员姓名',
           content: '张三',
@@ -63,7 +70,7 @@ export default {
     }
   },
   methods: {
-    goMeetingDeleteSucc() {
+    goResult() {
       this.$router.push('/marketingmanage/meetingmanage/mettingdeletesucc')
     },
   },
@@ -72,7 +79,10 @@ export default {
 
 <style lang="css" scoped>
 .wrap {
-  width: 500px;
   margin: 0 auto;
+  background: #ffffff;
+}
+.content {
+  padding: 40px;
 }
 </style>

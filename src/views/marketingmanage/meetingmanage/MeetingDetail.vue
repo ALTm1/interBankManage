@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 17:01:34
- * @LastEditTime: 2020-07-28 18:19:50
+ * @LastEditTime: 2020-08-03 16:42:48
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingDetail.vue
@@ -10,18 +10,29 @@
 
 <template>
   <div class="wrap">
-    <!-- 会议信息 -->
-    <div v-for="item in meetingInfoArr" :key="item.title">
-      <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
-    </div>
-    <!-- 报名参会列表 -->
-    <div>
-      <ui-table :data="tableData" stripe>
-        <ui-table-column prop="order" label="序号" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="name" label="姓名" align="center" min-width="100px"></ui-table-column>
-        <ui-table-column prop="contactPhone" label="联系电话" align="center" min-width="200px"></ui-table-column>
-        <ui-table-column prop="subOrgan" label="所属机构" align="center" min-width="100px"></ui-table-column>
-      </ui-table>
+    <BorderHeader title="详情页"></BorderHeader>
+    <div class="content">
+      <!-- 会议信息 -->
+      <div class="clear">
+        <HeaderItem text="会议信息"></HeaderItem>
+        <div
+          :class="[index%2==0?'float-left':'float-right']"
+          v-for="(item,index) in meetingInfoArr"
+          :key="item.title"
+        >
+          <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
+        </div>
+      </div>
+      <!-- 报名参会列表 -->
+      <div>
+        <HeaderItem text="报名参会列表"></HeaderItem>
+        <ui-table :data="tableData">
+          <ui-table-column prop="order" label="序号" align="center" min-width="100px"></ui-table-column>
+          <ui-table-column prop="name" label="姓名" align="center" min-width="100px"></ui-table-column>
+          <ui-table-column prop="contactPhone" label="联系电话" align="center" min-width="200px"></ui-table-column>
+          <ui-table-column prop="subOrgan" label="所属机构" align="center" min-width="100px"></ui-table-column>
+        </ui-table>
+      </div>
     </div>
   </div>
 </template>
@@ -95,7 +106,10 @@ export default {
 
 <style lang="css" scoped>
 .wrap {
-  width: 600px;
   margin: 0 auto;
+  background: #ffffff;
+}
+.content {
+  padding: 20px 40px;
 }
 </style>

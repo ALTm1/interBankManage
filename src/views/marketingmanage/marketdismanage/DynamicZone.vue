@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-30 19:52:15
- * @LastEditTime: 2020-07-31 19:04:33
+ * @LastEditTime: 2020-08-03 14:13:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\DynamicZone.vue
@@ -26,9 +26,15 @@
     <ui-dialog title="会议列表" center :visible.sync="meetingDialog">
       <div class="dialog-content">
         <ui-table :data="meetingTable">
-          <ui-table-column prop="order" label="请选择" align="center" min-width="150px">
+          <ui-table-column label="请选择" width="80">
             <template slot-scope="scope">
-              <ui-radio v-model="meetingRadio" :label="scope.row.order"></ui-radio>
+              <ui-radio
+                v-model="meetingRadio"
+                :label="scope.$index"
+                @change="getCurrentMeetingRow(scope.row)"
+              >
+                <i></i>
+              </ui-radio>
             </template>
           </ui-table-column>
           <ui-table-column prop="meetingTitle" label="会议标题" align="center" min-width="150px"></ui-table-column>
@@ -43,9 +49,15 @@
     <ui-dialog title="培训列表" center :visible.sync="trainDialog">
       <div class="dialog-content">
         <ui-table :data="trainTable">
-          <ui-table-column prop="order" label="请选择" align="center" min-width="150px">
+          <ui-table-column label="请选择" width="80">
             <template slot-scope="scope">
-              <ui-radio v-model="trainRadio" :label="scope.row.order"></ui-radio>
+              <ui-radio
+                v-model="trainRadio"
+                :label="scope.$index"
+                @change="getCurrentTrainRow(scope.row)"
+              >
+                <i></i>
+              </ui-radio>
             </template>
           </ui-table-column>
           <ui-table-column prop="trainTitle" label="培训标题" align="center" min-width="150px"></ui-table-column>
@@ -60,9 +72,22 @@
     <ui-dialog title="机构动态列表" center :visible.sync="organDynamicDialog">
       <div class="dialog-content">
         <ui-table :data="organDynamicTable">
-          <ui-table-column prop="order" label="请选择" align="center" min-width="150px">
+          <ui-table-column label="请选择" width="80">
             <template slot-scope="scope">
-              <ui-radio v-model="organDynamicRadio" :label="scope.row.order"></ui-radio>
+              <ui-radio
+                v-model="organDynamicRadio"
+                :label="scope.$index"
+                @change="getCurrentOrganDynamicRow(scope.row)"
+              >
+                <i></i>
+              </ui-radio>
+            </template>
+          </ui-table-column>
+          <ui-table-column label="请选择" width="80">
+            <template slot-scope="scope">
+              <ui-radio v-model="rowRadio" :label="scope.$index" @change="getCurrentRow(scope.row)">
+                <i></i>
+              </ui-radio>
             </template>
           </ui-table-column>
           <ui-table-column prop="organDynamicTitle" label="机构动态标题" align="center" min-width="150px"></ui-table-column>
@@ -100,6 +125,23 @@ export default {
         },
       ],
       meetingRadio: '',
+      choseMeetingRow: {},
+      // 培训列表弹框
+      trainDialog: false,
+      trainTable: [
+        {
+          order: 1,
+          trainTitle: '江南银行会议',
+          releaseDate: '2020-09-09',
+        },
+        {
+          order: 2,
+          trainTitle: '江南银行会议',
+          releaseDate: '2020-09-09',
+        },
+      ],
+      trainRadio: '',
+      choseTrainRow: {},
       // 机构动态列表弹框
       organDynamicDialog: false,
       organDynamicTable: [
@@ -115,22 +157,22 @@ export default {
         },
       ],
       organDynamicRadio: '',
-      // 机构动态列表弹框
-      trainDialog: false,
-      trainTable: [
-        {
-          order: 1,
-          trainTitle: '江南银行会议',
-          releaseDate: '2020-09-09',
-        },
-        {
-          order: 2,
-          trainTitle: '江南银行会议',
-          releaseDate: '2020-09-09',
-        },
-      ],
-      trainRadio: '',
+      choseOrganDynamicRow: {},
     }
+  },
+  methods: {
+    // 获取会议列表选中行
+    getCurrentMeetingRow(row) {
+      this.choseMeetingRow = row
+    },
+    // 获取培训列表选中行
+    getCurrentTrainRow(row) {
+      this.choseTrainRow = row
+    },
+    // 获取机构动态列表选中行
+    getCurrentOrganDynamicRow(row) {
+      this.choseOrganDynamicRow = row
+    },
   },
 }
 </script>

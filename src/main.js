@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-27 19:06:58
- * @LastEditTime: 2020-07-28 15:25:04
+ * @LastEditTime: 2020-08-03 13:36:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\main.js
@@ -18,8 +18,8 @@ import axios from '@/plugin/axios'
 import store from '@/store/index'
 
 // [ 可选组件 ] 右键菜单
-import contentmenu from 'v-contextmenu'
-import 'v-contextmenu/dist/index.css'
+// import contentmenu from 'v-contextmenu'
+// import 'v-contextmenu/dist/index.css'
 
 // 菜单和路由设置
 import router from './router'
@@ -35,7 +35,7 @@ import "@/assets/style/common.css"
 
 // 核心插件
 Vue.use(vxadmin)
-Vue.use(contentmenu)
+// Vue.use(contentmenu)
 
 Vue.prototype.$axios = axios
 new Vue({

@@ -2,60 +2,80 @@
 
 
 <template>
-  <div>
-    <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
-      <ui-form-item label="发布格式" prop="releaseFormat">
-        <ui-select v-model="form.releaseFormat" placeholder="请选择">
-          <ui-option label="文本" value="shanghai"></ui-option>
-          <ui-option label="图片" value="beijing"></ui-option>
-        </ui-select>
-      </ui-form-item>
-      <ui-form-item label="报名截止日" required prop="endDate">
-        <ui-date-picker
-          type="date"
-          placeholder="选择终止时间"
-          v-model="form.endDate"
-          style="width: 100%;"
-        ></ui-date-picker>
-      </ui-form-item>
-      <ui-form-item label="会议标题" prop="meetingTitle">
-        <ui-input v-model="form.meetingTitle"></ui-input>
-      </ui-form-item>
-      <ui-form-item label="发布对象" prop="releaseObj">
-        <ui-select v-model="form.releaseObj" placeholder="请选择" multiple>
-          <div v-for="item in form.releaseObjList" :key="item.label">
-            <ui-option :label="item.label" :value="item.value"></ui-option>
-          </div>
-        </ui-select>
-      </ui-form-item>
-      <ui-form-item label="会议图片" prop="meetingPicture">
-        <ui-upload
-          class="upload-demo"
-          action="https://jsonplaceholder.typicode.com/posts/"
-          :on-preview="handlePreview"
-          :on-remove="handleRemove"
-          :before-remove="beforeRemove"
-          multiple
-          :limit="3"
-          :on-exceed="handleExceed"
-          :file-list="form.fileList"
-        >
-          <Button text="点击上传" backgroundColor="#CE2848"></Button>
-        </ui-upload>
-      </ui-form-item>
-      <ui-form-item label="会议内容" prop="meetingContent">
-        <ui-input type="textarea" v-model="form.meetingContent"></ui-input>
-      </ui-form-item>
-      <!-- 按钮 -->
-      <ui-form-item>
-        <Button
-          @click.native="submitForm('ruleForm')"
-          text="修改"
-          backgroundColor="#CE2848"
-          margin="0px 60px 0px 0px"
-        ></Button>
-      </ui-form-item>
+  <div class="wrap">
+    <BorderHeader title="详情页"></BorderHeader>
+    <ui-form
+      class="form-block clear"
+      ref="ruleForm"
+      :model="form"
+      :rules="rules"
+      label-width="100px"
+    >
+      <div class="float-left">
+        <ui-form-item label="发布格式" prop="releaseFormat">
+          <ui-select v-model="form.releaseFormat" placeholder="请选择">
+            <ui-option label="文本" value="shanghai"></ui-option>
+            <ui-option label="图片" value="beijing"></ui-option>
+          </ui-select>
+        </ui-form-item>
+      </div>
+      <div class="float-right">
+        <ui-form-item label="报名截止日" required prop="endDate">
+          <ui-date-picker
+            type="date"
+            placeholder="选择终止时间"
+            v-model="form.endDate"
+            style="width: 100%;"
+          ></ui-date-picker>
+        </ui-form-item>
+      </div>
+      <div class="float-left">
+        <ui-form-item label="会议标题" prop="meetingTitle">
+          <ui-input v-model="form.meetingTitle" placeholder="请输入会议标题"></ui-input>
+        </ui-form-item>
+      </div>
+      <div class="float-right">
+        <ui-form-item label="发布对象" prop="releaseObj">
+          <ui-select v-model="form.releaseObj" placeholder="请选择" multiple>
+            <div v-for="item in form.releaseObjList" :key="item.label">
+              <ui-option :label="item.label" :value="item.value"></ui-option>
+            </div>
+          </ui-select>
+        </ui-form-item>
+      </div>
+      <div class="float-left">
+        <ui-form-item label="会议图片" prop="meetingPicture">
+          <ui-upload
+            class="upload-demo"
+            action="https://jsonplaceholder.typicode.com/posts/"
+            :on-preview="handlePreview"
+            :on-remove="handleRemove"
+            :before-remove="beforeRemove"
+            multiple
+            :limit="3"
+            :on-exceed="handleExceed"
+            :file-list="form.fileList"
+            :auto-upload="false"
+          >
+            <span class="upload-text">点击上传</span>
+          </ui-upload>
+        </ui-form-item>
+      </div>
+      <div class="float-right">
+        <ui-form-item label="会议内容" prop="meetingContent">
+          <ui-input type="textarea" v-model="form.meetingContent" placeholder="请输入会议内容"></ui-input>
+        </ui-form-item>
+      </div>
     </ui-form>
+    <!-- 按钮 -->
+    <div class="buttons">
+      <Button
+        @click.native="submitForm('ruleForm')"
+        text="修改"
+        backgroundColor="#CE2848"
+        margin="0px 60px 0px 0px"
+      ></Button>
+    </div>
   </div>
 </template>
 
@@ -151,9 +171,11 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.wrap {
+  background: #ffffff;
+}
 .form-block {
-  width: 600px;
-  margin: 0 auto;
+  padding: 50px;
 }
 .operator-button {
   font-size: 14px;
@@ -161,5 +183,9 @@ export default {
   font-weight: 400;
   text-decoration: underline;
   color: rgba(5, 141, 215, 1);
+}
+.buttons {
+  text-align: center;
+  padding-bottom: 50px;
 }
 </style>

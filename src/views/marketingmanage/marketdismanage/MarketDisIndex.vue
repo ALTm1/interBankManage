@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 14:07:51
- * @LastEditTime: 2020-07-31 19:02:45
+ * @LastEditTime: 2020-08-03 10:53:54
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\MarketDisIndex.vue
@@ -118,5 +118,8 @@ export default {
 }
 .wrap /deep/ .ui-menu--horizontal > .ui-menu-item.is-active {
   border-bottom: 3px solid #9b7041;
+}
+.wrap /deep/ .ui-menu--horizontal > .ui-menu-item:not(.is-disabled):focus {
+  background: none;
 }
 </style>

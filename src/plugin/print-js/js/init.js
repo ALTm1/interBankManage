@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 import Browser from './browser'
 import Modal from './modal'
