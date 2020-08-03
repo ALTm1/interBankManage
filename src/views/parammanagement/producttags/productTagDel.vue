@@ -1,12 +1,9 @@
 <template>
-  <!-- 产品标签新增页 -->
+  <!-- 产品标签删除页 -->
   <div class="product-tag-del">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">产品标签新增</ui-col>
-        <ui-col :span="12" class="back">返回</ui-col>
-      </ui-row>
+      <block-title blockTitle="产品标签删除"></block-title>
       <div class="form">
         <ui-form ref="form" label-width="150px">
           <ui-row>

@@ -3,9 +3,8 @@
   <div class="product-tag-add">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">审批菜单维护</ui-col>
-      </ui-row>
+      <block-title blockTitle="审批菜单维护"></block-title>
+
       <ui-row style="background:#fff;padding:40px 20px">
         <ui-col :span="4">关联功能：</ui-col>
         <ui-col :span="8">

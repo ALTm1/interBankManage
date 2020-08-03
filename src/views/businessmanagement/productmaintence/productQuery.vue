@@ -1,11 +1,9 @@
 <template>
   <!-- 产品查询页 -->
   <div class="product-query">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">行外机构信息查询</ui-col>
-      </ui-row>
+      <block-title blockTitle="产品查询"></block-title>
+
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">

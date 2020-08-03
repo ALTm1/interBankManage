@@ -1,17 +1,15 @@
 <template>
-  <!-- 产品查询页 -->
+  <!-- 文件修改页 -->
   <div class="files-management">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">文件新增</ui-col>
-      </ui-row>
+      <block-title blockTitle="文件修改"></block-title>
       <ui-row>
         <div class="form">
-          <ui-form ref="form" :model="form" label-width="150px">
+          <ui-form ref="form" :rules="rules" :model="form" label-width="150px">
             <ui-row>
               <ui-col>
-                <ui-form-item label="业务类型">
+                <ui-form-item label="业务类型" prop="productType">
                   <ui-select v-model="form.productType" placeholder="请选择">
                     <ui-option
                       v-for="item in proTypeList"
@@ -21,8 +19,8 @@
                     ></ui-option>
                   </ui-select>
                 </ui-form-item>
-                <ui-form-item label="业务场景">
-                  <ui-select v-model="form.tradeDirection" placeholder="请选择">
+                <ui-form-item label="业务场景" prop="buissnessScene">
+                  <ui-select v-model="form.buissnessScene" placeholder="请选择">
                     <ui-option
                       v-for="item in tradeDirectionList"
                       :key="item.value"
@@ -31,10 +29,10 @@
                     ></ui-option>
                   </ui-select>
                 </ui-form-item>
-                <ui-form-item label="文件标题">
+                <ui-form-item label="文件标题" prop="filesTitle">
                   <ui-input-business v-model="form.filesTitle" placeholder="请输入文件标题"></ui-input-business>
                 </ui-form-item>
-                <ui-form-item label="文件内容">
+                <ui-form-item label="文件内容" prop="filesContent">
                   <ui-input-business
                     style="display:inline-block;margin-right: 20px"
                     v-model="form.filesContent"
@@ -73,6 +71,21 @@ export default {
         filesTitle: '',
         // 文件内容
         filesContent: '',
+      },
+      // 表单校验规则
+      rules: {
+        productType: [
+          { required: true, message: '请选择产品类型', trigger: 'blur' },
+        ],
+        buissnessScene: [
+          { required: true, message: '请选择 业务场景', trigger: 'blur' },
+        ],
+        filesTitle: [
+          { required: true, message: '请输入文件标题', trigger: 'blur' },
+        ],
+        filesContent: [
+          { required: true, message: '请输入文件内容', trigger: 'blur' },
+        ],
       },
       // 业务类型数据
       businessTypeList: [

@@ -1,7 +1,9 @@
 <template>
   <!-- 部门删除结果页 -->
-  <div class="product-tag-res">
+  <div class="section-del-res">
     <div class="right-wrap">
+      <block-title blockTitle="部门删除结果"></block-title>
+
       <div class="result">
         <div>
           <img src alt class="result-img" />
@@ -19,7 +21,7 @@
 </template>
 <script>
 export default {
-  name: 'productTagRes',
+  name: 'sectionDelRes',
   computed: {},
   data() {
     return {}

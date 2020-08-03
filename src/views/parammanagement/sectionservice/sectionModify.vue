@@ -1,13 +1,9 @@
 <template>
-  <!-- 产品标签修改页 -->
+  <!-- 部门修改页 -->
   <div class="product-tag-add">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">部门修改</ui-col>
-        <ui-col :span="12" class="back">返回</ui-col>
-      </ui-row>
-
+      <block-title blockTitle="部门修改"></block-title>
       <div class="form">
         <!-- 可编辑表单 -->
         <ui-form

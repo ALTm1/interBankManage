@@ -1,12 +1,10 @@
 <template>
-  <!-- 产品标签新增页 -->
+  <!-- 机构补录页 -->
   <div class="info-detail">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">机构信息</ui-col>
-        <ui-col :span="12" class="back">返回</ui-col>
-      </ui-row>
+      <block-title blockTitle="机构补录"></block-title>
+
       <div class="form">
         <ui-form ref="form" :model="form" label-width="150px">
           <ui-row>

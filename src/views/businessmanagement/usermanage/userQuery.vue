@@ -3,9 +3,8 @@
   <div class="user-query">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">行外机构信息查询</ui-col>
-      </ui-row>
+      <block-title blockTitle="用户查询"></block-title>
+
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -42,10 +41,10 @@
           </ui-table-column>
           <ui-table-column prop="name" label="姓名" width="80"></ui-table-column>
           <ui-table-column prop="loginName" label="登录名" width="80"></ui-table-column>
-          <ui-table-column prop="idCard" label="身份证号码" width="200"></ui-table-column>
-          <ui-table-column prop="organForShort" label="机构简称" width="180"></ui-table-column>
-          <ui-table-column prop="subsidiaryOrgan" label="所属机构" width="180"></ui-table-column>
-          <ui-table-column prop="subsidiarySection" label="所属部门" width="180"></ui-table-column>
+          <ui-table-column prop="idCard" label="身份证号码"></ui-table-column>
+          <ui-table-column prop="organForShort" label="机构简称"></ui-table-column>
+          <ui-table-column prop="subsidiaryOrgan" label="所属机构"></ui-table-column>
+          <ui-table-column prop="subsidiarySection" label="所属部门"></ui-table-column>
           <ui-table-column prop="status" label="状态" width="80"></ui-table-column>
           <ui-table-column label="操作">
             <template slot-scope="scope">

@@ -1,7 +1,9 @@
 <template>
-  <!-- 产品标签新增结果页 -->
+  <!-- 结果页 -->
   <div class="product-tag-res">
     <div class="right-wrap">
+      <block-title blockTitle="部门结果"></block-title>
+
       <div class="result">
         <div>
           <img src alt class="result-img" />

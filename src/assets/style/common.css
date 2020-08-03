@@ -21,7 +21,7 @@
   font-family: SourceHanSansCN;
   font-weight: bold;
   color: rgba(51, 51, 51, 1);
-  text-align: left;
+  text-align: right;
 }
 
 .ui-input__inner {
@@ -39,18 +39,30 @@
 
 /* 标题 */
 
-.handle-title {
-  padding: 0 10px;
-  height: 30px;
-  line-height: 30px;
-  margin-top: 80px;
-  background: rgba(245, 246, 248, 1);
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 4px 4px 0px 0px;
+/*表格头部标题 */
+.list-title {
+  padding: 0 20px;
+  margin: 0px 0 37px;
+  height: 15px;
+  font-size: 14px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
 }
-
-.handle-title .back {
-  text-align: right;
+.list-title .img {
+  display: inline-block;
+  width: 6px;
+  height: 15px;
+  background: red;
+  vertical-align: middle;
+}
+.list-title span {
+  margin-left: 5px;
+  height: 15px;
+  font-size: 14px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
 }
 
 /* 确认页不可编辑的条目类名 */
@@ -115,11 +127,16 @@
 /* 表格含操作的样式 */
 
 .operator-button {
-  font-size: 14px;
+  font-size:12px;
+  font-family:SourceHanSansCN;
+  font-weight:bold;
+  color:rgba(69,159,221,1);
+  text-decoration: underline;
+  /* font-size: 14px;
   font-family: SimHei;
   font-weight: 400;
-  text-decoration: underline;
-  color: rgba(5, 141, 215, 1);
+ 
+  color: rgba(5, 141, 215, 1); */
 }
 
 /* 表格 */
@@ -220,14 +237,4 @@
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
   padding: 0px 0px;
-}
-
-/* table操作按钮 */
-
-.operator-button {
-  font-size: 14px;
-  font-family: SimHei;
-  font-weight: 400;
-  text-decoration: underline;
-  color: rgba(5, 141, 215, 1);
 }

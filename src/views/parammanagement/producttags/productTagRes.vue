@@ -2,6 +2,8 @@
   <!-- 产品标签新增结果页 -->
   <div class="product-tag-res">
     <div class="right-wrap">
+      <block-title blockTitle="产品标签结果"></block-title>
+
       <div class="result">
         <img src alt class="result-img" />
         <div class="result-status">交易成功</div>
