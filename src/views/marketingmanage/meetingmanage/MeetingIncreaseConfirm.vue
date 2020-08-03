@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 15:28:41
- * @LastEditTime: 2020-07-28 16:20:40
+ * @LastEditTime: 2020-08-03 16:33:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIncreaseConfirm.vue
@@ -9,11 +9,18 @@
 
 <template>
   <div class="wrap">
-    <div v-for="item in displayInfoArr" :key="item.title">
-      <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
+    <BorderHeader title="录入页"></BorderHeader>
+    <div class="content clear">
+      <div
+        :class="[index%2==0?'float-left':'float-right']"
+        v-for="(item,index) in displayInfoArr"
+        :key="item.title"
+      >
+        <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
+      </div>
     </div>
-    <div style="textAlign: center">
-      <Button text="确认" backgroundColor="#CE2848"></Button>
+    <div style="textAlign: center; paddingBottom: 50px">
+      <Button text="确认" backgroundColor="#CE2848" @click.native="goResult()"></Button>
     </div>
   </div>
 </template>
@@ -50,12 +57,20 @@ export default {
       ],
     }
   },
+  methods: {
+    goResult() {
+      this.$router.push('/marketingmanage/meetingmanage/mettingdeletesucc')
+    },
+  },
 }
 </script>
 
 <style lang="css" scoped>
 .wrap {
-  width: 500px;
   margin: 0 auto;
+  background: #ffffff;
+}
+.content {
+  padding: 50px 40px;
 }
 </style>

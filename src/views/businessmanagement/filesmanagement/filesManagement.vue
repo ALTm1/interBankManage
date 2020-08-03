@@ -1,11 +1,9 @@
 <template>
-  <!-- 产品查询页 -->
+  <!-- 文件管理页 -->
   <div class="files-management">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">行外机构信息查询</ui-col>
-      </ui-row>
+      <block-title blockTitle="文件管理"></block-title>
 
       <div class="table">
         <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">

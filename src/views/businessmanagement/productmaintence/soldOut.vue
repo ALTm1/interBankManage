@@ -3,10 +3,8 @@
   <div class="user-detail">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">产品详情</ui-col>
-        <ui-col :span="12" class="back">返回</ui-col>
-      </ui-row>
+      <block-title blockTitle="产品下架确认"></block-title>
+
       <div class="form">
         <ui-form ref="form" label-width="100px">
           <ui-row>

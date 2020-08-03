@@ -3,9 +3,7 @@
   <div class="product-tag-add">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">产品标签维护</ui-col>
-      </ui-row>
+      <block-title blockTitle="产品标签维护"></block-title>
       <div class="table">
         <ui-table :data="productTags" style="width: 96%;margin:0 auto">
           <ui-table-column label="请选择" width="80">

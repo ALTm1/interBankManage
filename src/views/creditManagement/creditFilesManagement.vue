@@ -1,11 +1,8 @@
 <template>
-  <!-- 行外机构信息维护页 -->
-  <div class="out-bank">
-    <!-- label-width="150px" -->
+  <!-- 授信额度查询页 -->
+  <div class="credit-query">
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">授信额度查询</ui-col>
-      </ui-row>
+      <block-title blockTitle="授信文件管理"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -82,7 +79,7 @@
 </template>
 <script>
 export default {
-  name: 'outBankInfoMaintain',
+  name: 'creditFilesManagement',
   computed: {},
   data() {
     return {
@@ -156,7 +153,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.out-bank {
+.credit-query {
   .form {
     background: #fff;
     .ui-form {

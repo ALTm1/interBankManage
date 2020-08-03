@@ -1,11 +1,9 @@
 <template>
-  <!-- 产品标签新增页 -->
+  <!-- 部门维护页 -->
   <div class="product-tag-add">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">部门维护</ui-col>
-      </ui-row>
+      <block-title blockTitle="部门维护"></block-title>
       <div class="table">
         <ui-table :data="productTags" style="width: 100%" ref="multipleTable">
           <ui-table-column label="请选择" width="80">

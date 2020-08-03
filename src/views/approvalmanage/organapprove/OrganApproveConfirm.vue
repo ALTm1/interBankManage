@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 15:10:07
- * @LastEditTime: 2020-07-31 17:00:59
+ * @LastEditTime: 2020-08-03 09:13:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\approvalmanage\organapprove\OrganApproveConfirm.vue
@@ -228,6 +228,8 @@ export default {
           content: '89889087@jk.cn',
         },
       ],
+      // 角色选择
+      roleRadio: '1',
       // 审批信息录入
       opinionRadio: '2',
     }

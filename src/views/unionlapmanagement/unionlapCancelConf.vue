@@ -1,11 +1,8 @@
 <template>
-  <!-- 联盟圈查询页 -->
+  <!-- 联盟圈注销确认页 -->
   <div class="user-query">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">联盟圈管理注销</ui-col>
-      </ui-row>
+      <block-title blockTitle="联盟圈管理注销确认"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">

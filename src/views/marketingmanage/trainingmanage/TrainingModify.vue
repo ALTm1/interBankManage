@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:09:21
- * @LastEditTime: 2020-07-29 10:18:28
+ * @LastEditTime: 2020-08-03 17:28:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingModify.vue
@@ -9,7 +9,8 @@
 
 
 <template>
-  <div>
+  <div class="wrap">
+    <BorderHeader title="详情页"></BorderHeader>
     <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
       <ui-form-item label="培训标题" prop="trainingTitle">
         <ui-input v-model="form.trainingTitle" placeholder="请输入培训标题"></ui-input>
@@ -32,12 +33,13 @@
           :limit="3"
           :on-exceed="handleExceed"
           :file-list="form.trainingContent"
+          :auto-upload="false"
         >
-          <Button text="点击上传" backgroundColor="#CE2848"></Button>
+          <span class="upload-text">点击上传</span>
         </ui-upload>
       </ui-form-item>
     </ui-form>
-    <div style="textAlign: center; marginTop: 100px">
+    <div class="buttons">
       <Button text="修改" backgroundColor="#9B7041" @click.native="submitForm('ruleForm')"></Button>
     </div>
   </div>
@@ -124,8 +126,13 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.wrap {
+  background: #ffffff;
+}
 .form-block {
   width: 600px;
   margin: 0 auto;
+  padding: 40px;
+  box-sizing: border-box;
 }
 </style>

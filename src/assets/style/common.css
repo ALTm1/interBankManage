@@ -8,7 +8,7 @@
   float: right;
 }
 
-.clear {
+.clear:after {
   content: "";
   display: table;
   clear: both;
@@ -16,12 +16,16 @@
 
 /* form表单 */
 
+.form-wrap {
+  background: #ffffff;
+}
+
 .ui-form-item__label {
   font-size: 14px;
   font-family: SourceHanSansCN;
   font-weight: bold;
   color: rgba(51, 51, 51, 1);
-  text-align: left;
+  text-align: right;
 }
 
 .ui-input__inner {
@@ -37,20 +41,44 @@
   border-radius: 3px 3px 3px 3px;
 }
 
-/* 标题 */
-
-.handle-title {
-  padding: 0 10px;
-  height: 30px;
-  line-height: 30px;
-  margin-top: 80px;
-  background: rgba(245, 246, 248, 1);
-  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 4px 4px 0px 0px;
+.ui-textarea__inner {
+  font-size: 12px;
+  font-family: SourceHanSansCN;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  width: 380px;
+  text-align: center;
+  background: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(231, 232, 239, 1);
+  border-radius: 3px 3px 3px 3px;
 }
 
-.handle-title .back {
-  text-align: right;
+/* 标题 */
+
+/*表格头部标题 */
+.list-title {
+  padding: 0 20px;
+  margin: 0px 0 37px;
+  height: 15px;
+  font-size: 14px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.list-title .img {
+  display: inline-block;
+  width: 6px;
+  height: 15px;
+  background: red;
+  vertical-align: middle;
+}
+.list-title span {
+  margin-left: 5px;
+  height: 15px;
+  font-size: 14px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
 }
 
 /* 确认页不可编辑的条目类名 */
@@ -115,11 +143,16 @@
 /* 表格含操作的样式 */
 
 .operator-button {
-  font-size: 14px;
+  font-size:12px;
+  font-family:SourceHanSansCN;
+  font-weight:bold;
+  color:rgba(69,159,221,1);
+  text-decoration: underline;
+  /* font-size: 14px;
   font-family: SimHei;
   font-weight: 400;
-  text-decoration: underline;
-  color: rgba(5, 141, 215, 1);
+ 
+  color: rgba(5, 141, 215, 1); */
 }
 
 /* 表格 */
@@ -203,6 +236,12 @@
 
 /* table表格 */
 
+.table-wrap {
+  margin-top: 20px;
+  padding-bottom: 30px;
+  background: #ffffff;
+}
+
 .ui-table thead {
   font-size: 12px;
   font-family: SourceHanSansCN;
@@ -230,4 +269,20 @@
   font-weight: 400;
   text-decoration: underline;
   color: rgba(5, 141, 215, 1);
+}
+
+/* "文件上传"文本样式 */
+
+.upload-text {
+  font-size: 14px;
+  font-family: SimHei;
+  font-weight: 400;
+  color: rgba(5, 141, 215, 1);
+}
+
+/* 自定义按钮 */
+
+.buttons {
+  text-align: center;
+  padding-bottom: 50px;
 }

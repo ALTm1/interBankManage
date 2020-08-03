@@ -35,7 +35,7 @@
         </div>
         <div class="float-right">
           <ui-form-item label="活动时间" required>
-            <ui-form-item prop="startDate">
+            <ui-form-item prop="startDate" class="start-date-item">
               <ui-date-picker
                 type="date"
                 placeholder="选择起始日期"
@@ -65,7 +65,7 @@
           </ui-form-item>
         </div>
       </ui-form>
-      <ui-table :data="tableData" stripe v-if="showTable">
+      <ui-table :data="tableData" v-if="showTable">
         <ui-table-column prop="serialNum" label="流水号" align="center" min-width="100px"></ui-table-column>
         <ui-table-column prop="approvalType" label="审批类型" align="center" min-width="200px"></ui-table-column>
         <ui-table-column prop="submissionTime" label="提交时间" align="center" min-width="100px"></ui-table-column>
@@ -120,7 +120,7 @@ export default {
           {
             type: 'date',
             required: true,
-            message: '请选择日期',
+            message: '请选择开始日期',
             trigger: 'change',
           },
         ],
@@ -128,7 +128,7 @@ export default {
           {
             type: 'date',
             required: true,
-            message: '请选择时间',
+            message: '请选择终止时间',
             trigger: 'change',
           },
         ],
@@ -189,8 +189,14 @@ export default {
   margin: 0 auto;
   padding: 0 50px;
 }
+
+.start-date-item {
+  margin-bottom: 22px;
+}
+
 .query-buttons {
   width: 100%;
+  margin-top: 50px;
 }
 .query-buttons /deep/ .ui-form-item__content {
   margin-left: 0px !important;

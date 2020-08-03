@@ -26,8 +26,9 @@
           :limit="3"
           :on-exceed="handleExceed"
           :file-list="form.trainingContent"
+          :auto-upload="false"
         >
-          <Button text="点击上传" backgroundColor="#CE2848"></Button>
+          <span class="upload-text">点击上传</span>
         </ui-upload>
       </ui-form-item>
     </ui-form>

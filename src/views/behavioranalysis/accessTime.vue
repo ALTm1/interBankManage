@@ -3,9 +3,7 @@
   <div class="access-frequency">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">授信额度查询</ui-col>
-      </ui-row>
+      <block-title blockTitle="功能模块访问时长"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -204,7 +202,7 @@ export default {
     }
   },
   created() {
-    this.accessModuleList.push(...this.PCModuleList)
+    this.accessModuleList = [...this.PCModuleList]
     // console.log(this.accessModuleList)
   },
   methods: {

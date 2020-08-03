@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 18:20:49
- * @LastEditTime: 2020-07-31 16:01:30
+ * @LastEditTime: 2020-08-03 16:36:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MettingDeleteSucc.vue
@@ -9,16 +9,19 @@
 
 <template>
   <div class="wrap">
-    <img class="succ-logo" :src="succLogo" alt="succLogo" />
-    <div class="succ-tips-one">
-      <span>交易已提交,请等待审核</span>
-    </div>
-    <div class="succ-tips-two">
-      <span>交易流水号：124122331434</span>
-    </div>
-    <div class="buttons">
-      <Button text="完成" backgroundColor="#CE2848" marginRight="40px" @click.native="returnLast()"></Button>
-      <Button text="返回" backgroundColor="#9B7041" @click.native="returnLast()"></Button>
+    <BorderHeader title="结果页"></BorderHeader>
+    <div>
+      <img class="succ-logo" :src="succLogo" alt="succLogo" />
+      <div class="succ-tips-one">
+        <span>交易已提交,请等待审核</span>
+      </div>
+      <div class="succ-tips-two">
+        <span>交易流水号：124122331434</span>
+      </div>
+      <div class="buttons">
+        <Button text="完成" backgroundColor="#CE2848" marginRight="40px" @click.native="returnLast()"></Button>
+        <Button text="返回" backgroundColor="#9B7041" @click.native="returnLast()"></Button>
+      </div>
     </div>
   </div>
 </template>
@@ -40,9 +43,10 @@ export default {
 
 <style lang="css" scoped>
 .wrap {
-  width: 600px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
+  background: #ffffff;
 }
 .succ-logo {
   width: 257px;
@@ -62,6 +66,6 @@ export default {
   margin-top: 17px;
 }
 .buttons {
-  margin-top: 40px;
+  padding: 50px;
 }
 </style>

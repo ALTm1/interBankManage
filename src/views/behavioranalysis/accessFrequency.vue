@@ -3,9 +3,10 @@
   <div class="access-frequency">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <ui-row class="handle-title">
+      <block-title blockTitle="功能模块访问频次"></block-title>
+      <!-- <ui-row class="handle-title">
         <ui-col :span="12">授信额度查询</ui-col>
-      </ui-row>
+      </ui-row>-->
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -92,6 +93,8 @@ export default {
   name: 'accessFrequency',
   data() {
     return {
+      // 标题
+      blockTitle: '功能模块访问频次',
       // 表单的值
       form: {
         access: '',
