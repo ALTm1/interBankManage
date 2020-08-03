@@ -1,7 +1,6 @@
 import business from './modules/business'
 import layoutHeaderAside from '@/layout/header-aside'
 import home from './modules/home'
-import system from './modules/system'
 // 参数管理路由
 import parammanagement from './modules/parammanagement'
 // 业务管理
@@ -58,30 +57,29 @@ const frameIn = [
       {
         path: 'index',
         name: 'index',
-        redirect: { name: 'system' },
+        redirect: { name: 'operatemanage' },
         meta: {
           auth: false,
           close: true
         },
         component: _import('system/index'),
         children: [
-          // {
-          //   path: 'operatemanage',
-          //   name: 'operatemanage',
-          //   component: () => import('@/pages/system/operateManage.vue'),
-          //   meta: {
-          //     title: '操作员管理'
-          //   }
-          // },
-          // {
-          //   path: 'rolemanage',
-          //   name: 'rolemanage',
-          //   component: () => import('@/pages/system/roleManage.vue'),
-          //   meta: {
-          //     title: '角色管理'
-          //   }
-          // },
-          ...system,
+          {
+            path: 'operatemanage',
+            name: 'operatemanage',
+            component: () => import('@/pages/system/operateManage.vue'),
+            meta: {
+              title: '操作员管理'
+            }
+          },
+          {
+            path: 'rolemanage',
+            name: 'rolemanage',
+            component: () => import('@/pages/system/roleManage.vue'),
+            meta: {
+              title: '角色管理'
+            }
+          },
           ...parammanagement,
           ...businessmanagement,
           ...creditmanagement,

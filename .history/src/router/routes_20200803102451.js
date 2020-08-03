@@ -1,7 +1,6 @@
 import business from './modules/business'
 import layoutHeaderAside from '@/layout/header-aside'
 import home from './modules/home'
-import system from './modules/system'
 // 参数管理路由
 import parammanagement from './modules/parammanagement'
 // 业务管理
@@ -58,7 +57,7 @@ const frameIn = [
       {
         path: 'index',
         name: 'index',
-        redirect: { name: 'system' },
+        redirect: { name: 'operatemanage' },
         meta: {
           auth: false,
           close: true

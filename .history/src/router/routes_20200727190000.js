@@ -2,22 +2,6 @@ import business from './modules/business'
 import layoutHeaderAside from '@/layout/header-aside'
 import home from './modules/home'
 import system from './modules/system'
-// 参数管理路由
-import parammanagement from './modules/parammanagement'
-// 业务管理
-import businessmanagement from './modules/businessmanagement'
-// 审批管理
-import creditmanagement from './modules/creditmanagement'
-// 行为分析
-import behavioranalysis from './modules/behavioranalysis'
-// 联盟圈
-import unionlapmanagement from './modules/unionlapmanagement'
-// 引入营销管理路由
-import marketingmanage from './modules/marketingmanage'
-// 引入审批管理路由
-import approvalmanage from './modules/approvalmanage'
-
-
 // import header from './modules'
 // 由于懒加载页面太多的话会造成webpack热更新太慢，所以开发环境不使用懒加载，只有生产环境使用懒加载
 const _import = require('@/libs/utils/util.import.' + process.env.NODE_ENV)
@@ -38,12 +22,10 @@ export const frameInRoutes = [
           auth: false
         },
         component: _import('system/log')
-      },
-
+      }
     ]
   },
-  business,
-
+  business
 ]
 /**
  * 在主框架内显示
@@ -58,35 +40,14 @@ const frameIn = [
       {
         path: 'index',
         name: 'index',
-        redirect: { name: 'system' },
+        redirect: { name: 'operatemanage' },
         meta: {
           auth: false,
           close: true
         },
         component: _import('system/index'),
-        children: [
-          // {
-          //   path: 'operatemanage',
-          //   name: 'operatemanage',
-          //   component: () => import('@/pages/system/operateManage.vue'),
-          //   meta: {
-          //     title: '操作员管理'
-          //   }
-          // },
-          // {
-          //   path: 'rolemanage',
-          //   name: 'rolemanage',
-          //   component: () => import('@/pages/system/roleManage.vue'),
-          //   meta: {
-          //     title: '角色管理'
-          //   }
-          // },
-          ...system,
-          ...parammanagement,
-          ...businessmanagement,
-          ...creditmanagement,
-          ...behavioranalysis,
-          ...unionlapmanagement
+        children:[
+          ...system
         ]
       },
       // 系统 前端日志
@@ -119,18 +80,10 @@ const frameIn = [
         },
         hidden: true,
         component: _import('system/function/redirect')
-      },
-
-
-      // 营销管理
-      ...marketingmanage,
-
-      // 审批管理
-      ...approvalmanage
+      }
     ]
   },
-  ...frameInRoutes,
-
+  ...frameInRoutes
 ]
 
 /**

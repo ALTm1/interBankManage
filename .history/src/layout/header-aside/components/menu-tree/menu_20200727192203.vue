@@ -111,10 +111,10 @@ export default {
       console.log(key, keyPath);
     },
     role() {
-      this.$router.push("/index/role/roleManage");
+      this.$router.push("roleManage");
     },
     operate() {
-      this.$router.push("/index/system/operatemanage");
+      this.$router.push("/system/roleManage");
     },
     handleOpen(key, keyPath) {
       console.log(key, keyPath);
