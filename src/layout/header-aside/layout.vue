@@ -30,7 +30,7 @@
           </div>
         </div>
         <ui-menu default-active="1" class="ui-menu-vertical-demo" @open="handleOpen">
-          <ui-submenu index="1">
+          <!-- <ui-submenu index="1">
             <template slot="title">
               <i class="ui-icon-location"></i>
               <span>我的主页</span>
@@ -41,14 +41,14 @@
               <template slot="title">选项4</template>
               <ui-menu-item index="1-4-1">选项1</ui-menu-item>
             </ui-submenu>
-          </ui-submenu>
+          </ui-submenu> -->
           <ui-submenu index="2">
             <template slot="title">
               <i class="ui-icon-location"></i>
               <span>系统管理</span>
             </template>
-            <ui-menu-item index="2-1" @click="operate">操作员管理</ui-menu-item>
-            <ui-menu-item index="2-2" @click="system">角色管理</ui-menu-item>
+            <ui-menu-item index="2-1" @click="system">操作员管理</ui-menu-item>
+            <ui-menu-item index="2-2" @click="role">角色管理</ui-menu-item>
             <ui-menu-item index="2-3">日志管理</ui-menu-item>
             <ui-menu-item index="2-4">登录密码修改</ui-menu-item>
             <ui-menu-item index="2-5">登录密码重置</ui-menu-item>
@@ -194,7 +194,7 @@ export default {
   },
   data() {
     return {
-      dialogVisible: false,
+      dialogVisible:false,
       // 用户身份
       user: '系统管理员1',
       time: '2',
@@ -243,10 +243,10 @@ export default {
       console.log(key, keyPath)
     },
     system() {
-      this.$router.push('rolemanage')
+      this.$router.push('/index/system')
     },
-    operate() {
-      this.$router.push('operatemanage')
+    role() {
+      this.$router.push('/index/role')
     },
     /***参数管理***/
     // 产品标签维护
@@ -411,7 +411,7 @@ export default {
 }
 
 .menu-wrap {
-  width: 300px;
+  // width: 300px;
   background-color: #fff;
 }
 .menu-right {
