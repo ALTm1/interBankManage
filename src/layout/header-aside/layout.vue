@@ -422,7 +422,4 @@ export default {
   color: #fff;
   cursor: pointer;
 }
-.menu-right {
-  width: calc(100% - 300px);
-}
 </style>
