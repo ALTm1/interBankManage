@@ -65,8 +65,8 @@ const frameIn = [
         },
         component: _import('system/index'),
         children: [
-       
-      
+
+
           ...system,
           ...parammanagement,
           ...businessmanagement,
