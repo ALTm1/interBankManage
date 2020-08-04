@@ -1,6 +1,6 @@
 <template>
-  <!-- 用户详情页 -->
-  <div class="user-detail">
+  <!-- 操作确认页 -->
+  <div class="handle-conf">
     <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="操作确认页"></block-title>
@@ -54,7 +54,7 @@
 </template>
 <script>
 export default {
-  name: 'blockUpConf',
+  name: 'handleConf',
   computed: {},
   data() {
     return {
@@ -93,7 +93,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.user-detail {
+.handle-conf {
   .form {
     background: #fff;
     .ui-form {

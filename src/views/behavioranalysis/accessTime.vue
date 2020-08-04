@@ -1,7 +1,6 @@
 <template>
-  <!-- 行为分析查询页 -->
-  <div class="access-frequency">
-    <!-- label-width="150px" -->
+  <!-- 功能模块访问时长页 -->
+  <div class="access-time">
     <div class="right-wrap">
       <block-title blockTitle="功能模块访问时长"></block-title>
       <ui-row>
@@ -38,47 +37,28 @@
           </ui-form>
         </div>
       </ui-row>
-
-      <div class="table">
-        <ui-table :data="productTags" style="width: 96%;margin:0 auto">
-          <ui-table-column label="请选择" width="80">
-            <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
-            </template>
-          </ui-table-column>
-          <ui-table-column prop="tagName" label="访问渠道"></ui-table-column>
-          <ui-table-column prop="remark" label="访问模块"></ui-table-column>
-          <ui-table-column prop="remark" label="访问时长超过10s次数"></ui-table-column>
-          <ui-table-column prop="remark" label="访问时长超过20s次数"></ui-table-column>
-          <ui-table-column prop="remark" label="访问时长超过30s次数"></ui-table-column>
-
-          <!-- <ui-table-column label="操作">
-            <template slot-scope="scope">
-              <ui-button
-                class="operator-button"
-                @click="goDetail(scope.row)"
-                type="text"
-                size="small"
-              >查看详情</ui-button>
-              <ui-button
-                class="operator-button"
-                @click="goCancel(scope.row)"
-                type="text"
-                size="small"
-              >注销</ui-button>
-            </template>
-          </ui-table-column>-->
-        </ui-table>
-        <!-- <ui-row class="btn">
-          <ui-pagination background layout="prev, pager, next" :total="1000"></ui-pagination>
-        </ui-row>-->
-      </div>
+      <ui-row>
+        <div class="table">
+          <ui-table :data="accessTimeData" style="width: 96%;margin:0 auto">
+            <ui-table-column label="请选择" width="80">
+              <template slot-scope="scope">
+                <ui-radio
+                  v-model="tableRadio"
+                  :label="scope.$index"
+                  @change.native="getCurrentRow(scope.row)"
+                >
+                  <i></i>
+                </ui-radio>
+              </template>
+            </ui-table-column>
+            <ui-table-column prop="tagName" label="访问渠道"></ui-table-column>
+            <ui-table-column prop="remark" label="访问模块"></ui-table-column>
+            <ui-table-column prop="remark" label="访问时长超过10s次数"></ui-table-column>
+            <ui-table-column prop="remark" label="访问时长超过20s次数"></ui-table-column>
+            <ui-table-column prop="remark" label="访问时长超过30s次数"></ui-table-column>
+          </ui-table>
+        </div>
+      </ui-row>
       <ui-row class="btn btnbg">
         <ui-pagination background layout="prev, pager, next" :total="1000"></ui-pagination>
       </ui-row>
@@ -87,7 +67,7 @@
 </template>
 <script>
 export default {
-  name: 'accessFrequency',
+  name: 'accessTime',
   data() {
     return {
       // 表单的值
@@ -178,8 +158,8 @@ export default {
       tableRadio: '',
       // 获取选中数据
       chosedData: [],
-      // 产品标签维护数据
-      productTags: [
+      // 访问时长数据
+      accessTimeData: [
         {
           index: '1',
           tagName: '蓝天大地',
@@ -228,7 +208,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.access-frequency {
+.access-time {
   .form {
     background: #fff;
     .ui-form {

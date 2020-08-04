@@ -251,11 +251,11 @@ export default {
       this.$router.push('/index/role')
     },
     // 密码重置
-    reset(){
+    reset() {
       this.$router.push('/index/loginreset')
     },
     //日志管理
-    log(){
+    log() {
       this.$router.push('/index/log')
     },
     /***参数管理***/

@@ -1,15 +1,15 @@
 <template>
-  <!-- 删除结果页 -->
-  <div class="unionlap--del-res">
+  <!-- 产品标签修改结果页 -->
+  <div class="product-tag-res">
     <div class="right-wrap">
-      <block-title blockTitle="联盟圈管理删除结果"></block-title>
+      <block-title blockTitle="产品标签修改结果"></block-title>
       <result :status="true" :tadeSuccess="'交易成功'" :batch="'1234567890123'" @click="clickFinish"></result>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'unionlapDelRes',
+  name: 'productTagRes',
   computed: {},
   data() {
     return {}
@@ -17,11 +17,7 @@ export default {
   methods: {
     // 点击完成
     clickFinish() {
-      this.$router.push('/unionlapQuery')
-    },
-    // 返回按钮
-    goBack() {
-      this.$router.go(-1)
+      this.$router.push('productService')
     },
   },
 }

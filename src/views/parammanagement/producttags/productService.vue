@@ -1,7 +1,6 @@
 <template>
-  <!-- 产品标签新增页 -->
-  <div class="product-tag-add">
-    <!-- label-width="150px" -->
+  <!-- 产品维护页 -->
+  <div class="product-service">
     <div class="right-wrap">
       <block-title blockTitle="产品标签维护"></block-title>
       <div class="table">
@@ -111,7 +110,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.product-tag-add {
+.product-service {
   .table {
     background: #fff;
   }

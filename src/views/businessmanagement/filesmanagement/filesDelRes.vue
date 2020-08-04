@@ -1,30 +1,15 @@
 <template>
   <!-- 文件删除结果页 -->
-  <div class="recording-res">
+  <div class="files-del-res">
     <div class="right-wrap">
       <block-title blockTitle="文件删除结果"></block-title>
-      <div class="result">
-        <div>
-          <img src alt class="result-img" />
-          <div class="result-status">交易成功</div>
-          <div class="batch">交易流水号:33445566888</div>
-        </div>
-        <!-- <div class="result-status">信息已提交，请等待审核</div> -->
-        <ui-row class="btn">
-          <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
-          <ui-button type="primary" class="continue-next" @click="clickFinish">完成</ui-button>
-        </ui-row>
-      </div>
+      <result :status="true" :tadeSuccess="'交易成功'" :batch="'1234567890123'" @click="clickFinish"></result>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'recordingRes',
-  computed: {},
-  data() {
-    return {}
-  },
+  name: 'filesDelRes',
   methods: {
     // 点击完成
     clickFinish() {

@@ -11,32 +11,27 @@
         </ui-row>
         <ui-row style="background: #fff;">
           <ui-col :span="12">
-            <!-- <ui-form-item label="机构全称"> -->
             <div class="item">
               <div class="item-label">
                 <div>机构全称</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
             <div class="item">
               <div class="item-label">
                 <div>机构类型</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
             <div class="item">
               <div class="item-label">
                 <div>是否为总机构</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
             <div class="item">
               <div class="item-label">
                 <div>归属机构全称</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
@@ -45,14 +40,12 @@
             <div class="item">
               <div class="item-label">
                 <div>归属机构统一社会信用代码</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
             <div class="item">
               <div class="item-label">
                 <div>归属机构组织机构代码证</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>

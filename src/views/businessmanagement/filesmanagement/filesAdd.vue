@@ -1,6 +1,6 @@
 <template>
   <!-- 产品查询页 -->
-  <div class="files-management">
+  <div class="files-add">
     <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="文件新增"></block-title>
@@ -46,10 +46,6 @@
               <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
               <ui-button type="primary" class="continue-next" @click=" clickSubmit('form')">提交</ui-button>
             </ui-row>
-            <!-- <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
-              <ui-button type="primary" class="continue-next" @click="clickQuery('form')">提交</ui-button>
-            </ui-row>-->
           </ui-form>
         </div>
       </ui-row>
@@ -58,7 +54,7 @@
 </template>
 <script>
 export default {
-  name: 'productQuery',
+  name: 'filesAdd',
   computed: {},
   data() {
     return {
@@ -102,33 +98,6 @@ export default {
           label: '他行',
         },
       ],
-      // 产品期限数据
-      proLimitList: [
-        {
-          value: '1',
-          label: '全部',
-        },
-        {
-          value: '2',
-          label: '30天以内',
-        },
-        {
-          value: '3',
-          label: '30-90天',
-        },
-        {
-          value: '4',
-          label: '91-180天',
-        },
-        {
-          value: '5',
-          label: '181-360天',
-        },
-        {
-          value: '6',
-          label: '一年以上',
-        },
-      ],
       // 产品类型数据
       proTypeList: [
         {
@@ -164,55 +133,10 @@ export default {
           label: '团购产品',
         },
       ],
-      // 交易方向数据
-      tradeDirectionList: [
-        {
-          value: '1',
-          label: '全部',
-        },
-        {
-          value: '2',
-          label: '买入',
-        },
-        {
-          value: '3',
-          label: '卖出',
-        },
-      ],
       // 单选按钮
       tableRadio: '',
       // 获取选中数据
       chosedData: [],
-      // 用户信息数据
-      userInfoList: [
-        {
-          name: '朱一龙',
-          loginName: '小哥の',
-          idCard: '334455666888',
-          organForShort: '就那个地方',
-          subsidiaryOrgan: '所属机构',
-          subsidiarySection: '所属部门',
-          status: '正常',
-        },
-        {
-          name: '朱一龙',
-          loginName: '小哥の',
-          idCard: '334455666888',
-          organForShort: '就那个地方',
-          subsidiaryOrgan: '所属机构',
-          subsidiarySection: '所属部门',
-          status: '已停用',
-        },
-        {
-          name: '朱一龙',
-          loginName: '小哥の',
-          idCard: '334455666888',
-          organForShort: '就那个地方',
-          subsidiaryOrgan: '所属机构',
-          subsidiarySection: '所属部门',
-          status: '已注销',
-        },
-      ],
     }
   },
   methods: {
@@ -220,8 +144,6 @@ export default {
     goBack() {
       this.$router.go(-1)
     },
-    // 点击查询
-    clickQuery() {},
     // 点击提交
     clickSubmit(formName) {
       this.$refs[formName].validate((valid) => {
@@ -232,14 +154,6 @@ export default {
         }
       })
     },
-    // 点击查看详情
-    goDetail(row) {
-      this.$router.push({
-        name: 'productDetail',
-        params: { detail: row },
-      })
-    },
-
     // 获取选中的数据
     getCurrentRow(row) {
       this.chosedData = row
@@ -248,7 +162,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.files-management {
+.files-add {
   .form {
     background: #fff;
     .ui-form {

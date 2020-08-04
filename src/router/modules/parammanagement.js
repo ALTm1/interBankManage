@@ -46,6 +46,24 @@ export default [
 
   },
   {
+    path: '/productTagModifyConf',
+    name: 'productTagModifyConf',
+    meta: {
+      title: '产品标签修改'
+    },
+    component: () => import('@/views/parammanagement/producttags/productTagModifyConf.vue'),
+
+  },
+  {
+    path: '/productTagModifyRes',
+    name: 'productTagModifyRes',
+    meta: {
+      title: '产品标签修改'
+    },
+    component: () => import('@/views/parammanagement/producttags/productTagModifyRes.vue'),
+
+  },
+  {
     path: '/productTagDel',
     name: 'productTagDel',
     meta: {

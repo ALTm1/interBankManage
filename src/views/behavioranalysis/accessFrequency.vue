@@ -1,12 +1,8 @@
 <template>
   <!-- 行为分析查询页 -->
   <div class="access-frequency">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="功能模块访问频次"></block-title>
-      <!-- <ui-row class="handle-title">
-        <ui-col :span="12">授信额度查询</ui-col>
-      </ui-row>-->
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -60,27 +56,7 @@
           <ui-table-column prop="remark" label="访客数"></ui-table-column>
           <ui-table-column prop="remark" label="注册用户"></ui-table-column>
           <ui-table-column prop="remark" label="总浏览器量"></ui-table-column>
-
-          <!-- <ui-table-column label="操作">
-            <template slot-scope="scope">
-              <ui-button
-                class="operator-button"
-                @click="goDetail(scope.row)"
-                type="text"
-                size="small"
-              >查看详情</ui-button>
-              <ui-button
-                class="operator-button"
-                @click="goCancel(scope.row)"
-                type="text"
-                size="small"
-              >注销</ui-button>
-            </template>
-          </ui-table-column>-->
         </ui-table>
-        <!-- <ui-row class="btn">
-          <ui-pagination background layout="prev, pager, next" :total="1000"></ui-pagination>
-        </ui-row>-->
       </div>
       <ui-row class="btn btnbg">
         <ui-pagination background layout="prev, pager, next" :total="1000"></ui-pagination>
@@ -207,8 +183,7 @@ export default {
     }
   },
   created() {
-    this.accessModuleList.push(...this.PCModuleList)
-    // console.log(this.accessModuleList)
+    this.accessModuleList = [...this.PCModuleList]
   },
   methods: {
     // 返回按钮

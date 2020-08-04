@@ -26,6 +26,8 @@ import HeaderItem from '@/components/headeritem'
 
 // 引入自定义BorderHeader 
 import BorderHeader from '@/components/borderheader'
+// 引入自定义结果页
+import Result from '@/components/result'
 
 // 引入块级标题
 import BlockTitle from '@/components/blocktitle'
@@ -39,4 +41,5 @@ Vue.component('DisplayItem', DisplayItem)
 Vue.component('HeaderItem', HeaderItem)
 Vue.component('BorderHeader', BorderHeader)
 Vue.component('block-title', BlockTitle)
+Vue.component('result', Result)
 

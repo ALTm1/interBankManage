@@ -1,6 +1,6 @@
 <template>
   <!-- 部门修改页 -->
-  <div class="product-tag-add">
+  <div class="section-modify">
     <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="部门修改"></block-title>
@@ -131,7 +131,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.product-tag-add {
+.section-modify {
   .form {
     background: #fff;
     .ui-form {

@@ -1,6 +1,6 @@
 <template>
   <!-- 产品标签新增确认页 -->
-  <div class="product-tag-add">
+  <div class="product-tag-add-conf">
     <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="产品标签新增确认"></block-title>
@@ -86,7 +86,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.product-tag-add {
+.product-tag-add-conf {
   .form {
     background: #fff;
     .ui-form {

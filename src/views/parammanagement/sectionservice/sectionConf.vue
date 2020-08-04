@@ -1,7 +1,6 @@
 <template>
   <!-- 部门维护确认页 -->
-  <div class="product-tag-add">
-    <!-- label-width="150px" -->
+  <div class="section-conf">
     <div class="right-wrap">
       <block-title blockTitle="部门维护"></block-title>
 
@@ -59,7 +58,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.product-tag-add {
+.section-conf {
   .form {
     background: #fff;
     .ui-form {

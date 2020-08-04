@@ -6,7 +6,7 @@
       <block-title blockTitle="文件详情"></block-title>
 
       <div class="table">
-        <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
+        <ui-table :data="fielsDetailList" style="width: 96%;margin:0 auto">
           <ui-table-column label="请选择" width="80">
             <template slot-scope="scope">
               <ui-radio
@@ -38,104 +38,12 @@ export default {
   computed: {},
   data() {
     return {
-      // 业务类型数据
-      businessTypeList: [
-        {
-          value: '1',
-          label: '全部',
-        },
-        {
-          value: '2',
-          label: '本行',
-        },
-        {
-          value: '3',
-          label: '他行',
-        },
-      ],
-      // 产品期限数据
-      proLimitList: [
-        {
-          value: '1',
-          label: '全部',
-        },
-        {
-          value: '2',
-          label: '30天以内',
-        },
-        {
-          value: '3',
-          label: '30-90天',
-        },
-        {
-          value: '4',
-          label: '91-180天',
-        },
-        {
-          value: '5',
-          label: '181-360天',
-        },
-        {
-          value: '6',
-          label: '一年以上',
-        },
-      ],
-      // 产品类型数据
-      proTypeList: [
-        {
-          value: '1',
-          label: '同业资金',
-        },
-        {
-          value: '2',
-          label: '债券业务',
-        },
-        {
-          value: '3',
-          label: '线上资金业务',
-        },
-        {
-          value: '4',
-          label: '同业投资',
-        },
-        {
-          value: '5',
-          label: '同业存单',
-        },
-        {
-          value: '6',
-          label: '票据业务',
-        },
-        {
-          value: '7',
-          label: '同业福费廷',
-        },
-        {
-          value: '8',
-          label: '团购产品',
-        },
-      ],
-      // 交易方向数据
-      tradeDirectionList: [
-        {
-          value: '1',
-          label: '全部',
-        },
-        {
-          value: '2',
-          label: '买入',
-        },
-        {
-          value: '3',
-          label: '卖出',
-        },
-      ],
       // 单选按钮
       tableRadio: '',
       // 获取选中数据
       chosedData: [],
-      // 用户信息数据
-      userInfoList: [
+      // 文件详情数据
+      fielsDetailList: [
         {
           name: '朱一龙',
           loginName: '小哥の',
@@ -177,13 +85,6 @@ export default {
     resetForm(formName) {
       console.log(3)
       this.$refs[formName].resetFields()
-    },
-    // 点击查看详情
-    goDetail(row) {
-      this.$router.push({
-        name: 'productDetail',
-        params: { detail: row },
-      })
     },
 
     // 点击下架

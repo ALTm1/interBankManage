@@ -1,6 +1,6 @@
 <template>
-  <!-- 产品标签新增页 -->
-  <div class="product-tag-add">
+  <!-- 审批菜单维护页 -->
+  <div class="menu-service">
     <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="审批菜单维护"></block-title>
@@ -120,7 +120,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.product-tag-add {
+.menu-service {
   .table {
     background: #fff;
   }

@@ -1,6 +1,6 @@
 <template>
   <!-- 联盟圈注销确认页 -->
-  <div class="user-query">
+  <div class="unionlap-cancel-conf">
     <div class="right-wrap">
       <block-title blockTitle="联盟圈管理注销确认"></block-title>
       <ui-row>
@@ -43,7 +43,7 @@
 </template>
 <script>
 export default {
-  name: 'userQuery',
+  name: 'unionlapCancelConf',
   computed: {},
   data() {
     return {
@@ -111,7 +111,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.user-query {
+.unionlap-cancel-conf {
   .form {
     background: #fff;
     .ui-form {
