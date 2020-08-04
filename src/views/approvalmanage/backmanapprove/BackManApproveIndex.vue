@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 16:12:51
- * @LastEditTime: 2020-07-31 16:49:10
+ * @LastEditTime: 2020-08-04 14:01:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\approvalmanage\backmanageapprove\BackManageApproveIndex.vue
@@ -12,10 +12,17 @@
 <template>
   <div class="wrap">
     <div class="content">
-      <ui-table :data="trainTable">
-        <ui-table-column prop="order" label="请选择" align="center" min-width="150px">
+      <BorderHeader title="后管交易审批"></BorderHeader>
+      <ui-table :data="backManApprovalTable">
+        <ui-table-column label="请选择" width="80">
           <template slot-scope="scope">
-            <ui-radio v-model="trainRadio" :label="scope.row.order"></ui-radio>
+            <ui-radio
+              v-model="backManApprovalRadio"
+              :label="scope.$index"
+              @change="getCurrentBackManApprovalRow(scope.row)"
+            >
+              <i></i>
+            </ui-radio>
           </template>
         </ui-table-column>
         <ui-table-column prop="serialNum" label="流水号" align="center" min-width="150px"></ui-table-column>
@@ -42,7 +49,7 @@
 export default {
   data() {
     return {
-      trainTable: [
+      backManApprovalTable: [
         {
           order: 1,
           serialNum: '141235888',
@@ -60,12 +67,17 @@ export default {
           tradeState: '待审批',
         },
       ],
-      trainRadio: '',
+      backManApprovalRadio: '',
+      choseBackManApprovalRow: {},
     }
   },
   methods: {
     goApprove() {
       this.$router.push('/approvalmanage/backmanapprove/backManapproverecord')
+    },
+    // 获取待审批选中行
+    getCurrentBackManApprovalRow(row) {
+      this.choseBackManApprovalRow = row
     },
   },
 }

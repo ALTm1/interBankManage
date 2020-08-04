@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:09:21
- * @LastEditTime: 2020-08-03 17:28:11
+ * @LastEditTime: 2020-08-04 13:33:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingModify.vue
@@ -10,7 +10,7 @@
 
 <template>
   <div class="wrap">
-    <BorderHeader title="详情页"></BorderHeader>
+    <BorderHeader title="培训修改录入页"></BorderHeader>
     <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
       <ui-form-item label="培训标题" prop="trainingTitle">
         <ui-input v-model="form.trainingTitle" placeholder="请输入培训标题"></ui-input>

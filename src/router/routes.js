@@ -72,6 +72,8 @@ const frameIn = [
         },
         component: _import('system/index'),
         children: [
+
+
           ...log,
           ...login,
           ...system,
@@ -80,7 +82,11 @@ const frameIn = [
           ...businessmanagement,
           ...creditmanagement,
           ...behavioranalysis,
-          ...unionlapmanagement
+          ...unionlapmanagement,
+          // 营销管理
+          ...marketingmanage,
+          // 审批管理
+          ...approvalmanage
         ]
       },
       // 系统 前端日志
@@ -114,17 +120,9 @@ const frameIn = [
         hidden: true,
         component: _import('system/function/redirect')
       },
-
-
-      // 营销管理
-      ...marketingmanage,
-
-      // 审批管理
-      ...approvalmanage
     ]
   },
   ...frameInRoutes,
-
 ]
 
 /**

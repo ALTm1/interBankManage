@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 18:52:08
- * @LastEditTime: 2020-08-03 17:22:28
+ * @LastEditTime: 2020-08-04 13:24:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingManageIndex.vue
@@ -13,7 +13,7 @@
 <template>
   <div>
     <div class="form-wrap">
-      <BorderHeader title="查询"></BorderHeader>
+      <BorderHeader title="培训管理"></BorderHeader>
       <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
         <ui-form-item label="会议标题" prop="meetingTitle">
           <ui-input v-model="form.meetingTitle" placeholder="请输入会议标题"></ui-input>

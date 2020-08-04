@@ -1,13 +1,13 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 16:03:32
- * @LastEditTime: 2020-08-03 14:04:37
+ * @LastEditTime: 2020-08-04 13:54:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\ProRecommend.vue
 --> 
 <template>
-  <div class="wrap">
+  <div class="pro-recommend-wrap">
     <div class="pro-block">
       <p class="table-title">产品1</p>
       <ui-table :data="tableData">
@@ -56,12 +56,12 @@
         </ui-table-column>-->
       </ui-table>
     </div>
-    <div class="pro-block">
+    <div class="pro-block add-pro-wrap">
       <p class="table-title">产品3</p>
       <div class="add-button" slot="reference" @click="proPopup = !proPopup">
         <span class="add-text">+添加</span>
       </div>
-      <ui-dialog title="产品列表" center :visible.sync="proPopup">
+      <ui-dialog title="产品列表" class="pro-list-dialog" center :visible.sync="proPopup">
         <ui-form class="form-block clear" ref="ruleForm" :model="form" label-width="100px">
           <ui-form-item label="产品一级分类" class="sel-row">
             <div class="float-left sel-row-left">
@@ -120,23 +120,29 @@
             <Button text="重置" backgroundColor="#9B7041"></Button>
           </div>
         </ui-form>
-        <ui-table :data="tableData" v-if="showTable">
-          <ui-table-column label="请选择" width="80">
-            <template slot-scope="scope">
-              <ui-radio v-model="rowRadio" :label="scope.$index" @change="getCurrentRow(scope.row)">
-                <i></i>
-              </ui-radio>
-            </template>
-          </ui-table-column>
-          <ui-table-column prop="proLevelOne" label="产品一级分类" align="center" min-width="100px"></ui-table-column>
-          <ui-table-column prop="proLevelTwo" label="产品二级分类" align="center" min-width="100px"></ui-table-column>
-          <ui-table-column prop="tradeDirec" label="交易方向" align="center" min-width="100px"></ui-table-column>
-          <ui-table-column prop="proName" label="产品名称" align="center" min-width="100px"></ui-table-column>
-          <ui-table-column prop="organName" label="机构全称" align="center" min-width="100px"></ui-table-column>
-          <ui-table-column prop="proRate" label="利率" align="center" min-width="100px"></ui-table-column>
-          <ui-table-column prop="timeLimit" label="期限" align="center" min-width="100px"></ui-table-column>
-          <ui-table-column prop="money" label="金额" align="center" min-width="100px"></ui-table-column>
-        </ui-table>
+        <div class="pro-list-table-wrap">
+          <ui-table :data="tableData" v-if="showTable">
+            <ui-table-column label="请选择" width="80">
+              <template slot-scope="scope">
+                <ui-radio
+                  v-model="rowRadio"
+                  :label="scope.$index"
+                  @change="getCurrentRow(scope.row)"
+                >
+                  <i></i>
+                </ui-radio>
+              </template>
+            </ui-table-column>
+            <ui-table-column prop="proLevelOne" label="产品一级分类" align="center" min-width="100px"></ui-table-column>
+            <ui-table-column prop="proLevelTwo" label="产品二级分类" align="center" min-width="100px"></ui-table-column>
+            <ui-table-column prop="tradeDirec" label="交易方向" align="center" min-width="100px"></ui-table-column>
+            <ui-table-column prop="proName" label="产品名称" align="center" min-width="100px"></ui-table-column>
+            <ui-table-column prop="organName" label="机构全称" align="center" min-width="100px"></ui-table-column>
+            <ui-table-column prop="proRate" label="利率" align="center" min-width="100px"></ui-table-column>
+            <ui-table-column prop="timeLimit" label="期限" align="center" min-width="100px"></ui-table-column>
+            <ui-table-column prop="money" label="金额" align="center" min-width="100px"></ui-table-column>
+          </ui-table>
+        </div>
         <div class="footer">
           <span class="cancel-button float-left" @click="proPopup=!proPopup">取消</span>
           <span class="confirm-button float-right" @click="proPopup=!proPopup">确认</span>
@@ -265,15 +271,25 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.pro-recommend-wrap {
+  background: #ffffff;
+}
+
 .table-title {
   font-size: 14px;
   font-family: SourceHanSansCN;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
+  padding-left: 20px;
 }
 
 .pro-block {
   margin-bottom: 20px;
+}
+
+.add-pro-wrap {
+  padding-bottom: 30px;
+  box-sizing: border-box;
 }
 
 /* 添加按钮 */
@@ -305,25 +321,25 @@ export default {
   margin: 40px 0;
 }
 
-.wrap /deep/ .ui-dialog {
+.pro-recommend-wrap /deep/ .ui-dialog {
   width: 1127px;
 }
-.wrap /deep/ .ui-input__inner {
+.pro-recommend-wrap /deep/ .ui-input__inner {
   width: 330px;
   height: 33px;
   background: rgba(255, 255, 255, 1);
   border: 2px solid rgba(231, 232, 239, 1);
   border-radius: 3px 3px 3px 3px;
 }
-.wrap /deep/ .ui-input--default {
+.pro-recommend-wrap /deep/ .ui-input--default {
   display: inline-block;
 }
-.wrap /deep/ .ui-dialog__header {
+.pro-recommend-wrap /deep/ .ui-dialog__header {
   background: rgba(245, 246, 248, 1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px 4px 0px 0px;
 }
-.wrap /deep/ .ui-dialog__title {
+.pro-recommend-wrap /deep/ .ui-dialog__title {
   font-size: 14px;
   font-family: SourceHanSansCN;
   font-weight: 400;
@@ -363,7 +379,13 @@ export default {
   font-weight: 400;
   color: rgba(255, 255, 255, 1);
 }
-.wrap /deep/ .ui-dialog--center .ui-dialog__body {
+.pro-recommend-wrap /deep/ .ui-dialog--center .ui-dialog__body {
   padding: 0px 0px;
 }
+
+
+.pro-list-table-wrap{
+  padding: 50px 0px;
+}
+
 </style>

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 15:10:07
- * @LastEditTime: 2020-08-03 09:13:01
+ * @LastEditTime: 2020-08-04 13:59:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\approvalmanage\organapprove\OrganApproveConfirm.vue
@@ -10,6 +10,7 @@
 
 <template>
   <div class="wrap">
+    <BorderHeader title="审批信息确认"></BorderHeader>
     <div class="content">
       <div class="summary-info clear">
         <HeaderItem text="认证信息"></HeaderItem>
@@ -71,7 +72,7 @@
           <DisplayItem title="拒绝原因" content="XXXXXXXXX"></DisplayItem>
         </div>
       </div>
-      <div style="textAlign: center">
+      <div class="buttons" style="paddingTop: 40px">
         <Button text="提交" backgroundColor="#CE2848" @click.native="goResult"></Button>
       </div>
     </div>
@@ -242,6 +243,9 @@ export default {
 }
 </script>
 <style lang="css" scoped>
+.wrap {
+  background: #ffffff;
+}
 .content {
   display: inline-block;
   padding: 0 50px;

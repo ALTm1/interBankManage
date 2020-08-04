@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 13:50:33
- * @LastEditTime: 2020-08-03 17:45:40
+ * @LastEditTime: 2020-08-04 13:37:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganIncreaseConfirm.vue
@@ -11,7 +11,7 @@
 
 <template>
   <div class="wrap">
-    <BorderHeader title="录入页"></BorderHeader>
+    <BorderHeader title="机构动态新增确认页"></BorderHeader>
     <div class="clear content">
       <div
         :class="[index%2==0?'float-left':'float-right']"

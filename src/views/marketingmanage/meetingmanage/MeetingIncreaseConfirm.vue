@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 15:28:41
- * @LastEditTime: 2020-08-03 16:33:29
+ * @LastEditTime: 2020-08-04 13:17:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIncreaseConfirm.vue
@@ -9,7 +9,7 @@
 
 <template>
   <div class="wrap">
-    <BorderHeader title="录入页"></BorderHeader>
+    <BorderHeader title="会议新增确认页"></BorderHeader>
     <div class="content clear">
       <div
         :class="[index%2==0?'float-left':'float-right']"

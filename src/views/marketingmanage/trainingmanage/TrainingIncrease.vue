@@ -3,37 +3,40 @@
 
 
 <template>
-  <div>
-    <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
-      <ui-form-item label="培训标题" prop="trainingTitle">
-        <ui-input v-model="form.trainingTitle" placeholder="请输入培训标题"></ui-input>
-      </ui-form-item>
-      <ui-form-item label="发布对象" prop="releaseObj">
-        <ui-select v-model="form.releaseObj" placeholder="请选择" multiple>
-          <div v-for="item in form.releaseObjList" :key="item.label">
-            <ui-option :label="item.label" :value="item.value"></ui-option>
-          </div>
-        </ui-select>
-      </ui-form-item>
-      <ui-form-item label="培训内容">
-        <ui-upload
-          class="upload-demo"
-          action="https://jsonplaceholder.typicode.com/posts/"
-          :on-preview="handlePreview"
-          :on-remove="handleRemove"
-          :before-remove="beforeRemove"
-          multiple
-          :limit="3"
-          :on-exceed="handleExceed"
-          :file-list="form.trainingContent"
-          :auto-upload="false"
-        >
-          <span class="upload-text">点击上传</span>
-        </ui-upload>
-      </ui-form-item>
-    </ui-form>
-    <div style="textAlign: center; marginTop: 100px">
-      <Button text="新增" backgroundColor="#9B7041" @click.native="submitForm('ruleForm')"></Button>
+  <div class="wrap">
+    <BorderHeader title="培训新增录入页"></BorderHeader>
+    <div class="content">
+      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
+        <ui-form-item label="培训标题" prop="trainingTitle">
+          <ui-input v-model="form.trainingTitle" placeholder="请输入培训标题"></ui-input>
+        </ui-form-item>
+        <ui-form-item label="发布对象" prop="releaseObj">
+          <ui-select v-model="form.releaseObj" placeholder="请选择" multiple>
+            <div v-for="item in form.releaseObjList" :key="item.label">
+              <ui-option :label="item.label" :value="item.value"></ui-option>
+            </div>
+          </ui-select>
+        </ui-form-item>
+        <ui-form-item label="培训内容">
+          <ui-upload
+            class="upload-demo"
+            action="https://jsonplaceholder.typicode.com/posts/"
+            :on-preview="handlePreview"
+            :on-remove="handleRemove"
+            :before-remove="beforeRemove"
+            multiple
+            :limit="3"
+            :on-exceed="handleExceed"
+            :file-list="form.trainingContent"
+            :auto-upload="false"
+          >
+            <span class="upload-text">点击上传</span>
+          </ui-upload>
+        </ui-form-item>
+      </ui-form>
+      <div class="buttons" style="paddingTop: 20px">
+        <Button text="新增" backgroundColor="#9B7041" @click.native="submitForm('ruleForm')"></Button>
+      </div>
     </div>
   </div>
 </template>
@@ -80,7 +83,7 @@ export default {
             message: '请选择发布对象',
             trigger: 'change',
           },
-        ]
+        ],
       },
     }
   },
@@ -104,7 +107,9 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$router.push('/marketingmanage/trainingmanage/trainingincreaseconfirm')
+          this.$router.push(
+            '/marketingmanage/trainingmanage/trainingincreaseconfirm'
+          )
         } else {
           return false
         }
@@ -115,8 +120,14 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.form-block {
-  width: 600px;
-  margin: 0 auto;
+.wrap {
+  background: #ffffff;
+  text-align: center;
 }
+.content {
+  display: inline-block;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
 </style>
