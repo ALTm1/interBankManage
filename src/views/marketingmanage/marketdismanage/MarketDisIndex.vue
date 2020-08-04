@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 14:07:51
- * @LastEditTime: 2020-08-03 18:09:37
+ * @LastEditTime: 2020-08-04 09:42:29
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\MarketDisIndex.vue
@@ -19,23 +19,27 @@
 
 <template>
   <div class="wrap">
-    <BorderHeader title="详情页"></BorderHeader>
-    <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
-      <ui-form-item label="营销渠道" prop="marketChannel">
-        <ui-select v-model="form.marketChannel" placeholder="请选择营销渠道">
-          <ui-option label="APP端" value="APP端"></ui-option>
-          <ui-option label="门户端" value="门户端"></ui-option>
-        </ui-select>
-      </ui-form-item>
-      <!-- 按钮 -->
-      <Button
-        @click.native="submitForm('ruleForm')"
-        text="查询"
-        backgroundColor="#CE2848"
-        margin="0px 60px 0px 0px"
-      ></Button>
-    </ui-form>
-    <div v-if="resultShow">
+    <div class="form-wrap">
+      <BorderHeader title="详情页"></BorderHeader>
+      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
+        <ui-form-item label="营销渠道" prop="marketChannel">
+          <ui-select v-model="form.marketChannel" placeholder="请选择营销渠道">
+            <ui-option label="APP端" value="APP端"></ui-option>
+            <ui-option label="门户端" value="门户端"></ui-option>
+          </ui-select>
+        </ui-form-item>
+        <!-- 按钮 -->
+        <div class="buttons" style="padding-top: 40px">
+          <Button
+            @click.native="submitForm('ruleForm')"
+            text="查询"
+            backgroundColor="#CE2848"
+            margin="0px 60px 0px 0px"
+          ></Button>
+        </div>
+      </ui-form>
+    </div>
+    <div v-if="resultShow" class="content-wrap">
       <ui-menu
         :default-active="menuActiveIndex"
         class="ui-menu-demo market-display-menu"
@@ -95,14 +99,18 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.wrap {
-  margin: 0 auto;
-  background: #ffffff;
+.form-wrap {
+  background: #fff;
 }
 .form-block {
   width: 600px;
   margin: 0 auto;
   padding: 40px;
+}
+
+.content-wrap {
+  background: #fff;
+  margin-top: 20px;
 }
 
 .market-display-menu {

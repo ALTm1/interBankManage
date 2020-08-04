@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 09:04:21
- * @LastEditTime: 2020-08-03 17:33:40
+ * @LastEditTime: 2020-08-04 09:14:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIndex.vue
@@ -82,7 +82,7 @@
           </template>
         </ui-table-column>
       </ui-table>
-      <div class="buttons" v-if="showTable">
+      <div class="buttons" style="marginTop: 40px" v-if="showTable">
         <Button text="新增" backgroundColor="#9B7041" @click.native="goMeetingIncrease"></Button>
       </div>
     </div>

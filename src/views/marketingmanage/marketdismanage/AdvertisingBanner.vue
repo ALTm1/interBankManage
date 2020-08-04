@@ -1,13 +1,13 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 15:07:58
- * @LastEditTime: 2020-07-29 15:56:26
+ * @LastEditTime: 2020-08-04 09:44:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\AdvertisingBanner.vue
 --> 
 <template>
-  <div class="wrap">
+  <div class="advertising-banner-wrap">
     <ui-upload
       list-type="picture-card"
       :file-list="bannerList"
@@ -21,7 +21,7 @@
     <ui-dialog :visible.sync="dialogVisible">
       <img width="100%" :src="dialogImageUrl" alt />
     </ui-dialog>
-    <div style="textAlign: center; marginTop: 35px">
+    <div class="buttons" style="paddingTop: 40px">
       <Button text="下一步" backgroundColor="#9B7041"></Button>
     </div>
   </div>
@@ -66,4 +66,7 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.advertising-banner-wrap{
+  padding: 0 20px;
+}
 </style>

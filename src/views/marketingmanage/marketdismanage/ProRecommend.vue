@@ -1,13 +1,13 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 16:03:32
- * @LastEditTime: 2020-08-03 14:04:37
+ * @LastEditTime: 2020-08-04 09:53:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\ProRecommend.vue
 --> 
 <template>
-  <div class="wrap">
+  <div class="pro-recommend-wrap">
     <div class="pro-block">
       <p class="table-title">产品1</p>
       <ui-table :data="tableData">
@@ -56,7 +56,7 @@
         </ui-table-column>-->
       </ui-table>
     </div>
-    <div class="pro-block">
+    <div class="pro-block add-pro-wrap">
       <p class="table-title">产品3</p>
       <div class="add-button" slot="reference" @click="proPopup = !proPopup">
         <span class="add-text">+添加</span>
@@ -265,15 +265,25 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.pro-recommend-wrap {
+  background: #ffffff;
+}
+
 .table-title {
   font-size: 14px;
   font-family: SourceHanSansCN;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
+  padding-left: 20px;
 }
 
 .pro-block {
   margin-bottom: 20px;
+}
+
+.add-pro-wrap {
+  padding-bottom: 30px;
+  box-sizing: border-box;
 }
 
 /* 添加按钮 */

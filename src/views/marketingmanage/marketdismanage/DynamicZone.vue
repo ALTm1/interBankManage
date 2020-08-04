@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-30 19:52:15
- * @LastEditTime: 2020-08-03 14:13:36
+ * @LastEditTime: 2020-08-04 09:56:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\DynamicZone.vue
@@ -83,13 +83,7 @@
               </ui-radio>
             </template>
           </ui-table-column>
-          <ui-table-column label="请选择" width="80">
-            <template slot-scope="scope">
-              <ui-radio v-model="rowRadio" :label="scope.$index" @change="getCurrentRow(scope.row)">
-                <i></i>
-              </ui-radio>
-            </template>
-          </ui-table-column>
+
           <ui-table-column prop="organDynamicTitle" label="机构动态标题" align="center" min-width="150px"></ui-table-column>
           <ui-table-column prop="releaseDate" label="发布时间" align="center" min-width="150px"></ui-table-column>
         </ui-table>
@@ -100,7 +94,7 @@
       </div>
     </ui-dialog>
 
-    <div style="text-align: center">
+    <div class="buttons" style="paddingTop: 40px">
       <Button text="提交" backgroundColor="#9B7041"></Button>
     </div>
   </div>
