@@ -3,7 +3,6 @@
   <div class="unionlap-del-conf">
     <div class="right-wrap">
       <block-title blockTitle="联盟圈管理新增结果"></block-title>
-
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
