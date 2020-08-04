@@ -1,6 +1,6 @@
 <template>
   <!-- 联盟圈查询页 -->
-  <div class="user-query">
+  <div class="unionlap-detail">
     <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="联盟圈管理详情"></block-title>
@@ -73,7 +73,7 @@
 </template>
 <script>
 export default {
-  name: 'userQuery',
+  name: 'unionlapDetail',
   computed: {},
   data() {
     return {
@@ -164,7 +164,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.user-query {
+.unionlap-detail {
   .form {
     background: #fff;
     .ui-form {

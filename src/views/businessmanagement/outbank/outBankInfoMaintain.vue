@@ -1,7 +1,6 @@
 <template>
   <!-- 行外机构信息维护页 -->
   <div class="out-bank">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="行外机构信息维护"></block-title>
       <ui-row>
@@ -150,7 +149,6 @@ export default {
 <style lang="scss">
 .out-bank {
   .right-wrap {
-    background: #fff;
     .form {
       background: #fff;
       .ui-form {

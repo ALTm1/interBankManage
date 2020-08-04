@@ -1,11 +1,8 @@
 <template>
-  <!-- 联盟圈查询页 -->
-  <div class="user-query">
-    <!-- label-width="150px" -->
+  <!-- 联盟圈删除确认页 -->
+  <div class="unionlap-del-conf">
     <div class="right-wrap">
-      <ui-row class="handle-title">
-        <ui-col :span="12">联盟圈管理修改</ui-col>
-      </ui-row>
+      <block-title blockTitle="联盟圈管理新增结果"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -46,7 +43,7 @@
 </template>
 <script>
 export default {
-  name: 'userQuery',
+  name: 'unionlapDelConf',
   computed: {},
   data() {
     return {
@@ -114,7 +111,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.user-query {
+.unionlap-del-conf {
   .form {
     background: #fff;
     .ui-form {

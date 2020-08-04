@@ -1,6 +1,6 @@
 <template>
   <!-- 文件删除确认页 -->
-  <div class="files-Conf">
+  <div class="files-del-conf">
     <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="文件删除确认"></block-title>
@@ -64,7 +64,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.files-Conf {
+.files-del-conf {
   .form {
     background: #fff;
     .ui-form {

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 15:07:58
- * @LastEditTime: 2020-08-04 09:44:56
+ * @LastEditTime: 2020-08-04 17:29:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\AdvertisingBanner.vue
@@ -60,13 +60,15 @@ export default {
     },
     handlePreview(file) {
       console.log(file)
+      this.dialogImageUrl = file.url
+      this.dialogVisible = true
     },
   },
 }
 </script>
 
 <style lang="css" scoped>
-.advertising-banner-wrap{
+.advertising-banner-wrap {
   padding: 0 20px;
 }
 </style>

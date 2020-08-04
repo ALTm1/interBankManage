@@ -10,12 +10,12 @@
             <ui-row>
               <ui-col>
                 <ui-form-item label="联盟圈名称">
-                  <ui-input-business v-model="form.organName" placeholder="请输入联盟圈名称"></ui-input-business>
+                  <ui-input-business v-model="form.unionlapName" placeholder="请输入联盟圈名称"></ui-input-business>
                 </ui-form-item>
               </ui-col>
             </ui-row>
             <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="goBack">重置</ui-button>
+              <ui-button type="primary" class="back-btn" @click="reset">重置</ui-button>
               <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button>
             </ui-row>
           </ui-form>
@@ -76,8 +76,7 @@ export default {
     return {
       // 表单的值
       form: {
-        organName: '',
-        userName: '',
+        unionlapName: '',
       },
       // 单选按钮
       tableRadio: '',
@@ -121,6 +120,9 @@ export default {
     // 返回按钮
     goBack() {
       this.$router.go(-1)
+    },
+    reset() {
+      this.form.unionlapName = ''
     },
     // 点击查询
     clickQuery() {},

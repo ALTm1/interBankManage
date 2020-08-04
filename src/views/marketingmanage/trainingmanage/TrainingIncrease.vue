@@ -34,7 +34,7 @@
           </ui-upload>
         </ui-form-item>
       </ui-form>
-      <div class="buttons" style="paddingTop: 20px">
+      <div class="buttons">
         <Button text="新增" backgroundColor="#9B7041" @click.native="submitForm('ruleForm')"></Button>
       </div>
     </div>
@@ -126,8 +126,7 @@ export default {
 }
 .content {
   display: inline-block;
-  padding: 40px;
+  padding: 40px 0px 0px;
   box-sizing: border-box;
 }
-
 </style>

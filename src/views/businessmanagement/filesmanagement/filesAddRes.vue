@@ -1,31 +1,14 @@
 <template>
   <!-- 文件新增结果 -->
-  <div class="recording-res">
+  <div class="files-add-res">
     <div class="right-wrap">
       <block-title blockTitle="文件新增结果"></block-title>
-
-      <div class="result">
-        <div>
-          <img src alt class="result-img" />
-          <div class="result-status">交易成功</div>
-          <div class="batch">交易流水号:33445566888</div>
-        </div>
-        <!-- <div class="result-status">信息已提交，请等待审核</div> -->
-        <ui-row class="btn">
-          <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
-          <ui-button type="primary" class="continue-next" @click="clickFinish">完成</ui-button>
-        </ui-row>
-      </div>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'recordingRes',
-  computed: {},
-  data() {
-    return {}
-  },
+  name: 'filesAddRes',
   methods: {
     // 点击完成
     clickFinish() {

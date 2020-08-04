@@ -1,6 +1,6 @@
 <template>
   <!-- 部门维护页 -->
-  <div class="product-tag-add">
+  <div class="section-service">
     <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="部门维护"></block-title>
@@ -102,11 +102,8 @@ export default {
 }
 </script>
 <style lang="scss">
-.product-tag-add {
-  .add-wrap {
-    width: 1137px;
-    margin: 0 auto;
-
+.section-service {
+  .right-wrap {
     .table {
       background: #fff;
     }

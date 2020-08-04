@@ -80,6 +80,13 @@
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
 }
+/* 表格带序号的颜色 */
+.serial-number{
+  font-size:14px;
+  font-family:SourceHanSansCN;
+  font-weight:400;
+  color:rgba(155,112,65,1);
+}
 
 /* 确认页不可编辑的条目类名 */
 
@@ -142,17 +149,11 @@
 
 /* 表格含操作的样式 */
 
-.operator-button {
+.operator1-button {
   font-size:12px;
   font-family:SourceHanSansCN;
   font-weight:bold;
   color:rgba(69,159,221,1);
-  text-decoration: underline;
-  /* font-size: 14px;
-  font-family: SimHei;
-  font-weight: 400;
- 
-  color: rgba(5, 141, 215, 1); */
 }
 
 /* 表格 */
@@ -192,53 +193,14 @@
 /*右边主题  */
 
 .right-wrap {
-  width: calc(100% - 24px);
-  /* width: 1137px; */
-  margin: 0 auto;
+  /* width: calc(100% - 24px);
+  margin: 0 auto; */
+  padding-bottom: 40px;
 }
-
-/* 结果页 */
-
-.result {
-  padding: 79px 0 100px 0;
-  background: #fff;
-}
-
-.waiting {
-  text-align: center;
-}
-
-.result-img {
-  display: block;
-  width: 257px;
-  height: 158px;
-  margin: 0 auto;
-  background: orangered;
-}
-
-.result-status, .batch {
-  text-align: center;
-  font-size: 16px;
-  font-family: SimHei;
-  font-weight: bold;
-  color: rgba(51, 51, 51, 1);
-}
-
-.result-status {
-  font-size: 16px;
-  margin: 20px 0;
-}
-
-.batch {
-  font-size: 12px;
-  margin-bottom: 49px;
-}
-
 /* table表格 */
 
 .table-wrap {
   margin-top: 20px;
-  padding-bottom: 30px;
   background: #ffffff;
 }
 
@@ -284,5 +246,5 @@
 
 .buttons {
   text-align: center;
-  padding-bottom: 50px;
+  padding: 50px 0px;
 }

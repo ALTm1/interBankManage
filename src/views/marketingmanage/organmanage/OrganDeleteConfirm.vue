@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 13:36:30
- * @LastEditTime: 2020-08-04 13:41:53
+ * @LastEditTime: 2020-08-04 15:44:19
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganDeleteConfirm.vue
@@ -68,6 +68,6 @@ export default {
   background: #ffffff;
 }
 .content {
-  padding: 40px;
+  padding: 40px 0px 0px;
 }
 </style>

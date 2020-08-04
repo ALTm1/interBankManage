@@ -1,6 +1,6 @@
 <template>
   <!-- 机构注销结果页 -->
-  <div class="recording-res">
+  <div class="organ-cancel-res">
     <div class="right-wrap">
       <block-title blockTitle="机构注销结果"></block-title>
 
@@ -18,7 +18,7 @@
 </template>
 <script>
 export default {
-  name: 'recordingRes',
+  name: 'organCancelRes',
   computed: {},
   data() {
     return {}

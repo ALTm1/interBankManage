@@ -261,11 +261,11 @@ export default {
       this.$router.push('/index/role')
     },
     // 密码重置
-    reset(){
+    reset() {
       this.$router.push('/index/loginreset')
     },
     //日志管理
-    log(){
+    log() {
       this.$router.push('/index/log')
     },
     // 个人票务
@@ -456,7 +456,7 @@ export default {
 .menu-right {
   width: calc(100% - 196px);
   min-height: 92vh;
-  padding: 20px 20px;
+  padding: 20px 12px;
   box-sizing: border-box;
   background: rgba(239, 240, 244, 1);
 }

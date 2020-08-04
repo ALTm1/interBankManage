@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 13:30:32
- * @LastEditTime: 2020-08-04 13:41:11
+ * @LastEditTime: 2020-08-04 15:43:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganModifyConfirm.vue
@@ -56,10 +56,6 @@ export default {
   background: #ffffff;
 }
 .content {
-  padding: 40px;
-}
-.buttons {
-  text-align: center;
-  padding-bottom: 50px;
+  padding: 40px 0px 0px;
 }
 </style>

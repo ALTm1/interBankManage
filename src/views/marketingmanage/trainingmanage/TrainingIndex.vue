@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 18:52:08
- * @LastEditTime: 2020-08-04 13:24:45
+ * @LastEditTime: 2020-08-04 15:18:55
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingManageIndex.vue
@@ -80,7 +80,7 @@
           </template>
         </ui-table-column>
       </ui-table>
-      <div class="buttons" style="paddingTop: 40px" v-if="showTable">
+      <div class="buttons" v-if="showTable">
         <Button text="新增" backgroundColor="#9B7041" @click.native="goTrainingIncrease"></Button>
       </div>
     </div>

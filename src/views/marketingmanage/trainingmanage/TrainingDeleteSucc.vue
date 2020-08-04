@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:32:37
- * @LastEditTime: 2020-08-03 17:24:00
+ * @LastEditTime: 2020-08-04 15:28:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingDeleteSucc.vue
@@ -70,8 +70,5 @@ export default {
   font-family: SimHei;
   font-weight: bold;
   margin-top: 17px;
-}
-.buttons {
-  margin-top: 40px;
 }
 </style>

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 18:20:49
- * @LastEditTime: 2020-08-03 16:36:47
+ * @LastEditTime: 2020-08-04 15:10:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MettingDeleteSucc.vue
@@ -64,8 +64,5 @@ export default {
   font-family: SimHei;
   font-weight: bold;
   margin-top: 17px;
-}
-.buttons {
-  padding: 50px;
 }
 </style>

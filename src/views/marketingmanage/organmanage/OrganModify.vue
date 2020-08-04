@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 13:20:59
- * @LastEditTime: 2020-08-04 13:40:15
+ * @LastEditTime: 2020-08-04 15:43:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganModify.vue
@@ -95,7 +95,7 @@ export default {
 .form-block {
   width: 600px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 40px 0px 0px;
 }
 .operator-button {
   font-size: 14px;
@@ -103,9 +103,5 @@ export default {
   font-weight: 400;
   text-decoration: underline;
   color: rgba(5, 141, 215, 1);
-}
-.buttons {
-  text-align: center;
-  padding-bottom: 50px;
 }
 </style>

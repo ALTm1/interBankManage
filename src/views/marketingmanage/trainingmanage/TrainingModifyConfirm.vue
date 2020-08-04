@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:16:02
- * @LastEditTime: 2020-08-04 13:34:41
+ * @LastEditTime: 2020-08-04 15:37:33
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingModifyConfirm.vue
@@ -60,6 +60,6 @@ export default {
   background: #ffffff;
 }
 .content {
-  padding: 40px;
+  padding: 40px 40px 0px;
 }
 </style>

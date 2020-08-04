@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 15:28:41
- * @LastEditTime: 2020-08-04 13:17:13
+ * @LastEditTime: 2020-08-04 15:09:53
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIncreaseConfirm.vue
@@ -19,7 +19,7 @@
         <DisplayItem :title="item.title" :content="item.content"></DisplayItem>
       </div>
     </div>
-    <div style="textAlign: center; paddingBottom: 50px">
+    <div class="buttons">
       <Button text="确认" backgroundColor="#CE2848" @click.native="goResult()"></Button>
     </div>
   </div>
