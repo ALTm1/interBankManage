@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 13:46:44
- * @LastEditTime: 2020-08-04 13:37:05
+ * @LastEditTime: 2020-08-04 15:40:50
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganIncrease.vue
@@ -91,7 +91,7 @@ export default {
 /* form表单 */
 .form-block {
   width: 600px;
-  padding: 50px;
+  padding: 40px 0px 0px;
   margin: 0 auto;
 }
 </style>

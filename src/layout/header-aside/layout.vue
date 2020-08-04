@@ -427,7 +427,7 @@ export default {
 .menu-right {
   width: calc(100% - 196px);
   min-height: 92vh;
-  padding: 20px 20px;
+  padding: 20px 12px;
   box-sizing: border-box;
   background: rgba(239, 240, 244, 1);
 }

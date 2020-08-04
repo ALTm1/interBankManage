@@ -203,7 +203,7 @@ export default {
   background: #ffffff;
 }
 .form-block {
-  padding: 40px;
+  padding: 40px 40px 0px;
   box-sizing: border-box;
 }
 .table-wrap {

@@ -69,12 +69,7 @@
     </ui-form>
     <!-- 按钮 -->
     <div class="buttons">
-      <Button
-        @click.native="submitForm('ruleForm')"
-        text="修改"
-        backgroundColor="#CE2848"
-        margin="0px 60px 0px 0px"
-      ></Button>
+      <Button @click.native="submitForm('ruleForm')" text="修改" backgroundColor="#CE2848"></Button>
     </div>
   </div>
 </template>
@@ -175,7 +170,7 @@ export default {
   background: #ffffff;
 }
 .form-block {
-  padding: 50px;
+  padding: 50px 0px 0px;
 }
 .operator-button {
   font-size: 14px;
@@ -184,8 +179,5 @@ export default {
   text-decoration: underline;
   color: rgba(5, 141, 215, 1);
 }
-.buttons {
-  text-align: center;
-  padding-bottom: 50px;
-}
+
 </style>

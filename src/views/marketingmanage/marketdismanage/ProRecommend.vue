@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 16:03:32
- * @LastEditTime: 2020-08-04 13:54:49
+ * @LastEditTime: 2020-08-04 16:58:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\ProRecommend.vue
@@ -44,16 +44,6 @@
         <ui-table-column prop="proRate" label="利率" align="center" min-width="100px"></ui-table-column>
         <ui-table-column prop="timeLimit" label="期限" align="center" min-width="100px"></ui-table-column>
         <ui-table-column prop="money" label="金额" align="center" min-width="100px"></ui-table-column>
-        <!-- <ui-table-column label="操作" align="center" min-width="200px">
-          <template slot-scope="scope">
-            <ui-button
-              class="operator-button"
-              @click="goModify(scope.row)"
-              type="text"
-              size="small"
-            >修改</ui-button>
-          </template>
-        </ui-table-column>-->
       </ui-table>
     </div>
     <div class="pro-block add-pro-wrap">
@@ -62,8 +52,14 @@
         <span class="add-text">+添加</span>
       </div>
       <ui-dialog title="产品列表" class="pro-list-dialog" center :visible.sync="proPopup">
-        <ui-form class="form-block clear" ref="ruleForm" :model="form" label-width="100px">
-          <ui-form-item label="产品一级分类" class="sel-row">
+        <ui-form
+          class="form-block clear"
+          ref="ruleForm"
+          :model="form"
+          :rules="rules"
+          label-width="120px"
+        >
+          <ui-form-item label="产品一级分类" class="sel-row" prop="proLevelOne">
             <div class="float-left sel-row-left">
               <ui-select v-model="form.proLevelOne" placeholder="请选择" multiple>
                 <div v-for="item in form.proLevelOneList" :key="item.label">
@@ -72,7 +68,7 @@
               </ui-select>
             </div>
           </ui-form-item>
-          <ui-form-item label="产品二级分类" class="sel-row">
+          <ui-form-item label="产品二级分类" class="sel-row" prop="proLevelTwo">
             <div class="float-right">
               <ui-select v-model="form.proLevelTwo" placeholder="请选择" multiple>
                 <div v-for="item in form.proLevelTwoList" :key="item.label">
@@ -81,7 +77,7 @@
               </ui-select>
             </div>
           </ui-form-item>
-          <ui-form-item label="交易方向" class="sel-row">
+          <ui-form-item label="交易方向" class="sel-row" prop="tradeDirec">
             <div class="float-left sel-row-left">
               <ui-select v-model="form.tradeDirec" placeholder="请选择" multiple>
                 <div v-for="item in form.tradeDirecList" :key="item.label">
@@ -90,7 +86,7 @@
               </ui-select>
             </div>
           </ui-form-item>
-          <ui-form-item label="产品期限" class="sel-row">
+          <ui-form-item label="产品期限" class="sel-row" prop="expires">
             <div class="float-right">
               <ui-select v-model="form.expires" placeholder="请选择" multiple>
                 <div v-for="item in form.expiresList" :key="item.label">
@@ -99,12 +95,12 @@
               </ui-select>
             </div>
           </ui-form-item>
-          <ui-form-item label="最小利率" class="sel-row">
+          <ui-form-item label="最小利率" class="sel-row" prop="minRate">
             <div class="float-left sel-row-left">
               <ui-input v-model="form.minRate" placeholder="请输入最小利率值"></ui-input>
             </div>
           </ui-form-item>
-          <ui-form-item label="最大利率" class="sel-row">
+          <ui-form-item label="最大利率" class="sel-row" prop="maxRate">
             <div class="float-right">
               <ui-input v-model="form.maxRate" placeholder="请输入最大利率值"></ui-input>
             </div>
@@ -115,13 +111,13 @@
               text="查询"
               backgroundColor="#CE2848"
               marginRight="100px"
-              @click.native="showTable=!showTable"
+              @click.native="showProList('ruleForm')"
             ></Button>
-            <Button text="重置" backgroundColor="#9B7041"></Button>
+            <Button text="重置" backgroundColor="#9B7041" @click.native="resetForm('ruleForm')"></Button>
           </div>
         </ui-form>
-        <div class="pro-list-table-wrap">
-          <ui-table :data="tableData" v-if="showTable">
+        <div class="pro-list-table-wrap" v-if="showTable">
+          <ui-table :data="tableData">
             <ui-table-column label="请选择" width="80">
               <template slot-scope="scope">
                 <ui-radio
@@ -226,6 +222,22 @@ export default {
         minRate: '',
         maxRate: '',
       },
+      rules: {
+        proLevelOne: [{ required: true, message: '请选择', trigger: 'change' }],
+        proLevelTwo: [{ required: true, message: '请选择', trigger: 'change' }],
+        tradeDirec: [{ required: true, message: '请选择', trigger: 'change' }],
+        expires: [{ required: true, message: '请选择', trigger: 'blur' }],
+        minRate: [
+          { required: true, message: '请输入最小利率', trigger: 'blur' },
+        ],
+        maxRate: [
+          {
+            required: true,
+            message: '请输入最大利率',
+            trigger: 'blur',
+          },
+        ],
+      },
       showTable: false,
       rowRadio: '',
       tableData: [
@@ -265,6 +277,20 @@ export default {
     // 获取选中行
     getCurrentRow(row) {
       this.choseRow = row
+    },
+    // 产品查询结果
+    showProList(formName) {
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          this.showTable = true
+        } else {
+          this.showTable = false
+        }
+      })
+    },
+    // 重置
+    resetForm(formName) {
+      this.$refs[formName].resetFields()
     },
   },
 }
@@ -383,9 +409,7 @@ export default {
   padding: 0px 0px;
 }
 
-
-.pro-list-table-wrap{
+.pro-list-table-wrap {
   padding: 50px 0px;
 }
-
 </style>

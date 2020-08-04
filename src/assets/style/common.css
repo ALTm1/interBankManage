@@ -238,7 +238,6 @@
 
 .table-wrap {
   margin-top: 20px;
-  padding-bottom: 30px;
   background: #ffffff;
 }
 
@@ -284,5 +283,5 @@
 
 .buttons {
   text-align: center;
-  padding-bottom: 50px;
+  padding: 50px 0px;
 }

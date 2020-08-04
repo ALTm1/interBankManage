@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:09:21
- * @LastEditTime: 2020-08-04 13:33:53
+ * @LastEditTime: 2020-08-04 15:34:23
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingModify.vue
@@ -132,7 +132,7 @@ export default {
 .form-block {
   width: 600px;
   margin: 0 auto;
-  padding: 40px;
+  padding: 40px 0px 0px;
   box-sizing: border-box;
 }
 </style>
