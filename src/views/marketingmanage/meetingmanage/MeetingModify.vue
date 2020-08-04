@@ -3,7 +3,7 @@
 
 <template>
   <div class="wrap">
-    <BorderHeader title="详情页"></BorderHeader>
+    <BorderHeader title="会议修改录入页"></BorderHeader>
     <ui-form
       class="form-block clear"
       ref="ruleForm"

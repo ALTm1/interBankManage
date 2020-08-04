@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 17:40:25
- * @LastEditTime: 2020-08-03 17:31:14
+ * @LastEditTime: 2020-08-04 13:23:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingDelete.vue
@@ -9,7 +9,7 @@
 
 <template>
   <div class="wrap">
-    <BorderHeader title="详情页"></BorderHeader>
+    <BorderHeader title="会议删除确认页"></BorderHeader>
     <div class="clear content">
       <div
         :class="[index%2==0?'float-left':'float-right']"

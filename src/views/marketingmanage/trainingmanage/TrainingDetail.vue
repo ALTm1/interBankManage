@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:19:30
- * @LastEditTime: 2020-08-03 17:25:00
+ * @LastEditTime: 2020-08-04 13:32:57
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingDetail.vue
@@ -9,8 +9,7 @@
 
 <template>
   <div class="wrap">
-    <BorderHeader title="详情页"></BorderHeader>
-
+    <BorderHeader title="培训详情"></BorderHeader>
     <div class="clear content">
       <div
         :class="[index%2==0?'float-left':'float-right']"

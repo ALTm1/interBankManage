@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 11:14:20
- * @LastEditTime: 2020-08-03 17:41:53
+ * @LastEditTime: 2020-08-04 13:17:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Ed
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetindIncrease.vue
@@ -11,8 +11,14 @@
 <template>
   <div class="wrap">
     <div class="form-wrap">
-      <BorderHeader title="录入页"></BorderHeader>
-      <ui-form class="form-block clear" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
+      <BorderHeader title="会议新增录入页"></BorderHeader>
+      <ui-form
+        class="form-block clear"
+        ref="ruleForm"
+        :model="form"
+        :rules="rules"
+        label-width="100px"
+      >
         <div class="float-left">
           <ui-form-item label="发布格式" prop="releaseFormat">
             <ui-select v-model="form.releaseFormat" placeholder="请选择">
