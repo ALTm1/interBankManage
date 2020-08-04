@@ -129,7 +129,7 @@ export default {
     .ui-form {
       width: 50%;
       padding: 0;
-      margin: 82px auto 47px;
+      margin: 88px auto 47px;
     }
   }
   .table {
