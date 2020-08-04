@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:51:31
- * @LastEditTime: 2020-08-03 17:39:23
+ * @LastEditTime: 2020-08-04 13:36:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganIndex.vue
@@ -12,7 +12,7 @@
 <template>
   <div>
     <div class="form-wrap">
-      <BorderHeader title="会议管理查询"></BorderHeader>
+      <BorderHeader title="机构动态管理"></BorderHeader>
       <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="120px">
         <ui-form-item label="机构动态标题" prop="organTitle">
           <ui-input v-model="form.organTitle" placeholder="请输入机构动态标题"></ui-input>
@@ -48,7 +48,7 @@
     </div>
     <div class="table-wrap" v-if="showTable">
       <BorderHeader title="查询结果"></BorderHeader>
-      <ui-table :data="tableData" stripe v-if="showTable">
+      <ui-table :data="tableData" v-if="showTable">
         <ui-table-column prop="order" label="序号" align="center" min-width="100px"></ui-table-column>
         <ui-table-column prop="organTitle" label="会议标题" align="center" min-width="200px"></ui-table-column>
         <ui-table-column prop="releaseTime" label="发布时间" align="center" min-width="100px"></ui-table-column>

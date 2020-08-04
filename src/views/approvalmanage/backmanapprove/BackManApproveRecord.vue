@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 16:43:54
- * @LastEditTime: 2020-07-31 18:29:37
+ * @LastEditTime: 2020-08-04 14:01:56
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\approvalmanage\backmanapprove\BackManApproveRecord.vue
@@ -10,6 +10,7 @@
 
 <template>
   <div class="wrap">
+    <BorderHeader title="审批信息录入"></BorderHeader>
     <div class="content">
       <div class="summary-info clear">
         <HeaderItem text="审批信息"></HeaderItem>
@@ -47,7 +48,7 @@
           </div>
         </div>
       </div>
-      <div style="textAlign: center">
+      <div class="buttons" style="paddingTop: 40px">
         <Button text="提交" backgroundColor="#CE2848" @click.native="goConfirm"></Button>
       </div>
     </div>
@@ -141,6 +142,9 @@ export default {
 }
 </script>
 <style lang="css" scoped>
+.wrap {
+  background: #ffffff;
+}
 /deep/ .ui-input__inner {
   width: 330px;
 }

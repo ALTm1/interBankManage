@@ -1,13 +1,14 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 13:17:05
- * @LastEditTime: 2020-07-31 15:50:18
+ * @LastEditTime: 2020-08-04 13:59:06
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\approvalmanage\accreditedinstitution\AccreditedInstitutionRecord.vue
 --> 
 <template>
   <div class="wrap">
+    <BorderHeader title="审批信息录入"></BorderHeader>
     <div class="content">
       <div class="summary-info clear">
         <HeaderItem text="认证信息"></HeaderItem>
@@ -72,7 +73,7 @@
           </div>
         </div>
       </div>
-      <div style="textAlign: center">
+      <div class="buttons" style="paddingTop: 40px">
         <Button text="提交" backgroundColor="#CE2848" @click.native="goConfirm"></Button>
       </div>
     </div>
@@ -243,6 +244,10 @@ export default {
 }
 </script>
 <style lang="css" scoped>
+.wrap {
+  background: #ffffff;
+}
+
 .content {
   display: inline-block;
   padding: 0 50px;

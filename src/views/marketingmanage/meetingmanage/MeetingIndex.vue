@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 09:04:21
- * @LastEditTime: 2020-08-04 09:14:17
+ * @LastEditTime: 2020-08-04 13:18:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIndex.vue
@@ -11,7 +11,7 @@
 <template>
   <div class="wrap">
     <div class="form-wrap">
-      <BorderHeader title="会议管理查询"></BorderHeader>
+      <BorderHeader title="会议管理"></BorderHeader>
       <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
         <ui-form-item label="会议标题" prop="meetingTitle">
           <ui-input v-model="form.meetingTitle" placeholder="请输入会议标题"></ui-input>

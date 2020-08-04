@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 09:57:39
- * @LastEditTime: 2020-08-03 17:21:30
+ * @LastEditTime: 2020-08-04 13:31:38
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingIncreaseConfirm.vue
@@ -10,7 +10,7 @@
 
 <template>
   <div class="wrap">
-    <BorderHeader title="查询"></BorderHeader>
+    <BorderHeader title="培训新增确认页"></BorderHeader>
     <div class="clear content">
       <div
         :class="[index%2==0?'float-left':'float-right']"
@@ -58,7 +58,7 @@ export default {
 .wrap {
   background: #ffffff;
 }
-.content{
+.content {
   padding: 40px;
 }
 </style>

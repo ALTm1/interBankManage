@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 14:07:51
- * @LastEditTime: 2020-08-04 09:42:29
+ * @LastEditTime: 2020-08-04 13:42:46
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\MarketDisIndex.vue
@@ -20,7 +20,7 @@
 <template>
   <div class="wrap">
     <div class="form-wrap">
-      <BorderHeader title="详情页"></BorderHeader>
+      <BorderHeader title="营销展示管理"></BorderHeader>
       <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
         <ui-form-item label="营销渠道" prop="marketChannel">
           <ui-select v-model="form.marketChannel" placeholder="请选择营销渠道">

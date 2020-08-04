@@ -1,24 +1,9 @@
-<!--
- * @Author: your name
- * @Date: 2020-07-31 18:13:21
- * @LastEditTime: 2020-07-31 18:29:04
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \interBankManage\src\views\approvalmanage\approvalrecord\ApprovalRecordDetail.vue
---> 
 
-<!--
- * @Author: your name
- * @Date: 2020-07-31 16:57:07
- * @LastEditTime: 2020-07-31 17:05:11
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \interBankManage\src\views\approvalmanage\backmanapprove\BackManApproveSucc.vue
---> 
 
 
 <template>
   <div class="wrap">
+    <BorderHeader title="审批记录详情"></BorderHeader>
     <div class="content">
       <div class="summary-info clear">
         <HeaderItem text="审批信息"></HeaderItem>
@@ -53,8 +38,8 @@
           <DisplayItem title="拒绝原因" content="XXXXXXXXX"></DisplayItem>
         </div>
       </div>
-      <div style="textAlign: center">
-        <Button text="确认" backgroundColor="#CE2848" @click.native="returnLast()"></Button>
+      <div class="buttons" style="paddingTop: 40px"> 
+        <Button text="返回" backgroundColor="#9B7041" @click.native="returnLast()"></Button>
       </div>
     </div>
   </div>
@@ -145,6 +130,9 @@ export default {
 }
 </script>
 <style lang="css" scoped>
+.wrap {
+  background: #ffffff;
+}
 /deep/ .ui-input__inner {
   width: 330px;
 }

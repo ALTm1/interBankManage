@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 15:58:58
- * @LastEditTime: 2020-07-31 17:07:21
+ * @LastEditTime: 2020-08-04 14:00:12
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\approvalmanage\organapprove\OrganApproveSucc.vue
@@ -11,16 +11,19 @@
 
 <template>
   <div class="wrap">
-    <img class="succ-logo" :src="succLogo" alt="succLogo" />
-    <div class="succ-tips-one">
-      <span>交易已提交,请等待审核</span>
-    </div>
-    <div class="succ-tips-two">
-      <span>交易流水号：124122331434</span>
-    </div>
-    <div class="buttons">
-      <Button text="完成" backgroundColor="#CE2848" marginRight="40px" @click.native="returnLast()"></Button>
-      <Button text="返回" backgroundColor="#9B7041" @click.native="returnLast()"></Button>
+    <BorderHeader title="结果页"></BorderHeader>
+    <div>
+      <img class="succ-logo" :src="succLogo" alt="succLogo" />
+      <div class="succ-tips-one">
+        <span>交易已提交,请等待审核</span>
+      </div>
+      <div class="succ-tips-two">
+        <span>交易流水号：124122331434</span>
+      </div>
+      <div class="buttons">
+        <Button text="完成" backgroundColor="#CE2848" marginRight="40px" @click.native="returnLast()"></Button>
+        <Button text="返回" backgroundColor="#9B7041" @click.native="returnLast()"></Button>
+      </div>
     </div>
   </div>
 </template>
@@ -34,7 +37,7 @@ export default {
   },
   methods: {
     returnLast() {
-      this.$router.push('/approvalmanage/backmanapprove/backmanapproveindex')
+      this.$router.push('/approvalmanage/organapprove/organapproveindex')
     },
   },
 }
@@ -42,8 +45,7 @@ export default {
 
 <style lang="css" scoped>
 .wrap {
-  width: 600px;
-  margin: 0 auto;
+  background: #ffffff;
   text-align: center;
 }
 .succ-logo {
