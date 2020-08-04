@@ -1,7 +1,6 @@
 <template>
   <!-- 用户查询页 -->
   <div class="user-query">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="用户查询"></block-title>
 
@@ -94,9 +93,6 @@
           <ui-button type="primary" class="continue-next" @click="clickConfirm">确 定</ui-button>
         </span>
       </ui-dialog>
-      <!-- <ui-row class="btn btnbg">
-        <ui-button type="primary" class="back-btn single-btn" @click="goAdd">新增</ui-button>
-      </ui-row>-->
     </div>
   </div>
 </template>

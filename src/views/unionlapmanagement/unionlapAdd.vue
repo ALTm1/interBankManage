@@ -1,6 +1,6 @@
 <template>
   <!-- 联盟圈新增页 -->
-  <div class="user-query">
+  <div class="unionlap-add">
     <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="联盟圈管理新增"></block-title>
@@ -12,9 +12,6 @@
                 <ui-form-item label="联盟圈名称">
                   <ui-input-business v-model="form.unionlapName" placeholder="请输入联盟圈名称"></ui-input-business>
                 </ui-form-item>
-                <!-- <ui-form-item label="用户姓名">
-                  <ui-input-business v-model="form.userName" placeholder="请输入用户姓名"></ui-input-business>
-                </ui-form-item>-->
               </ui-col>
             </ui-row>
             <ui-row class="btn">
@@ -41,21 +38,9 @@
           <ui-table-column prop="name" label="机构名称"></ui-table-column>
           <ui-table-column prop="loginName" label="圈内共享受用信材料">
             <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >是</ui-radio>
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >否</ui-radio>
+              <ui-checkbox label="是" v-model="scope.checked"></ui-checkbox>
+              <ui-checkbox label="否" v-model="scope.noChecked"></ui-checkbox>
             </template>
-            <ui-checkbox-group v-model="checkList">
-              <!-- <ui-checkbox label="是"></ui-checkbox>
-              <ui-checkbox label="否"></ui-checkbox>-->
-            </ui-checkbox-group>
           </ui-table-column>
         </ui-table>
       </div>
@@ -84,7 +69,12 @@
               </ui-table-column>
               <ui-table-column prop="index" label="序号"></ui-table-column>
               <ui-table-column prop="name" label="机构名称"></ui-table-column>
-              <ui-table-column prop="loginName" label="圈内共享受用信材料"></ui-table-column>
+              <ui-table-column prop="loginName" label="圈内共享受用信材料">
+                <template slot-scope="scope">
+                  <ui-checkbox label="是" v-model="scope.checked"></ui-checkbox>
+                  <ui-checkbox label="否" v-model="scope.noChecked"></ui-checkbox>
+                </template>
+              </ui-table-column>
             </ui-table>
           </div>
           <div slot="footer" class="dialog-footer">
@@ -98,7 +88,7 @@
 </template>
 <script>
 export default {
-  name: 'userQuery',
+  name: 'unionlapAdd',
   computed: {},
   data() {
     return {
@@ -107,7 +97,8 @@ export default {
         unionlapName: '',
       },
       //复选框
-      checkList: ['选中且禁用'],
+      checked: false,
+      noChecked: false,
       // 单选按钮
       tableRadio: '',
       // 获取选中数据
@@ -177,7 +168,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.user-query {
+.unionlap-add {
   .form {
     background: #fff;
     .ui-form {
@@ -186,30 +177,30 @@ export default {
       margin: 0 auto;
     }
   }
-  .ui-radio__input {
-    cursor: pointer;
-    vertical-align: middle;
-    border: 2px solid rgba(153, 153, 153, 1);
-    border-radius: 50%;
-    width: 18px;
-    height: 18px;
-  }
-  .ui-radio__inner {
-    width: 0px;
-    height: 0px;
-  }
-  .is-checked {
-    .ui-radio__inner {
-      width: 10px;
-      height: 10px;
-      border: none;
-      margin: 4px auto;
-      background: #ce2848;
-    }
-    .ui-radio__inner::after {
-      width: 0;
-    }
-  }
+  // .ui-radio__input {
+  //   cursor: pointer;
+  //   vertical-align: middle;
+  //   border: 2px solid rgba(153, 153, 153, 1);
+  //   border-radius: 50%;
+  //   width: 18px;
+  //   height: 18px;
+  // }
+  // .ui-radio__inner {
+  //   width: 0px;
+  //   height: 0px;
+  // }
+  // .is-checked {
+  //   .ui-radio__inner {
+  //     width: 10px;
+  //     height: 10px;
+  //     border: none;
+  //     margin: 4px auto;
+  //     background: #ce2848;
+  //   }
+  //   .ui-radio__inner::after {
+  //     width: 0;
+  //   }
+  // }
 
   .ui-dialog {
     width: 75.2%;

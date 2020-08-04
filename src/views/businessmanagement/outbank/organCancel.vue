@@ -1,10 +1,8 @@
 <template>
   <!-- 机构注销页 -->
-  <div class="info-detail">
-    <!-- label-width="150px" -->
+  <div class="organ-cancel">
     <div class="right-wrap">
       <block-title blockTitle="机构注销"></block-title>
-
       <div class="form">
         <ui-row class="list-title" style="padding-top: 33px">
           <div class="img"></div>
@@ -12,32 +10,27 @@
         </ui-row>
         <ui-row style="background: #fff;">
           <ui-col :span="12">
-            <!-- <ui-form-item label="机构全称"> -->
             <div class="item">
               <div class="item-label">
                 <div>机构全称</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
             <div class="item">
               <div class="item-label">
                 <div>机构类型</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
             <div class="item">
               <div class="item-label">
                 <div>是否为总机构</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
             <div class="item">
               <div class="item-label">
                 <div>归属机构全称</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
@@ -46,14 +39,12 @@
             <div class="item">
               <div class="item-label">
                 <div>归属机构统一社会信用代码</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
             <div class="item">
               <div class="item-label">
                 <div>归属机构组织机构代码证</div>
-                <!-- <div>啦啦啦</div> -->
               </div>
               <div class="right-item">{{form.tagName}}</div>
             </div>
@@ -257,10 +248,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.info-detail {
-  .right-wrap {
-    background: #fff;
-  }
+.organ-cancel {
   .item {
     font-size: 14px;
     font-family: SourceHanSansCN;
@@ -284,7 +272,6 @@ export default {
       width: 90%;
       margin: 0 auto;
     }
-
     .right-item {
       display: inline-block;
     }

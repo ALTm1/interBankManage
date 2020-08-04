@@ -1,7 +1,6 @@
 <template>
   <!-- 文件修改确认页 -->
-  <div class="files-Conf">
-    <!-- label-width="150px" -->
+  <div class="files-modify-Conf">
     <div class="right-wrap">
       <block-title blockTitle="文件修改确认"></block-title>
 
@@ -34,21 +33,10 @@
 </template>
 <script>
 export default {
-  name: 'blockUpConf',
+  name: 'filesModifyConf',
   computed: {},
   data() {
-    return {
-      fromLastPage: {},
-      // 按钮文本
-      btnText: '',
-      // 操作结果，根据接口返回内容判断
-      // 启用
-      startUsing: 0,
-      // 停用
-      blockUp: 1,
-      // 注销
-      cancel: 2,
-    }
+    return {}
   },
   created() {},
   methods: {
@@ -65,7 +53,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.files-Conf {
+.files-modify-Conf {
   .form {
     background: #fff;
     .ui-form {

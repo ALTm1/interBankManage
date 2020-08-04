@@ -34,7 +34,7 @@
 </template>
 <script>
 export default {
-  name: 'blockUpConf',
+  name: 'filesAddConf',
   computed: {},
   data() {
     return {

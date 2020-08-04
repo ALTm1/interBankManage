@@ -1,7 +1,6 @@
 <template>
   <!-- 用户详情页 -->
   <div class="user-detail">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
       <block-title blockTitle="用户详情"></block-title>
 
@@ -45,7 +44,6 @@
           </ui-row>
           <ui-row class="btn">
             <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
-            <!-- <ui-button type="primary" class="continue-next" @click="submitForm('form')">确认</ui-button> -->
           </ui-row>
         </ui-form>
       </div>
@@ -93,8 +91,6 @@ export default {
 
     // 返回按钮
     goBack() {
-      // this.isContentShow = '0'
-      // this.btnText = '新增'
       this.$router.go(-1)
     },
   },

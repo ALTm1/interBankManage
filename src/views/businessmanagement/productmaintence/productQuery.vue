@@ -82,16 +82,6 @@
                 <ui-form-item label="年利率">
                   <ui-input-business v-model="form.maxRate" placeholder="请输入最大年利率"></ui-input-business>
                 </ui-form-item>
-                <!-- <ui-form-item label="产品期限">
-                  <ui-select v-model="form.businessType" placeholder="请选择">
-                    <ui-option
-                      v-for="item in businessTypeList"
-                      :key="item.value"
-                      :label="item.label"
-                      :value="item.value"
-                    ></ui-option>
-                  </ui-select>
-                </ui-form-item>-->
               </ui-col>
             </ui-row>
             <ui-row class="btn">
@@ -103,7 +93,7 @@
       </ui-row>
 
       <div class="table">
-        <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
+        <ui-table :data="productList" style="width: 96%;margin:0 auto">
           <ui-table-column label="请选择" width="80">
             <template slot-scope="scope">
               <ui-radio
@@ -261,7 +251,7 @@ export default {
       // 获取选中数据
       chosedData: [],
       // 用户信息数据
-      userInfoList: [
+      productList: [
         {
           name: '朱一龙',
           loginName: '小哥の',

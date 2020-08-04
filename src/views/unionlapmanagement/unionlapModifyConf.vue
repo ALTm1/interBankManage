@@ -54,7 +54,7 @@
 </template>
 <script>
 export default {
-  name: 'userQuery',
+  name: 'unionlapModifyConf',
   computed: {},
   data() {
     return {

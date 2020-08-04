@@ -45,7 +45,7 @@
 </template>
 <script>
 export default {
-  name: 'userQuery',
+  name: 'unionlapAddConf',
   computed: {},
   data() {
     return {
@@ -110,6 +110,9 @@ export default {
 </script>
 <style lang="scss">
 .unionlapadd-conf {
+  .right-wrap {
+    background: #fff;
+  }
   .form {
     // background: #fff;
     .ui-form {

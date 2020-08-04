@@ -1,7 +1,6 @@
 <template>
-  <!-- 联盟圈查询页 -->
-  <div class="user-query">
-    <!-- label-width="150px" -->
+  <!-- 联盟圈修改页 -->
+  <div class="unionlap-modify">
     <div class="right-wrap">
       <block-title blockTitle="联盟圈修改"></block-title>
       <ui-row>
@@ -36,10 +35,10 @@
           </ui-table-column>
           <ui-table-column prop="name" label="机构名称"></ui-table-column>
           <ui-table-column prop="loginName" label="圈内共享受用信材料">
-            <ui-checkbox-group v-model="checkList">
-              <ui-checkbox label="是"></ui-checkbox>
-              <ui-checkbox label="否"></ui-checkbox>
-            </ui-checkbox-group>
+            <template slot-scope="scope">
+              <ui-checkbox label="是" v-model="scope.checked"></ui-checkbox>
+              <ui-checkbox label="否" v-model="scope.noChecked"></ui-checkbox>
+            </template>
           </ui-table-column>
         </ui-table>
       </div>
@@ -55,7 +54,7 @@
 </template>
 <script>
 export default {
-  name: 'userQuery',
+  name: 'unionlapModify',
   computed: {},
   data() {
     return {
@@ -64,7 +63,8 @@ export default {
         unionlapName: '',
       },
       //复选框
-      checkList: ['选中且禁用'],
+      checked: false,
+      noChecked: false,
       // 单选按钮
       tableRadio: '',
       // 获取选中数据
@@ -123,7 +123,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.user-query {
+.unionlap-modify {
   .form {
     // background: #fff;
     .ui-form {
