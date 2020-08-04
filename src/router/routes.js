@@ -1,7 +1,12 @@
 import business from './modules/business'
 import layoutHeaderAside from '@/layout/header-aside'
 import home from './modules/home'
+// 系统管理
 import system from './modules/system'
+// 登录密码修改
+import login from './modules/login'
+// 日志管理
+import log from './modules/log'
 // 参数管理路由
 import parammanagement from './modules/parammanagement'
 // 业务管理
@@ -67,6 +72,8 @@ const frameIn = [
         children: [
 
 
+          ...log,
+          ...login,
           ...system,
           ...parammanagement,
           ...businessmanagement,
