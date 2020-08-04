@@ -49,9 +49,9 @@
             </template>
             <ui-menu-item index="2-1" @click="system">操作员管理</ui-menu-item>
             <ui-menu-item index="2-2" @click="role">角色管理</ui-menu-item>
-            <ui-menu-item index="2-3">日志管理</ui-menu-item>
+            <ui-menu-item index="2-3" @click="log">日志管理</ui-menu-item>
             <ui-menu-item index="2-4">登录密码修改</ui-menu-item>
-            <ui-menu-item index="2-5">登录密码重置</ui-menu-item>
+            <ui-menu-item index="2-5" @click="reset">登录密码重置</ui-menu-item>
           </ui-submenu>
 
           <ui-menu-item index="3">
@@ -242,11 +242,21 @@ export default {
     handleClose(key, keyPath) {
       console.log(key, keyPath)
     },
+    // 操作员管理
     system() {
       this.$router.push('/index/system')
     },
+    // 角色管理
     role() {
       this.$router.push('/index/role')
+    },
+    // 密码重置
+    reset(){
+      this.$router.push('/index/loginreset')
+    },
+    //日志管理
+    log(){
+      this.$router.push('/index/log')
     },
     /***参数管理***/
     // 产品标签维护
@@ -417,7 +427,7 @@ export default {
 .menu-right {
   width: calc(100% - 196px);
   min-height: 92vh;
-  padding: 20px 20px ;
+  padding: 20px 20px;
   box-sizing: border-box;
   background: rgba(239, 240, 244, 1);
 }
