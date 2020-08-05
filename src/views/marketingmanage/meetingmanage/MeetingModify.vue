@@ -15,8 +15,8 @@
         <div class="float-left">
           <ui-form-item label="发布格式" prop="releaseFormat">
             <ui-select v-model="form.releaseFormat" placeholder="请选择">
-              <ui-option label="文本" value="shanghai"></ui-option>
-              <ui-option label="图片" value="beijing"></ui-option>
+              <ui-option label="文本" value="文本"></ui-option>
+              <ui-option label="图片" value="图片"></ui-option>
             </ui-select>
           </ui-form-item>
         </div>
@@ -26,6 +26,7 @@
               type="date"
               placeholder="选择终止时间"
               v-model="form.endDate"
+              format="yyyy-MM-dd"
               style="width: 100%;"
             ></ui-date-picker>
           </ui-form-item>
@@ -38,7 +39,7 @@
         <div class="float-right">
           <ui-form-item label="发布对象" prop="releaseObj">
             <ui-select v-model="form.releaseObj" placeholder="请选择" multiple>
-              <div v-for="item in form.releaseObjList" :key="item.label">
+              <div v-for="item in releaseObjList" :key="item.label">
                 <ui-option :label="item.label" :value="item.value"></ui-option>
               </div>
             </ui-select>
@@ -57,6 +58,7 @@
               :on-exceed="handleExceed"
               :file-list="form.fileList"
               :auto-upload="false"
+              :on-change="handleUploadChange"
             >
               <span class="upload-text">点击上传</span>
             </ui-upload>
@@ -80,28 +82,28 @@
 export default {
   data() {
     return {
+      releaseObjList: [
+        {
+          label: '大众会员',
+          value: '大众会员',
+        },
+        {
+          label: '机构会员',
+          value: '机构会员',
+        },
+        {
+          label: '联盟会员',
+          value: '联盟会员',
+        },
+        {
+          label: '本行会员',
+          value: '本行会员',
+        },
+      ],
       form: {
         releaseFormat: '',
         endDate: '',
         releaseObj: [],
-        releaseObjList: [
-          {
-            label: '大众会员',
-            value: '大众会员',
-          },
-          {
-            label: '机构会员',
-            value: '机构会员',
-          },
-          {
-            label: '联盟会员',
-            value: '联盟会员',
-          },
-          {
-            label: '本行会员',
-            value: '本行会员',
-          },
-        ],
         fileList: [
           { name: 'logo.png', url: require('@/assets/image/logo.png') },
         ],
@@ -134,6 +136,7 @@ export default {
   methods: {
     handleRemove(file, fileList) {
       console.log(file, fileList)
+      this.form.fileList = fileList
     },
     handlePreview(file) {
       console.log(file)
@@ -148,12 +151,19 @@ export default {
     beforeRemove(file, fileList) {
       return this.$confirm(`确定移除 ${file.name}？`)
     },
+    handleUploadChange(file, fileList) {
+      this.form.fileList = fileList
+    },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$router.push(
-            '/marketingmanage/meetingmanage/meetingmodifyconfirm'
-          )
+          console.log(this.form)
+          this.$router.push({
+            path: '/marketingmanage/meetingmanage/meetingmodifyconfirm',
+            query: {
+              form: JSON.stringify(this.form),
+            },
+          })
         } else {
           return false
         }

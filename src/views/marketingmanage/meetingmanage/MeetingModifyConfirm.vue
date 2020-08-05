@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 16:35:32
- * @LastEditTime: 2020-08-05 10:36:34
+ * @LastEditTime: 2020-08-05 18:37:13
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingModifyConfirm.vue
@@ -57,6 +57,42 @@ export default {
         },
       ],
     }
+  },
+  created() {
+    var displayInfoArrTemp = JSON.parse(this.$route.query.form)
+    // 报名截止日期
+    var endDate = new Date(displayInfoArrTemp.endDate).Format('yyyy-MM-dd')
+    // 会议图片
+    var fileList = ''
+    for (var i = 0; i < displayInfoArrTemp.fileList.length; i++) {
+      fileList = fileList + displayInfoArrTemp.fileList[i].name + ' '
+    }
+    this.displayInfoArr = [
+      {
+        title: '发布格式',
+        content: displayInfoArrTemp.releaseFormat,
+      },
+      {
+        title: '报名截止日期',
+        content: endDate,
+      },
+      {
+        title: '会议标题',
+        content: displayInfoArrTemp.meetingTitle,
+      },
+      {
+        title: '发布对象',
+        content: displayInfoArrTemp.releaseObj.join(','),
+      },
+      {
+        title: '会议图片',
+        content: fileList,
+      },
+      {
+        title: '会议内容',
+        content: displayInfoArrTemp.meetingContent,
+      },
+    ]
   },
   methods: {
     goResult() {
