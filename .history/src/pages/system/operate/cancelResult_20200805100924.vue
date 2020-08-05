@@ -6,7 +6,7 @@
       <li class="title-right"></li>
     </div>
     <div class="header-wrap">
-      <div class="result-img">
+      <div>
         <img style="width:261px;" src="~@/assets/image/success.png" alt="">
       </div>
       <div class="result-header">
@@ -60,12 +60,6 @@ export default {
   }
 };
 </script>
-<style>
-.result-img {
-  text-align: center;
-  margin: 67px 0 18px 0;
-}
-</style>
 <style scoped>
 .title-left{
     margin-left: 11px;

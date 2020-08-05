@@ -1,8 +1,16 @@
 <template>
   <div>
+    <!-- 面包屑 -->
+    <!-- <div class="operate-header">
+      <ui-breadcrumb separator-class="ui-icon-arrow-right">
+        <ui-breadcrumb-item :to="{ path: '/' }">您的位置:系统管理</ui-breadcrumb-item>
+        <ui-breadcrumb-item>操作员管理</ui-breadcrumb-item>
+        <ui-breadcrumb-item>修改结果页</ui-breadcrumb-item>
+      </ui-breadcrumb>
+    </div> -->
     <div class="result-wrap">
         <div class="table-title">
-      <li class="title-left">操作员注销确认页</li>
+      <li class="title-left">操作员修改结果页</li>
       <li class="title-right"></li>
     </div>
     <div class="header-wrap">
@@ -11,7 +19,7 @@
       </div>
       <div class="result-header">
         <img src alt />
-        <li>交易已提交,请等待审核</li>
+        <li>交易已提交</li>
         <li>交易流水号：{{batch}}</li>
       </div>
       <div class="info-wrap">
@@ -48,7 +56,7 @@
 </template>
 <script>
 export default {
-  name: "cancelresult",
+  name: "modifyresult",
   data() {
     return {
       batch: "124122331434",
@@ -60,12 +68,6 @@ export default {
   }
 };
 </script>
-<style>
-.result-img {
-  text-align: center;
-  margin: 67px 0 18px 0;
-}
-</style>
 <style scoped>
 .title-left{
     margin-left: 11px;
@@ -90,7 +92,6 @@ button {
 .result-right li:nth-child(1) {
   width: 80px;
   text-align: right;
-  line-height: 33px;
 }
 .result-left li:nth-child(2),
 .result-right li:nth-child(2) {
@@ -141,7 +142,7 @@ button {
   width: 100%;
 }
 .result-wrap{
-    /* margin-left: 12px; */
+    margin-left: 12px;
     margin-top: 21px;
 }
 .result-information {

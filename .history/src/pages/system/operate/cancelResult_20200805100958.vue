@@ -63,7 +63,6 @@ export default {
 <style>
 .result-img {
   text-align: center;
-  margin: 67px 0 18px 0;
 }
 </style>
 <style scoped>
