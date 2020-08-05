@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 09:04:21
- * @LastEditTime: 2020-08-04 15:14:44
+ * @LastEditTime: 2020-08-05 15:08:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIndex.vue
@@ -10,8 +10,8 @@
 
 <template>
   <div class="wrap">
+    <BorderHeader title="会议管理"></BorderHeader>
     <div class="form-wrap">
-      <BorderHeader title="会议管理"></BorderHeader>
       <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
         <ui-form-item label="会议标题" prop="meetingTitle">
           <ui-input v-model="form.meetingTitle" placeholder="请输入会议标题"></ui-input>
@@ -200,17 +200,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.wrap {
-  width: 100%;
-}
-
 /* 表单 */
-
 .form-block {
   width: 600px;
-  margin: 0 auto;
-  padding: 50px 50px;
+  padding: 50px;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 .start-date-item {
   margin-bottom: 22px;

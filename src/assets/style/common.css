@@ -18,7 +18,9 @@
 
 .form-wrap {
   background: #ffffff;
+  padding: 0 50px;
 }
+
 
 .ui-form-item__label {
   font-size: 14px;
@@ -56,6 +58,7 @@
 /* 标题 */
 
 /*表格头部标题 */
+
 .list-title {
   padding: 0 20px;
   margin: 0px 0 37px;
@@ -65,12 +68,14 @@
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
 }
+
 .list-title .img {
   display: inline-block;
   width: 4px;
   height: 15px;
   vertical-align: middle;
 }
+
 .list-title span {
   margin-left: 5px;
   height: 15px;
@@ -79,12 +84,14 @@
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
 }
+
 /* 表格带序号的颜色 */
-.serial-number{
-  font-size:14px;
-  font-family:SourceHanSansCN;
-  font-weight:400;
-  color:rgba(155,112,65,1);
+
+.serial-number {
+  font-size: 14px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(155, 112, 65, 1);
 }
 
 /* 确认页不可编辑的条目类名 */
@@ -149,10 +156,10 @@
 /* 表格含操作的样式 */
 
 .operator1-button {
-  font-size:12px;
-  font-family:SourceHanSansCN;
-  font-weight:bold;
-  color:rgba(69,159,221,1);
+  font-size: 12px;
+  font-family: SourceHanSansCN;
+  font-weight: bold;
+  color: rgba(69, 159, 221, 1);
 }
 
 /* 表格 */
@@ -163,19 +170,29 @@
   font-weight: bold;
   color: rgba(189, 194, 202, 1);
 }
+
 .ui-table::before {
   height: 0;
 }
+
 .ui-table__header-wrapper th {
+<<<<<<< HEAD
   font-size:12px;
   font-family:SourceHanSansCN;
   /* font-weight:bold;
   color:rgba(51,51,51,1);
+=======
+  font-size: 12px;
+  font-family: SourceHanSansCN;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+>>>>>>> a251fe7b412d960e9beb6844086ebdc89e75e310
   padding: 0;
   background: rgba(245, 246, 248, 1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px 4px 0px 0px; */
 }
+
 .ui-table .ui-table__header-wrapper tr {
   /* height: 30px; */
 }
@@ -212,6 +229,12 @@
   margin: 0 auto; */
   padding-bottom: 40px;
 }
+
+.menu-right-content {
+  width: 100%;
+  background: #fff;
+}
+
 /* table表格 */
 
 .table-wrap {
@@ -292,4 +315,16 @@
   font-family: SourceHanSansCN;
   font-weight: 400;
   color: rgba(153, 153, 153, 1);
+}
+/* 组件content */
+
+.content-wrap {
+  padding: 50px;
+  background: #fff;
+}
+
+/* select组件下拉箭头 */
+
+.ui-icon-arrow-up:before {
+  content: "\e78f";
 }

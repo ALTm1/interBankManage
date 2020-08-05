@@ -5,7 +5,7 @@
 <template>
   <div class="wrap">
     <BorderHeader title="培训新增录入页"></BorderHeader>
-    <div class="content">
+    <div class="form-wrap">
       <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
         <ui-form-item label="培训标题" prop="trainingTitle">
           <ui-input v-model="form.trainingTitle" placeholder="请输入培训标题"></ui-input>
@@ -49,10 +49,6 @@ export default {
         trainingTitle: '',
         releaseObj: [],
         releaseObjList: [
-          {
-            label: '所有人',
-            value: '所有人',
-          },
           {
             label: '大众会员',
             value: '大众会员',
@@ -122,11 +118,14 @@ export default {
 <style lang="css" scoped>
 .wrap {
   background: #ffffff;
-  text-align: center;
 }
-.content {
-  display: inline-block;
-  padding: 40px 0px 0px;
+.form-block {
+  padding: 50px 0px 0px;
+  width: 600px;
   box-sizing: border-box;
+  margin: 0 auto;
+}
+.wrap /deep/ .upload-demo{
+  text-align: left;
 }
 </style>

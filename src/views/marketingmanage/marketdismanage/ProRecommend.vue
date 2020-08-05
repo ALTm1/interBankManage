@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 16:03:32
- * @LastEditTime: 2020-08-04 16:58:35
+ * @LastEditTime: 2020-08-05 14:52:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\ProRecommend.vue
@@ -53,7 +53,7 @@
       </div>
       <ui-dialog title="产品列表" class="pro-list-dialog" center :visible.sync="proPopup">
         <ui-form
-          class="form-block clear"
+          class="form-block-dialog clear"
           ref="ruleForm"
           :model="form"
           :rules="rules"
@@ -189,11 +189,6 @@ export default {
         expires: '',
         expiresList: [
           {
-            label: '全部',
-            value: '全部',
-            active: false,
-          },
-          {
             label: '30天以内',
             value: '30天以内',
             active: false,
@@ -301,6 +296,10 @@ export default {
   background: #ffffff;
 }
 
+.form-block-dialog{
+  margin-top: 40px;
+}
+
 .table-title {
   font-size: 14px;
   font-family: SourceHanSansCN;
@@ -370,10 +369,6 @@ export default {
   font-family: SourceHanSansCN;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
-}
-
-.form-block {
-  padding: 20px 40px;
 }
 
 .footer {

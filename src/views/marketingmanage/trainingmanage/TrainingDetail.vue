@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:19:30
- * @LastEditTime: 2020-08-04 13:32:57
+ * @LastEditTime: 2020-08-05 10:35:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingDetail.vue
@@ -10,7 +10,7 @@
 <template>
   <div class="wrap">
     <BorderHeader title="培训详情"></BorderHeader>
-    <div class="clear content">
+    <div class="content-wrap clear">
       <div
         :class="[index%2==0?'float-left':'float-right']"
         v-for="(item,index) in displayInfoArr"
@@ -61,8 +61,5 @@ export default {
 .wrap {
   margin: 0 auto;
   background: #ffffff;
-}
-.content {
-  padding: 20px 40px;
 }
 </style>

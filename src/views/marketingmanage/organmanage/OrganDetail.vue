@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 11:24:32
- * @LastEditTime: 2020-08-04 13:38:46
+ * @LastEditTime: 2020-08-05 10:35:58
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganDetail.vue
@@ -11,7 +11,7 @@
 <template>
   <div class="wrap">
     <BorderHeader title="机构动态详情"></BorderHeader>
-    <div class="clear content">
+    <div class="content-wrap clear">
       <div
         :class="[index%2==0?'float-left':'float-right']"
         v-for="(item,index) in displayInfoArr"
@@ -58,8 +58,5 @@ export default {
 .wrap {
   margin: 0 auto;
   background: #ffffff;
-}
-.content {
-  padding: 20px 40px;
 }
 </style>

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 14:07:51
- * @LastEditTime: 2020-08-04 15:45:02
+ * @LastEditTime: 2020-08-05 15:10:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\MarketDisIndex.vue
@@ -19,8 +19,8 @@
 
 <template>
   <div class="wrap">
+    <BorderHeader title="营销展示管理"></BorderHeader>
     <div class="form-wrap">
-      <BorderHeader title="营销展示管理"></BorderHeader>
       <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
         <ui-form-item label="营销渠道" prop="marketChannel">
           <ui-select v-model="form.marketChannel" placeholder="请选择营销渠道">
@@ -39,7 +39,7 @@
         </div>
       </ui-form>
     </div>
-    <div v-if="resultShow" class="content-wrap">
+    <div v-if="resultShow" class="content">
       <ui-menu
         :default-active="menuActiveIndex"
         class="ui-menu-demo market-display-menu"
@@ -99,16 +99,17 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.form-wrap {
-  background: #fff;
-}
 .form-block {
+  padding: 50px;
   width: 600px;
+  box-sizing: border-box;
   margin: 0 auto;
-  padding: 40px 0px 0px;
 }
 
-.content-wrap {
+.wrap /deep/ .ui-form-item {
+  display: inline-block;
+}
+.content {
   background: #fff;
   margin-top: 20px;
 }

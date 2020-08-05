@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 16:35:32
- * @LastEditTime: 2020-08-04 15:18:00
+ * @LastEditTime: 2020-08-05 10:36:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingModifyConfirm.vue
@@ -11,7 +11,7 @@
 <template>
   <div class="wrap">
     <BorderHeader title="会议修改确认页"></BorderHeader>
-    <div class="clear content">
+    <div class="content-wrap clear">
       <div
         :class="[index%2==0?'float-left':'float-right']"
         v-for="(item,index) in displayInfoArr"
@@ -69,8 +69,5 @@ export default {
 <style lang="css" scoped>
 .wrap {
   background: #ffffff;
-}
-.content {
-  padding: 50px 0px 0px;
 }
 </style>
