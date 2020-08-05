@@ -2,8 +2,6 @@
   <!-- 产品查询页 -->
   <div class="product-query">
     <div class="right-wrap">
-      <block-title blockTitle="产品查询"></block-title>
-
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">

@@ -1,10 +1,7 @@
 <template>
   <!-- 文件详情页 -->
   <div class="files-detail">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="文件详情"></block-title>
-
       <div class="table">
         <ui-table :data="fielsDetailList" style="width: 96%;margin:0 auto">
           <ui-table-column label="请选择" width="80">

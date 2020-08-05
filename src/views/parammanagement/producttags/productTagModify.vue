@@ -1,9 +1,7 @@
 <template>
   <!-- 产品标签修改页 -->
   <div class="product-tag-modify">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="产品标签修改"></block-title>
       <div class="form">
         <!-- 可编辑表单 -->
         <ui-form ref="form" :rules="rules" :model="form" label-width="150px">
@@ -52,6 +50,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
+          sessionStorage.setItem('proTag', JSON.stringify(this.form))
           this.$router.push('/productTagModifyConf')
         } else {
           return false

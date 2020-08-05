@@ -3,7 +3,6 @@
   <div class="files-add">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="文件新增"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :rules="rules" :model="form" label-width="150px">
@@ -166,7 +165,7 @@ export default {
   .form {
     background: #fff;
     .ui-form {
-      width: 60%;
+      width: 50%;
       padding: 62px 20px;
       margin: 0 auto;
     }

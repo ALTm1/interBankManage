@@ -2,10 +2,11 @@
   <!-- 机构注销页 -->
   <div class="organ-cancel">
     <div class="right-wrap">
-      <block-title blockTitle="机构注销"></block-title>
       <div class="form">
         <ui-row class="list-title" style="padding-top: 33px">
-          <div class="img"></div>
+          <div class="img">
+            <img src="@/assets/image/titleleft.png" alt />
+          </div>
           <span>机构列表</span>
         </ui-row>
         <ui-row style="background: #fff;">
@@ -66,7 +67,9 @@
         </ui-row>
       </div>
       <ui-row class="list-title" style="padding-top: 33px">
-        <div class="img"></div>
+        <div class="img">
+          <img src="@/assets/image/titleleft.png" alt />
+        </div>
         <span>证件信息</span>
       </ui-row>
       <div class="form">
@@ -108,7 +111,9 @@
         </ui-row>
       </div>
       <ui-row class="list-title" style="padding-top: 33px">
-        <div class="img"></div>
+        <div class="img">
+          <img src="@/assets/image/titleleft.png" alt />
+        </div>
         <span>当前机构地址</span>
       </ui-row>
       <div class="form">
@@ -249,6 +254,9 @@ export default {
 </script>
 <style lang="scss">
 .organ-cancel {
+  .right-wrap {
+    background: #fff;
+  }
   .item {
     font-size: 14px;
     font-family: SourceHanSansCN;

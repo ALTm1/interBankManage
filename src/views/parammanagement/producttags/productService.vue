@@ -2,7 +2,6 @@
   <!-- 产品维护页 -->
   <div class="product-service">
     <div class="right-wrap">
-      <block-title blockTitle="产品标签维护"></block-title>
       <div class="table">
         <ui-table :data="productTags" style="width: 96%;margin:0 auto">
           <ui-table-column label="请选择" width="80">

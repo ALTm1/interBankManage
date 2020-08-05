@@ -1,12 +1,12 @@
 <template>
   <!-- 机构信息详情页 -->
   <div class="info-detail">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="机构信息详情"></block-title>
       <div class="form">
         <ui-row class="list-title" style="padding-top: 33px">
-          <div class="img"></div>
+          <div class="img">
+            <img src="@/assets/image/titleleft.png" alt />
+          </div>
           <span>机构列表</span>
         </ui-row>
         <ui-row style="background: #fff;">
@@ -189,7 +189,7 @@
           </ui-col>
         </ui-row>
         <ui-row class="btn">
-          <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
+          <ui-button type="primary" class="back-btn single-btn" @click="goBack">返回</ui-button>
           <ui-button
             type="primary"
             v-if="form.ownScialCode"

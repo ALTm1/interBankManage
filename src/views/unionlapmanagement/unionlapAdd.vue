@@ -1,9 +1,7 @@
 <template>
   <!-- 联盟圈新增页 -->
   <div class="unionlap-add">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="联盟圈管理新增"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -14,37 +12,40 @@
                 </ui-form-item>
               </ui-col>
             </ui-row>
-            <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="resetForm">重置</ui-button>
-              <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button>
-            </ui-row>
           </ui-form>
         </div>
       </ui-row>
-
-      <div class="table">
-        <ui-table :data="userInfoList">
-          <ui-table-column label="请选择" width="80">
-            <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
-            </template>
-          </ui-table-column>
-          <ui-table-column prop="name" label="机构名称"></ui-table-column>
-          <ui-table-column prop="loginName" label="圈内共享受用信材料">
-            <template slot-scope="scope">
-              <ui-checkbox label="是" v-model="scope.checked"></ui-checkbox>
-              <ui-checkbox label="否" v-model="scope.noChecked"></ui-checkbox>
-            </template>
-          </ui-table-column>
-        </ui-table>
-      </div>
-      <ui-row class="btn btnbg">
+      <ui-row class="list-title" style="padding-top: 33px">
+        <div class="img">
+          <img src="@/assets/image/titleleft.png" alt />
+        </div>
+        <span>机构列表</span>
+      </ui-row>
+      <ui-row>
+        <div class="table table-list">
+          <ui-table :data="userInfoList">
+            <ui-table-column label="请选择" width="80">
+              <template slot-scope="scope">
+                <ui-radio
+                  v-model="tableRadio"
+                  :label="scope.$index"
+                  @change.native="getCurrentRow(scope.row)"
+                >
+                  <i></i>
+                </ui-radio>
+              </template>
+            </ui-table-column>
+            <ui-table-column prop="name" label="机构名称"></ui-table-column>
+            <ui-table-column prop="loginName" label="圈内共享受用信材料">
+              <template slot-scope="scope">
+                <ui-checkbox label="是" v-model="scope.checked"></ui-checkbox>
+                <ui-checkbox label="否" v-model="scope.noChecked"></ui-checkbox>
+              </template>
+            </ui-table-column>
+          </ui-table>
+        </div>
+      </ui-row>
+      <ui-row class="btn">
         <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
         <ui-button type="primary" class="continue-next" @click="goAdd">新增</ui-button>
         <!-- 新增弹窗 -->
@@ -145,20 +146,13 @@ export default {
     goBack() {
       this.$router.go(-1)
     },
-    // 点击查询
-    clickQuery() {},
-    // 点击查看详情
+    // 点击新增
     goAdd() {
       this.dialogTableVisible = true
-      // this.$router.push('/unionlapAddConf')
     },
     // 点击弹窗确定
     goConfirm() {
-      // this.dialogTableVisible = true
       this.$router.push('/unionlapAddConf')
-    },
-    resetForm() {
-      this.form.unionlapName = ''
     },
     // 获取选中的数据
     getCurrentRow(row) {
@@ -170,37 +164,22 @@ export default {
 <style lang="scss">
 .unionlap-add {
   .form {
-    background: #fff;
     .ui-form {
       width: 50%;
       padding: 62px 0;
       margin: 0 auto;
     }
   }
-  // .ui-radio__input {
-  //   cursor: pointer;
-  //   vertical-align: middle;
-  //   border: 2px solid rgba(153, 153, 153, 1);
-  //   border-radius: 50%;
-  //   width: 18px;
-  //   height: 18px;
-  // }
-  // .ui-radio__inner {
-  //   width: 0px;
-  //   height: 0px;
-  // }
-  // .is-checked {
-  //   .ui-radio__inner {
-  //     width: 10px;
-  //     height: 10px;
-  //     border: none;
-  //     margin: 4px auto;
-  //     background: #ce2848;
-  //   }
-  //   .ui-radio__inner::after {
-  //     width: 0;
-  //   }
-  // }
+  .right-wrap {
+    .table-list {
+      // background: #fff;
+      margin-bottom: 17px;
+      .ui-table {
+        width: 62.35%;
+        margin: 0 auto;
+      }
+    }
+  }
 
   .ui-dialog {
     width: 75.2%;

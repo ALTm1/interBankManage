@@ -1,10 +1,7 @@
 <template>
   <!-- 操作确认页 -->
   <div class="handle-conf">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="操作确认页"></block-title>
-
       <div class="form">
         <ui-form ref="form" label-width="100px">
           <ui-row>

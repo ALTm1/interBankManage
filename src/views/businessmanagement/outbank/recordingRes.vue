@@ -2,16 +2,7 @@
   <!-- 补录结果页 -->
   <div class="recording-res">
     <div class="right-wrap">
-      <block-title blockTitle="补录结果"></block-title>
-      <div class="result">
-        <img src alt class="result-img" />
-        <div class="result-status">交易成功</div>
-        <div class="batch">交易流水号:33445566888</div>
-        <ui-row class="btn">
-          <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
-          <ui-button type="primary" class="continue-next" @click="clickFinish">完成</ui-button>
-        </ui-row>
-      </div>
+      <result :status="true" :tadeSuccess="'交易成功'" :batch="'1234567890123'" @click="clickFinish"></result>
     </div>
   </div>
 </template>

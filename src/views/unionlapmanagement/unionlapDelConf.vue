@@ -2,7 +2,6 @@
   <!-- 联盟圈删除确认页 -->
   <div class="unionlap-del-conf">
     <div class="right-wrap">
-      <block-title blockTitle="联盟圈管理新增结果"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -16,24 +15,26 @@
           </ui-form>
         </div>
       </ui-row>
+      <ui-row class="list-title" style="padding-top: 33px">
+        <div class="img">
+          <img src="@/assets/image/titleleft.png" alt />
+        </div>
+        <span>机构列表</span>
+      </ui-row>
+      <ui-row>
+        <div class="table">
+          <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
+            <ui-table-column label="请选择" width="80">
+              <template slot-scope="scope">
+                <span class="serial-number">{{scope.$index+1}}</span>
+              </template>
+            </ui-table-column>
+            <ui-table-column prop="name" label="机构名称"></ui-table-column>
+            <ui-table-column prop="loginName" label="圈内共享受用信材料"></ui-table-column>
+          </ui-table>
+        </div>
+      </ui-row>
 
-      <div class="table">
-        <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
-          <ui-table-column label="请选择" width="80">
-            <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
-            </template>
-          </ui-table-column>
-          <ui-table-column prop="name" label="机构名称"></ui-table-column>
-          <ui-table-column prop="loginName" label="圈内共享受用信材料"></ui-table-column>
-        </ui-table>
-      </div>
       <ui-row class="btn btnbg">
         <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
         <ui-button type="primary" class="continue-next" @click="clickConfirm">确认</ui-button>

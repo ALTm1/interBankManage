@@ -1,9 +1,7 @@
 <template>
   <!-- 产品标签新增页 -->
   <div class="product-tag-add">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="产品标签新增"></block-title>
       <div class="form">
         <ui-form ref="form" :rules="rules" :model="form" label-width="150px">
           <ui-row>

@@ -2,7 +2,6 @@
   <!-- 联盟圈修改页 -->
   <div class="unionlap-modify">
     <div class="right-wrap">
-      <block-title blockTitle="联盟圈修改"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -16,35 +15,40 @@
           </ui-form>
         </div>
       </ui-row>
-      <ui-row class="list-title">
-        <div class="img"></div>
+      <ui-row class="list-title" style="padding-top: 33px">
+        <div class="img">
+          <img src="@/assets/image/titleleft.png" alt />
+        </div>
         <span>机构列表</span>
       </ui-row>
-      <div class="table">
-        <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
-          <ui-table-column label="请选择" width="80">
-            <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
-            </template>
-          </ui-table-column>
-          <ui-table-column prop="name" label="机构名称"></ui-table-column>
-          <ui-table-column prop="loginName" label="圈内共享受用信材料">
-            <template slot-scope="scope">
-              <ui-checkbox label="是" v-model="scope.checked"></ui-checkbox>
-              <ui-checkbox label="否" v-model="scope.noChecked"></ui-checkbox>
-            </template>
-          </ui-table-column>
-        </ui-table>
-      </div>
+      <ui-row>
+        <div class="table table-list">
+          <ui-table :data="userInfoList">
+            <ui-table-column label="请选择" width="80">
+              <template slot-scope="scope">
+                <ui-radio
+                  v-model="tableRadio"
+                  :label="scope.$index"
+                  @change.native="getCurrentRow(scope.row)"
+                >
+                  <i></i>
+                </ui-radio>
+              </template>
+            </ui-table-column>
+            <ui-table-column prop="name" label="机构名称"></ui-table-column>
+            <ui-table-column prop="loginName" label="圈内共享受用信材料">
+              <template slot-scope="scope">
+                <ui-checkbox label="是" v-model="scope.checked"></ui-checkbox>
+                <ui-checkbox label="否" v-model="scope.noChecked"></ui-checkbox>
+              </template>
+            </ui-table-column>
+          </ui-table>
+        </div>
+      </ui-row>
+
       <ui-row class="btn btnbg">
-        <ui-button type="primary" class="back-btn" @click="goBack">新增机构</ui-button>
-        <ui-button type="primary" class="continue-next" @click="goModify">删除机构</ui-button>
+        <ui-button type="primary" class="back-btn" @click="goAdd">新增机构</ui-button>
+        <ui-button type="primary" class="continue-next" @click="goCancel">删除机构</ui-button>
       </ui-row>
       <ui-row class="btn btnbg">
         <ui-button type="primary" class="continue-next" @click="goBack">返回</ui-button>
@@ -108,11 +112,13 @@ export default {
     goBack() {
       this.$router.go(-1)
     },
-    // 点击查询
-    clickQuery() {},
-    // 点击查看详情
-    goModify() {
+    // 点击新增
+    goAdd() {
       this.$router.push('/unionlapModifyConf')
+    },
+    // 点击删除
+    goCancel() {
+      this.$router.push('/unionlapCancelConf')
     },
 
     // 获取选中的数据
@@ -132,8 +138,18 @@ export default {
       margin: 88px auto 47px;
     }
   }
+  .right-wrap {
+    .table-list {
+      // background: #fff;
+      margin-bottom: 17px;
+      .ui-table {
+        width: 62.35%;
+        margin: 0 auto;
+      }
+    }
+  }
   .table {
-    background: #fff;
+    // background: #fff;
   }
   .btnbg {
     margin-top: 0;
