@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:32:37
- * @LastEditTime: 2020-08-05 09:36:00
+ * @LastEditTime: 2020-08-05 15:26:30
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingDeleteSucc.vue
@@ -19,9 +19,7 @@
 <script>
 export default {
   data() {
-    return {
-      succLogo: require('@/assets/image/logo.png'),
-    }
+    return {}
   },
   methods: {
     // 点击完成
@@ -37,27 +35,5 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.wrap {
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  background: #ffffff;
-}
-.succ-logo {
-  width: 257px;
-  height: 158px;
-  margin-bottom: 25px;
-}
-.succ-tips-one {
-  font-size: 16px;
-  font-family: SimHei;
-  font-weight: bold;
-  color: rgba(51, 51, 51, 1);
-}
-.succ-tips-two {
-  font-size: 12px;
-  font-family: SimHei;
-  font-weight: bold;
-  margin-top: 17px;
-}
+
 </style>

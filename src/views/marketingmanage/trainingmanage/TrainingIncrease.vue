@@ -118,10 +118,12 @@ export default {
 <style lang="css" scoped>
 .wrap {
   background: #ffffff;
-  text-align: center;
 }
-.form-block{
-  display: inline-block;
+.form-block {
+  padding: 50px 0px 0px;
+  width: 600px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 .wrap /deep/ .upload-demo{
   text-align: left;

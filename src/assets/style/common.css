@@ -21,6 +21,7 @@
   padding: 0 50px;
 }
 
+
 .ui-form-item__label {
   font-size: 14px;
   font-family: SourceHanSansCN;
@@ -52,10 +53,6 @@
   background: rgba(255, 255, 255, 1);
   border: 2px solid rgba(231, 232, 239, 1);
   border-radius: 3px 3px 3px 3px;
-}
-
-.form-wrap .ui-input__suffix {
-  right: 20px;
 }
 
 /* 标题 */
@@ -225,6 +222,11 @@
   /* width: calc(100% - 24px);
   margin: 0 auto; */
   padding-bottom: 40px;
+}
+
+.menu-right-content {
+  width: 100%;
+  background: #fff;
 }
 
 /* table表格 */

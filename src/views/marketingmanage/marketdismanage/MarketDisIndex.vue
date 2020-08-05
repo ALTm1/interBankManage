@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 14:07:51
- * @LastEditTime: 2020-08-05 10:41:43
+ * @LastEditTime: 2020-08-05 15:10:27
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\MarketDisIndex.vue
@@ -100,11 +100,15 @@ export default {
 
 <style lang="css" scoped>
 .form-block {
+  padding: 50px;
   width: 600px;
+  box-sizing: border-box;
   margin: 0 auto;
-  padding: 40px 0px 0px;
 }
 
+.wrap /deep/ .ui-form-item {
+  display: inline-block;
+}
 .content {
   background: #fff;
   margin-top: 20px;

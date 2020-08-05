@@ -169,6 +169,9 @@ export default {
 }
 .form-block {
   padding: 50px 0px 0px;
+  width: 1200px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 .operator-button {
   font-size: 14px;
