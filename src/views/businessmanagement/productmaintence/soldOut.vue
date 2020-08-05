@@ -2,8 +2,6 @@
   <!-- 下架确认页 -->
   <div class="sold-out-conf">
     <div class="right-wrap">
-      <block-title blockTitle="产品下架确认"></block-title>
-
       <div class="form">
         <ui-form ref="form" label-width="150px">
           <ui-row>

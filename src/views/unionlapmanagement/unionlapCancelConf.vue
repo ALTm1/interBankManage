@@ -2,7 +2,6 @@
   <!-- 联盟圈注销确认页 -->
   <div class="unionlap-cancel-conf">
     <div class="right-wrap">
-      <block-title blockTitle="联盟圈管理注销确认"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -21,13 +20,7 @@
         <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
           <ui-table-column label="请选择" width="80">
             <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
+              <span class="serial-number">00{{scope.$index+1}}</span>
             </template>
           </ui-table-column>
           <ui-table-column prop="name" label="机构名称"></ui-table-column>

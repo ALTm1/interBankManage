@@ -77,12 +77,12 @@
           <ui-menu-item index="8">
             <i class="ui-icon-setting"></i>
             <span slot="title">同业圈管理</span>
-          </ui-menu-item> -->
+          </ui-menu-item>-->
           <!-- <ui-menu-item index="9">
             <i class="ui-icon-setting"></i>
             <span slot="title">举报及反馈管理</span>
-          </ui-menu-item> -->
-          
+          </ui-menu-item>-->
+
           <ui-submenu index="11">
             <template slot="title">
               <i class="ui-icon-location"></i>
@@ -131,7 +131,7 @@
           </ui-submenu>
           <ui-submenu index="16">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="ui-icon-location"></i>
               <span>行为模块分析</span>
             </template>
             <ui-menu-item index="16-1" @click="goAccessFrequency">功能模块访问频次</ui-menu-item>
@@ -139,7 +139,7 @@
           </ui-submenu>
           <ui-submenu index="17">
             <template slot="title">
-              <i class="el-icon-location"></i>
+              <i class="ui-icon-location"></i>
               <span>联盟圈管理</span>
             </template>
             <ui-menu-item index="17-1" @click="goUnionlapmanagement">联盟圈管理</ui-menu-item>
@@ -269,22 +269,22 @@ export default {
       this.$router.push('/index/log')
     },
     // 个人票务
-     personal(){
-       this.$router.push('/index/personalbill')
-     },
+    personal() {
+      this.$router.push('/index/personalbill')
+    },
     // 团队票务
-    group(){
+    group() {
       this.$router.push('/index/group')
     },
     // 登录密码修改
-    password(){
+    password() {
       this.$router.push('/index/password')
     },
-    team(){
-    this.$router.push('/index/teamlbill')
+    team() {
+      this.$router.push('/index/teamlbill')
     },
     // 客户端
-    client(){
+    client() {
       this.$router.push('/index/client')
     },
     /***参数管理***/
@@ -462,23 +462,22 @@ export default {
 }
 .menu-admin {
   // width:196px;
-height:104px;
-// line-height: 104px;
-  background: #DADADA;
+  height: 104px;
+  // line-height: 104px;
+  background: #dadada;
   text-align: center;
   cursor: pointer;
 }
-.menu-admin span{
-  font-size:17px;
-font-weight:400;
-color: #fff;
-padding-top: 32px;
-display: inline-block;
+.menu-admin span {
+  font-size: 17px;
+  font-weight: 400;
+  color: #fff;
+  padding-top: 32px;
+  display: inline-block;
 }
-.menu-admin li{
-  font-size:15px;
-font-weight:400;
-color:rgba(128,195,223,1);
-
+.menu-admin li {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgba(128, 195, 223, 1);
 }
 </style>

@@ -1,9 +1,7 @@
 <template>
   <!-- 产品标签删除页 -->
   <div class="product-tag-del">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="产品标签删除"></block-title>
       <div class="form">
         <ui-form ref="form" label-width="150px">
           <ui-row>

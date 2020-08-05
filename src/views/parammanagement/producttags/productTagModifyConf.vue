@@ -1,9 +1,7 @@
 <template>
   <!-- 产品标签修改页 -->
   <div class="product-tag-modify-conf">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="产品标签修改确认"></block-title>
       <div class="form">
         <!-- 可编辑表单 -->
         <ui-form ref="form" :model="form" label-width="150px">
@@ -38,7 +36,9 @@ export default {
       },
     }
   },
-  created() {},
+  created() {
+    this.form = JSON.parse(sessionStorage.getItem('proTag'))
+  },
 
   methods: {
     submitForm(formName) {

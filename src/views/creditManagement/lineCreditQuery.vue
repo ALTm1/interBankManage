@@ -55,26 +55,7 @@
           <ui-table-column prop="remark" label="零售业务部业务额度（亿元）"></ui-table-column>
           <ui-table-column prop="remark" label="资产管理部业务额度（亿元）"></ui-table-column>
           <ui-table-column prop="remark" label="业务往来情况"></ui-table-column>
-          <ui-table-column label="操作">
-            <template slot-scope="scope">
-              <ui-button
-                class="operator-button"
-                @click="goDetail(scope.row)"
-                type="text"
-                size="small"
-              >查看详情</ui-button>
-              <ui-button
-                class="operator-button"
-                @click="goCancel(scope.row)"
-                type="text"
-                size="small"
-              >注销</ui-button>
-            </template>
-          </ui-table-column>
         </ui-table>
-        <!-- <ui-row class="btn">
-          <ui-pagination background layout="prev, pager, next" :total="1000"></ui-pagination>
-        </ui-row>-->
       </div>
       <ui-row class="btn btnbg">
         <ui-pagination background layout="prev, pager, next" :total="1000"></ui-pagination>

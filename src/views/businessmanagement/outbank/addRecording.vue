@@ -1,10 +1,7 @@
 <template>
   <!-- 机构补录页 -->
   <div class="info-detail">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="机构补录"></block-title>
-
       <div class="form">
         <ui-form ref="form" :model="form" label-width="150px">
           <ui-row>

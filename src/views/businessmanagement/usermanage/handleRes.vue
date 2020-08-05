@@ -2,7 +2,6 @@
   <!-- 结果页 -->
   <div class="handle-res">
     <div class="right-wrap">
-      <block-title blockTitle="确认结果"></block-title>
       <result :status="true" :tadeSuccess="'交易成功'" :batch="'1234567890123'" @click="clickFinish"></result>
     </div>
   </div>

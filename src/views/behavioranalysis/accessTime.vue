@@ -2,7 +2,6 @@
   <!-- 功能模块访问时长页 -->
   <div class="access-time">
     <div class="right-wrap">
-      <block-title blockTitle="功能模块访问时长"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">

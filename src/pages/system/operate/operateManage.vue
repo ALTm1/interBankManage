@@ -30,14 +30,11 @@
         </div>
         <!-- 结果表格 -->
         <ui-table :data="tableData" cell-class-name="number">
-            <ui-table-column
-      label="机构号"
-      width="100">
-      <template slot-scope="scope">
-          <li style="color:#9B7041;">{{ scope.row.number }}</li>
-       
-      </template>
-    </ui-table-column>
+          <ui-table-column label="机构号" width="100">
+            <template slot-scope="scope">
+              <li style="color:#9B7041;">{{ scope.row.number }}</li>
+            </template>
+          </ui-table-column>
           <ui-table-column prop="name" label="操作员姓名" width="180"></ui-table-column>
           <ui-table-column prop="department" label="所属部门" width="180"></ui-table-column>
           <ui-table-column prop="state" label="状态" width="150"></ui-table-column>
@@ -60,72 +57,72 @@
 </template>
 <script>
 export default {
-  name: "operatemanage",
+  name: 'operatemanage',
   data() {
     return {
-        id:'',
-        name:'',
+      id: '',
+      name: '',
       tableData: [
         {
-          number: "100011",
-          name: "王小虎",
-          department: "金融同业部",
-          state: "正常",
-          role: "交易员",
-          time: "2020-01-31  17:00"
+          number: '100011',
+          name: '王小虎',
+          department: '金融同业部',
+          state: '正常',
+          role: '交易员',
+          time: '2020-01-31  17:00',
         },
         {
-          number: "100011",
-          name: "王小虎",
-          department: "金融同业部",
-          state: "正常",
-          role: "交易员",
-          time: "2020-01-31  17:00"
+          number: '100011',
+          name: '王小虎',
+          department: '金融同业部',
+          state: '正常',
+          role: '交易员',
+          time: '2020-01-31  17:00',
         },
         {
-          number: "100011",
-          name: "王小虎",
-          department: "金融同业部",
-          state: "正常",
-          role: "交易员",
-          time: "2020-01-31  17:00"
-        }
+          number: '100011',
+          name: '王小虎',
+          department: '金融同业部',
+          state: '正常',
+          role: '交易员',
+          time: '2020-01-31  17:00',
+        },
       ],
-      showQuery:false
-    };
+      showQuery: false,
+    }
   },
   methods: {
     toDetail(row) {
-        this.$router.push('operatedetail')
+      this.$router.push('operatedetail')
     },
-    modify(row){
-        this.$router.push('operatemodify')
+    modify(row) {
+      this.$router.push('operatemodify')
     },
-    cancel(row){
-        this.$router.push('operatecancel')
+    cancel(row) {
+      this.$router.push('operatecancel')
     },
-    refresh(){
-        // 点击重置
-        this.id='';
-        this.name='';
+    refresh() {
+      // 点击重置
+      this.id = ''
+      this.name = ''
     },
-    query(){
-        // 点击查询
-        this.showQuery=true;
+    query() {
+      // 点击查询
+      this.showQuery = true
     },
-    add(){
-        // 新增，跳转到新增录入页
-        this.$router.push('operateAdd')
-    }
-  }
-};
+    add() {
+      // 新增，跳转到新增录入页
+      this.$router.push('operateAdd')
+    },
+  },
+}
 </script>
 <style>
-.ui-table .number{
-font-size:14px;
-font-family:SourceHanSansCN;
-font-weight:400;
-color:rgba(51,51,51,1);
+.ui-table .number {
+  font-size: 14px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
 }
 </style>
 <style scoped>

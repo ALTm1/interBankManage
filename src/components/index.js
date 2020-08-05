@@ -31,6 +31,8 @@ import Result from '@/components/result'
 
 // 引入块级标题
 import BlockTitle from '@/components/blocktitle'
+// 引入查询结果标题
+import QueryResult from '@/components/queryresult'
 // 注意 有些组件使用异步加载会有影响
 Vue.component('ui-container-full', ContainerFull)
 Vue.component('ui-icon-fa', IconFa)
@@ -42,4 +44,5 @@ Vue.component('HeaderItem', HeaderItem)
 Vue.component('BorderHeader', BorderHeader)
 Vue.component('block-title', BlockTitle)
 Vue.component('result', Result)
+Vue.component('QueryResult', QueryResult)
 

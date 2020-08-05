@@ -3,8 +3,6 @@
   <div class="section-del">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="部门删除确认"></block-title>
-
       <div class="form">
         <ui-form ref="form" label-width="150px">
           <ui-row>
