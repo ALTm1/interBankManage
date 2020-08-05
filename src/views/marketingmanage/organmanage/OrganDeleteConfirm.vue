@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 13:36:30
- * @LastEditTime: 2020-08-04 15:44:19
+ * @LastEditTime: 2020-08-05 10:36:11
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganDeleteConfirm.vue
@@ -11,7 +11,7 @@
 <template>
   <div class="wrap">
     <BorderHeader title="机构动态删除确认页"></BorderHeader>
-    <div class="clear content">
+    <div class="content-wrap clear">
       <div
         :class="[index%2==0?'float-left':'float-right']"
         v-for="(item,index) in displayInfoArr"
@@ -66,8 +66,5 @@ export default {
 .wrap {
   margin: 0 auto;
   background: #ffffff;
-}
-.content {
-  padding: 40px 0px 0px;
 }
 </style>

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 15:28:41
- * @LastEditTime: 2020-08-04 15:09:53
+ * @LastEditTime: 2020-08-05 10:29:47
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIncreaseConfirm.vue
@@ -10,7 +10,7 @@
 <template>
   <div class="wrap">
     <BorderHeader title="会议新增确认页"></BorderHeader>
-    <div class="content clear">
+    <div class="content-wrap clear">
       <div
         :class="[index%2==0?'float-left':'float-right']"
         v-for="(item,index) in displayInfoArr"
@@ -69,8 +69,5 @@ export default {
 .wrap {
   margin: 0 auto;
   background: #ffffff;
-}
-.content {
-  padding: 50px 40px;
 }
 </style>

@@ -32,16 +32,10 @@
       </ui-row>
 
       <div class="table">
-        <ui-table :data="productTags" style="width: 96%;margin:0 auto">
-          <ui-table-column label="请选择" width="80">
+        <ui-table :data="productTags">
+          <ui-table-column label="序号" width="180">
             <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
+              <span class="serial-number">001{{scope.$index + 1}}</span>
             </template>
           </ui-table-column>
           <ui-table-column prop="tagName" label="机构名称"></ui-table-column>
@@ -149,8 +143,9 @@ export default {
 <style lang="scss">
 .out-bank {
   .right-wrap {
+    background: #fff;
     .form {
-      background: #fff;
+      // background: #fff;
       .ui-form {
         width: 50%;
         padding: 62px 0;
@@ -159,6 +154,15 @@ export default {
     }
     .table {
       padding-bottom: 40px;
+      // .ui-table__header-wrapper th {
+      //   padding: 0;
+      //   background: rgba(245, 246, 248, 1);
+      //   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+      //   border-radius: 4px 4px 0px 0px;
+      // }
+      // .ui-table__header-wrapper tr {
+      //   height: 30px;
+      // }
     }
   }
 

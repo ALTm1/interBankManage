@@ -1,11 +1,6 @@
 <template>
-  <!-- 部门删除结果页 -->
-  <!-- <div class="result-box">
-    <div class="right-wrap">
-  <block-title blockTitle="部门删除结果"></block-title>-->
-
   <div class="result">
-    <img src alt class="result-img" />
+    <img :src="src" alt class="result-img" />
     <div v-show="status">
       <div class="result-status">{{tadeSuccess}}</div>
       <div class="batch">交易流水号:{{batch}}</div>
@@ -41,7 +36,10 @@ export default {
     },
   },
   data() {
-    return {}
+    return {
+      src: require('@/assets/image/success.png'),
+      faliedSrc: require('@/assets/image/success.png'),
+    }
   },
   methods: {
     // 点击完成
@@ -62,10 +60,9 @@ export default {
   background: #fff;
   .result-img {
     display: block;
-    width: 257px;
-    height: 158px;
+    width: 260px;
+    height: 170px;
     margin: 0 auto;
-    background: #98243d;
   }
 
   .result-status,
@@ -82,14 +79,19 @@ export default {
   }
   .result-status {
     font-size: 16px;
-    margin: 20px 0;
+    margin: 18px 0 17px;
   }
 
   .batch {
     font-size: 12px;
-    margin-bottom: 49px;
+    margin-bottom: 79px;
   }
-
+  .back-btn {
+    margin-right: 204px;
+  }
+  .ui-button + .ui-button {
+    margin-left: 0;
+  }
   .continue-next {
     background: #98243d !important;
     border-color: #98243d !important;

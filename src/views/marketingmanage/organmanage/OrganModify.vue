@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 13:20:59
- * @LastEditTime: 2020-08-04 15:43:17
+ * @LastEditTime: 2020-08-05 10:25:34
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganModify.vue
@@ -13,30 +13,32 @@
 <template>
   <div class="wrap">
     <BorderHeader title="机构动态修改录入页"></BorderHeader>
-    <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="150px">
-      <ui-form-item label="机构动态标题" prop="organTitle">
-        <ui-input v-model="form.organTitle" placeholder="请输入机构动态标题"></ui-input>
-      </ui-form-item>
+    <div class="form-wrap">
+      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="150px">
+        <ui-form-item label="机构动态标题" prop="organTitle">
+          <ui-input v-model="form.organTitle" placeholder="请输入机构动态标题"></ui-input>
+        </ui-form-item>
 
-      <ui-form-item label="机构动态内容">
-        <ui-upload
-          class="upload-demo"
-          action="https://jsonplaceholder.typicode.com/posts/"
-          :on-preview="handlePreview"
-          :on-remove="handleRemove"
-          :before-remove="beforeRemove"
-          multiple
-          :limit="3"
-          :on-exceed="handleExceed"
-          :file-list="form.organContent"
-          :auto-upload="false"
-        >
-          <span class="upload-text">点击上传</span>
-        </ui-upload>
-      </ui-form-item>
-    </ui-form>
-    <div class="buttons">
-      <Button text="修改" backgroundColor="#9B7041" @click.native="submitForm('ruleForm')"></Button>
+        <ui-form-item label="机构动态内容">
+          <ui-upload
+            class="upload-demo"
+            action="https://jsonplaceholder.typicode.com/posts/"
+            :on-preview="handlePreview"
+            :on-remove="handleRemove"
+            :before-remove="beforeRemove"
+            multiple
+            :limit="3"
+            :on-exceed="handleExceed"
+            :file-list="form.organContent"
+            :auto-upload="false"
+          >
+            <span class="upload-text">点击上传</span>
+          </ui-upload>
+        </ui-form-item>
+      </ui-form>
+      <div class="buttons">
+        <Button text="修改" backgroundColor="#9B7041" @click.native="submitForm('ruleForm')"></Button>
+      </div>
     </div>
   </div>
 </template>

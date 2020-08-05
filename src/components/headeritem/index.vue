@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 13:32:44
- * @LastEditTime: 2020-07-31 13:33:17
+ * @LastEditTime: 2020-08-05 11:04:08
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\components\headeritem\index.vue
@@ -25,7 +25,7 @@ export default {
   },
   data() {
     return {
-      lineImg: require('@/assets/image/line.png'),
+      lineImg: require('@/assets/image/titleleft.png'),
     }
   },
 

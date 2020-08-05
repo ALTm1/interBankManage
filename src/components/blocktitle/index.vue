@@ -3,7 +3,7 @@
     <ui-row class="handle-title">
       <ui-col :span="12">{{blockTitle}}</ui-col>
       <ui-col :span="12" class="img">
-        <img src alt />
+        <img :src="src" alt />
       </ui-col>
     </ui-row>
   </div>
@@ -16,6 +16,11 @@ export default {
       type: String,
       default: '',
     },
+  },
+  data() {
+    return {
+      src: require('@/assets/image/back.png'),
+    }
   },
 }
 </script>
@@ -35,10 +40,9 @@ export default {
     img {
       float: right;
       display: block;
-      width: 14px;
-      height: 14px;
-      margin: 8px 0;
-      background: #f0f;
+      width: 20px;
+      height: 20px;
+      margin: 5px 0;
     }
   }
 }

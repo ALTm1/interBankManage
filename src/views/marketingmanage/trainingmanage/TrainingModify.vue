@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:09:21
- * @LastEditTime: 2020-08-04 15:34:23
+ * @LastEditTime: 2020-08-05 11:23:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingModify.vue
@@ -11,36 +11,38 @@
 <template>
   <div class="wrap">
     <BorderHeader title="培训修改录入页"></BorderHeader>
-    <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
-      <ui-form-item label="培训标题" prop="trainingTitle">
-        <ui-input v-model="form.trainingTitle" placeholder="请输入培训标题"></ui-input>
-      </ui-form-item>
-      <ui-form-item label="发布对象" prop="releaseObj">
-        <ui-select v-model="form.releaseObj" placeholder="请选择" multiple>
-          <div v-for="item in form.releaseObjList" :key="item.label">
-            <ui-option :label="item.label" :value="item.value"></ui-option>
-          </div>
-        </ui-select>
-      </ui-form-item>
-      <ui-form-item label="培训内容">
-        <ui-upload
-          class="upload-demo"
-          action="https://jsonplaceholder.typicode.com/posts/"
-          :on-preview="handlePreview"
-          :on-remove="handleRemove"
-          :before-remove="beforeRemove"
-          multiple
-          :limit="3"
-          :on-exceed="handleExceed"
-          :file-list="form.trainingContent"
-          :auto-upload="false"
-        >
-          <span class="upload-text">点击上传</span>
-        </ui-upload>
-      </ui-form-item>
-    </ui-form>
-    <div class="buttons">
-      <Button text="修改" backgroundColor="#9B7041" @click.native="submitForm('ruleForm')"></Button>
+    <div class="form-wrap">
+      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
+        <ui-form-item label="培训标题" prop="trainingTitle">
+          <ui-input v-model="form.trainingTitle" placeholder="请输入培训标题"></ui-input>
+        </ui-form-item>
+        <ui-form-item label="发布对象" prop="releaseObj">
+          <ui-select v-model="form.releaseObj" placeholder="请选择" multiple>
+            <div v-for="item in form.releaseObjList" :key="item.label">
+              <ui-option :label="item.label" :value="item.value"></ui-option>
+            </div>
+          </ui-select>
+        </ui-form-item>
+        <ui-form-item label="培训内容">
+          <ui-upload
+            class="upload-demo"
+            action="https://jsonplaceholder.typicode.com/posts/"
+            :on-preview="handlePreview"
+            :on-remove="handleRemove"
+            :before-remove="beforeRemove"
+            multiple
+            :limit="3"
+            :on-exceed="handleExceed"
+            :file-list="form.trainingContent"
+            :auto-upload="false"
+          >
+            <span class="upload-text">点击上传</span>
+          </ui-upload>
+        </ui-form-item>
+      </ui-form>
+      <div class="buttons">
+        <Button text="修改" backgroundColor="#9B7041" @click.native="submitForm('ruleForm')"></Button>
+      </div>
     </div>
   </div>
 </template>
@@ -53,10 +55,6 @@ export default {
         trainingTitle: '',
         releaseObj: [],
         releaseObjList: [
-          {
-            label: '所有人',
-            value: '所有人',
-          },
           {
             label: '大众会员',
             value: '大众会员',
