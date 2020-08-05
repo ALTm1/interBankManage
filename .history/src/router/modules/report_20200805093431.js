@@ -41,22 +41,6 @@ export default [
         }
       },
       {
-        path: 'groupdelete',
-        name: 'groupdelete',
-        component: () => import('@/views/report/group/groupDelete.vue'),
-        meta: {
-          title: '分组信息删除'
-        }
-      },
-      {
-        path: 'deleteresult',
-        name: 'deleteresult',
-        component: () => import('@/views/report/group/deleteResult.vue'),
-        meta: {
-          title: '分组信息删除结果'
-        }
-      },
-      {
         path: 'modifyconfirm',
         name: 'modifyconfirm',
         component: () => import('@/views/report/group/modifyConfirm.vue'),
@@ -64,15 +48,6 @@ export default [
           title: '分组信息维护修改确认'
         }
       },
-      {
-        path: 'modifysucc',
-        name: 'modifysucc',
-        component: () => import('@/views/report/group/modifySucc.vue'),
-        meta: {
-          title: '分组信息维护修改结果'
-        }
-      },
-      
       {
         path: 'groupadd',
         name: 'groupadd',

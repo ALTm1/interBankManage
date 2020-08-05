@@ -34,7 +34,7 @@
       </div>
       <!-- 按钮 -->
       <div class="modify-btn">
-        <button @click="modify">修改</button>
+        <button @click="cancel">删除</button>
       </div>
     </div>
      </div>
@@ -54,8 +54,8 @@ export default {
     };
   },
   methods: {
-    modify() {
-      this.$router.push("modifyconfirm");
+    cancel() {
+      this.$router.push("deleteresult");
     }
   }
 };
@@ -93,11 +93,11 @@ input {
   font-size: 12px;
   font-family: SourceHanSansCN;
   font-weight: bold;
-  color: rgba(153, 153, 153, 1);
+  color: #333333;
+  /* color: rgba(153, 153, 153, 1); */
 }
 .modify-content div input{
   text-align: center;
-  /* float: right; */
   width: 300px;
   height: 33px;
   background: rgba(255, 255, 255, 1);

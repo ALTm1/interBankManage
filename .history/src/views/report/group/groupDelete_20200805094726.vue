@@ -2,7 +2,7 @@
   <div>
     <div class="modify-content">
       <div class="table-title">
-        <li class="title-left">分组信息维护修改录入页</li>
+        <li class="title-left">分组信息删除页</li>
         <li class="title-right"></li>
       </div>
        <div class="content-wrap">
@@ -34,7 +34,7 @@
       </div>
       <!-- 按钮 -->
       <div class="modify-btn">
-        <button @click="modify">修改</button>
+        <button @click="cancel">删除</button>
       </div>
     </div>
      </div>
@@ -54,8 +54,8 @@ export default {
     };
   },
   methods: {
-    modify() {
-      this.$router.push("modifyconfirm");
+    cancel() {
+      this.$router.push("deleteresult");
     }
   }
 };
@@ -93,11 +93,11 @@ input {
   font-size: 12px;
   font-family: SourceHanSansCN;
   font-weight: bold;
-  color: rgba(153, 153, 153, 1);
+  color: #333333;
+  /* color: rgba(153, 153, 153, 1); */
 }
 .modify-content div input{
   text-align: center;
-  /* float: right; */
   width: 300px;
   height: 33px;
   background: rgba(255, 255, 255, 1);

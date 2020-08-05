@@ -142,25 +142,22 @@ input {
   padding-left: 11px;
 }
 .content-wrap {
-  /* padding: 40px 81px 81px 90px; */
+  padding: 40px 81px 81px 90px;
   background-color: #fff;
-  width: 100%;
-  
 box-shadow:0px 1px 1px 0px rgba(0, 0, 0, 0.1);
 border-radius:4px 4px 0px 0px;
 }
 .content-wrap div {
   width: 100%;
-  margin-top: 100px;
   display: inline-block;
 }
 .content-wrap ul{
     width: 500px;
     margin: 0 auto;
     display: -webkit-box;
-    border-top: 1px solid #999;
+    /* border-top: 1px solid #999;
     border-left: 1px solid #999;
-    border-right: 1px solid #999;
+    border-right: 1px solid #999; */
 }
 .content-wrap ul:last-child{
     border-bottom: 1px solid #999;

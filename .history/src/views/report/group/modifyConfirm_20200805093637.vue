@@ -34,7 +34,7 @@
       </div>
       <!-- 按钮 -->
       <div class="modify-btn">
-        <button @click="modify">修改</button>
+        <button @click="confirm">确认</button>
       </div>
     </div>
      </div>
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     modify() {
-      this.$router.push("modifyconfirm");
+      this.$router.push("modifysucc");
     }
   }
 };
@@ -93,11 +93,10 @@ input {
   font-size: 12px;
   font-family: SourceHanSansCN;
   font-weight: bold;
-  color: rgba(153, 153, 153, 1);
+  /* color: rgba(153, 153, 153, 1); */
 }
 .modify-content div input{
   text-align: center;
-  /* float: right; */
   width: 300px;
   height: 33px;
   background: rgba(255, 255, 255, 1);

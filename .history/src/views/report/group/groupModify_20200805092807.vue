@@ -151,7 +151,6 @@ border-radius:4px 4px 0px 0px;
 }
 .content-wrap div {
   width: 100%;
-  margin-top: 100px;
   display: inline-block;
 }
 .content-wrap ul{

@@ -34,7 +34,7 @@
       </div>
       <!-- 按钮 -->
       <div class="modify-btn">
-        <button @click="modify">修改</button>
+        <button @click="confirm">确认</button>
       </div>
     </div>
      </div>
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     modify() {
-      this.$router.push("modifyconfirm");
+      this.$router.push("modifysucc");
     }
   }
 };

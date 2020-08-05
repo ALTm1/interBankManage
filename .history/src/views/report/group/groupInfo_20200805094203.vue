@@ -68,7 +68,7 @@ export default {
         this.$router.push('groupmodify')
       },
       cancel(row){
-        this.$router.push('groupdelete')
+        this.$router.push('groupmodify')
       },
       add(){
         this.$router.push('groupadd')
