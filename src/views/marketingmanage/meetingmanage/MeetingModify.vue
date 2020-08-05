@@ -86,10 +86,6 @@ export default {
         releaseObj: [],
         releaseObjList: [
           {
-            label: '所有人',
-            value: '所有人',
-          },
-          {
             label: '大众会员',
             value: '大众会员',
           },

@@ -54,6 +54,10 @@
   border-radius: 3px 3px 3px 3px;
 }
 
+.form-wrap .ui-input__suffix {
+  right: 20px;
+}
+
 /* 标题 */
 
 /*表格头部标题 */
@@ -170,22 +174,26 @@
   font-weight: bold;
   color: rgba(189, 194, 202, 1);
 }
+
 .ui-table::before {
   height: 0;
 }
+
 .ui-table__header-wrapper th {
-  font-size:12px;
-  font-family:SourceHanSansCN;
-  font-weight:bold;
-  color:rgba(51,51,51,1);
+  font-size: 12px;
+  font-family: SourceHanSansCN;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
   padding: 0;
   background: rgba(245, 246, 248, 1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
   border-radius: 4px 4px 0px 0px;
 }
+
 .ui-table .ui-table__header-wrapper tr {
   height: 30px;
 }
+
 .ui-table .ui-table__body-wrapper tr {
   height: 58px;
 }
@@ -276,4 +284,10 @@
 .content-wrap {
   padding: 50px;
   background: #fff;
+}
+
+/* select组件下拉箭头 */
+
+.ui-icon-arrow-up:before {
+  content: "\e78f";
 }

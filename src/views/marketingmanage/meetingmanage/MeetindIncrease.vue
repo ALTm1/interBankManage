@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 11:14:20
- * @LastEditTime: 2020-08-05 10:08:03
+ * @LastEditTime: 2020-08-05 11:22:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Ed
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetindIncrease.vue
@@ -99,10 +99,6 @@ export default {
         endDate: '',
         releaseObj: [],
         releaseObjList: [
-          {
-            label: '所有人',
-            value: '所有人',
-          },
           {
             label: '大众会员',
             value: '大众会员',

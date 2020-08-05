@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 16:03:32
- * @LastEditTime: 2020-08-04 16:58:35
+ * @LastEditTime: 2020-08-05 11:24:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\ProRecommend.vue
@@ -188,11 +188,6 @@ export default {
         ],
         expires: '',
         expiresList: [
-          {
-            label: '全部',
-            value: '全部',
-            active: false,
-          },
           {
             label: '30天以内',
             value: '30天以内',

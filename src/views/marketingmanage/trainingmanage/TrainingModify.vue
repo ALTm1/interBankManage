@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:09:21
- * @LastEditTime: 2020-08-05 10:21:53
+ * @LastEditTime: 2020-08-05 11:23:26
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingModify.vue
@@ -55,10 +55,6 @@ export default {
         trainingTitle: '',
         releaseObj: [],
         releaseObjList: [
-          {
-            label: '所有人',
-            value: '所有人',
-          },
           {
             label: '大众会员',
             value: '大众会员',
