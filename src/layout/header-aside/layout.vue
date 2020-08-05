@@ -50,11 +50,11 @@
             <ui-menu-item index="2-1" @click="system">操作员管理</ui-menu-item>
             <ui-menu-item index="2-2" @click="role">角色管理</ui-menu-item>
             <ui-menu-item index="2-3" @click="log">日志管理</ui-menu-item>
-            <ui-menu-item index="2-4">登录密码修改</ui-menu-item>
+            <ui-menu-item index="2-4" @click="password">登录密码修改</ui-menu-item>
             <ui-menu-item index="2-5" @click="reset">登录密码重置</ui-menu-item>
           </ui-submenu>
 
-          <ui-menu-item index="3">
+          <!-- <ui-menu-item index="3">
             <i class="ui-icon-document"></i>
             <span slot="title">机构管理</span>
           </ui-menu-item>
@@ -77,15 +77,12 @@
           <ui-menu-item index="8">
             <i class="ui-icon-setting"></i>
             <span slot="title">同业圈管理</span>
-          </ui-menu-item>
-          <ui-menu-item index="9">
+          </ui-menu-item> -->
+          <!-- <ui-menu-item index="9">
             <i class="ui-icon-setting"></i>
             <span slot="title">举报及反馈管理</span>
-          </ui-menu-item>
-          <ui-menu-item index="10">
-            <i class="ui-icon-setting"></i>
-            <span slot="title">客户端版本管理</span>
-          </ui-menu-item>
+          </ui-menu-item> -->
+          
           <ui-submenu index="11">
             <template slot="title">
               <i class="ui-icon-location"></i>
@@ -147,6 +144,19 @@
             </template>
             <ui-menu-item index="17-1" @click="goUnionlapmanagement">联盟圈管理</ui-menu-item>
           </ui-submenu>
+          <ui-submenu index="18">
+            <template slot="title">
+              <i class="ui-icon-location"></i>
+              <span>报表管理</span>
+            </template>
+            <ui-menu-item index="18-1" @click="personal">个人票据统计</ui-menu-item>
+            <ui-menu-item index="18-2" @click="team">团队票据统计</ui-menu-item>
+            <ui-menu-item index="18-3" @click="group">分组信息维护</ui-menu-item>
+          </ui-submenu>
+          <ui-menu-item index="10">
+            <i class="ui-icon-setting"></i>
+            <span slot="title" @click="client">客户端版本管理</span>
+          </ui-menu-item>
         </ui-menu>
       </div>
       <!-- 右侧 -->
@@ -257,6 +267,25 @@ export default {
     //日志管理
     log() {
       this.$router.push('/index/log')
+    },
+    // 个人票务
+     personal(){
+       this.$router.push('/index/personalbill')
+     },
+    // 团队票务
+    group(){
+      this.$router.push('/index/group')
+    },
+    // 登录密码修改
+    password(){
+      this.$router.push('/index/password')
+    },
+    team(){
+    this.$router.push('/index/teamlbill')
+    },
+    // 客户端
+    client(){
+      this.$router.push('/index/client')
     },
     /***参数管理***/
     // 产品标签维护
@@ -432,9 +461,24 @@ export default {
   background: rgba(239, 240, 244, 1);
 }
 .menu-admin {
-  background: #be9d62;
+  // width:196px;
+height:104px;
+// line-height: 104px;
+  background: #DADADA;
   text-align: center;
-  color: #fff;
   cursor: pointer;
+}
+.menu-admin span{
+  font-size:17px;
+font-weight:400;
+color: #fff;
+padding-top: 32px;
+display: inline-block;
+}
+.menu-admin li{
+  font-size:15px;
+font-weight:400;
+color:rgba(128,195,223,1);
+
 }
 </style>
