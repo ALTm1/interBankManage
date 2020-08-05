@@ -176,17 +176,14 @@
 }
 
 .ui-table__header-wrapper th {
-<<<<<<< HEAD
   font-size:12px;
   font-family:SourceHanSansCN;
   /* font-weight:bold;
   color:rgba(51,51,51,1);
-=======
   font-size: 12px;
   font-family: SourceHanSansCN;
   font-weight: bold;
   color: rgba(51, 51, 51, 1);
->>>>>>> a251fe7b412d960e9beb6844086ebdc89e75e310
   padding: 0;
   background: rgba(245, 246, 248, 1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
