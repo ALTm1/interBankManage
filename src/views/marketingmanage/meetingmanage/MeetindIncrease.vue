@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 11:14:20
- * @LastEditTime: 2020-08-04 15:07:23
+ * @LastEditTime: 2020-08-05 10:08:03
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Ed
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetindIncrease.vue
@@ -10,8 +10,8 @@
 
 <template>
   <div class="wrap">
+    <BorderHeader title="会议新增录入页"></BorderHeader>
     <div class="form-wrap">
-      <BorderHeader title="会议新增录入页"></BorderHeader>
       <ui-form
         class="form-block clear"
         ref="ruleForm"
@@ -178,7 +178,7 @@ export default {
       })
     },
     returnLast() {
-      this.$router.push('/marketingmanage/meetingmanage/meetingindex')
+      this.$router.go(-1)
     },
   },
 }

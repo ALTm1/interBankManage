@@ -4,8 +4,8 @@
 <template>
   <div class="wrap">
     <div class="content">
+      <BorderHeader title="审批记录查询"></BorderHeader>
       <div class="form-wrap">
-        <BorderHeader title="审批记录查询"></BorderHeader>
         <ui-form
           class="form-block clear"
           ref="ruleForm"
@@ -198,10 +198,6 @@ export default {
   display: inline-block;
 }
 
-.form-wrap {
-  display: inline-block;
-  background: #ffffff;
-}
 .form-block {
   padding: 40px 40px 0px;
   box-sizing: border-box;

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:51:31
- * @LastEditTime: 2020-08-04 15:39:33
+ * @LastEditTime: 2020-08-05 10:23:37
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganIndex.vue
@@ -11,8 +11,8 @@
 
 <template>
   <div>
+    <BorderHeader title="机构动态管理"></BorderHeader>
     <div class="form-wrap">
-      <BorderHeader title="机构动态管理"></BorderHeader>
       <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="120px">
         <ui-form-item label="机构动态标题" prop="organTitle">
           <ui-input v-model="form.organTitle" placeholder="请输入机构动态标题"></ui-input>

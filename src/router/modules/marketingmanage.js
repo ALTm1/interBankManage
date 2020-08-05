@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-28 09:23:48
- * @LastEditTime: 2020-07-30 19:57:14
+ * @LastEditTime: 2020-08-05 10:00:44
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\router\modules\marketingmanage.js

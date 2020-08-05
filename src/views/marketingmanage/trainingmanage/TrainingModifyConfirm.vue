@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:16:02
- * @LastEditTime: 2020-08-04 15:37:33
+ * @LastEditTime: 2020-08-05 10:34:36
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingModifyConfirm.vue
@@ -12,7 +12,7 @@
 <template>
   <div class="wrap">
     <BorderHeader title="培训修改确认页"></BorderHeader>
-    <div class="clear content">
+    <div class="content-wrap clear">
       <div
         :class="[index%2==0?'float-left':'float-right']"
         v-for="(item,index) in displayInfoArr"
@@ -58,8 +58,5 @@ export default {
 <style lang="css" scoped>
 .wrap {
   background: #ffffff;
-}
-.content {
-  padding: 40px 40px 0px;
 }
 </style>
