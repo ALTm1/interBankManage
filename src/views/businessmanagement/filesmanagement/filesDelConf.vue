@@ -1,9 +1,7 @@
 <template>
   <!-- 文件删除确认页 -->
   <div class="files-del-conf">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="文件删除确认"></block-title>
       <div class="form">
         <ui-form ref="form" label-width="100px">
           <ui-row>

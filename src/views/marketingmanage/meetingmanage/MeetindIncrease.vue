@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 11:14:20
- * @LastEditTime: 2020-08-05 11:22:28
+ * @LastEditTime: 2020-08-05 15:09:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Ed
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetindIncrease.vue
@@ -184,6 +184,9 @@ export default {
 /* form表单 */
 .form-block {
   padding: 50px 0px 0px;
+  width: 1200px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 .wrap /deep/ .ui-form-item {
   display: inline-block;

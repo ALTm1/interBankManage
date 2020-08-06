@@ -1,72 +1,43 @@
 <template>
-  <!-- 联盟圈查询页 -->
+  <!-- 联盟圈详情页 -->
   <div class="unionlap-detail">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="联盟圈管理详情"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
             <ui-row>
               <ui-col>
                 <ui-form-item label="联盟圈名称">
-                  <ui-input-business v-model="form.organName" placeholder="请输入联盟圈名称"></ui-input-business>
+                  <div class="right-item">{{form.organName}}</div>
                 </ui-form-item>
-                <!-- <ui-form-item label="用户姓名">
-                  <ui-input-business v-model="form.userName" placeholder="请输入用户姓名"></ui-input-business>
-                </ui-form-item>-->
               </ui-col>
-            </ui-row>
-            <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
-              <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button>
             </ui-row>
           </ui-form>
         </div>
       </ui-row>
+      <ui-row class="list-title" style="padding-top: 33px">
+        <div class="img">
+          <img src="@/assets/image/titleleft.png" alt />
+        </div>
+        <span>机构列表</span>
+      </ui-row>
+      <ui-row>
+        <div class="table">
+          <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
+            <ui-table-column label="请选择" width="80">
+              <template slot-scope="scope">
+                <span class="serial-number">{{scope.$index+1}}</span>
+              </template>
+            </ui-table-column>
+            <ui-table-column prop="name" label="联盟圈名称"></ui-table-column>
+            <ui-table-column prop="loginName" label="创建时间"></ui-table-column>
+            <ui-table-column prop="loginName" label="是否圈内共享授用信材料"></ui-table-column>
+          </ui-table>
+        </div>
+      </ui-row>
 
-      <div class="table">
-        <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
-          <ui-table-column label="请选择" width="80">
-            <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
-            </template>
-          </ui-table-column>
-          <ui-table-column prop="name" label="联盟圈名称"></ui-table-column>
-          <ui-table-column prop="loginName" label="创建时间"></ui-table-column>
-          <ui-table-column prop="loginName" label="状态"></ui-table-column>
-          <ui-table-column label="操作">
-            <template slot-scope="scope">
-              <ui-button
-                class="operator-button"
-                @click="goDetail(scope.row)"
-                type="text"
-                size="small"
-              >详情</ui-button>
-              <ui-button
-                class="operator-button"
-                @click="goModify(scope.row)"
-                type="text"
-                size="small"
-              >修改</ui-button>
-              <ui-button
-                class="operator-button"
-                @click="goCancel(scope.row)"
-                type="text"
-                size="small"
-              >注销</ui-button>
-            </template>
-          </ui-table-column>
-        </ui-table>
-      </div>
       <ui-row class="btn btnbg">
-        <ui-button type="primary" class="continue-next" @click="goAdd">新增</ui-button>
+        <ui-button type="primary" class="back-btn single-btn" @click="goBack">返回</ui-button>
       </ui-row>
     </div>
   </div>
@@ -79,13 +50,10 @@ export default {
     return {
       // 表单的值
       form: {
-        organName: '',
+        organName: '啦啦啦',
         userName: '',
       },
-      // 单选按钮
-      tableRadio: '',
-      // 获取选中数据
-      chosedData: [],
+
       // 用户信息数据
       userInfoList: [
         {
@@ -125,48 +93,13 @@ export default {
     goBack() {
       this.$router.go(-1)
     },
-    // 点击查询
-    clickQuery() {},
-    // 点击查看详情
-    goDetail(row) {
-      //   console.log(row)
-      this.$router.push({
-        name: 'userDetail',
-        params: { detail: row },
-      })
-    },
-    // 新增
-    goAdd() {
-      //   console.log(row)
-      this.$router.push('unionlapAdd')
-    },
-
-    // 点击修改
-    goModify(row) {
-      //   this.$router.push({
-      //     path: '/handleConf',
-      //     query: { detail: row, type: 0 },
-      //   })
-    },
-
-    // 点击注销
-    goCancel(row) {
-      this.$router.push({
-        path: 'handleConf',
-        query: { detail: row, type: 2 },
-      })
-    },
-    // 获取选中的数据
-    getCurrentRow(row) {
-      this.chosedData = row
-    },
   },
 }
 </script>
 <style lang="scss">
 .unionlap-detail {
   .form {
-    background: #fff;
+    // background: #fff;
     .ui-form {
       width: 50%;
       padding: 62px 0;

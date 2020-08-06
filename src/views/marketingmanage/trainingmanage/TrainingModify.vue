@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:09:21
- * @LastEditTime: 2020-08-05 11:23:26
+ * @LastEditTime: 2020-08-05 18:52:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingModify.vue
@@ -18,7 +18,7 @@
         </ui-form-item>
         <ui-form-item label="发布对象" prop="releaseObj">
           <ui-select v-model="form.releaseObj" placeholder="请选择" multiple>
-            <div v-for="item in form.releaseObjList" :key="item.label">
+            <div v-for="item in releaseObjList" :key="item.label">
               <ui-option :label="item.label" :value="item.value"></ui-option>
             </div>
           </ui-select>
@@ -35,6 +35,7 @@
             :on-exceed="handleExceed"
             :file-list="form.trainingContent"
             :auto-upload="false"
+            :on-change="handleUploadChange"
           >
             <span class="upload-text">点击上传</span>
           </ui-upload>
@@ -51,27 +52,27 @@
 export default {
   data() {
     return {
+      releaseObjList: [
+        {
+          label: '大众会员',
+          value: '大众会员',
+        },
+        {
+          label: '机构会员',
+          value: '机构会员',
+        },
+        {
+          label: '联盟会员',
+          value: '联盟会员',
+        },
+        {
+          label: '本行会员',
+          value: '本行会员',
+        },
+      ],
       form: {
         trainingTitle: '',
         releaseObj: [],
-        releaseObjList: [
-          {
-            label: '大众会员',
-            value: '大众会员',
-          },
-          {
-            label: '机构会员',
-            value: '机构会员',
-          },
-          {
-            label: '联盟会员',
-            value: '联盟会员',
-          },
-          {
-            label: '本行会员',
-            value: '本行会员',
-          },
-        ],
         trainingContent: [
           { name: 'logo.png', url: require('@/assets/image/logo.png') },
         ],
@@ -94,6 +95,7 @@ export default {
   methods: {
     handleRemove(file, fileList) {
       console.log(file, fileList)
+      this.form.trainingContent = fileList
     },
     handlePreview(file) {
       console.log(file)
@@ -108,12 +110,20 @@ export default {
     beforeRemove(file, fileList) {
       return this.$confirm(`确定移除 ${file.name}？`)
     },
+    handleUploadChange(file, fileList) {
+      this.form.trainingContent = fileList
+    },
+
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
+        console.log(this.form)
         if (valid) {
-          this.$router.push(
-            '/marketingmanage/trainingmanage/trainingmodifyconfirm'
-          )
+          this.$router.push({
+            path: '/marketingmanage/trainingmanage/trainingmodifyconfirm',
+            query: {
+              form: JSON.stringify(this.form),
+            },
+          })
         } else {
           return false
         }

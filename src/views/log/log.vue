@@ -68,7 +68,7 @@
 </template>
 <script>
 export default {
-  name: "operatemanage",
+  name: "log",
   data() {
     return {
       name:'',

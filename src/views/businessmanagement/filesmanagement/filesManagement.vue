@@ -1,10 +1,7 @@
 <template>
   <!-- 文件管理页 -->
   <div class="files-management">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="文件管理"></block-title>
-
       <div class="table">
         <ui-table :data="filesList" style="width: 96%;margin:0 auto">
           <ui-table-column label="请选择" width="80">

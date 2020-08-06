@@ -2,8 +2,6 @@
   <!-- 用户详情页 -->
   <div class="user-detail">
     <div class="right-wrap">
-      <block-title blockTitle="用户详情"></block-title>
-
       <div class="form">
         <ui-form ref="form" label-width="100px">
           <ui-row>

@@ -1,6 +1,6 @@
 <template>
-  <!-- 停用结果页 -->
-  <div class="files-modify-res">
+  <!-- 部门修改页 -->
+  <div class="section-modify-res">
     <div class="right-wrap">
       <result :status="true" :tadeSuccess="'交易成功'" :batch="'1234567890123'" @click="clickFinish"></result>
     </div>
@@ -8,18 +8,15 @@
 </template>
 <script>
 export default {
-  name: 'filesModifyRes',
-  computed: {},
-  data() {
-    return {}
-  },
+  name: 'sectionModifyRes',
   methods: {
-    // 点击完成
     clickFinish() {
-      this.$router.push('/filesManagement')
+      this.$router.push('/sectionService')
     },
     // 返回按钮
     goBack() {
+      // this.isContentShow = '0'
+      // this.btnText = '新增'
       this.$router.go(-1)
     },
   },

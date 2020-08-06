@@ -54,7 +54,7 @@
 </template>
 <script>
 export default {
-  name: "operatemanage",
+  name: "clientPage",
   data() {
     return {
       code: "",

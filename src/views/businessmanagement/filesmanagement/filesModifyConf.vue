@@ -2,23 +2,21 @@
   <!-- 文件修改确认页 -->
   <div class="files-modify-Conf">
     <div class="right-wrap">
-      <block-title blockTitle="文件修改确认"></block-title>
-
       <div class="form">
         <ui-form ref="form" label-width="100px">
           <ui-row>
             <ui-col>
               <ui-form-item label="业务类型">
-                <div class="right-item">啦啦啦啦啦啦啦</div>
+                <div class="right-item">{{form.productType}}</div>
               </ui-form-item>
               <ui-form-item label="业务场景">
-                <div class="right-item">啦啦啦啦啦啦啦</div>
+                <div class="right-item">{{form.buissnessScene}}</div>
               </ui-form-item>
               <ui-form-item label="文件标题">
-                <div class="right-item">啦啦啦啦啦啦啦</div>
+                <div class="right-item">{{form.filesTitle}}</div>
               </ui-form-item>
               <ui-form-item label="文件内容">
-                <div class="right-item">啦啦啦啦啦啦啦</div>
+                <div class="right-item">{{form.filesContent}}</div>
               </ui-form-item>
             </ui-col>
           </ui-row>
@@ -36,9 +34,13 @@ export default {
   name: 'filesModifyConf',
   computed: {},
   data() {
-    return {}
+    return {
+      form: {},
+    }
   },
-  created() {},
+  created() {
+    this.form = JSON.parse(sessionStorage.getItem('filesModifyInfo'))
+  },
   methods: {
     // 点击确认
     submitForm(formName) {

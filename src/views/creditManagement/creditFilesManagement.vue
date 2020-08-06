@@ -8,7 +8,7 @@
           <ui-form ref="form" :model="form" label-width="150px">
             <ui-row>
               <ui-col>
-                <ui-form-item label="机构类型">
+                <!-- <ui-form-item label="机构类型">
                   <ui-select v-model="form.organType" placeholder="请选择">
                     <ui-option
                       v-for="item in organTypeList"
@@ -17,15 +17,11 @@
                       :value="item.value"
                     ></ui-option>
                   </ui-select>
-                </ui-form-item>
+                </ui-form-item>-->
                 <ui-form-item label="机构名称">
                   <ui-input-business v-model="form.organName" placeholder="请输入机构名称"></ui-input-business>
                 </ui-form-item>
               </ui-col>
-            </ui-row>
-            <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
-              <!-- <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button> -->
             </ui-row>
           </ui-form>
         </div>
@@ -71,9 +67,9 @@
           </ui-table-column>
         </ui-table>
       </div>
-      <!-- <ui-row class="btn btnbg">
-        <ui-button type="primary" class="back-btn single-btn" @click="goAdd">新增</ui-button>
-      </ui-row>-->
+      <ui-row class="btn btnbg">
+        <ui-button type="primary" class="back-btn single-btn" @click="goBack">返回</ui-button>
+      </ui-row>
     </div>
   </div>
 </template>
@@ -141,10 +137,7 @@ export default {
     goDetail(row) {
       this.$router.push('/infoDetail')
     },
-    // 点击注销
-    goCancel(row) {
-      this.$router.push('/organCancel')
-    },
+
     // 获取选中的数据
     getCurrentRow(row) {
       this.chosedData = row

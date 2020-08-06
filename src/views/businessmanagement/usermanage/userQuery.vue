@@ -2,8 +2,6 @@
   <!-- 用户查询页 -->
   <div class="user-query">
     <div class="right-wrap">
-      <block-title blockTitle="用户查询"></block-title>
-
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">

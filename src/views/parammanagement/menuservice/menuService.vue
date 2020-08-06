@@ -1,9 +1,7 @@
 <template>
   <!-- 审批菜单维护页 -->
   <div class="menu-service">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="审批菜单维护"></block-title>
       <ui-row style="background:#fff;padding:40px 20px">
         <ui-col :span="4">关联功能：</ui-col>
         <ui-col :span="8">

@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 10:16:02
- * @LastEditTime: 2020-08-05 10:34:36
+ * @LastEditTime: 2020-08-05 18:42:35
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\trainingmanage\TrainingModifyConfirm.vue
@@ -46,6 +46,31 @@ export default {
         },
       ],
     }
+  },
+  created() {
+    var displayInfoArrTemp = JSON.parse(this.$route.query.form)
+    // 报名截止日期
+    var endDate = new Date(displayInfoArrTemp.endDate).Format('yyyy-MM-dd')
+    // 会议图片
+    var trainingContent = ''
+    for (var i = 0; i < displayInfoArrTemp.trainingContent.length; i++) {
+      trainingContent =
+        trainingContent + displayInfoArrTemp.trainingContent[i].name + ' '
+    }
+    this.displayInfoArr = [
+      {
+        title: '培训标题',
+        content: displayInfoArrTemp.trainingTitle,
+      },
+      {
+        title: '发布对象',
+        content: displayInfoArrTemp.releaseObj.join(' '),
+      },
+      {
+        title: '培训内容',
+        content: trainingContent,
+      },
+    ]
   },
   methods: {
     goResult() {

@@ -1,9 +1,7 @@
 <template>
   <!-- 联盟圈修改确认页 -->
   <div class="modify-conf">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="联盟圈管理修改确认"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">

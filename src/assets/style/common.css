@@ -21,6 +21,7 @@
   padding: 0 50px;
 }
 
+
 .ui-form-item__label {
   font-size: 14px;
   font-family: SourceHanSansCN;
@@ -54,10 +55,6 @@
   border-radius: 3px 3px 3px 3px;
 }
 
-.form-wrap .ui-input__suffix {
-  right: 20px;
-}
-
 /* 标题 */
 
 /*表格头部标题 */
@@ -74,9 +71,8 @@
 
 .list-title .img {
   display: inline-block;
-  width: 6px;
+  width: 4px;
   height: 15px;
-  background: red;
   vertical-align: middle;
 }
 
@@ -180,6 +176,10 @@
 }
 
 .ui-table__header-wrapper th {
+  font-size:12px;
+  font-family:SourceHanSansCN;
+  /* font-weight:bold;
+  color:rgba(51,51,51,1);
   font-size: 12px;
   font-family: SourceHanSansCN;
   font-weight: bold;
@@ -187,11 +187,11 @@
   padding: 0;
   background: rgba(245, 246, 248, 1);
   box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0px 0px; */
 }
 
 .ui-table .ui-table__header-wrapper tr {
-  height: 30px;
+  /* height: 30px; */
 }
 
 .ui-table .ui-table__body-wrapper tr {
@@ -225,6 +225,11 @@
   /* width: calc(100% - 24px);
   margin: 0 auto; */
   padding-bottom: 40px;
+}
+
+.menu-right-content {
+  width: 100%;
+  background: #fff;
 }
 
 /* table表格 */
@@ -278,7 +283,36 @@
   text-align: center;
   padding: 50px 0px;
 }
+/* 面包屑样式 */
+.ui-breadcrumb__inner {
+  font-size: 12px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+.ui-breadcrumb__inner a,
+.ui-breadcrumb__inner.is-link {
+  font-size: 12px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+.ui-breadcrumb__item:last-child .ui-breadcrumb__inner,
+.ui-breadcrumb__item:last-child .ui-breadcrumb__inner a,
+.ui-breadcrumb__item:last-child .ui-breadcrumb__inner a:hover,
+.ui-breadcrumb__item:last-child .ui-breadcrumb__inner:hover {
+  font-size: 12px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: #9b7041;
+}
 
+.ui-breadcrumb__inner {
+  font-size: 12px;
+  font-family: SourceHanSansCN;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
 /* 组件content */
 
 .content-wrap {

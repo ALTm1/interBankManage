@@ -2,7 +2,6 @@
   <!-- 联盟圈页新增确认-->
   <div class="unionlapadd-conf">
     <div class="right-wrap">
-      <block-title blockTitle="联盟圈管理新增确认"></block-title>
       <ui-row>
         <ui-col>
           <div class="form">

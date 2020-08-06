@@ -2,7 +2,6 @@
   <!-- 文件修改页 -->
   <div class="files-modify">
     <div class="right-wrap">
-      <block-title blockTitle="文件修改"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :rules="rules" :model="form" label-width="150px">
@@ -85,50 +84,50 @@ export default {
       // 业务场景数据
       buissnessSceneList: [
         {
-          value: '1',
+          value: '全部',
           label: '全部',
         },
         {
-          value: '2',
+          value: '本行',
           label: '本行',
         },
         {
-          value: '3',
+          value: '他行',
           label: '他行',
         },
       ],
       // 产品类型数据
       proTypeList: [
         {
-          value: '1',
+          value: '同业资金',
           label: '同业资金',
         },
         {
-          value: '2',
+          value: '债券业务',
           label: '债券业务',
         },
         {
-          value: '3',
+          value: '线上资金业务',
           label: '线上资金业务',
         },
         {
-          value: '4',
+          value: '同业投资',
           label: '同业投资',
         },
         {
-          value: '5',
+          value: '同业存单',
           label: '同业存单',
         },
         {
-          value: '6',
+          value: '票据业务',
           label: '票据业务',
         },
         {
-          value: '7',
+          value: '同业福费廷',
           label: '同业福费廷',
         },
         {
-          value: '8',
+          value: '团购产品',
           label: '团购产品',
         },
       ],
@@ -145,7 +144,14 @@ export default {
     },
     // 点击提交
     clickSubmit(formName) {
-      this.$router.push('/filesModifyConf')
+      this.$refs[formName].validate((valid) => {
+        if (valid) {
+          sessionStorage.setItem('filesModifyInfo', JSON.stringify(this.form))
+          this.$router.push('/filesModifyConf')
+        } else {
+          return false
+        }
+      })
     },
     // 获取选中的数据
     getCurrentRow(row) {
@@ -159,7 +165,7 @@ export default {
   .form {
     background: #fff;
     .ui-form {
-      width: 60%;
+      width: 50%;
       padding: 62px 20px;
       margin: 0 auto;
     }

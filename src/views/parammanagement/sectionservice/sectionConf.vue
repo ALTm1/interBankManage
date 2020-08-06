@@ -2,8 +2,6 @@
   <!-- 部门维护确认页 -->
   <div class="section-conf">
     <div class="right-wrap">
-      <block-title blockTitle="部门维护"></block-title>
-
       <div class="form">
         <ui-form ref="form" :rules="rules" :model="form" label-width="150px">
           <ui-row>

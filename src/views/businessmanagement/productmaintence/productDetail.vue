@@ -1,10 +1,7 @@
 <template>
   <!-- 产品详情页 -->
   <div class="user-detail">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="产品详情"></block-title>
-
       <div class="form">
         <ui-form ref="form" label-width="120px">
           <ui-row>
@@ -58,10 +55,13 @@
           </ui-row>
         </ui-form>
       </div>
-      <ui-row class="handle-title">
-        <ui-col :span="12">机构列表</ui-col>
-        <ui-col :span="12" class="back">返回</ui-col>
+      <ui-row class="list-title" style="padding-top: 33px">
+        <div class="img">
+          <img src="@/assets/image/titleleft.png" alt />
+        </div>
+        <span>机构列表</span>
       </ui-row>
+
       <div class="table">
         <ui-table :data="userInfoList" style="width: 100%;">
           <ui-table-column label="序号" width="80">
@@ -78,9 +78,11 @@
           <ui-table-column prop="loginName" label="机构全称"></ui-table-column>
         </ui-table>
       </div>
-      <ui-row class="handle-title">
-        <ui-col :span="12">发布方联系人</ui-col>
-        <ui-col :span="12" class="back">返回</ui-col>
+      <ui-row class="list-title" style="padding-top: 33px">
+        <div class="img">
+          <img src="@/assets/image/titleleft.png" alt />
+        </div>
+        <span>发布方联系人</span>
       </ui-row>
       <div class="table">
         <ui-table :data="userInfoList" style="width: 100%">

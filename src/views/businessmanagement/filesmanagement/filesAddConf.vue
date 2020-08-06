@@ -1,10 +1,7 @@
 <template>
   <!-- 文件新增确认页 -->
   <div class="files-Conf">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="文件新增确认"></block-title>
-
       <div class="form">
         <ui-form ref="form" label-width="100px">
           <ui-row>

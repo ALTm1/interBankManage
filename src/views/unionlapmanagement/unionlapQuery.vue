@@ -3,36 +3,29 @@
   <div class="user-query">
     <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="联盟圈管理"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
             <ui-row>
               <ui-col>
-                <ui-form-item label="联盟圈名称">
+                <ui-form-item label="联盟圈名称" prop="unionlapName">
                   <ui-input-business v-model="form.unionlapName" placeholder="请输入联盟圈名称"></ui-input-business>
                 </ui-form-item>
               </ui-col>
             </ui-row>
             <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="reset">重置</ui-button>
+              <ui-button type="primary" class="back-btn" @click="reset('form')">重置</ui-button>
               <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button>
             </ui-row>
           </ui-form>
         </div>
       </ui-row>
-
+      <query-result :isResultShow="isResultShow"></query-result>
       <div class="table">
         <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
-          <ui-table-column label="请选择" width="80">
+          <ui-table-column label="序号" width="80">
             <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
+              <span class="serial-number">00{{scope.$index + 1}}</span>
             </template>
           </ui-table-column>
           <ui-table-column prop="name" label="联盟圈名称"></ui-table-column>
@@ -74,6 +67,7 @@ export default {
   computed: {},
   data() {
     return {
+      isResultShow: false,
       // 表单的值
       form: {
         unionlapName: '',
@@ -121,14 +115,15 @@ export default {
     goBack() {
       this.$router.go(-1)
     },
-    reset() {
-      this.form.unionlapName = ''
+    reset(formName) {
+      this.$refs[formName].resetFields()
     },
     // 点击查询
-    clickQuery() {},
+    clickQuery() {
+      this.isResultShow = true
+    },
     // 点击查看详情
     goDetail(row) {
-      //   console.log(row)
       this.$router.push({
         name: 'unionlapDetail',
         params: { detail: row },
@@ -136,7 +131,6 @@ export default {
     },
     // 新增
     goAdd() {
-      //   console.log(row)
       this.$router.push('unionlapAdd')
     },
 
@@ -151,7 +145,7 @@ export default {
     // 点击删除
     goCancel(row) {
       this.$router.push({
-        path: 'unionlapDelConf',
+        path: 'unionlapCancelConf',
         query: { detail: row, type: 2 },
       })
     },

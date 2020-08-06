@@ -1,9 +1,7 @@
 <template>
   <!-- 部门维护页 -->
   <div class="section-service">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="部门维护"></block-title>
       <div class="table">
         <ui-table :data="productTags" style="width: 100%" ref="multipleTable">
           <ui-table-column label="请选择" width="80">

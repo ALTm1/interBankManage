@@ -2,7 +2,6 @@
   <!-- 菜单维护结果页 -->
   <div class="menu-service-res">
     <div class="right-wrap">
-      <block-title blockTitle="审批菜单维护"></block-title>
       <result :status="true" :tadeSuccess="'交易成功'" :batch="'1234567890123'" @click="clickFinish"></result>
     </div>
   </div>

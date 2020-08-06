@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 09:04:21
- * @LastEditTime: 2020-08-05 13:35:31
+ * @LastEditTime: 2020-08-05 15:08:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIndex.vue
@@ -200,17 +200,12 @@ export default {
 </script>
 
 <style lang="css" scoped>
-.wrap {
-  width: 100%;
-}
-
 /* 表单 */
-
 .form-block {
   width: 600px;
-  margin: 0 auto;
-  padding: 50px 50px;
+  padding: 50px;
   box-sizing: border-box;
+  margin: 0 auto;
 }
 .start-date-item {
   margin-bottom: 22px;

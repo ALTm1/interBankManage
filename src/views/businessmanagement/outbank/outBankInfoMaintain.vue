@@ -2,13 +2,12 @@
   <!-- 行外机构信息维护页 -->
   <div class="out-bank">
     <div class="right-wrap">
-      <block-title blockTitle="行外机构信息维护"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
             <ui-row>
               <ui-col>
-                <ui-form-item label="机构类型">
+                <ui-form-item label="机构类型" prop="organType">
                   <ui-select v-model="form.organType" placeholder="请选择">
                     <ui-option
                       v-for="item in organTypeList"
@@ -18,13 +17,13 @@
                     ></ui-option>
                   </ui-select>
                 </ui-form-item>
-                <ui-form-item label="机构名称">
+                <ui-form-item label="机构名称" prop="organName">
                   <ui-input-business v-model="form.organName" placeholder="请输入机构名称"></ui-input-business>
                 </ui-form-item>
               </ui-col>
             </ui-row>
             <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
+              <ui-button type="primary" class="back-btn" @click="reset('form')">重置</ui-button>
               <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button>
             </ui-row>
           </ui-form>
@@ -125,6 +124,10 @@ export default {
     },
     // 点击查询
     clickQuery() {},
+    // 点击重置
+    reset(formName) {
+      this.$refs[formName].resetFields()
+    },
     // 点击查看详情
     goDetail(row) {
       this.$router.push('/infoDetail')

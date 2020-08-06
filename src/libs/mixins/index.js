@@ -1,6 +1,16 @@
+/*
+ * @Author: your name
+ * @Date: 2020-07-27 19:06:58
+ * @LastEditTime: 2020-08-05 17:56:16
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \interBankManage\src\libs\mixins\index.js
+ */
 import Vue from 'vue'
 // 混入全局服务
 import { $locale } from '@/libs/mixins/service'
+// 混入Date格式化方法
+import '@/libs/mixins/dateformat'
 
 Vue.mixin({
   methods: {
@@ -12,7 +22,7 @@ Vue.mixin({
       return $locale.MESSAGES[key]
     },
     // 重新获得验证码图片
-    switchCode (verifyid) {
+    switchCode(verifyid) {
       document.getElementById(verifyid).setAttribute('src', 'eweb-common.GenTokenImg.do?timestrap=' + Date.now())
     },
 
@@ -25,6 +35,7 @@ Vue.mixin({
           callback(data)
         }
       })
-    }
+    },
+
   }
 })

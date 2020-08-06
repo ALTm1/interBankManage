@@ -195,13 +195,15 @@ export default {
   text-align: center;
 }
 .content {
-  display: inline-block;
+  width: 100%;
+}
+.form-block {
+  padding: 50px 0px 0px;
+  width: 1200px;
+  box-sizing: border-box;
+  margin: 0 auto;
 }
 
-.form-block {
-  padding: 40px 40px 0px;
-  box-sizing: border-box;
-}
 .table-wrap {
   background: #ffffff;
 }

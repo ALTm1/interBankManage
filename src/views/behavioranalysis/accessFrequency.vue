@@ -2,7 +2,6 @@
   <!-- 行为分析查询页 -->
   <div class="access-frequency">
     <div class="right-wrap">
-      <block-title blockTitle="功能模块访问频次"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
