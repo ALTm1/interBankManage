@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 13:30:32
- * @LastEditTime: 2020-08-05 10:35:32
+ * @LastEditTime: 2020-08-06 09:31:21
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganModifyConfirm.vue
@@ -42,6 +42,25 @@ export default {
         },
       ],
     }
+  },
+  created() {
+    var displayInfoArrTemp = JSON.parse(this.$route.query.form)
+    // 机构动态内容
+    var organContent = ''
+    for (var i = 0; i < displayInfoArrTemp.organContent.length; i++) {
+      organContent =
+        organContent + displayInfoArrTemp.organContent[i].name + ' '
+    }
+    this.displayInfoArr = [
+      {
+        title: '机构动态标题',
+        content: displayInfoArrTemp.organTitle,
+      },
+      {
+        title: '机构动态内容',
+        content: organContent,
+      },
+    ]
   },
   methods: {
     goResult() {

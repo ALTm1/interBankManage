@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 15:37:16
- * @LastEditTime: 2020-07-31 14:23:31
+ * @LastEditTime: 2020-08-06 10:56:49
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\components\displayitem\index.vue

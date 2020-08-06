@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 16:03:32
- * @LastEditTime: 2020-08-05 14:52:34
+ * @LastEditTime: 2020-08-06 13:42:42
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\ProRecommend.vue
@@ -20,7 +20,7 @@
         <ui-table-column prop="proRate" label="利率" align="center" min-width="100px"></ui-table-column>
         <ui-table-column prop="timeLimit" label="期限" align="center" min-width="100px"></ui-table-column>
         <ui-table-column prop="money" label="金额" align="center" min-width="100px"></ui-table-column>
-        <!-- <ui-table-column label="操作" align="center" min-width="200px">
+        <ui-table-column label="操作" align="center" min-width="200px">
           <template slot-scope="scope">
             <ui-button
               class="operator-button"
@@ -29,7 +29,7 @@
               size="small"
             >修改</ui-button>
           </template>
-        </ui-table-column>-->
+        </ui-table-column>
       </ui-table>
     </div>
     <div class="pro-block">
@@ -44,6 +44,16 @@
         <ui-table-column prop="proRate" label="利率" align="center" min-width="100px"></ui-table-column>
         <ui-table-column prop="timeLimit" label="期限" align="center" min-width="100px"></ui-table-column>
         <ui-table-column prop="money" label="金额" align="center" min-width="100px"></ui-table-column>
+        <ui-table-column label="操作" align="center" min-width="200px">
+          <template slot-scope="scope">
+            <ui-button
+              class="operator-button"
+              @click="goModify(scope.row)"
+              type="text"
+              size="small"
+            >修改</ui-button>
+          </template>
+        </ui-table-column>
       </ui-table>
     </div>
     <div class="pro-block add-pro-wrap">
@@ -61,7 +71,7 @@
         >
           <ui-form-item label="产品一级分类" class="sel-row" prop="proLevelOne">
             <div class="float-left sel-row-left">
-              <ui-select v-model="form.proLevelOne" placeholder="请选择" multiple>
+              <ui-select v-model="form.proLevelOne" placeholder="请选择">
                 <div v-for="item in form.proLevelOneList" :key="item.label">
                   <ui-option :label="item.label" :value="item.value"></ui-option>
                 </div>
@@ -70,7 +80,7 @@
           </ui-form-item>
           <ui-form-item label="产品二级分类" class="sel-row" prop="proLevelTwo">
             <div class="float-right">
-              <ui-select v-model="form.proLevelTwo" placeholder="请选择" multiple>
+              <ui-select v-model="form.proLevelTwo" placeholder="请选择">
                 <div v-for="item in form.proLevelTwoList" :key="item.label">
                   <ui-option :label="item.label" :value="item.value"></ui-option>
                 </div>
@@ -79,7 +89,7 @@
           </ui-form-item>
           <ui-form-item label="交易方向" class="sel-row" prop="tradeDirec">
             <div class="float-left sel-row-left">
-              <ui-select v-model="form.tradeDirec" placeholder="请选择" multiple>
+              <ui-select v-model="form.tradeDirec" placeholder="请选择">
                 <div v-for="item in form.tradeDirecList" :key="item.label">
                   <ui-option :label="item.label" :value="item.value"></ui-option>
                 </div>
@@ -153,7 +163,7 @@ export default {
   data() {
     return {
       form: {
-        proLevelOne: [],
+        proLevelOne: '',
         proLevelOneList: [
           {
             label: '同业存款',
@@ -164,7 +174,7 @@ export default {
             value: '线上资金',
           },
         ],
-        proLevelTwo: [],
+        proLevelTwo: '',
         proLevelTwoList: [
           {
             label: '同业存款',
@@ -175,7 +185,7 @@ export default {
             value: '线上资金',
           },
         ],
-        tradeDirec: [],
+        tradeDirec: '',
         tradeDirecList: [
           {
             label: '买入',
@@ -273,6 +283,15 @@ export default {
     getCurrentRow(row) {
       this.choseRow = row
     },
+    // 跳转修改页
+    goModify(row) {
+      this.$router.push({
+        path: '/productmodify',
+        query: {
+          row: JSON.stringify(row)
+        },
+      })
+    },
     // 产品查询结果
     showProList(formName) {
       this.$refs[formName].validate((valid) => {
@@ -296,7 +315,7 @@ export default {
   background: #ffffff;
 }
 
-.form-block-dialog{
+.form-block-dialog {
   margin-top: 40px;
 }
 

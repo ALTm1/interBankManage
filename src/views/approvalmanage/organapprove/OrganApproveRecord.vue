@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-31 13:17:05
- * @LastEditTime: 2020-08-04 13:59:06
+ * @LastEditTime: 2020-08-06 13:53:05
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\approvalmanage\accreditedinstitution\AccreditedInstitutionRecord.vue
@@ -277,7 +277,6 @@ export default {
   line-height: 33px;
   text-align: center;
   background: rgba(255, 255, 255, 1);
-  border: 2px solid rgba(231, 232, 239, 1);
   border-radius: 3px;
   font-size: 12px;
   font-family: SourceHanSansCN;
