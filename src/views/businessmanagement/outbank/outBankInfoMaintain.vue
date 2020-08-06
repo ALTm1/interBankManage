@@ -29,35 +29,38 @@
           </ui-form>
         </div>
       </ui-row>
+      <query-result :isResultShow="isResultShow"></query-result>
+      <ui-row>
+        <div class="table">
+          <ui-table :data="productTags">
+            <ui-table-column label="序号" width="180">
+              <template slot-scope="scope">
+                <span class="serial-number">001{{scope.$index + 1}}</span>
+              </template>
+            </ui-table-column>
+            <ui-table-column prop="tagName" label="机构名称"></ui-table-column>
+            <ui-table-column prop="remark" label="机构类型"></ui-table-column>
+            <ui-table-column prop="createTime" label="机构状态"></ui-table-column>
+            <ui-table-column label="操作">
+              <template slot-scope="scope">
+                <ui-button
+                  class="operator-button"
+                  @click="goDetail(scope.row)"
+                  type="text"
+                  size="small"
+                >查看详情</ui-button>
+                <ui-button
+                  class="operator-button"
+                  @click="goCancel(scope.row)"
+                  type="text"
+                  size="small"
+                >注销</ui-button>
+              </template>
+            </ui-table-column>
+          </ui-table>
+        </div>
+      </ui-row>
 
-      <div class="table">
-        <ui-table :data="productTags">
-          <ui-table-column label="序号" width="180">
-            <template slot-scope="scope">
-              <span class="serial-number">001{{scope.$index + 1}}</span>
-            </template>
-          </ui-table-column>
-          <ui-table-column prop="tagName" label="机构名称"></ui-table-column>
-          <ui-table-column prop="remark" label="机构类型"></ui-table-column>
-          <ui-table-column prop="createTime" label="机构状态"></ui-table-column>
-          <ui-table-column label="操作">
-            <template slot-scope="scope">
-              <ui-button
-                class="operator-button"
-                @click="goDetail(scope.row)"
-                type="text"
-                size="small"
-              >查看详情</ui-button>
-              <ui-button
-                class="operator-button"
-                @click="goCancel(scope.row)"
-                type="text"
-                size="small"
-              >注销</ui-button>
-            </template>
-          </ui-table-column>
-        </ui-table>
-      </div>
       <ui-row class="btn btnbg">
         <!-- <ui-button type="primary" class="back-btn single-btn" @click="goAdd">新增</ui-button> -->
       </ui-row>
@@ -75,6 +78,7 @@ export default {
         organType: '',
         organName: '',
       },
+      isResultShow: false,
       // 机构类型数据
       organTypeList: [
         {
@@ -123,7 +127,9 @@ export default {
       this.$router.go(-1)
     },
     // 点击查询
-    clickQuery() {},
+    clickQuery() {
+      this.isResultShow = true
+    },
     // 点击重置
     reset(formName) {
       this.$refs[formName].resetFields()

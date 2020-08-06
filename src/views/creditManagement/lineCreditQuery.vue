@@ -1,9 +1,7 @@
 <template>
   <!-- 行外机构信息维护页 -->
   <div class="line-query">
-    <!-- label-width="150px" -->
     <div class="right-wrap">
-      <block-title blockTitle="授信额度查询"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
@@ -31,32 +29,35 @@
           </ui-form>
         </div>
       </ui-row>
+      <query-result :isResultShow="isResultShow"></query-result>
+      <ui-row>
+        <div class="table">
+          <ui-table :data="productTags" style="width: 96%;margin:0 auto">
+            <ui-table-column label="请选择" width="80">
+              <template slot-scope="scope">
+                <ui-radio
+                  v-model="tableRadio"
+                  :label="scope.$index"
+                  @change.native="getCurrentRow(scope.row)"
+                >
+                  <i></i>
+                </ui-radio>
+              </template>
+            </ui-table-column>
+            <ui-table-column prop="tagName" label="机构名称"></ui-table-column>
+            <ui-table-column prop="remark" label="授信测算额度"></ui-table-column>
+            <ui-table-column prop="remark" label="总额度（亿元）"></ui-table-column>
+            <ui-table-column prop="remark" label="授信期限（月）"></ui-table-column>
+            <ui-table-column prop="remark" label="交易银行部业务额度（亿元）"></ui-table-column>
+            <ui-table-column prop="remark" label="金融市场部业务额度（亿元）"></ui-table-column>
+            <ui-table-column prop="remark" label="金融业务部业务额度（亿元）"></ui-table-column>
+            <ui-table-column prop="remark" label="零售业务部业务额度（亿元）"></ui-table-column>
+            <ui-table-column prop="remark" label="资产管理部业务额度（亿元）"></ui-table-column>
+            <ui-table-column prop="remark" label="业务往来情况"></ui-table-column>
+          </ui-table>
+        </div>
+      </ui-row>
 
-      <div class="table">
-        <ui-table :data="productTags" style="width: 96%;margin:0 auto">
-          <ui-table-column label="请选择" width="80">
-            <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
-            </template>
-          </ui-table-column>
-          <ui-table-column prop="tagName" label="机构名称"></ui-table-column>
-          <ui-table-column prop="remark" label="授信测算额度"></ui-table-column>
-          <ui-table-column prop="remark" label="总额度（亿元）"></ui-table-column>
-          <ui-table-column prop="remark" label="授信期限（月）"></ui-table-column>
-          <ui-table-column prop="remark" label="交易银行部业务额度（亿元）"></ui-table-column>
-          <ui-table-column prop="remark" label="金融市场部业务额度（亿元）"></ui-table-column>
-          <ui-table-column prop="remark" label="金融业务部业务额度（亿元）"></ui-table-column>
-          <ui-table-column prop="remark" label="零售业务部业务额度（亿元）"></ui-table-column>
-          <ui-table-column prop="remark" label="资产管理部业务额度（亿元）"></ui-table-column>
-          <ui-table-column prop="remark" label="业务往来情况"></ui-table-column>
-        </ui-table>
-      </div>
       <ui-row class="btn btnbg">
         <ui-pagination background layout="prev, pager, next" :total="1000"></ui-pagination>
       </ui-row>
@@ -74,6 +75,8 @@ export default {
         organType: '',
         organName: '',
       },
+      // 查询结果
+      isResultShow: false,
       // 机构类型数据
       organTypeList: [
         {
@@ -122,7 +125,9 @@ export default {
       this.$router.go(-1)
     },
     // 点击查询
-    clickQuery() {},
+    clickQuery() {
+      this.isResultShow = true
+    },
     // 点击查看详情
     goDetail(row) {
       this.$router.push('/infoDetail')

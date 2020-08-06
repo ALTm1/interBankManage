@@ -68,16 +68,19 @@ export default {
     }
   },
   created() {
-    this.fromLastPage = this.$route.query.detail ? this.$route.query.detail : {}
+    this.fromLastPage = this.$route.query.detail
+      ? JSON.parse(this.$route.query.detail)
+      : {}
     // 暂时用路由传参简单代替，按钮文本返回时，显示为注销，接口请求在判断就好了
-    this.$route.query.type === 0
-      ? (this.btnText = '启用')
-      : this.$route.query.type === 1
-      ? (this.btnText = '停用')
-      : (this.btnText = '注销')
+    // this.$route.query.type === 0
+    //   ? (this.btnText = '启用')
+    //   : this.$route.query.type === 1
+    //   ? (this.btnText = '停用')
+    //   : (this.btnText = '注销')
+    this.btnText = sessionStorage.getItem('btnText')
   },
   methods: {
-    // 点击停用
+    // 点击操作按钮
     submitForm(formName) {
       this.$router.push('/handleRes')
     },

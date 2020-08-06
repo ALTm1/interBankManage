@@ -2,26 +2,18 @@
   <!-- 授信额度查询页 -->
   <div class="credit-query">
     <div class="right-wrap">
-      <block-title blockTitle="授信文件管理"></block-title>
       <ui-row>
         <div class="form">
           <ui-form ref="form" :model="form" label-width="150px">
             <ui-row>
               <ui-col>
-                <!-- <ui-form-item label="机构类型">
-                  <ui-select v-model="form.organType" placeholder="请选择">
-                    <ui-option
-                      v-for="item in organTypeList"
-                      :key="item.value"
-                      :label="item.label"
-                      :value="item.value"
-                    ></ui-option>
-                  </ui-select>
-                </ui-form-item>-->
                 <ui-form-item label="机构名称">
                   <ui-input-business v-model="form.organName" placeholder="请输入机构名称"></ui-input-business>
                 </ui-form-item>
               </ui-col>
+            </ui-row>
+            <ui-row class="btn btnbg">
+              <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button>
             </ui-row>
           </ui-form>
         </div>
@@ -40,29 +32,13 @@
               </ui-radio>
             </template>
           </ui-table-column>
-          <ui-table-column prop="tagName" label="机构名称" width="180"></ui-table-column>
-          <ui-table-column prop="remark" label="授信文件" width="180"></ui-table-column>
-          <!-- <ui-table-column prop="createTime" label="机构状态" width="180"></ui-table-column> -->
+          <ui-table-column prop="tagName" label="机构名称"></ui-table-column>
+          <ui-table-column prop="remark" label="授信文件"></ui-table-column>
           <ui-table-column label="操作">
             <template slot-scope="scope">
-              <ui-button
-                class="operator-button"
-                @click="goDetail(scope.row)"
-                type="text"
-                size="small"
-              >上传</ui-button>
-              <ui-button
-                class="operator-button"
-                @click="goCancel(scope.row)"
-                type="text"
-                size="small"
-              >重新上传</ui-button>
-              <ui-button
-                class="operator-button"
-                @click="goCancel(scope.row)"
-                type="text"
-                size="small"
-              >下载</ui-button>
+              <ui-button class="operator-button" type="text" size="small">上传</ui-button>
+              <ui-button class="operator-button" type="text" size="small">重新上传</ui-button>
+              <ui-button class="operator-button" type="text" size="small">下载</ui-button>
             </template>
           </ui-table-column>
         </ui-table>
