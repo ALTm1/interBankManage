@@ -28,6 +28,7 @@
   font-weight: bold;
   color: rgba(51, 51, 51, 1);
   text-align: right;
+  padding: 0 40px 0 0;
 }
 
 .ui-input__inner {
