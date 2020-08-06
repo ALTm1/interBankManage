@@ -7,82 +7,85 @@
           <ui-form ref="form" :model="form" label-width="150px">
             <ui-row>
               <ui-col>
-                <ui-form-item label="机构名称">
+                <ui-form-item label="机构名称" prop="organName">
                   <ui-input-business v-model="form.organName" placeholder="请输入机构名称"></ui-input-business>
                 </ui-form-item>
-                <ui-form-item label="用户姓名">
+                <ui-form-item label="用户姓名" prop="userName">
                   <ui-input-business v-model="form.userName" placeholder="请输入用户姓名"></ui-input-business>
                 </ui-form-item>
               </ui-col>
             </ui-row>
             <ui-row class="btn">
-              <ui-button type="primary" class="back-btn" @click="goBack">返回</ui-button>
+              <ui-button type="primary" class="back-btn" @click="reset('form')">重置</ui-button>
               <ui-button type="primary" class="continue-next" @click="clickQuery('form')">查询</ui-button>
             </ui-row>
           </ui-form>
         </div>
       </ui-row>
+      <query-result :isResultShow="isResultShow"></query-result>
+      <ui-row>
+        <div class="table">
+          <ui-table :data="userInfoList">
+            <ui-table-column label="请选择" width="60">
+              <template slot-scope="scope">
+                <ui-radio
+                  v-model="tableRadio"
+                  :label="scope.$index"
+                  @change.native="getCurrentRow(scope.row)"
+                >
+                  <i></i>
+                </ui-radio>
+              </template>
+            </ui-table-column>
+            <ui-table-column prop="name" label="姓名" width="80"></ui-table-column>
+            <ui-table-column prop="loginName" label="登录名"></ui-table-column>
+            <ui-table-column prop="idCard" label="身份证号码"></ui-table-column>
+            <ui-table-column prop="organForShort" label="机构简称"></ui-table-column>
+            <ui-table-column prop="subsidiaryOrgan" label="所属机构"></ui-table-column>
+            <ui-table-column prop="subsidiarySection" label="所属部门"></ui-table-column>
+            <ui-table-column prop="status" label="状态" width="70"></ui-table-column>
+            <ui-table-column label="操作">
+              <template slot-scope="scope">
+                <ui-button
+                  class="operator-button"
+                  @click="goDetail(scope.row)"
+                  type="text"
+                  size="small"
+                >详情</ui-button>
+                <ui-button
+                  v-if="scope.row.status === '正常'"
+                  class="operator-button"
+                  @click="goResetPass(scope.row)"
+                  type="text"
+                  size="small"
+                >密码重置</ui-button>
+                <ui-button
+                  v-if="scope.row.status === '正常'"
+                  class="operator-button"
+                  @click="goBlockUp(scope.row)"
+                  type="text"
+                  size="small"
+                >停用</ui-button>
+                <ui-button
+                  v-if="scope.row.status === '已停用'"
+                  class="operator-button"
+                  @click="goStartUsing(scope.row)"
+                  type="text"
+                  size="small"
+                >启用</ui-button>
+                <ui-button
+                  v-if="scope.row.status != '已注销'"
+                  class="operator-button"
+                  @click="goCancel(scope.row)"
+                  type="text"
+                  size="small"
+                >注销</ui-button>
+              </template>
+            </ui-table-column>
+          </ui-table>
+        </div>
+      </ui-row>
 
-      <div class="table">
-        <ui-table :data="userInfoList" style="width: 96%;margin:0 auto">
-          <ui-table-column label="请选择" width="80">
-            <template slot-scope="scope">
-              <ui-radio
-                v-model="tableRadio"
-                :label="scope.$index"
-                @change.native="getCurrentRow(scope.row)"
-              >
-                <i></i>
-              </ui-radio>
-            </template>
-          </ui-table-column>
-          <ui-table-column prop="name" label="姓名" width="80"></ui-table-column>
-          <ui-table-column prop="loginName" label="登录名" width="80"></ui-table-column>
-          <ui-table-column prop="idCard" label="身份证号码"></ui-table-column>
-          <ui-table-column prop="organForShort" label="机构简称"></ui-table-column>
-          <ui-table-column prop="subsidiaryOrgan" label="所属机构"></ui-table-column>
-          <ui-table-column prop="subsidiarySection" label="所属部门"></ui-table-column>
-          <ui-table-column prop="status" label="状态" width="80"></ui-table-column>
-          <ui-table-column label="操作">
-            <template slot-scope="scope">
-              <ui-button
-                class="operator-button"
-                @click="goDetail(scope.row)"
-                type="text"
-                size="small"
-              >详情</ui-button>
-              <ui-button
-                v-if="scope.row.status === '正常'"
-                class="operator-button"
-                @click="goResetPass(scope.row)"
-                type="text"
-                size="small"
-              >密码重置</ui-button>
-              <ui-button
-                v-if="scope.row.status === '正常'"
-                class="operator-button"
-                @click="goBlockUp(scope.row)"
-                type="text"
-                size="small"
-              >停用</ui-button>
-              <ui-button
-                v-if="scope.row.status === '已停用'"
-                class="operator-button"
-                @click="goStartUsing(scope.row)"
-                type="text"
-                size="small"
-              >启用</ui-button>
-              <ui-button
-                v-if="scope.row.status != '已注销'"
-                class="operator-button"
-                @click="goCancel(scope.row)"
-                type="text"
-                size="small"
-              >注销</ui-button>
-            </template>
-          </ui-table-column>
-        </ui-table>
-      </div>
       <!-- 重置密码弹窗 -->
       <ui-dialog title="提示" :visible.sync="centerDialogVisible" width="50%" center>
         <div class="resetTip">是否确认修改密码？</div>
@@ -105,6 +108,7 @@ export default {
         organName: '',
         userName: '',
       },
+      isResultShow: false,
       // 单选按钮
       tableRadio: '',
       // 获取选中数据
@@ -148,11 +152,16 @@ export default {
     goBack() {
       this.$router.go(-1)
     },
+    // 重置表单
+    reset(formName) {
+      this.$refs[formName].resetFields()
+    },
     // 点击查询
-    clickQuery() {},
+    clickQuery() {
+      this.isResultShow = true
+    },
     // 点击查看详情
     goDetail(row) {
-      //   console.log(row)
       this.$router.push({
         name: 'userDetail',
         params: { detail: row },
@@ -162,10 +171,6 @@ export default {
     // 点击重置密码
     goResetPass(row) {
       this.centerDialogVisible = true
-      //   this.$router.push({
-      //     path: '/handleConf',
-      //     query: { detail: row, type: 0 },
-      //   })
     },
     // 点击重置密码确认按钮
     clickConfirm() {
@@ -177,22 +182,25 @@ export default {
     goStartUsing(row) {
       this.$router.push({
         path: '/handleConf',
-        query: { detail: row, type: 0 },
+        query: { detail: JSON.stringify(row), type: 0 },
       })
+      sessionStorage.setItem('btnText', '启用')
     },
     // 点击停用
     goBlockUp(row) {
       this.$router.push({
         path: '/handleConf',
-        query: { detail: row, type: 1 },
+        query: { detail: JSON.stringify(row), type: 1 },
       })
+      sessionStorage.setItem('btnText', '停用')
     },
     // 点击注销
     goCancel(row) {
       this.$router.push({
         path: 'handleConf',
-        query: { detail: row, type: 2 },
+        query: { detail: JSON.stringify(row), type: 2 },
       })
+      sessionStorage.setItem('btnText', '注销')
     },
     // 获取选中的数据
     getCurrentRow(row) {
@@ -213,6 +221,7 @@ export default {
   }
   .table {
     background: #fff;
+    padding-bottom: 40px;
   }
   .btnbg {
     margin-top: 0;

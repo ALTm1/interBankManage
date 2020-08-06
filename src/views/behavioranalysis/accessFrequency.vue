@@ -8,7 +8,7 @@
             <ui-row>
               <ui-col>
                 <ui-form-item label="访问渠道">
-                  <ui-select v-model="form.access" placeholder="请选择">
+                  <ui-select v-model="form.access" @change placeholder="请选择">
                     <ui-option
                       v-for="item in accessList"
                       :key="item.value"
@@ -189,8 +189,18 @@ export default {
     goBack() {
       this.$router.go(-1)
     },
+    //下拉框事件
+    selectType() {
+      if (this.form.access === '1') {
+        this.accessModuleList = [...this.AppModuleList]
+      } else {
+        this.accessModuleList = [...this.PCModuleList]
+      }
+    },
     // 点击查询
-    clickQuery() {},
+    clickQuery() {
+      console.log(this.form.access)
+    },
     // 点击查看详情
     goDetail(row) {
       this.$router.push('/infoDetail')

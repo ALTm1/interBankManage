@@ -23,7 +23,7 @@ export default [
                 path: '/accessTime',
                 name: 'accessTime',
                 meta: {
-                    title: '授信额度查询'
+                    title: '功能模块访问时长'
                 },
                 component: () => import('@/views/behavioranalysis/accessTime.vue'),
             },

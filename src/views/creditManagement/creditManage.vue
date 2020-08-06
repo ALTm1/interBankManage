@@ -3,8 +3,8 @@
     <!-- 面包屑 -->
     <div>
       <ui-breadcrumb separator-class="ui-icon-arrow-right">
-        <ui-breadcrumb-item :to="{ path: '/behaviorAnalysis' }">您的位置:行为模块分析</ui-breadcrumb-item>
-        <ui-breadcrumb-item v-show="name!='行为管理分析'">{{name}}</ui-breadcrumb-item>
+        <ui-breadcrumb-item :to="{ path: '/behaviorAnalysis' }">您的位置:审批管理</ui-breadcrumb-item>
+        <ui-breadcrumb-item v-show="name!='审批管理'">{{name}}</ui-breadcrumb-item>
       </ui-breadcrumb>
     </div>
     <!-- 标题 -->
