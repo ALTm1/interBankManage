@@ -156,7 +156,7 @@ export default {
   },
   created() {
     var rowTemp = JSON.parse(this.$route.query.row)
-    debugger
+
     this.form = rowTemp
   },
   methods: {

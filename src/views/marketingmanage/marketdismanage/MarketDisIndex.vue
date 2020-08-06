@@ -1,24 +1,15 @@
-<!--
- * @Author: your name
- * @Date: 2020-07-29 14:07:51
- * @LastEditTime: 2020-08-05 15:10:27
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \interBankManage\src\views\marketingmanage\marketdismanage\MarketDisIndex.vue
---> 
 
-<!--
- * @Author: your name
- * @Date: 2020-07-28 11:14:20
- * @LastEditTime: 2020-07-28 18:47:27
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Ed
- * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetindIncrease.vue
---> 
 
 
 <template>
   <div class="wrap">
+    <div class="breadcrumb-header">
+      <ui-breadcrumb separator-class="ui-icon-arrow-right">
+        <ui-breadcrumb-item>您的位置: 营销管理</ui-breadcrumb-item>
+        <ui-breadcrumb-item>营销展示管理</ui-breadcrumb-item>
+        <ui-breadcrumb-item v-show="name!='营销展示管理'">{{name}}</ui-breadcrumb-item>
+      </ui-breadcrumb>
+    </div>
     <BorderHeader title="营销展示管理"></BorderHeader>
     <div class="form-wrap">
       <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
@@ -61,6 +52,8 @@
 export default {
   data() {
     return {
+      // 路由组件meta信息
+      name: '',
       form: {
         marketChannel: '',
       },
@@ -72,6 +65,14 @@ export default {
       resultShow: false,
       menuActiveIndex: '1',
     }
+  },
+  watch: {
+    $route: {
+      handler: function (route) {
+        this.name = route.meta.title
+      },
+      immediate: true,
+    },
   },
   methods: {
     submitForm(formName) {
@@ -85,7 +86,6 @@ export default {
       })
     },
     handleSelect(key, keyPath) {
-      console.log(key, keyPath)
       if (key == '1') {
         this.$router.push('/advertisingbanner')
       } else if (key == '2') {
@@ -99,6 +99,9 @@ export default {
 </script>
 
 <style lang="css" scoped>
+.breadcrumb-header {
+  margin-bottom: 40px;
+}
 .form-block {
   padding: 50px;
   width: 600px;

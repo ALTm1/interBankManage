@@ -60,7 +60,7 @@ export default {
   },
   methods: {
     goResult() {
-      this.$router.push('/marketingmanage/trainingmanage/trainingdeletesucc')
+      this.$router.push('/trainingdeletesucc')
     },
   },
 }

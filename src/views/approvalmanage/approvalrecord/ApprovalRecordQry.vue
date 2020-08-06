@@ -167,7 +167,7 @@ export default {
   methods: {
     goDetail(row) {
       this.$router.push({
-        path: '/approvalmanage/approvalrecord/approvalrecorddetail',
+        path: '/approvalrecorddetail',
         query: {
           detail: JSON.stringify(row),
         },

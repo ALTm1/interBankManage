@@ -136,7 +136,7 @@ export default {
   },
   methods: {
     goConfirm() {
-      this.$router.push('/approvalmanage/backmanapprove/backmanapproveconfirm')
+      this.$router.push('/backmanapproveconfirm')
     },
   },
 }

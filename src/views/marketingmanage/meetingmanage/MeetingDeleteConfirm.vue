@@ -71,7 +71,7 @@ export default {
   },
   methods: {
     goResult() {
-      this.$router.push('/marketingmanage/meetingmanage/mettingdeletesucc')
+      this.$router.push('/mettingdeletesucc')
     },
   },
 }

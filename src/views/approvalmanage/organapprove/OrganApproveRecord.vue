@@ -238,7 +238,7 @@ export default {
   },
   methods: {
     goConfirm() {
-      this.$router.push('/approvalmanage/organapprove/organapproveconfirm')
+      this.$router.push('/organapproveconfirm')
     },
   },
 }

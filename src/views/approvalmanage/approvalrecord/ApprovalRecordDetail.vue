@@ -124,7 +124,7 @@ export default {
   },
   methods: {
     returnLast() {
-      this.$router.push('/approvalmanage/approvalrecord/approvalrecordqry')
+      this.$router.push('/approvalrecordqry')
     },
   },
 }

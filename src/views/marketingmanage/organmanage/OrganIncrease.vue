@@ -77,7 +77,7 @@ export default {
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$router.push('/marketingmanage/organmanage/organincreaseconfirm')
+          this.$router.push('/organincreaseconfirm')
         } else {
           return false
         }

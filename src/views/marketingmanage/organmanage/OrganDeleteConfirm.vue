@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     goDeleteSucc() {
-      this.$router.push('/marketingmanage/organmanage/organdeletesucc')
+      this.$router.push('/organdeletesucc')
     },
   },
 }

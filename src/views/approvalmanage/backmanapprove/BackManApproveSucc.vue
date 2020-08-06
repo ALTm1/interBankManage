@@ -25,7 +25,7 @@ export default {
   methods: {
     // 点击完成
     clickFinish() {
-      this.$router.push('/approvalmanage/backmanapprove/backmanapproveindex')
+      this.$router.push('/backmanapproveindex')
     },
     // 返回按钮
     goBack() {

@@ -25,7 +25,7 @@ export default {
   methods: {
     // 点击完成
     clickFinish() {
-      this.$router.push('/approvalmanage/organapprove/organapproveindex')
+      this.$router.push('/organapproveqry')
     },
     // 返回按钮
     goBack() {

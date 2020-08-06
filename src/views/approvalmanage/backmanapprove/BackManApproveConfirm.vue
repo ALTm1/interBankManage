@@ -124,7 +124,7 @@ export default {
   },
   methods: {
     goResult() {
-      this.$router.push('/approvalmanage/backmanapprove/backmanapprovesucc')
+      this.$router.push('/backmanapprovesucc')
     },
   },
 }

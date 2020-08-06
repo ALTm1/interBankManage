@@ -1,11 +1,4 @@
-<!--
- * @Author: your name
- * @Date: 2020-07-28 15:28:41
- * @LastEditTime: 2020-08-05 10:29:47
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingIncreaseConfirm.vue
---> 
+
 
 <template>
   <div class="wrap">
@@ -59,7 +52,7 @@ export default {
   },
   methods: {
     goResult() {
-      this.$router.push('/marketingmanage/meetingmanage/mettingdeletesucc')
+      this.$router.push('/mettingdeletesucc')
     },
   },
 }

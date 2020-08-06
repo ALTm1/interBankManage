@@ -45,7 +45,7 @@ export default {
   },
   methods: {
     goResult() {
-      this.$router.push('/marketingmanage/organmanage/organdeletesucc')
+      this.$router.push('/organdeletesucc')
     },
   },
 }

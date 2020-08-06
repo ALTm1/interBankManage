@@ -104,7 +104,7 @@ export default {
       this.$refs[formName].validate((valid) => {
         if (valid) {
           this.$router.push(
-            '/marketingmanage/trainingmanage/trainingincreaseconfirm'
+            '/trainingincreaseconfirm'
           )
         } else {
           return false

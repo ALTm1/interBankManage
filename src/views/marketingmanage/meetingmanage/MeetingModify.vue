@@ -159,7 +159,7 @@ export default {
         if (valid) {
           console.log(this.form)
           this.$router.push({
-            path: '/marketingmanage/meetingmanage/meetingmodifyconfirm',
+            path: '/meetingmodifyconfirm',
             query: {
               form: JSON.stringify(this.form),
             },

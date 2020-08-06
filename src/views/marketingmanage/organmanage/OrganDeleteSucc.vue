@@ -23,7 +23,7 @@ export default {
   methods: {
     // 点击完成
     clickFinish() {
-      this.$router.push('/marketingmanage/organmanage/organindex')
+      this.$router.push('/organqry')
     },
     // 返回按钮
     goBack() {

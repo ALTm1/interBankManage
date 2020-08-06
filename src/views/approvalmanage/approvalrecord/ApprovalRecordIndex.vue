@@ -3,8 +3,8 @@
     <div class="breadcrumb-header">
       <ui-breadcrumb separator-class="ui-icon-arrow-right">
         <ui-breadcrumb-item>您的位置: 审批管理</ui-breadcrumb-item>
-        <ui-breadcrumb-item>后管交易审批</ui-breadcrumb-item>
-        <ui-breadcrumb-item v-show="name!='后管交易审批'">{{name}}</ui-breadcrumb-item>
+        <ui-breadcrumb-item>审批记录查询</ui-breadcrumb-item>
+        <ui-breadcrumb-item v-show="name!='审批记录查询'">{{name}}</ui-breadcrumb-item>
       </ui-breadcrumb>
     </div>
     <router-view />

@@ -69,7 +69,7 @@ export default {
   },
   created() {
     var displayInfoArrTemp = JSON.parse(this.$route.query.form)
-    debugger
+
     this.displayInfoArr = [
       {
         title: '产品一级分类',

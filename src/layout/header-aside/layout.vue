@@ -323,34 +323,34 @@ export default {
 
     // 会议管理
     goMeetingManage() {
-      this.$router.push("/marketingmanage/meetingmanage/meetingindex");
+      this.$router.push("/meetingqry");
     },
     // 培训管理
     goTrainingManage() {
-      this.$router.push("/marketingmanage/trainingmanage/trainingindex");
+      this.$router.push("/trainingqry");
     },
     // 机构动态管理
     goOrganManage() {
-      this.$router.push("/marketingmanage/organmanage/organindex");
+      this.$router.push("/organqry");
     },
     // 营销展示管理
     goMarketDisManage() {
-      this.$router.push("/marketingmanage/marketdismanage/marketdisindex");
+      this.$router.push("/marketingmanage/marketdismanage");
     },
 
     /** 审批管理 **/
 
     // 机构认证审批
     goOrganApprove() {
-      this.$router.push("/approvalmanage/organapprove/organapproveindex");
+      this.$router.push("/organapproveqry");
     },
     // 后管交易审批
     goBackManApprove() {
-      this.$router.push("/approvalmanage/backmanapprove/backmanapproveindex");
+      this.$router.push("/backmanapproveqry");
     },
     // 审批记录查询
     goApprovalRecord() {
-      this.$router.push("/approvalmanage/approvalrecord/approvalrecordqry");
+      this.$router.push("/approvalrecordqry");
     },
 
     handleClose(done) {

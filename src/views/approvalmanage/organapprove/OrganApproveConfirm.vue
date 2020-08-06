@@ -237,7 +237,7 @@ export default {
   },
   methods: {
     goResult() {
-      this.$router.push('/approvalmanage/organapprove/organapprovesucc')
+      this.$router.push('/organapprovesucc')
     },
   },
 }

@@ -119,7 +119,7 @@ export default {
         console.log(this.form)
         if (valid) {
           this.$router.push({
-            path: '/marketingmanage/trainingmanage/trainingmodifyconfirm',
+            path: '/trainingmodifyconfirm',
             query: {
               form: JSON.stringify(this.form),
             },

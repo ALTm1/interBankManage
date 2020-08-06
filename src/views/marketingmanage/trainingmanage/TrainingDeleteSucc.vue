@@ -24,7 +24,7 @@ export default {
   methods: {
     // 点击完成
     clickFinish() {
-      this.$router.push('/marketingmanage/trainingmanage/trainingindex')
+      this.$router.push('/trainingqry')
     },
     // 返回按钮
     goBack() {
