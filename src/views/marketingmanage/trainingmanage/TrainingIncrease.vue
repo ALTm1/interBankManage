@@ -6,7 +6,7 @@
   <div class="wrap">
     <BorderHeader title="培训新增录入页"></BorderHeader>
     <div class="form-wrap">
-      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
+      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="auto">
         <ui-form-item label="培训标题" prop="trainingTitle">
           <ui-input v-model="form.trainingTitle" placeholder="请输入培训标题"></ui-input>
         </ui-form-item>

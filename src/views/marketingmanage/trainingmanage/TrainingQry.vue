@@ -14,7 +14,7 @@
   <div>
     <BorderHeader title="培训管理"></BorderHeader>
     <div class="form-wrap">
-      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
+      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="auto">
         <ui-form-item label="会议标题" prop="meetingTitle">
           <ui-input v-model="form.meetingTitle" placeholder="请输入会议标题"></ui-input>
         </ui-form-item>

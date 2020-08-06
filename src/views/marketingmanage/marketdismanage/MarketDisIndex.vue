@@ -12,7 +12,7 @@
     </div>
     <BorderHeader title="营销展示管理"></BorderHeader>
     <div class="form-wrap">
-      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="100px">
+      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="auto">
         <ui-form-item label="营销渠道" prop="marketChannel">
           <ui-select v-model="form.marketChannel" placeholder="请选择营销渠道">
             <ui-option label="APP端" value="APP端"></ui-option>

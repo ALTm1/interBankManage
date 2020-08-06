@@ -67,7 +67,7 @@
           ref="ruleForm"
           :model="form"
           :rules="rules"
-          label-width="120px"
+          label-width="auto"
         >
           <ui-form-item label="产品一级分类" class="sel-row" prop="proLevelOne">
             <div class="float-left sel-row-left">

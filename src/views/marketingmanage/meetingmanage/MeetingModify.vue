@@ -10,7 +10,7 @@
         ref="ruleForm"
         :model="form"
         :rules="rules"
-        label-width="100px"
+        label-width="auto"
       >
         <div class="float-left">
           <ui-form-item label="发布格式" prop="releaseFormat">

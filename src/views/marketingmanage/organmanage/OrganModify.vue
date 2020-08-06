@@ -14,7 +14,7 @@
   <div class="wrap">
     <BorderHeader title="机构动态修改录入页"></BorderHeader>
     <div class="form-wrap">
-      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="150px">
+      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="auto">
         <ui-form-item label="机构动态标题" prop="organTitle">
           <ui-input v-model="form.organTitle" placeholder="请输入机构动态标题"></ui-input>
         </ui-form-item>

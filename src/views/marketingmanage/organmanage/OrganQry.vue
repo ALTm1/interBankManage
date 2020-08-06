@@ -6,7 +6,7 @@
   <div>
     <BorderHeader title="机构动态管理"></BorderHeader>
     <div class="form-wrap">
-      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="120px">
+      <ui-form class="form-block" ref="ruleForm" :model="form" :rules="rules" label-width="auto">
         <ui-form-item label="机构动态标题" prop="organTitle">
           <ui-input v-model="form.organTitle" placeholder="请输入机构动态标题"></ui-input>
         </ui-form-item>
