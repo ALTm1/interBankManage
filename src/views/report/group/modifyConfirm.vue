@@ -3,33 +3,35 @@
     <div class="modify-content">
       <div class="table-title">
         <li class="title-left">分组信息维护修改确认页</li>
-        <li class="title-right"></li>
+        <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
       </div>
-       <div class="content-wrap">
+       <div class="content-list">
       <div>
         <ul>
           <li>组长</li>
-          <input type="text" v-model="leader" name id placeholder="请输入组长名称" />
+          <input type="text" disabled v-model="leader" name id placeholder="请输入组长名称" />
         </ul>
         <ul>
           <li>组员1</li>
-          <input type="text" v-model="member1" name id placeholder="请输入组员名称" />
+          <input type="text" disabled v-model="member1" name id placeholder="请输入组员名称" />
         </ul>
         <ul>
           <li>组员2</li>
-          <input type="text" v-model="member2" name id placeholder="请输入组员名称" />
+          <input type="text" disabled v-model="member2" name id placeholder="请输入组员名称" />
         </ul>
         <ul>
           <li>组员3</li>
-          <input type="text" v-model="member3" name id placeholder="请输入组员名称" />
+          <input type="text" disabled v-model="member3" name id placeholder="请输入组员名称" />
         </ul>
          <ul>
           <li>组员4</li>
-          <input type="text" v-model="member4" name id placeholder="请输入组员名称" />
+          <input type="text" disabled v-model="member4" name id placeholder="请输入组员名称" />
         </ul>
          <ul>
           <li>组员5</li>
-          <input type="text" v-model="member5" name id placeholder="请输入组员名称" />
+          <input type="text" disabled v-model="member5" name id placeholder="请输入组员名称" />
         </ul>
       </div>
       <!-- 按钮 -->
@@ -42,20 +44,43 @@
 </template>
 <script>
 export default {
-  name: "operatemodify",
+  name: "groupmodifyconfirm",
   data() {
     return {
-      leader:'张三三',
-      member1:'李依依',
-      member2:'李依依',
-      member3:'李依依',
-      member4:'李依依',
-      member5:'李依依',
+      leader:'',
+      member1:'',
+      member2:'',
+      member3:'',
+      member4:'',
+      member5:'',
     };
   },
+  created(){
+    this.leader=this.$route.params.leader;
+    this.member1=this.$route.params.member1;
+    this.member2=this.$route.params.member2;
+    this.member3=this.$route.params.member3;
+    this.member4=this.$route.params.member4;
+    this.member5=this.$route.params.member5;
+  },
   methods: {
+    back(){
+            this.$router.go(-1)
+    },
     confirm() {
-      this.$router.push("modifysucc");
+      var dataSet={
+        leader:this.leader,
+        member1:this.member1,
+        member2:this.member2,
+        member3:this.member3,
+        member4:this.member4,
+        member5:this.member5,
+      }
+      this.$router.push({
+        name:'modifysucc',
+        params:dataSet
+      }
+        );
     }
   }
 };
@@ -78,7 +103,7 @@ input {
   outline: none;
 }
 .modify-content {
-  width: 100%;
+  width: 96%;
   background-color: #fff;
   margin: 21px 0 254px 0;
 }
@@ -141,7 +166,7 @@ input {
 .title-left {
   padding-left: 11px;
 }
-.content-wrap {
+.content-list{
   /* padding: 40px 81px 81px 90px; */
   background-color: #fff;
   width: 100%;
@@ -149,12 +174,12 @@ input {
 box-shadow:0px 1px 1px 0px rgba(0, 0, 0, 0.1);
 border-radius:4px 4px 0px 0px;
 }
-.content-wrap div {
+.content-list div {
   width: 100%;
   margin-top: 100px;
   display: inline-block;
 }
-.content-wrap ul{
+.content-list ul{
     width: 500px;
     margin: 0 auto;
     display: -webkit-box;
@@ -162,17 +187,17 @@ border-radius:4px 4px 0px 0px;
     border-left: 1px solid #999;
     border-right: 1px solid #999;
 }
-.content-wrap ul:last-child{
+.content-list ul:last-child{
     border-bottom: 1px solid #999;
 }
-.content-wrap ul li{
+.content-list ul li{
     width: 80px;
     line-height: 40px;
     border-right: 1px solid #999;
     
 }
-.content-wrap div input,
-.content-wrap div div{
+.content-list div input,
+.content-list div div{
     text-align: center;
   width: 400px;
   height: 40px;

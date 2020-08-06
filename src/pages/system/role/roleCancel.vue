@@ -3,7 +3,9 @@
     <div class="detail-content">
       <div class="table-title">
         <li class="title-left">角色注销</li>
-        <li class="title-right"></li>
+         <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
       </div>
 
       <div class="content-wrap">
@@ -109,8 +111,10 @@ export default {
   methods:{
       cancel(){
           this.$router.push('cancelresult')
-          
-      }
+      },
+      back(){
+            this.$router.go(-1)
+        }
   }
 };
 </script>

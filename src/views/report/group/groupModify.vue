@@ -3,9 +3,11 @@
     <div class="modify-content">
       <div class="table-title">
         <li class="title-left">分组信息维护修改录入页</li>
-        <li class="title-right"></li>
+         <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
       </div>
-       <div class="content-wrap">
+       <div class="modify-wrap">
       <div>
         <ul>
           <li>组长</li>
@@ -45,17 +47,40 @@ export default {
   name: "operatemodify",
   data() {
     return {
-      leader:'张三三',
-      member1:'李依依',
-      member2:'李依依',
-      member3:'李依依',
-      member4:'李依依',
-      member5:'李依依',
+      leader:'',
+      member1:'',
+      member2:'',
+      member3:'',
+      member4:'',
+      member5:'',
     };
+  },
+  created(){
+    this.leader=this.$route.params.leader;
+    this.member1=this.$route.params.member1;
+    this.member2=this.$route.params.member2;
+    this.member3=this.$route.params.member3;
+    this.member4=this.$route.params.member4;
+    this.member5=this.$route.params.member5;
   },
   methods: {
     modify() {
-      this.$router.push("modifyconfirm");
+      var dataSet={
+        leader:this.leader,
+        member1:this.member1,
+        member2:this.member2,
+        member3:this.member3,
+        member4:this.member4,
+        member5:this.member5,
+      }
+      this.$router.push({
+        name:'groupmodifyconfirm',
+        params:dataSet
+      }
+       );
+    },
+     back(){
+            this.$router.go(-1)
     }
   }
 };
@@ -78,7 +103,7 @@ input {
   outline: none;
 }
 .modify-content {
-  width: 100%;
+  width: 96%;
   background-color: #fff;
   margin: 21px 0 254px 0;
 }
@@ -141,20 +166,19 @@ input {
 .title-left {
   padding-left: 11px;
 }
-.content-wrap {
+.modify-wrap{
   /* padding: 40px 81px 81px 90px; */
   background-color: #fff;
   width: 100%;
-  
 box-shadow:0px 1px 1px 0px rgba(0, 0, 0, 0.1);
 border-radius:4px 4px 0px 0px;
 }
-.content-wrap div {
+.modify-wrap div {
   width: 100%;
   margin-top: 100px;
   display: inline-block;
 }
-.content-wrap ul{
+.modify-wrap ul{
     width: 500px;
     margin: 0 auto;
     display: -webkit-box;
@@ -162,17 +186,17 @@ border-radius:4px 4px 0px 0px;
     border-left: 1px solid #999;
     border-right: 1px solid #999;
 }
-.content-wrap ul:last-child{
+.modify-wrap ul:last-child{
     border-bottom: 1px solid #999;
 }
-.content-wrap ul li{
+.modify-wrap ul li{
     width: 80px;
     line-height: 40px;
     border-right: 1px solid #999;
     
 }
-.content-wrap div input,
-.content-wrap div div{
+.modify-wrap div input,
+.modify-wrap div div{
     text-align: center;
   width: 400px;
   height: 40px;

@@ -24,8 +24,8 @@ export default {
   watch: {
     $route: {
       handler: function(route) {
-        console.log(route);
-         console.log(route.meta.title);
+        // console.log(route);
+        //  console.log(route.meta.title);
          this.name=route.meta.title
       },
       immediate: true
@@ -34,7 +34,61 @@ export default {
 };
 </script>
 <style>
-.ui-breadcrumb__inner a, .ui-breadcrumb__inner.is-link{
+.ui-icon-caret-right:before{
+  /* content: '\e691'; */
+  content: '\008B';
+}
+.ui-tree-node__expand-icon{
+  color: #94A4AC;
+  font-size: 15px;
+   transform: rotate(45deg); 
+}
+.ui-checkbox__inner::after{
+  height: 8px;
+  left: 5px;
+  border: 2px solid #FE946A;
+  border-left: 0;
+  border-top: 0;
+}
+.ui-checkbox__inner,.ui-checkbox__inner:hover,.ui-checkbox__inner:active,.ui-checkbox__input.is-focus .ui-checkbox__inner{
+  width:20px;
+height:20px;
+background:rgba(255,255,255,1);
+border:2px solid rgba(254,145,102,1);
+border-radius:50%;
+}
+.ui-checkbox__input.is-checked .ui-checkbox__inner, .ui-checkbox__input.is-indeterminate .ui-checkbox__inner{
+  background-color: #fff;
+  
+}
+.ui-checkbox__input.is-indeterminate .ui-checkbox__inner{
+  border:2px solid rgba(254,145,102,1);
+}
+.ui-checkbox__input.is-checked .ui-checkbox__inner{
+  border:2px solid rgba(255,191,40,1);
+}
+.title-left{
+    display: inline-block;
+}
+.title-right{
+    float: right;
+      cursor: pointer;
+}
+.title-right img{
+  width: 14px;
+  margin-right: 12px;
+}
+.ui-table__header-wrapper th{
+  background-color: #fff;
+  height: 50px;
+  line-height: 50px;
+  height:12px;
+font-size:12px;
+font-family:SourceHanSansCN;
+font-weight:bold;
+color:rgba(189,194,202,1);
+}
+.ui-breadcrumb__inner a, .ui-breadcrumb__inner.is-link,.ui-breadcrumb__inner{
   font-size:12px;
 font-weight:400;
 color:rgba(153,153,153,1);

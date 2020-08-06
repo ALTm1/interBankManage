@@ -3,7 +3,9 @@
     <div class="result-wrap">
         <div class="table-title">
       <li class="title-left">操作员修改结果页</li>
-      <li class="title-right"></li>
+      <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
     </div>
     <div class="header-wrap">
       <div class="result-img">
@@ -52,14 +54,32 @@ export default {
   data() {
     return {
       batch: "124122331434",
-      id: "111000",
-      name: "张三",
-      znumber: "江南农商银行总行",
-      number: "111000"
+      id: "",
+      name: "",
+      znumber: "",
+      number: ""
     };
+  },
+  created(){
+    console.log(this.$route.params)
+    this.id = this.$route.params.id;
+    this.name = this.$route.params.name;
+    this.znumber = this.$route.params.znumber;
+    this.number = this.$route.params.number;
+  },
+  methods:{
+    back(){
+            this.$router.go(-1)
+        }
   }
 };
 </script>
+<style>
+.result-img {
+  text-align: center;
+  margin: 67px 0 18px 0;
+}
+</style>
 <style scoped>
 .title-left{
     margin-left: 11px;
@@ -134,7 +154,8 @@ button {
   width: 100%;
 }
 .result-wrap{
-    margin-left: 12px;
+  width: 96%;
+    /* margin-left: 12px; */
     margin-top: 21px;
 }
 .result-information {

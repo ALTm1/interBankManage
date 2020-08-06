@@ -1,7 +1,5 @@
 <template>
     <div>
-        <!-- 面包屑 -->
-    <!-- 面包屑 -->
      <div class="operate-header">
       <ui-breadcrumb separator-class="ui-icon-arrow-right">
         <ui-breadcrumb-item :to="{ path: 'operatemanage' }">您的位置: 系统管理</ui-breadcrumb-item>
@@ -12,7 +10,9 @@
     <div class="detail-content">
         <div class="table-title">
           <li class="title-left">操作日志详情</li>
-          <li class="title-right"></li>
+           <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
         </div>
         <div class="content-wrap">
             <div>
@@ -90,15 +90,21 @@ export default {
         }
     },
     watch: {
+
     $route: {
       handler: function(route) {
-        console.log(route);
-         console.log(route.meta.title);
+        // console.log(route);
+        //  console.log(route.meta.title);
          this.path=route.meta.title
       },
       immediate: true
     }
   },
+  methods:{
+      back(){
+            this.$router.go(-1)
+        }
+  }
 }
 </script>
 <style>
@@ -141,7 +147,8 @@ font-weight:400;
   border-radius: 4px 4px 0px 0px;
 }
 .detail-content{
-    margin-left: 12px;
+    width: 96%;
+    /* margin-left: 12px; */
     margin-top: 21px;
 }
 .title-left{

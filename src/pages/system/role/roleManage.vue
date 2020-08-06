@@ -1,11 +1,6 @@
 <template>
   <div class="role-wrap">
     <!-- 角色查询 -->
-     <!-- 面包屑 -->
-      <!-- <ui-breadcrumb separator-class="ui-icon-arrow-right">
-        <ui-breadcrumb-item :to="{ path: '/' }">您的位置: 系统管理</ui-breadcrumb-item>
-        <ui-breadcrumb-item>角色查询</ui-breadcrumb-item>
-      </ui-breadcrumb> -->
     <div class="role-query">
       <li>角色查询</li>
     </div>
@@ -64,7 +59,10 @@ export default {
         this.$router.push('roleadd')
       },
       modify(row){
-        this.$router.push('rolemodify')
+        this.$router.push({
+          name:'roleModify',
+          params:row
+        })
       },
       cancel(row){
         this.$router.push('rolecancel')

@@ -1,15 +1,16 @@
 <template>
-    <div>
-      
+  <div>
     <div class="modify-content">
       <div class="table-title">
-          <li class="title-left">操作员修改录入页</li>
-          <li class="title-right"></li>
-        </div>
+        <li class="title-left">操作员修改录入页</li>
+        <li class="title-right" @click="back">
+           <img src="~@/assets/image/back.png" alt=""> 
+        </li>
+      </div>
       <div style="margin-top:40px;">
         <ul class="content-left">
           <li>操作员ID</li>
-          <input type="text" name id v-model="id" />
+          <input type="number" name id v-model="id" />
         </ul>
         <ul class="content-right">
           <li>操作员姓名</li>
@@ -19,17 +20,17 @@
       <div>
         <ul class="content-left">
           <li>证件号</li>
-          <input type="text" name id v-model="znumber" />
+          <input type="number" name id v-model="znumber" />
         </ul>
         <ul class="content-right">
           <li>工号</li>
-          <input type="text" name id v-model="number" />
+          <input type="number" name id v-model="number" />
         </ul>
       </div>
       <div>
         <ul class="content-left">
           <li>联系电话</li>
-          <input type="text" name id v-model="phone" />
+          <input type="number" name id v-model="phone" />
         </ul>
         <ul class="content-right">
           <li>邮箱</li>
@@ -72,6 +73,10 @@
             ></ui-option>
           </ui-select>
         </ul>
+         <ul class="content-right">
+          <li>状态</li>
+          <input type="text" disabled name id v-model="state" />
+        </ul>
       </div>
       <!-- 按钮 -->
       <div class="modify-btn">
@@ -86,18 +91,19 @@ export default {
   data() {
     return {
       id: '1100',
-      name: '张三',
+      name: '',
       znumber: '123456789009876543',
-      number: '11100',
+      number: '',
       phone: '18888888888',
       email: '12113564892@mdks.cn',
+      state:'',
       options: [
         {
-          value: '选项1',
+          value: '江南农商银行总行',
           label: '江南农商银行总行',
         },
         {
-          value: '选项2',
+          value: '双皮奶',
           label: '双皮奶',
         },
       ],
@@ -122,13 +128,42 @@ export default {
         },
       ],
       value: '江南农商银行总行',
-      value1: '金融同业部',
+      value1: '',
       value2: '交易员',
     }
   },
+  created(){
+    console.log(this.$route.params)
+    this.value1=this.$route.params.department;
+    this.name=this.$route.params.name;
+    this.number=this.$route.params.number;
+    this.value2=this.$route.params.role;
+    this.state=this.$route.params.state;
+// time: "2020-01-31  17:00"
+  },
   methods: {
+     back(){
+            this.$router.go(-1)
+        },
     modify() {
-      this.$router.push('modifyconfirm')
+      console.log(this.value)
+      var dataSet={
+        id:this.id,
+        name:this.name,
+        znumber: this.znumber,
+      number: this.number,
+      phone: this.phone,
+      email: this.email,
+      orgnization:this.value,
+    department:this.value1,
+    state:this.state,
+    role:this.value2,
+      };
+      console.log(dataSet)
+      this.$router.push({
+        name:'modifyConfirm',
+        params:dataSet
+      })
     },
   },
 }
@@ -161,13 +196,14 @@ export default {
 }
 </style>
 <style scoped>
+
 input {
   outline: none;
 }
-.modify-content{
-    width: 100%;
-    background-color: #fff;
-    margin: 21px 0 254px 0;
+.modify-content {
+  width: 96%;
+  background-color: #fff;
+  margin: 21px 0 254px 0;
 }
 .modify-content div {
   display: inline-block;
@@ -225,7 +261,7 @@ input {
   margin-top: 71px;
   margin-bottom: 197px;
 }
-.title-left{
+.title-left {
   padding-left: 11px;
 }
 </style>

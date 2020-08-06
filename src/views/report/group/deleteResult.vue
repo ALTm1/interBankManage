@@ -3,7 +3,9 @@
     <div class="result-wrap">
         <div class="table-title">
       <li class="title-left">分组信息删除结果页</li>
-      <li class="title-right"></li>
+      <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
     </div>
     <div class="header-wrap">
       <div class="result-img">
@@ -31,6 +33,11 @@ export default {
     return {
       batch: "124122331434",
     };
+  },
+  methods:{
+    back(){
+            this.$router.go(-1)
+    }
   }
 };
 </script>
@@ -86,6 +93,7 @@ button {
   width: 100%;
 }
 .result-wrap{
+  width: 96%;
     margin-top: 21px;
 }
 .result-header image {

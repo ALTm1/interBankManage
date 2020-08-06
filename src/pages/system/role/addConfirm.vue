@@ -3,7 +3,9 @@
     <div class="detail-content">
       <div class="table-title">
         <li class="title-left">角色新增确认</li>
-        <li class="title-right"></li>
+        <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
       </div>
 
       <div class="content-wrap">
@@ -109,8 +111,10 @@ export default {
   methods:{
       confirm(){
           this.$router.push('addresult')
-          
-      }
+      },
+      back(){
+            this.$router.go(-1)
+        }
   }
 };
 </script>
@@ -121,28 +125,7 @@ background:rgba(255,255,255,1);
 border-radius:6px;
 margin-bottom: 40px;
 }
-/* .function-tree .ui-checkbox__input.is-checked .ui-checkbox__inner, .ui-checkbox__input.is-indeterminate .ui-checkbox__inner{
-    background:rgba(255,255,255,1);
-border:2px solid rgba(254,145,102,1);
-border-radius:50%;
-width:20px;
-height:20px;
-}
-.function-tree .ui-checkbox__inner{
-    width:20px;
-height:20px;
-background:rgba(255,255,255,1);
-border:2px solid rgba(254,145,102,1);
-border-radius:50%;
-} */
-.function-tree .ui-tree-node__expand-icon{
-    transform: rotate(270deg);
-    position: absolute;
-    right: 5px;
-}
-.function-tree .ui-tree-node__expand-icon.expanded{
-    transform: rotate(90deg);
-}
+
 </style>
 <style scoped>
 .detail-content {

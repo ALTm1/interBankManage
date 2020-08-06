@@ -3,9 +3,11 @@
     <div class="modify-content">
       <div class="table-title">
         <li class="title-left">分组信息删除页</li>
-        <li class="title-right"></li>
+        <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
       </div>
-       <div class="content-wrap">
+       <div class="modify-wrap">
       <div>
         <ul>
           <li>组长</li>
@@ -56,6 +58,9 @@ export default {
   methods: {
     cancel() {
       this.$router.push("deleteresult");
+    },
+    back(){
+            this.$router.go(-1)
     }
   }
 };
@@ -78,7 +83,7 @@ input {
   outline: none;
 }
 .modify-content {
-  width: 100%;
+  width: 96%;
   background-color: #fff;
   margin: 21px 0 254px 0;
 }
@@ -141,20 +146,19 @@ input {
 .title-left {
   padding-left: 11px;
 }
-.content-wrap {
-  /* padding: 40px 81px 81px 90px; */
+.modify-wrap{
   background-color: #fff;
   width: 100%;
   
 box-shadow:0px 1px 1px 0px rgba(0, 0, 0, 0.1);
 border-radius:4px 4px 0px 0px;
 }
-.content-wrap div {
+.modify-wrap div {
   width: 100%;
   margin-top: 100px;
   display: inline-block;
 }
-.content-wrap ul{
+.modify-wrap ul{
     width: 500px;
     margin: 0 auto;
     display: -webkit-box;
@@ -162,17 +166,17 @@ border-radius:4px 4px 0px 0px;
     border-left: 1px solid #999;
     border-right: 1px solid #999;
 }
-.content-wrap ul:last-child{
+.modify-wrap ul:last-child{
     border-bottom: 1px solid #999;
 }
-.content-wrap ul li{
+.modify-wrap ul li{
     width: 80px;
     line-height: 40px;
     border-right: 1px solid #999;
     
 }
-.content-wrap div input,
-.content-wrap div div{
+.modify-wrap div input,
+.modify-wrap div div{
     text-align: center;
   width: 400px;
   height: 40px;

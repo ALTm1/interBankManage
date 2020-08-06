@@ -24,8 +24,8 @@ export default {
   watch: {
     $route: {
       handler: function(route) {
-        console.log(route);
-         console.log(route.meta.title);
+        // console.log(route);
+        //  console.log(route.meta.title);
          this.name=route.meta.title
       },
       immediate: true

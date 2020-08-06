@@ -58,7 +58,7 @@ export default [
       },
       {
         path: 'modifyconfirm',
-        name: 'modifyconfirm',
+        name: 'groupmodifyconfirm',
         component: () => import('@/views/report/group/modifyConfirm.vue'),
         meta: {
           title: '分组信息维护修改确认'

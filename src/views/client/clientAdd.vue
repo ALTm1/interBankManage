@@ -2,7 +2,9 @@
   <div class="add-wrap">
     <div class="table-title">
       <li class="title-left">客户端版本新增</li>
-      <li class="title-right"></li>
+      <li class="title-right" @click="back">
+           <img src="~@/assets/image/back.png" alt=""> 
+        </li>
     </div>
     <div class="content-wrap">
       <div>
@@ -54,6 +56,9 @@ export default {
   methods: {
     add() {
       this.$router.push("addconfirm");
+    },
+    back(){
+            this.$router.go(-1)
     }
   }
 };

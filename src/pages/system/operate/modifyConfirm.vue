@@ -2,57 +2,57 @@
   <div>
     <div class="modify-content">
       <div class="table-title">
-          <li class="title-left">操作员修改确认页</li>
-          <li class="title-right"></li>
-        </div>
+        <li class="title-left">操作员修改确认页</li>
+        <li class="title-right" @click="back"><img src="~@/assets/image/back.png" alt=""> </li>
+      </div>
       <div style="margin-top:40px;">
         <ul class="content-left">
           <li>操作员ID</li>
-          <input type="text" name id v-model="id" />
+          <input disabled type="text" name id v-model="id" />
         </ul>
         <ul class="content-right">
           <li>操作员姓名</li>
-          <input type="text" name id v-model="name" />
+          <input disabled type="text" name id v-model="name" />
         </ul>
       </div>
       <div>
         <ul class="content-left">
           <li>证件号</li>
-          <input type="text" name id v-model="znumber" />
+          <input disabled type="text" name id v-model="znumber" />
         </ul>
         <ul class="content-right">
           <li>工号</li>
-          <input type="text" name id v-model="number" />
+          <input disabled type="text" name id v-model="number" />
         </ul>
       </div>
       <div>
         <ul class="content-left">
           <li>联系电话</li>
-          <input type="text" name id v-model="phone" />
+          <input disabled type="text" name id v-model="phone" />
         </ul>
         <ul class="content-right">
           <li>邮箱</li>
-          <input type="text" name id v-model="email" />
+          <input disabled type="text" name id v-model="email" />
         </ul>
       </div>
       <div>
         <ul class="content-left">
           <li>所属机构</li>
-          <input type="text" name id v-model="orgnization" />
+          <input disabled type="text" name id v-model="orgnization" />
         </ul>
         <ul class="content-right">
           <li>所属部门</li>
-          <input type="text" name id v-model="department" />
+          <input disabled type="text" name id v-model="department" />
         </ul>
       </div>
       <div>
         <ul class="content-left">
           <li>操作角色</li>
-          <input type="text" name id v-model="role" />
+          <input disabled type="text" name id v-model="role" />
         </ul>
         <ul class="content-right">
           <li>状态</li>
-          <input type="text" name id v-model="state" />
+          <input disabled type="text" name id v-model="state" />
         </ul>
       </div>
       <!-- 按钮 -->
@@ -67,26 +67,58 @@ export default {
   name: "operatemodify",
   data() {
     return {
-      id: "1100",
-      name: "张三",
-      znumber: "123456789009876543",
-      number: "11100",
-      phone: "18888888888",
-      email: "12113564892@mdks.cn",
-      orgnization: "江南农商银行总行",
-      department: "金融同业部",
-      state: "正常",
-      role: "交易员"
+      id: "",
+      name: "",
+      znumber: "",
+      number: "",
+      phone: "",
+      email: "",
+      orgnization: "",
+      department: "",
+      state: "",
+      role: ""
     };
   },
+  created() {
+    console.log(this.$route.params);
+    this.id = this.$route.params.id;
+    this.name = this.$route.params.name;
+    this.znumber = this.$route.params.znumber;
+    this.number = this.$route.params.number;
+    this.phone = this.$route.params.phone;
+    this.email = this.$route.params.email;
+    this.orgnization = this.$route.params.orgnization;
+    this.department = this.$route.params.department;
+    this.state = this.$route.params.state;
+    this.role = this.$route.params.role;
+  },
   methods: {
+    back(){
+            this.$router.go(-1)
+        },
     modify() {
-      this.$router.push("modifyresult");
+      var dataSet = {
+        id: this.id,
+        name: this.name,
+        znumber: this.znumber,
+        number: this.number,
+        phone: this.phone,
+        email: this.email,
+        orgnization: this.orgnization,
+        department: this.department,
+        state: this.state,
+        role: this.role
+      };
+      this.$router.push({
+        name: "modifyResult",
+        params: dataSet
+      });
     }
   }
 };
 </script>
 <style>
+.modify-content
 .ui-input__prefix,
 .ui-input__suffix {
   top: 37px;
@@ -112,14 +144,15 @@ input {
 }
 </style>
 <style scoped>
-.title-left{
+
+.title-left {
   padding-left: 11px;
 }
 input {
   outline: none;
 }
 .modify-content {
-  width: 100%;
+  width: 96%;
   background-color: #fff;
   margin: 21px 0 254px 0;
 }

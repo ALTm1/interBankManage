@@ -3,7 +3,9 @@
     <div class="result-wrap">
       <div class="table-title">
         <li class="title-left">分组新增结果页</li>
-        <li class="title-right"></li>
+        <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
       </div>
       <div class="content-wrap">
         <div class="content-list">
@@ -54,6 +56,19 @@ export default {
       member4:'李四',
       member5:'',
     };
+  },
+  created(){
+    this.leader=this.$route.params.leader;
+    this.member1=this.$route.params.member1;
+    this.member2=this.$route.params.member2;
+    this.member3=this.$route.params.member3;
+    this.member4=this.$route.params.member4;
+    this.member5=this.$route.params.member5;
+  },
+  methods:{
+    back(){
+            this.$router.go(-1)
+    }
   }
 };
 </script>
@@ -67,12 +82,13 @@ button {
   cursor: pointer;
 }
 .result-wrap{
+  width: 96%;
     /* margin-top: 21px; */
     padding-top: 21px;
 }
+
 .content-wrap{
-    width: 100%;
-   
+  
     background-color: #fff;
 }
 .content-list{
@@ -119,7 +135,7 @@ button {
   border-radius: 3px 3px 3px 3px;
   font-size: 14px;
   font-weight: 400;
-  margin: 0 192px 0 340px;
+  margin: 0 140px 0 330px;
   color: rgba(255, 255, 255, 1);
 }
 .result-btn button:nth-child(2) {

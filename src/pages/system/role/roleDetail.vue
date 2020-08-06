@@ -3,7 +3,9 @@
     <div class="detail-content">
       <div class="table-title">
         <li class="title-left">角色查询</li>
-        <li class="title-right"></li>
+        <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
       </div>
 
       <div class="content-wrap">
@@ -64,32 +66,39 @@ export default {
       data: [
         {
           id: 1,
+          disabled: true,
           label: "系统管理",
           children: [
             {
               id: 4,
+              disabled: true,
               label: "操作员管理",
             },
             {
               id: 5,
+              disabled: true,
               label: "角色管理",
             },
           ]
         },
         {
           id: 2,
+          disabled: true,
           label: "系统参数",
           children: [
             {
-              id: 5,
+              id: 7,
+              disabled: true,
               label: "产品标签维护"
             },
             {
               id: 6,
+              disabled: true,
               label: "部门维护"
             },
             {
               id: 3,
+              disabled: true,
               label: "审批菜单维护"
             },
           ]
@@ -100,7 +109,13 @@ export default {
         label: "label"
       }
     };
+  },
+  methods:{
+     back(){
+            this.$router.go(-1)
+        }
   }
+  
 };
 </script>
 <style>

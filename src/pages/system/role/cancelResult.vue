@@ -3,7 +3,9 @@
     <div class="result-wrap">
       <div class="table-title">
         <li class="title-left">角色注销结果页</li>
-        <li class="title-right"></li>
+       <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
       </div>
       <div class="header-wrap">
         <div class="result-img">
@@ -30,6 +32,11 @@ export default {
     return {
       batch: "124122331434"
     };
+  },
+  methods:{
+     back(){
+            this.$router.go(-1)
+        }
   }
 };
 </script>

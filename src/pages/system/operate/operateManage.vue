@@ -6,7 +6,6 @@
       <div class="operate-table">
         <div class="table-title">
           <li class="title-left">操作员查询</li>
-          <li class="title-right"></li>
         </div>
         <div class="table-wrap">
           <ul>
@@ -24,7 +23,7 @@
         </div>
       </div>
       <!-- 查询结果 -->
-      <div class="operate-manage" v-show="showQuery">
+      <div class="operate-manage">
         <div class="table-title">
           <li class="title-left">查询结果</li>
         </div>
@@ -40,7 +39,7 @@
           <ui-table-column prop="state" label="状态" width="150"></ui-table-column>
           <ui-table-column prop="role" label="操作角色" width="150"></ui-table-column>
           <ui-table-column prop="time" label="上次登录时间" width="180"></ui-table-column>
-          <ui-table-column label="更多">
+          <ui-table-column prop="more" fixed="right" label="更多" width="180">
             <template slot-scope="scope">
               <ui-button @click="toDetail(scope.row)" type="text" size="small">详情</ui-button>
               <ui-button type="text" size="small" @click="modify(scope.row)">修改</ui-button>
@@ -60,62 +59,70 @@ export default {
   name: 'operatemanage',
   data() {
     return {
-      id: '',
-      name: '',
+      id: "",
+      name: "",
       tableData: [
         {
-          number: '100011',
-          name: '王小虎',
-          department: '金融同业部',
-          state: '正常',
-          role: '交易员',
-          time: '2020-01-31  17:00',
+          number: "100011",
+          name: "王小虎",
+          department: "金融同业部",
+          state: "正常",
+          role: "交易员",
+          time: "2020-01-31  17:00",
+          more:'更多'
         },
         {
-          number: '100011',
-          name: '王小虎',
-          department: '金融同业部',
-          state: '正常',
-          role: '交易员',
-          time: '2020-01-31  17:00',
+          number: "100011",
+          name: "王小虎",
+          department: "金融同业部",
+          state: "正常",
+          role: "交易员",
+          more:'更多',
+          time: "2020-01-31  17:00"
         },
         {
-          number: '100011',
-          name: '王小虎',
-          department: '金融同业部',
-          state: '正常',
-          role: '交易员',
-          time: '2020-01-31  17:00',
-        },
+          number: "100011",
+          name: "王小虎",
+          department: "金融同业部",
+          state: "正常",
+          role: "交易员",
+          more:'更多',
+          time: "2020-01-31  17:00"
+        }
       ],
-      showQuery: false,
-    }
+      showQuery: false
+    };
   },
   methods: {
     toDetail(row) {
-      this.$router.push('operatedetail')
+      this.$router.push("operatedetail");
     },
     modify(row) {
-      this.$router.push('operatemodify')
+      console.log(row);
+      this.$router.push({
+        name: "operatemodify",
+        params: row
+      });
     },
     cancel(row) {
-      this.$router.push('operatecancel')
+      this.$router.push("operatecancel");
     },
     refresh() {
       // 点击重置
-      this.id = ''
-      this.name = ''
+      this.id = "";
+      this.name = "";
     },
     query() {
       // 点击查询
-      this.showQuery = true
+      // this.showQuery=true;
     },
     add() {
       // 新增，跳转到新增录入页
-      this.$router.push('operateAdd')
+      this.$router.push("operateAdd");
     },
-  },
-}
+    back() {}
+  }
+};
 </script>
 <style>
 .ui-table .number {
@@ -138,7 +145,9 @@ button {
 }
 .title-right {
   float: right;
+  /* cursor: pointer; */
 }
+
 .table-wrap {
   padding: 61px 0 34px 0;
   text-align: center;

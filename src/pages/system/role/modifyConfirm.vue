@@ -51,14 +51,14 @@
 </template>
 <script>
 export default {
-  name: "roledetail",
+  name: "Modifyconfirm",
   data() {
     return {
 
-      state: "有效",
-      ps: "备注",
-      name: "张三",
-      id: "11100",
+      state: "",
+      ps: "",
+      name: "",
+      id: "",
       data: [
         {
           id: 1,
@@ -105,6 +105,12 @@ export default {
         label: "label"
       }
     };
+  },
+  created(){
+     this.state=this.$route.params.state;
+    this.ps=this.$route.params.ps;
+    this.name=this.$route.params.name;
+    this.id=this.$route.params.id;
   },
   methods:{
       confirm(){

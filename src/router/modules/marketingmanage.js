@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2020-07-28 09:23:48
- * @LastEditTime: 2020-08-05 10:00:44
+ * @LastEditTime: 2020-08-06 10:38:17
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\router\modules\marketingmanage.js
@@ -236,6 +236,22 @@ export default [
           title: '产品推荐'
         },
         component: () => import('@/views/marketingmanage/marketdismanage/ProRecommend'),
+      },
+      {
+        path: '/productmodify',
+        name: 'productmodify',
+        meta: {
+          title: '产品推荐修改录入'
+        },
+        component: () => import('@/views/marketingmanage/marketdismanage/ProductModify'),
+      },
+      {
+        path: '/productmodifyconfirm',
+        name: 'productmodifyconfirm',
+        meta: {
+          title: '产品推荐修改确认'
+        },
+        component: () => import('@/views/marketingmanage/marketdismanage/ProductModifyConfirm'),
       },
       {
         path: '/dynamiczone',

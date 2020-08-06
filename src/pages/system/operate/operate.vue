@@ -24,8 +24,8 @@ export default {
   watch: {
     $route: {
       handler: function(route) {
-        console.log(route);
-         console.log(route.meta.title);
+        // console.log(route);
+        //  console.log(route.meta.title);
          this.name=route.meta.title
       },
       immediate: true
@@ -34,6 +34,31 @@ export default {
 };
 </script>
 <style>
+.title-left{
+    display: inline-block;
+}
+.title-right{
+    float: right;
+      cursor: pointer;
+}
+.title-right img{
+  width: 14px;
+  margin-right: 12px;
+}
+.ui-table__header-wrapper th{
+  background-color: #fff;
+  height: 50px;
+  line-height: 50px;
+  height:12px;
+font-size:12px;
+font-family:SourceHanSansCN;
+font-weight:bold;
+color:rgba(189,194,202,1);
+}
+.ui-table thead{
+  /* color: #333; */
+  border-bottom: 1px solid #BDC2CA;
+}
 .table-title {
   width: 100%;
   height: 30px;
@@ -69,11 +94,6 @@ export default {
 }
 .operate-header {
   font-size: 12px;
-  /* padding-left: 11px; */
-}
-.ui-input__prefix,
-.ui-input__suffix {
-  /* top: 37px; */
 }
 .ui-input__inner {
   float: right;

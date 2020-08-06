@@ -38,8 +38,8 @@ export default [
                 }
             },
             {
-                path: 'modifyresult',
-                name: 'modifyresult',
+                path: 'modifyResult',
+                name: 'modifyResult',
                 component: () => import('@/pages/system/operate/modifyResult.vue'),
                 meta: {
                     title: '操作员修改结果页'
@@ -78,8 +78,8 @@ export default [
                 }
             },
             {
-                path: 'modifyconfirm',
-                name: 'modifyconfirm',
+                path: 'modifyConfirm',
+                name: 'modifyConfirm',
                 component: () => import('@/pages/system/operate/modifyConfirm.vue'),
                 meta: {
                     title: '操作员修改确认页'
@@ -116,7 +116,7 @@ export default [
             },
             {
                 path: 'rolemodify',
-                name: 'rolemodify',
+                name: 'roleModify',
                 component: () => import('@/pages/system/role/roleModify.vue'),
                 meta: {
                     title: '角色修改'
@@ -124,7 +124,7 @@ export default [
             },
             {
                 path: 'modifyconfirm',
-                name: 'modifyconfirm',
+                name: 'ModifyConfirm',
                 component: () => import('@/pages/system/role/modifyConfirm.vue'),
                 meta: {
                     title: '角色修改确认'

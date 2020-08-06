@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-29 13:20:59
- * @LastEditTime: 2020-08-05 10:25:34
+ * @LastEditTime: 2020-08-06 09:28:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\organmanage\OrganModify.vue
@@ -31,6 +31,7 @@
             :on-exceed="handleExceed"
             :file-list="form.organContent"
             :auto-upload="false"
+            :on-change="handleUploadChange"
           >
             <span class="upload-text">点击上传</span>
           </ui-upload>
@@ -63,6 +64,7 @@ export default {
   methods: {
     handleRemove(file, fileList) {
       console.log(file, fileList)
+      this.form.organContent = fileList
     },
     handlePreview(file) {
       console.log(file)
@@ -77,10 +79,19 @@ export default {
     beforeRemove(file, fileList) {
       return this.$confirm(`确定移除 ${file.name}？`)
     },
+    handleUploadChange(file, fileList) {
+      this.form.organContent = fileList
+    },
     submitForm(formName) {
       this.$refs[formName].validate((valid) => {
         if (valid) {
-          this.$router.push('/marketingmanage/organmanage/organmodifyconfirm')
+          console.log(this.form)
+          this.$router.push({
+            path: '/marketingmanage/organmanage/organmodifyconfirm',
+            query: {
+              form: JSON.stringify(this.form),
+            },
+          })
         } else {
           return false
         }

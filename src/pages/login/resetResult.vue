@@ -11,7 +11,9 @@
     <div class="result-wrap">
         <div class="table-title">
       <li class="title-left">登录密码重置</li>
-      <li class="title-right"></li>
+      <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
     </div>
     <div class="header-wrap">
       <div class="result-header">
@@ -19,8 +21,6 @@
         <li>修改成功</li>
         <li>重置后的登录密码已发送短信至用户</li>
       </div>
-      
-
       <div class="result-btn">
         <button>继续</button>
         <button>返回</button>
@@ -37,6 +37,11 @@ export default {
     return {
      
     };
+  },
+  methods:{
+      back(){
+            this.$router.go(-1)
+        }
   }
 };
 </script>

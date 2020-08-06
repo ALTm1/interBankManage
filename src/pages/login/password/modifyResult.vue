@@ -3,7 +3,9 @@
     <div class="result-wrap">
         <div class="table-title">
       <li class="title-left">登录密码修改结果页</li>
-      <li class="title-right"></li>
+       <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
     </div>
     <div class="header-wrap">
       <div class="result-header">
@@ -11,29 +13,6 @@
         <li>密码修改成功</li>
         <!-- <li>交易流水号：{{batch}}</li> -->
       </div>
-      <!-- <div class="info-wrap">
-        <div class="result-information">
-          <ul class="result-left">
-            <li>操作员ID</li>
-            <li>{{id}}</li>
-          </ul>
-          <ul class="result-right">
-            <li>操作员姓名</li>
-            <li>{{name}}</li>
-          </ul>
-        </div>
-        <div class="result-information">
-          <ul class="result-left">
-            <li>所属机构</li>
-            <li>{{orgnization}}</li>
-          </ul>
-          <ul class="result-right">
-            <li>所属部门</li>
-            <li>{{department}}</li>
-          </ul>
-        </div>
-      </div> -->
-
       <div class="result-btn">
         <button>继续</button>
         <button>返回</button>
@@ -54,6 +33,11 @@ export default {
       orgnization: "江南农商银行总行",
       department: "金融同业部"
     };
+  },
+   methods:{
+      back(){
+            this.$router.go(-1)
+        }
   }
 };
 </script>

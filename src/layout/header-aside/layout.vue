@@ -4,9 +4,11 @@
     <div class="tab-menu">
       <img src="~@/assets/image/tab.png" alt />
       <!-- <menuTree></menuTree> -->
+      <div>
+        <span>管理平台</span>
+      </div>
       <div class="tab-title">
-        <li>{{user}}，欢迎您！</li>
-        <li>这是您第{{time}}次登录，上次登录时间：{{}}</li>
+        <li>上次登录时间：{{time}}</li>
       </div>
     </div>
     <!-- 退出登录 -->
@@ -53,35 +55,6 @@
             <ui-menu-item index="2-4" @click="password">登录密码修改</ui-menu-item>
             <ui-menu-item index="2-5" @click="reset">登录密码重置</ui-menu-item>
           </ui-submenu>
-
-          <!-- <ui-menu-item index="3">
-            <i class="ui-icon-document"></i>
-            <span slot="title">机构管理</span>
-          </ui-menu-item>
-          <ui-menu-item index="4">
-            <i class="ui-icon-setting"></i>
-            <span slot="title">用户管理</span>
-          </ui-menu-item>
-          <ui-menu-item index="5">
-            <i class="ui-icon-setting"></i>
-            <span slot="title">产品查询</span>
-          </ui-menu-item>
-          <ui-menu-item index="6">
-            <i class="ui-icon-setting"></i>
-            <span slot="title">任务中心</span>
-          </ui-menu-item>
-          <ui-menu-item index="7">
-            <i class="ui-icon-setting"></i>
-            <span slot="title">个人中心</span>
-          </ui-menu-item>
-          <ui-menu-item index="8">
-            <i class="ui-icon-setting"></i>
-            <span slot="title">同业圈管理</span>
-          </ui-menu-item>-->
-          <!-- <ui-menu-item index="9">
-            <i class="ui-icon-setting"></i>
-            <span slot="title">举报及反馈管理</span>
-          </ui-menu-item>-->
 
           <ui-submenu index="11">
             <template slot="title">
@@ -169,23 +142,23 @@
 </template>
 
 <script>
-import uiMenuSide from './components/menu-side'
-import uiMenuHeader from './components/menu-header'
-import uiTabs from './components/tabs'
-import uiHeaderFullscreen from './components/header-fullscreen'
-import uiHeaderLocales from './components/header-locales'
-import uiHeaderSearch from './components/header-search'
-import uiHeaderSize from './components/header-size'
-import uiHeaderTheme from './components/header-theme'
-import uiHeaderUser from './components/header-user'
-import uiHeaderLog from './components/header-log'
-import uiHeaderColor from './components/header-color'
-import { mapState, mapGetters, mapActions } from 'vuex'
-import mixinSearch from './mixins/search'
-import menuTree from './components/menu-tree/menu'
-import home from '../../pages/home/Home'
+import uiMenuSide from "./components/menu-side";
+import uiMenuHeader from "./components/menu-header";
+import uiTabs from "./components/tabs";
+import uiHeaderFullscreen from "./components/header-fullscreen";
+import uiHeaderLocales from "./components/header-locales";
+import uiHeaderSearch from "./components/header-search";
+import uiHeaderSize from "./components/header-size";
+import uiHeaderTheme from "./components/header-theme";
+import uiHeaderUser from "./components/header-user";
+import uiHeaderLog from "./components/header-log";
+import uiHeaderColor from "./components/header-color";
+import { mapState, mapGetters, mapActions } from "vuex";
+import mixinSearch from "./mixins/search";
+import menuTree from "./components/menu-tree/menu";
+import home from "../../pages/home/Home";
 export default {
-  name: 'ui-layout-header-aside',
+  name: "ui-layout-header-aside",
   mixins: [mixinSearch],
   components: {
     uiMenuSide,
@@ -200,29 +173,28 @@ export default {
     uiHeaderLog,
     uiHeaderColor,
     menuTree,
-    home,
+    home
   },
   data() {
     return {
       dialogVisible: false,
       // 用户身份
-      user: '系统管理员1',
-      time: '2',
+      time: "2020-09-09 17:00",
       // [侧边栏宽度] 正常状态
-      asideWidth: '200px',
+      asideWidth: "200px",
       // [侧边栏宽度] 折叠状态
-      asideWidthCollapse: '65px',
-    }
+      asideWidthCollapse: "65px"
+    };
   },
   computed: {
-    ...mapState('vxadmin', {
-      keepAlive: (state) => state.page.keepAlive,
-      grayActive: (state) => state.gray.active,
-      transitionActive: (state) => state.transition.active,
-      asideCollapse: (state) => state.menu.asideCollapse,
+    ...mapState("vxadmin", {
+      keepAlive: state => state.page.keepAlive,
+      grayActive: state => state.gray.active,
+      transitionActive: state => state.transition.active,
+      asideCollapse: state => state.menu.asideCollapse
     }),
-    ...mapGetters('vxadmin', {
-      themeActiveSetting: 'theme/activeSetting',
+    ...mapGetters("vxadmin", {
+      themeActiveSetting: "theme/activeSetting"
     }),
     /**
      * @description 最外层容器的背景图片样式
@@ -232,173 +204,173 @@ export default {
       return {
         ...(this.themeActiveSetting.backgroundImage
           ? {
-              backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')`,
+              backgroundImage: `url('${this.$baseUrl}${this.themeActiveSetting.backgroundImage}')`
             }
-          : {}),
-      }
-    },
+          : {})
+      };
+    }
   },
   methods: {
-    ...mapActions('vxadmin/menu', ['asideCollapseToggle']),
+    ...mapActions("vxadmin/menu", ["asideCollapseToggle"]),
     /**
      * 接收点击切换侧边栏的按钮
      */
     handleToggleAside() {
-      this.asideCollapseToggle()
+      this.asideCollapseToggle();
     },
     handleOpen(key, keyPath) {
-      console.log(key, keyPath)
+      console.log(key, keyPath);
     },
     handleClose(key, keyPath) {
-      console.log(key, keyPath)
+      console.log(key, keyPath);
     },
     // 操作员管理
     system() {
-      this.$router.push('/index/system')
+      this.$router.push("/index/system");
     },
     // 角色管理
     role() {
-      this.$router.push('/index/role')
+      this.$router.push("/index/role");
     },
     // 密码重置
     reset() {
-      this.$router.push('/index/loginreset')
+      this.$router.push("/index/loginreset");
     },
     //日志管理
     log() {
-      this.$router.push('/index/log')
+      this.$router.push("/index/log");
     },
     // 个人票务
     personal() {
-      this.$router.push('/index/personalbill')
+      this.$router.push("/index/personalbill");
     },
     // 团队票务
     group() {
-      this.$router.push('/index/group')
+      this.$router.push("/index/group");
     },
     // 登录密码修改
     password() {
-      this.$router.push('/index/password')
+      this.$router.push("/index/password");
     },
     team() {
-      this.$router.push('/index/teamlbill')
+      this.$router.push("/index/teamlbill");
     },
     // 客户端
     client() {
-      this.$router.push('/index/client')
+      this.$router.push("/index/client");
     },
     /***参数管理***/
     // 产品标签维护
     goTagService() {
-      this.$router.push('/productService')
+      this.$router.push("/productService");
     },
     // 部门维护
     goSection() {
-      this.$router.push('/sectionService')
+      this.$router.push("/sectionService");
     },
     // 审批菜单维护
     goApproveMenuService() {
-      this.$router.push('/menuService')
+      this.$router.push("/menuService");
     },
     /**业务管理***/
     //  行外机构信息管理
     goOutBankInfo() {
-      this.$router.push('/outBankInfoMaintain')
+      this.$router.push("/outBankInfoMaintain");
     },
     // 用户管理
     goUserManagement() {
-      this.$router.push('/userQuery')
-      productQuery
+      this.$router.push("/userQuery");
+      productQuery;
     },
     // 产品维护
     goProductmaintence() {
-      this.$router.push('/productQuery')
+      this.$router.push("/productQuery");
     },
     // 文件管理
     goFilesManagement() {
-      this.$router.push('/filesManagement')
+      this.$router.push("/filesManagement");
     },
     /***
      * 授信管理
      */
     //授信额度查询
     goCreditQuery() {
-      this.$router.push('/lineCreditQuery')
+      this.$router.push("/lineCreditQuery");
     },
     //授信文件管理
     goCreditFilesManagement() {
-      this.$router.push('/creditFilesManagement')
+      this.$router.push("/creditFilesManagement");
     },
     /***
      * 行为分析
      */
     //访问频次
     goAccessFrequency() {
-      this.$router.push('/accessFrequency')
+      this.$router.push("/accessFrequency");
     },
     //访问时长
     goAccessTime() {
-      this.$router.push('/accessTime')
+      this.$router.push("/accessTime");
     },
     /***
      * 联盟圈管理
      */
     goUnionlapmanagement() {
-      this.$router.push('/unionlapQuery')
+      this.$router.push("/unionlapQuery");
     },
 
     /** 营销管理 **/
 
     // 会议管理
     goMeetingManage() {
-      this.$router.push('/marketingmanage/meetingmanage/meetingindex')
+      this.$router.push("/marketingmanage/meetingmanage/meetingindex");
     },
     // 培训管理
     goTrainingManage() {
-      this.$router.push('/marketingmanage/trainingmanage/trainingindex')
+      this.$router.push("/marketingmanage/trainingmanage/trainingindex");
     },
     // 机构动态管理
     goOrganManage() {
-      this.$router.push('/marketingmanage/organmanage/organindex')
+      this.$router.push("/marketingmanage/organmanage/organindex");
     },
     // 营销展示管理
     goMarketDisManage() {
-      this.$router.push('/marketingmanage/marketdismanage/marketdisindex')
+      this.$router.push("/marketingmanage/marketdismanage/marketdisindex");
     },
 
     /** 审批管理 **/
 
     // 机构认证审批
     goOrganApprove() {
-      this.$router.push('/approvalmanage/organapprove/organapproveindex')
+      this.$router.push("/approvalmanage/organapprove/organapproveindex");
     },
     // 后管交易审批
     goBackManApprove() {
-      this.$router.push('/approvalmanage/backmanapprove/backmanapproveindex')
+      this.$router.push("/approvalmanage/backmanapprove/backmanapproveindex");
     },
     // 审批记录查询
     goApprovalRecord() {
-      this.$router.push('/approvalmanage/approvalrecord/approvalrecordqry')
+      this.$router.push("/approvalmanage/approvalrecord/approvalrecordqry");
     },
 
     handleClose(done) {
-      this.$confirm('确认关闭？')
-        .then((_) => {
-          done()
+      this.$confirm("确认关闭？")
+        .then(_ => {
+          done();
         })
-        .catch((_) => {})
+        .catch(_ => {});
     },
     getout() {
-      this.dialogVisible = false
-      this.$router.push('/login')
-    },
-  },
-}
+      this.dialogVisible = false;
+      this.$router.push("/login");
+    }
+  }
+};
 </script>
 
 <style lang="scss">
 // 注册主题
-@import '~@/assets/style/theme/register.scss';
+@import "~@/assets/style/theme/register.scss";
 </style>
 <style lang="scss">
 .tab-menu {
@@ -444,6 +416,11 @@ export default {
   display: -webkit-box;
   line-height: 50px;
   margin-left: 100px;
+  li {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(140, 140, 140, 1);
+  }
 }
 .menu-side {
   background: rgb(240, 239, 244);

@@ -3,7 +3,9 @@
     <div class="modify-content">
       <div class="table-title">
         <li class="title-left">客户端版本修改录入页</li>
-        <li class="title-right"></li>
+        <li class="title-right" @click="back">
+           <img src="~@/assets/image/back.png" alt=""> 
+        </li>
       </div>
       <div style="margin-top:40px;">
         <ul class="content-left">
@@ -60,7 +62,10 @@ export default {
   methods: {
     modify() {
       this.$router.push("modifyconfirm");
-    }
+    },
+     back(){
+            this.$router.go(-1)
+        }
   }
 };
 </script>

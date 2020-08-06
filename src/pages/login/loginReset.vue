@@ -13,7 +13,7 @@
       <div class="operate-table">
         <div class="table-title">
           <li class="title-left">登录密码重置</li>
-          <li class="title-right"></li>
+          
         </div>
         <div class="table-wrap">
           <ul>
@@ -31,7 +31,7 @@
         </div>
       </div>
       <!-- 查询结果 -->
-      <div class="operate-manage" v-show="showQuery">
+      <div class="operate-manage">
         <div class="table-title">
           <li class="title-left">查询结果</li>
         </div>

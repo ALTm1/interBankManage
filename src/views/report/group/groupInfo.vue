@@ -4,7 +4,7 @@
     <div class="group-wrap">
         <div class="table-title">
         <li class="title-left">分组信息维护</li>
-        <li class="title-right"></li>
+        
       </div>
         <div class="role-table">
       <ui-table :data="tableData">
@@ -65,7 +65,11 @@ export default {
   },
   methods:{
        modify(row) {
-        this.$router.push('groupmodify')
+        this.$router.push({
+          name:'groupmodify',
+          params:row
+        }
+          )
       },
       cancel(row){
         this.$router.push('groupdelete')

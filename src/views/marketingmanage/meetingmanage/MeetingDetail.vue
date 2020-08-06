@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-07-28 17:01:34
- * @LastEditTime: 2020-08-05 10:29:26
+ * @LastEditTime: 2020-08-06 10:43:28
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \interBankManage\src\views\marketingmanage\meetingmanage\MeetingDetail.vue
@@ -12,7 +12,6 @@
   <div class="wrap">
     <BorderHeader title="会议详情"></BorderHeader>
     <div class="content-wrap">
-      <!-- 会议信息 -->
       <div class="clear">
         <HeaderItem text="会议信息"></HeaderItem>
         <div

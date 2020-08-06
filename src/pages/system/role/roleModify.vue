@@ -55,11 +55,11 @@ export default {
   name: "roledetail",
   data() {
     return {
-      time: "2020-09-09  19:00",
-      state: "有效",
-      ps: "备注",
-      name: "张三",
-      id: "11100",
+      // time: "2020-09-09  19:00",
+      state: "",
+      ps: "",
+      name: "",
+      id: "",
       data: [
         {
           id: 1,
@@ -100,9 +100,26 @@ export default {
       }
     };
   },
+  created(){
+    console.log(this.$route.params)
+    this.state=this.$route.params.state;
+    this.ps=this.$route.params.ps;
+    this.name=this.$route.params.name;
+    this.id=this.$route.params.id;
+  },
   methods: {
     confirm() {
-      this.$router.push("modifyconfirm");
+      var dataSet={
+        state:this.state,
+        ps:this.ps,
+        name:this.name,
+        id:this.id,
+      }
+      this.$router.push(
+        {
+          name:'ModifyConfirm',
+          params:dataSet
+        });
     }
   }
 };
@@ -133,9 +150,7 @@ input {
   font-weight: bold;
   color: rgba(153, 153, 153, 1);
 }
-.content-wrap div {
-  /* margin: 0 auto; */
-}
+
 .content-wrap{
   position: relative;
 }

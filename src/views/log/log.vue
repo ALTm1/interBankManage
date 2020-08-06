@@ -8,12 +8,6 @@
         <ui-breadcrumb-item>{{name}}</ui-breadcrumb-item>
       </ui-breadcrumb>
     </div>
-    <!-- <div class="operate-header">
-      <ui-breadcrumb separator-class="ui-icon-arrow-right">
-        <ui-breadcrumb-item :to="{ path: '/' }">您的位置: 系统管理</ui-breadcrumb-item>
-        <ui-breadcrumb-item>日志查询</ui-breadcrumb-item>
-      </ui-breadcrumb>
-    </div> -->
     <!-- 操作员管理 -->
     <div class="operate-content">
       <!-- 查询表格 -->
@@ -42,7 +36,7 @@
         </div>
       </div>
       <!-- 查询结果 -->
-      <div class="operate-manage" v-show="showQuery">
+      <div class="operate-manage">
         <div class="table-title">
           <li class="title-left">查询结果</li>
         </div>
@@ -145,8 +139,8 @@ export default {
   watch: {
     $route: {
       handler: function(route) {
-        console.log(route);
-         console.log(route.meta.title);
+        // console.log(route);
+        //  console.log(route.meta.title);
          this.name=route.meta.title
       },
       immediate: true
@@ -175,6 +169,17 @@ export default {
 };
 </script>
 <style>
+.title-left{
+    display: inline-block;
+}
+.title-right{
+    float: right;
+      cursor: pointer;
+}
+.title-right img{
+  width: 14px;
+  margin-right: 12px;
+}
 .ui-breadcrumb__inner a, .ui-breadcrumb__inner.is-link,.ui-breadcrumb__inner{
   font-size:12px;
 font-weight:400;

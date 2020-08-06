@@ -2,7 +2,9 @@
   <div class="add-wrap">
     <div class="table-title">
       <li class="title-left">角色新增录入页</li>
-      <li class="title-right"></li>
+       <li class="title-right" @click="back">
+         <img src="~@/assets/image/back.png" alt=""> 
+      </li>
     </div>
     <div class="content-wrap">
       <div>
@@ -93,6 +95,9 @@ export default {
     };
   },
   methods: {
+       back(){
+            this.$router.go(-1)
+        },
     add() {
       this.$router.push("addconfirm");
     }
@@ -100,7 +105,9 @@ export default {
 };
 </script>
 <style>
+.add-wrap
 .ui-input__prefix,
+.add-wrap
 .ui-input__suffix {
   top: 37px;
 }
@@ -164,7 +171,6 @@ input {
 }
 .content-wrap div input {
   text-align: center;
-  /* float: right; */
   width: 300px;
   height: 33px;
   background: rgba(255, 255, 255, 1);
@@ -172,10 +178,9 @@ input {
 }
 .content-wrap div div {
   text-align: center;
-  width: 300px;
-  /* height: 33px; */
+  width: 600px;
   background: rgba(255, 255, 255, 1);
-  /* border: 2px solid rgba(231, 232, 239, 1);  */
+  border-radius:6px;
 }
 .add-btn {
   text-align: center;

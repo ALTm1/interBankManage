@@ -3,7 +3,9 @@
     <div class="result-wrap">
         <div class="table-title">
       <li class="title-left">客户端版本删除结果页</li>
-      <li class="title-right"></li>
+      <li class="title-right" @click="back">
+           <img src="~@/assets/image/back.png" alt=""> 
+        </li>
     </div>
     <div class="header-wrap">
       <div class="result-img">
@@ -14,9 +16,6 @@
         <li>交易已提交,请等待审核</li>
         <li>交易流水号：{{batch}}</li>
       </div>
-
-
-
       <div class="result-btn">
         <button>继续</button>
         <button>返回</button>
@@ -32,8 +31,12 @@ export default {
   data() {
     return {
       batch: "124122331434",
-     
     };
+  },
+  methods:{
+    back(){
+            this.$router.go(-1)
+    }
   }
 };
 </script>
